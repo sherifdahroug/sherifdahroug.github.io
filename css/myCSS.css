@@ -26,6 +26,53 @@
 }
 
 
+.cd-announcement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+.cd-artwork {
+  max-width: 40%;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+.cd-artwork img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.cd-details {
+  max-width: 60%;
+}
+.cd-details h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+.cd-details p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+.cd-details button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.cd-details button:hover {
+  background-color: #218838;
+}
+
+
 /*--
 	Slider 
 --*/
@@ -395,7 +442,7 @@ footer {
   transform: scale(1.1) rotate(360deg);
 }
 
-.social-icons .fa-linkedin{color:#3771c8ff;} 
+.social-icons .fa-linkedin{color:rgb(0, 0, 0);} 
 .social-icons .ai-researchgate{color:#3771c8ff;} 
 .social-icons .ai-google-scholar{color:#3771c8ff;} 
 
