@@ -1,8 +1,36 @@
+
+.nav {
+  background-color: #ffffff; /* Replace with your desired background color */
+  color: #000;
+}
+
+/* Change background color */
+.navbar {
+  background-color: #ffffff; /* Replace with your desired background color */
+}
+
+/* Change text color */
+.navbar .nav-link, .navbar-brand {
+  color: #000000 !important; /* Replace with your desired text color */
+}
+
+/* Change text color on hover */
+.navbar .nav-link:hover {
+  color: #ffcc00 !important; /* Replace with your hover color */
+}
+
+
+.masthead {
+  background-color: #ffffff; /* Replace with your desired background color */
+  color: #000;
+}
+
+
 /*--
 	Slider 
 --*/
 #slider {
-  background: url("../img/homePage/imHomePage_v0.jpg") no-repeat center center #000;
+  background: url("../img/homePage/imHomePage_v0.jpg") no-repeat center center #ffffff;
   background-attachment: fixed;
   padding-bottom: 230px;
   padding-top: 500px;
@@ -52,7 +80,7 @@
 }
 #slider .block p {
   text-align: left;
-  color: #ffffff;
+  color: #000000;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
 }
@@ -62,6 +90,8 @@
 --*/
 #intro {
   padding: 100px 0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0,0,0);
 }
 
 #intro button{
@@ -116,7 +146,7 @@
 
 
 #headerBiography {
-  background: url("../img/biography_header.png") no-repeat center center #000;
+  background: url("../img/biography_header.png") no-repeat center center #ffffff;
   background-attachment: fixed;
   /*padding-bottom: 13em;
   padding-top: 22em;
@@ -129,7 +159,7 @@
   position: relative;
   max-width: 100%;
   height: auto;
-  color: white;
+  color: rgb(0, 0, 0);
   background-size: cover;
 }
 
@@ -137,9 +167,79 @@
   float: right;
   width: 50%;
 }
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #000;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+.page h2 {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.page p {
+  font-size: 1.2em;
+  max-width: 600px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.page a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+footer {
+  text-align: center;
+  background: #111;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 0.9em;
+}
 
 #headerConcert {
-  background: url("../img/concert_header.png") no-repeat center center #000;
+  background: url("../img/concert_header.png") no-repeat center center #ffffff;
   background-attachment: fixed;
   padding-bottom: 800px;
   background-position: 50% 0%;
@@ -151,12 +251,12 @@
   position: relative;
   max-width: 100%;
   height: auto;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 
 #headerConcert2 {
-  background: url("../img/concert_header.png") no-repeat center center #000;
+  background: url("../img/concert_header.png") no-repeat center center #ffffff;
   background-attachment: fixed;
   padding-bottom: 18em;
   position: relative;
@@ -166,7 +266,7 @@
 }
 
 #headerMM {
-  background: url("../img/media_header.png") no-repeat center center #000;
+  background: url("../img/media_header.png") no-repeat center center #ffffff;
   background-attachment: fixed;
   padding-bottom: 50px;
   background-position: 0% 20%;
@@ -180,7 +280,7 @@
 
 
 #headerMusic {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   padding-bottom: 5em;
   height: auto;
 }
@@ -214,7 +314,7 @@
   margin: 0px;
 }
 #contact-form .block form .form-group .form-control {
-  background: #F6F8FA;
+  background: #ffffff;
   height: 60px;
   border: 1px solid #EEF2F6;
   box-shadow: none;
@@ -225,7 +325,7 @@
   margin: 0px;
 }
 #contact-form .block form .form-group-2 textarea {
-  background: #F6F8FA;
+  background: #ffffff;
   height: 135px;
   border: 1px solid #EEF2F6;
   box-shadow: none;
@@ -234,7 +334,7 @@
 #contact-form .block button {
   width: 100%;
   height: 60px;
-  background: #47424C;
+  background: #ffffff;
   border: none;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -337,7 +437,7 @@
   opacity: 0.0;
 }
 #projects-header .block {
-  color: #E3E3E4;
+  color: #000000;
   margin: 0 auto;
   padding-left:0em;
   text-align: center;

@@ -34,13 +34,15 @@
   <body>
 
     <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <!--
+    
     <a class="navbar-brand" href="/">
-      <img src="/img/logo/logo_tampon_20211014-12.jpg" alt="Logo" height="80">
+      <!--<img src="/_site/img/logo/lettre-11.png" alt="Logo" height="80">-->
+      SHERIF DAHROUG
     </a>
-    -->
+    
+    
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fa fa-bars"></i>
@@ -48,20 +50,27 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/biography">Biography</a>
+          <a class="nav-link" href="/biography">BIOGRAPHY</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/awards">awards</a>
+          <a class="nav-link" href="/awards">AWARDS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/concert">Concert</a>
+          <a class="nav-link" href="/music">MUSIC</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/music">music</a>
+          <a class="nav-link" href="/books">BOOKS</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/concert">CONCERTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/press">PRESS</a>
+        </li>
+       
         <!--
         <li class="nav-item">
           <a class="nav-link" href="/momentsMausicaux">Moments musicaux</a>
@@ -73,10 +82,12 @@
           <a class="nav-link" href="/projects">projects</a>
         </li>
         -->
+        <!--
         <li class="nav-item">
-          <a class="nav-link" href="/#contact-form">Contact</a>
+          <a class="nav-link" href="/#contact-form">CONTACT</a>
         </li>
       </ul>
+       -->
     </div>
   </div>
 </nav>
@@ -253,86 +264,351 @@
   </div>
 -->
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Homepage</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
 
-<section id="slider">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-2">
-        <div class="block">
-          <h1 class="animated fadeInUp">Sherif DAHROUG</h1>
-          <!-- <p class="animated fadeInUp">Guitariste concertiste</p> -->
-          <p class="animated fadeInUp">Concert guitarist and composer</p>
-        </div>
+      body {
+          font-family: "Garamond", serif;
+          color: white;
+          background-color: #111;
+      }
+
+      /* Full-screen hero section with your personal photo */
+      .hero {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          background: url('img/homePage/Home.jpg') no-repeat center 30%/cover; /* Replace 'your-photo.jpg' */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          transition: opacity 0.8s ease-in-out;
+      }
+
+      .hero h1 {
+          font-size: 3rem;
+          font-weight: 300;
+          background: rgba(0, 0, 0, 0.4);
+          padding: 20px 40px;
+          border-radius: 10px;
+      }
+
+      /* Content section */
+      .content {
+          height: 15vh;
+          padding: 50px;
+          background-color: white;
+          color: black;
+      }
+
+      /* Fade-out effect on scroll */
+      .fade-out {
+          opacity: 0;
+          pointer-events: none;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="hero" id="hero">
+      
+  </div>
+
+
+  <script>
+    window.addEventListener('scroll', function() {
+        let scrollValue = window.scrollY;
+        let opacity = 1 - scrollValue / 1500;
+        document.getElementById('hero').style.opacity = opacity;
+    });
+  </script>
+
+</body>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Album Announcement</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+      }
+      .album-announcement {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 20px;
+          background-color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .album-artwork {
+          max-width: 40%;
+          flex-shrink: 0;
+          margin-right: 20px;
+      }
+      .album-artwork img {
+          width: 100%;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .album-details {
+          max-width: 60%;
+      }
+      .album-details h2 {
+          font-size: 28px;
+          margin-bottom: 15px;
+          color: #333;
+      }
+      .album-details p {
+          font-size: 16px;
+          margin-bottom: 20px;
+          color: #555;
+          line-height: 1.5;
+      }
+      .album-details button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          border: none;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      .album-details button:hover {
+          background-color: #0056b3;
+      }
+  </style>
+</head>
+<body>
+
+  <section class="cd-announcement">
+      <div class="album-artwork">
+          <img src="img/postsMusic/albums/2024-10-18-Regards sur l'Horizon/regards.jpg" alt="New Album Artwork">
       </div>
+      <div class="album-details">
+          <h2>New Album: "Regards sur l’Horizon"</h2>
+          <p>We are delighted to announce that the new album "Regards sur l’Horizon" has been honored with the Silver Medal at the esteemed Global Music Awards, held in La Jolla, California, USA.</p>
+          <button onclick="window.location.href='https://distrokid.com/hyperfollow/sherifdahroug/regards-sur-lhorizon-2?fbclid=IwY2xjawH9i21leHRuA2FlbQIxMAABHa5Wj1hjnxAEEm5LyC42yOcImmGuY1L5mOaZnGd00qv8rBgNsaKx6wBqCQ_aem_lGOyGEG8Y4-f2C4odsrRUghttps://example.com'">Listen Now</button>
+      </div>
+  </section>
+
+</body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Quotes</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+      }
+      .quotes-section {
+          background-color: #fff;
+          padding: 40px 20px;
+          text-align: center;
+      }
+      .quotes-section h2 {
+          font-size: 28px;
+          color: #333;
+          margin-bottom: 30px;
+      }
+      .quote {
+          font-style: italic;
+          font-size: 18px;
+          color: #555;
+          margin-bottom: 20px;
+          line-height: 1.6;
+      }
+      .quote::before, .quote::after {
+          content: '"';
+          color: #999;
+      }
+      .source {
+          font-weight: bold;
+          font-size: 16px;
+          color: #333;
+          margin-top: 10px;
+      }
+  </style>
+</head>
+<body>
+  <section class="cd-announcement">
+    
+    <section class="quotes-section">
+        <h2>Press & Critical Insights</h2>
+        
+        <div class="quote">
+            "His music weaves a narrative that reinvents the order of time, illuminating the depths of all desire and all mundanity. It reveals a musician of universal stature and a master of every element."
+            <div class="source">- Yasmin Magdi, Ministry of Culture Magazine, Issue 86, April 2016.</div>
+        </div>
+
+        <div class="quote">
+            "Winning the Special Prize for Distinguished Creativity in Composition, alongside four Platinum Prizes at the World Grand Prix, goes beyond mere achievement. It is a rare artistic phenomenon—a manifestation of genius that channels the power of nature and reflects a creative excellence of unparalleled magnitude, beyond words."
+            <div class="source">- Exclusive Journal of Laureates 2024, World Organization of Music Competitions – April 2024.</div>
+        </div>
+
+        <div class="quote">
+            "...He carries the poise of an artist who promises dreams, combined with the evident mastery of an erudite musician who imparts knowledge with a gentle touch, imbued with a disarming sense of understated authority."
+            <div class="source">- J. C. Dorge, French writer, article La Ronde Poétique, Paris concert, 2014.</div>
+        </div>
+
+        <div class="quote">
+          "..Under his fingers, notes burst forth, stirring the depths of emotion, where passion and pleasure intertwine with pain and sorrow. He plays the guitar with melodies that transport us to the edges of beauty, brushing against the stars. The strings under his hands shape a music where harmony merges with the artist, the instrument dissolves into the sound, and the whole transforms into a musical state that enchants the mind and captivates the soul."
+          <div class="source">- Nisreen Mahran, Al-Ahram, December 15, 2023.</div>
+      </div>
+
+      <div class="quote">
+        "Dahroug's music is an inner journey where thought becomes music, seeking to connect architecture, astronomy, philosophy, and poetry."
+        <div class="source">- Névine Lamei, Al-Ahram Hebdo, December 16, 2024.</div>
     </div>
-  </div>
-</section>
 
+    <div class="quote">
+      "It is with genuine admiration that we acknowledge his exceptional talent, remarkable musicality, and accomplished technique."
+      <div class="source">- Wiener Internationaler Musikwettbewerb, 3 April 2024.</div>
+  </div>
+
+  <div class="quote">
+    "His innovative works—ranging from neo-impressionism to theatrical soundscapes—are redefining the landscape of contemporary classical music"
+    <div class="source">- ICON STORY Magazine, WOMCO – November 2024.</div>
+  </div>
+
+  <div class="quote">
+    "...A magnificent, insightful, and powerful musical interpretation... a true contribution to the universal cultural heritage."
+    <div class="source">- The Global Influential Times – April 2024.</div>
+  </div>
+    </section>
+
+  </section>
+
+</body>
+</html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Book Announcement</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+      }
+      .book-announcement {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 20px;
+          background-color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          margin: 20px;
+      }
+      .book-artwork {
+          max-width: 40%;
+          flex-shrink: 0;
+          margin-right: 20px;
+      }
+      .book-artwork img {
+          width: 100%;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .book-details {
+          max-width: 60%;
+      }
+      .book-details h2 {
+          font-size: 28px;
+          margin-bottom: 15px;
+          color: #333;
+      }
+      .book-details p {
+          font-size: 16px;
+          margin-bottom: 20px;
+          color: #555;
+          line-height: 1.5;
+      }
+      .book-details button {
+          padding: 10px 20px;
+          background-color: #28a745;
+          border: none;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      .book-details button:hover {
+          background-color: #218838;
+      }
+  </style>
+</head>
+<body>
+
+  <section class="book-announcement">
+      <div class="book-artwork">
+          <img src="img/postsBooks/annonce- archetectonique-15.png" alt="Book Cover">
+      </div>
+      <div class="book-details">
+          <h2>New Book: "In Pursuit of a Sonic Architectonics"</h2>
+          <p>Dive into a Bold Reflection That Transcends Classical Aesthetic Boundaries
+            In Pursuit of a Sonic Architectonics neither seeks to conform to a rigid theoretical tradition nor to dismiss it. Its ambition? To explore beauty in its contradictions and dissonances, bridging contemplative reflection, with its transcendental dimensions, and the immanent demands of technical realization.
+            This book embarks on a rare and daring exercise, aiming for timeless universality while remaining deeply contextual—rooted in a symbolic and phenomenological interpretation. Drawing its essence from Egyptian philosophy, a millennia-old tradition of regeneration, it shapes an aesthetic where abstraction and mystery merge into an eternal language.
+            Like art itself, In Pursuit of a Sonic Architectonics creates a unique and intimate universe—a space of artistic liberation where every enigma becomes a suspended answer. Far from claiming to unravel the mysteries of its architectonic cosmos or dispel the philosophical aura of sonic art, it amplifies the mystery itself. This work stands as a profound and thoughtful alternative to the cultural alienation of our era.
+            Above all, In Pursuit of a Sonic Architectonics is a manifesto for an autonomous, liberated, and resolutely timeless sonic aesthetic. It is a vibrant call to reconnect with the roots of art and life, where the horizon of sonic creation transforms into a boundless territory.
+            In its quest for a new artistic vision, this book is both an invitation to exploration and a declaration for those daring enough to dream beyond established conventions.
+            In Pursuit of a Sonic Architectonics is ultimately a manifesto for an independent and enduringly relevant sonic aesthetic.
+            ​
+            Book Details
+            ASIN: ‎B0DNWFQHV7
+            Publisher: Lyre de Mercure (November 29, 2024)
+            Language: French
+            Format: Hardcover
+            Page Count: 362 pages
+            ISBN-13: ‎979-8345129029
+            Item Weight: 785 g
+            Dimensions: ‎17.78 x 2.64 x 25.4 cm</p>
+          <button onclick="window.location.href='https://amzn.eu/d/1zLUd9F'">Order Now</button>
+      </div>
+  </section>
+
+</body>
 
 
 <section id="intro">
   <div class="container">
-      <br>
-      <p style="font-style: italic; font-size: 26px;">
-        <!-- <q>… Il a la prestance de l’artiste qui vous promet du rêve et la compétence évidente du maître qui sait transmettre son savoir avec une douceur empreinte d'une discrète autorité désarmante. …
-        </q> -->
-        <q>... He has the aura of an artist who promises you dreams and the evident competence of a master who knows how to transmit his knowledge with a gentleness imbued with a discreet disarming authority. ...</q>
-      </p>
-      <p style="font-size:14px; text-align: right;">
-        J. C.Dorge, French writer, article La Ronde Poétique, Paris concert 2014.
-      </p>
-
-      <br>
-      <p style="font-style: italic; font-size: 26px;">
-        <q>... It is with genuine admiration that we acknowledge his exceptional talent, remarkable musicality, and accomplished technique. ...
-        </q>
-      </p>
-      <p style="font-size:14px; text-align: right;">
-        Wiener Internationaler Musikwettbewerb, 3 April 2024.
-      </p>
-
-      <br>
-      <p style="font-style: italic; font-size: 26px;">
-        <q>... recognizing his outstanding innovation and originality in musical composition ...
-        </q>
-      </p>
-      <p style="font-size:14px; text-align: right;">
-        World Grand Prix International, London, March 2024.
-      </p>
-
-      <br>
-      <p style="font-style: italic; font-size: 26px;">
-        <q>... From his fingertips, the tones flow, shaking the folds of emotions, so the passion and pleasure course through them, mixed with pain and grief. He plays the guitar with melodies that carry us on the edges of beauty until we almost touch the stars.
-          The strings under his hands shape music, until the harmony melts with the artist, the instrument melts in the tones, and the whole melts in a musical state that charms the minds and captivates the souls. ...
-        </q>
-      </p>
-      <p style="font-size:14px; text-align: right;">
-        Nisreen Mahran, Al-Ahram newspaper, 15 december 2023.
-      </p>
       
+    <center>
+      <h2>Connect with Us</h2>
+      <p>Follow us on your favorite platforms to stay updated with our latest releases and updates.</p>
       
-      
-
+      <span class="social-icons icon-circle icon-rotate list-inline">
+        <a href="https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB" target="_blank"> <i class="fab fa-apple fa-2x"></i> </a>
+        <a href="https://deezer.page.link/cSHMG2FeyTUE5b7j9" target="_blank"> <i class="fab fa-deezer fa-2x"></i> </a> 
+        <a href="https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=R1DYHH5VS6GNNifwKK0Dfw" target="_blank"> <i class="fab fa-spotify fa-2x"></i> </a>  
+        <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank"> <i class="fab fa-linkedin fa-2x"></i> </a>  
+        <a href="https://www.facebook.com/cherif.dahroug" target="_blank"> <i class="fab fa-facebook fa-2x"></i> </a>
+      </span>
+    </center>
 
   </div>
 </section>
 
-<!--
-<section id="intro">
-  <div class="container">
-      <br>
-      <p style="font-style: italic; font-size: 26px;">
-        <q>… He has the imposing presence of the artist who promises you the dream, 
-          and the evident skill of the master who transmits his sublime art 
-          with a gentleness marked by a discrete disarming authority …
-        </q>
-      </p>
-      <p style="font-size:16px; text-align: right;">
-        J. C.Dorge, French writer, review on Paris concert 2014, La Ronde Poétique.
-      </p>
-  </div>
-</section>
--->
 
 <!-- contact form start 
 <section id="contact-form">
@@ -370,15 +646,75 @@
   </div>
 </section>
 -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Newsletter Signup</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          margin: 0;
+          padding: 0;
+      }
+      footer {
+          background-color: #ffffff;
+          color: #fff;
+          padding: 40px 20px;
+          text-align: center;
+      }
+      .newsletter-form {
+          max-width: 500px;
+          margin: 0 auto;
+      }
+      .newsletter-form h2 {
+          font-size: 24px;
+          margin-bottom: 15px;
+          color: #000000;
+      }
+      .newsletter-form input {
+          width: calc(100% - 20px);
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+      }
+      .newsletter-form button {
+          width: 100%;
+          padding: 10px;
+          background-color: #e91e63;
+          border: none;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      .newsletter-form button:hover {
+          background-color: #c2185b;
+      }
+      .footer-text {
+          margin-top: 20px;
+          font-size: 14px;
+          color: #aaa;
+      }
+  </style>
+</head>
+<body>
 
+  <footer>
+      <div class="newsletter-form">
+          <h2>Stay Updated with Our Newsletter</h2>
+          <form action="mailto:ccdahroug@gmail.com" method="POST" enctype="text/plain">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <button type="submit">Subscribe</button>
+          </form>
+      </div>
+      <p class="footer-text">Join our artist community and never miss an update. We respect your privacy.</p>
+  </footer>
 
-<section id="contact-form">
-  <div class="container">
-    <h3> Contact </h3>
-    <p> ccdahroug@gmail.com
-    </p>    
-  </div>
-</section>
+</body>
 
 
     <!-- Footer -->
@@ -399,7 +735,7 @@
           
         </ul>
         -->
-        <p class="copyright text-muted">Copyright &copy; DAHROUG 2024</p>
+        <p class="copyright text-muted">Copyright &copy; DAHROUG 2025</p>
       </div>
     </div>
   </div>

@@ -34,13 +34,15 @@
   <body>
 
     <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <!--
+    
     <a class="navbar-brand" href="/">
-      <img src="/img/logo/logo_tampon_20211014-12.jpg" alt="Logo" height="80">
+      <!--<img src="/_site/img/logo/lettre-11.png" alt="Logo" height="80">-->
+      SHERIF DAHROUG
     </a>
-    -->
+    
+    
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fa fa-bars"></i>
@@ -48,20 +50,27 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/biography">Biography</a>
+          <a class="nav-link" href="/biography">BIOGRAPHY</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/awards">awards</a>
+          <a class="nav-link" href="/awards">AWARDS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/concert">Concert</a>
+          <a class="nav-link" href="/music">MUSIC</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/music">music</a>
+          <a class="nav-link" href="/books">BOOKS</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/concert">CONCERTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/press">PRESS</a>
+        </li>
+       
         <!--
         <li class="nav-item">
           <a class="nav-link" href="/momentsMausicaux">Moments musicaux</a>
@@ -73,45 +82,67 @@
           <a class="nav-link" href="/projects">projects</a>
         </li>
         -->
+        <!--
         <li class="nav-item">
-          <a class="nav-link" href="/#contact-form">Contact</a>
+          <a class="nav-link" href="/#contact-form">CONTACT</a>
         </li>
       </ul>
+       -->
     </div>
   </div>
 </nav>
 
 
-    <header id="headerConcert">
-    <!--
-    <div class="col-md-12">
-        <div class="block" style="text-align: center; position: relative;">
-            <img src="/img/down-arrow.png" alt="down-arrow" style="width:3em;" align="middle" hspace="0.0">
-            <p>concert</p>
-        </div>
-    </div>
-    -->
-</header>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Banner</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('img/concert/Concert-2400scale.jpg') no-repeat center 30%/cover; /* Replace 'your-photo.jpg' */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: opacity 0.8s ease-in-out;
+        }
 
+      /* Content section */
+      .content {
+          height: 15vh;
+          padding: 50px;
+          background-color: white;
+          color: black;
+      }
 
-<!-- <section id="intro">
-    <h1 style="text-align: center;">Coming concerts</h1>
-    <br>
-    <br>
+      /* Fade-out effect on scroll */
+      .fade-out {
+          opacity: 0;
+          pointer-events: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="hero" id="hero"></div>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            let scrollValue = window.scrollY;
+            let opacity = 1 - scrollValue / 1500;
+            document.getElementById('hero').style.opacity = opacity;
+        });
+    </script>
+</body>
 
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-                <div class="block">
-                    <img src="/img/concert/programme_2022-2023.jpg" alt="programme_2022-2023"  style="height:100%;">
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</section>-->
 
 
 <section id="intro">
@@ -149,18 +180,9 @@
                     <img src="/img/concert/programme_2017-2016.jpg" alt="programme_2017-2016"  style="height:100%;">
                 </div>
 
+            
                 <br>
 
-                <div class="block">
-                    <img src="/img/concert/concert_20170917.jpg" alt="concert_20170917"  style="height:100%;">
-                </div>
-
-                <br>
-
-                <div class="block">
-                    <img src="/img/concert/concert_20170528.jpg" alt="concert_20170528"  style="height:100%;">
-                </div>
-                
                 <br>
 
                 <div class="block">
@@ -216,7 +238,7 @@
           
         </ul>
         -->
-        <p class="copyright text-muted">Copyright &copy; DAHROUG 2024</p>
+        <p class="copyright text-muted">Copyright &copy; DAHROUG 2025</p>
       </div>
     </div>
   </div>
