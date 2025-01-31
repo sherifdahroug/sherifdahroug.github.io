@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://sherifdahroug.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sherifdahroug.github.io/" rel="alternate" type="text/html" /><updated>2025-01-31T13:17:10+01:00</updated><id>http://sherifdahroug.github.io/feed.xml</id><title type="html">Sherif DAHROUG</title><subtitle>Concert guitarist and composer. He pursues a career as a concert performer on the French and European stages as a soloist and chamber musician. Laureate of the 2022 Concert Diploma of the Paris Schola Cantorum. Laureate of the 2017 Virtuosity Diploma (Master of Arts HES-SO, Musical Interpretation). In 2009, he moved to Paris after obtaining his diploma in music performance from the London Royal Academy of Music. He earned a scholarship from the Ecole Normale de Musique de Paris for the brevet and concert license (2009-2015). He teaches guitar, ensemble music and musical creation (Harmony, composition and improvisation). He is preparing his next album entitled &lt;em&gt;&quot;The universe of variations&quot;&lt;/em&gt; works of J.S. Bach, M.M. Ponce, and B.Britten.</subtitle><author><name>DAHROUG</name></author><entry><title type="html">News 2</title><link href="http://sherifdahroug.github.io/2024/02/13/test2.html" rel="alternate" type="text/html" title="News 2" /><published>2024-02-13T00:00:00+01:00</published><updated>2024-02-13T00:00:00+01:00</updated><id>http://sherifdahroug.github.io/2024/02/13/test2</id><content type="html" xml:base="http://sherifdahroug.github.io/2024/02/13/test2.html"><![CDATA[<section id="intro">
+    <div class="container">
+    </div>
+  </section>
+    
+  <!-- Smart Blocks associates Logo Section Start -->
+  <section id="intro">
+    <div class="container">
+    </div>
+  </section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Test 2p</title><link href="http://sherifdahroug.github.io/2024/02/13/test2p.html" rel="alternate" type="text/html" title="Test 2p" /><published>2024-02-13T00:00:00+01:00</published><updated>2024-02-13T00:00:00+01:00</updated><id>http://sherifdahroug.github.io/2024/02/13/test2p</id><content type="html" xml:base="http://sherifdahroug.github.io/2024/02/13/test2p.html"><![CDATA[<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <!--
+                    <div class="section-title">
+                        <p>This project proposes a novel approach to cholesteatoma surgery. </p>
+                    </div>
+                    -->
+  
+                    <p>
+                        XXX
+                    </p>
+                </div>
+            </div>
+            
+  
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                    <img src="/img/projects/smartBlocks0.png" alt="passive smart blocks"  style="width:100%;">
+                    <center>(a) passive experimental installation </center>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                    <img src="/img/projects/smartBlocks_blockModulaire0.png" alt="block view"  style="width:100%;">
+                    <center>(b) view of one block</center>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <center>Fig. 1 : Modular aerodynamic conveyor.</center>
+            </div>
+    
+  
+            
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                    <img src="/img/projects/smartBlocks_blockModulaire1.png" alt="block_v2" style="width:100%;height:auto;">
+                    <center>Fig. 2 : comparison between the old and the new block</center>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                    <img src="/img/projects/smartBlocks1.png" alt="active samrt block"  style="width:100%;height:auto;">
+                    <center>Fig. 3 : active experimental installation</center>
+                </div>
+            </div>
+  
+            
+            <div class="col-md-12">
+                <h4>Associates</h4>
+                <ul style="list-style-type:circle;">
+                    <li>
+                        <a href="https://www.femto-st.fr/en/femto-people/nadinepiat" target="_blank">Nadine Le-Fort Piat</a> (University Professor, ENSMM, Institut FEMTO-ST, Besançon, France) 
+                    </li>
+                    <li>
+                        <a href="https://gjlaurent.github.io/" target="_blank">Guillaume Laurent</a> (Associate Professor, ENSMM, Institut FEMTO-ST, Besançon, France) 
+                        <span class="social-icons icon-circle icon-rotate list-inline">
+                            <a href="https://scholar.google.fr/citations?hl=en&user=2J7dBGwAAAAJ" target="_blank"> <i class="ai ai-google-scholar ai-2x"></i> </a> 
+                            <a href="https://www.researchgate.net/profile/Guillaume_Laurent2" target="_blank"> <i class="ai ai-researchgate ai-2x"></i> </a> 
+                            <a href="https://www.linkedin.com/in/guillaume-laurent-b0a971108/" target="_blank"> <i class="fab fa-linkedin fa-2x"></i> </a>  
+                        </span>
+                    </li>
+                </ul> 
+            </div>
+        </div>    
+    </div>
+  </section>
+    
+  <!-- Smart Blocks associates Logo Section Start -->
+  <section id="intro">
+    <div class="container">
+        <center>
+            <a href="https://www.femto-st.fr/en" target="_blank">  
+                <img src="/img/associateLogo/logo_FemtoSt.png" alt="logoFEMTOST" style="width:10em;" align="middle" hspace="20">
+            </a>
+            <a href="http://www.cnrs.fr/en/cnrs" target="_blank">   
+                <img src="/img/associateLogo/logo_cnrs.png" alt="logoCNRS" style="width:6em;" align="middle" hspace="20">
+            </a>
+            <a href="https://www.ubfc.fr/" target="_blank"> 
+                <img src="/img/associateLogo/logo_ubfc.png" alt="logoUBFC" style="width:11em;" align="middle" hspace="20">
+            </a>
+            <a href="http://www.univ-fcomte.fr/" target="_blank"> 
+                <img src="/img/associateLogo/logo_ufc.png" alt="logoUBFC" style="width:13em;" align="middle" hspace="20">
+            </a>
+            <a href="https://www.utbm.fr/" target="_blank"> 
+                <img src="/img/associateLogo/logo_Utbm.png" alt="logoUTBM" style="width:14em;" align="middle" hspace="20">
+            </a>
+            <a href="https://www.ens2m.fr/" target="_blank"> 
+                <img src="/img/associateLogo/logo_ensmm.png" alt="logoENSMM" style="width:13em;" align="middle" hspace="20">
+            </a>
+            <a href="http://www.uniovi.es/" target="_blank"> 
+                <img src="/img/associateLogo/logo_epi.png" alt="logoEPIGijon" style="width:18em;" align="middle" hspace="20">
+            </a>
+            <a href="http://www.eu4m.eu/inicio" target="_blank"> 
+                <img src="/img/associateLogo/logo_eu4m.png" alt="logoEU4M" style="width:18em;" align="middle" hspace="20">
+            </a>
+            <a href="https://anr.fr/" target="_blank"> 
+                <img src="/img/associateLogo/logo_anr.png" alt="logoANR" style="width:12em;" align="middle" hspace="20">
+            </a>
+        </center>
+    </div>
+  </section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[XXX (a) passive experimental installation (b) view of one block Fig. 1 : Modular aerodynamic conveyor. Fig. 2 : comparison between the old and the new block Fig. 3 : active experimental installation Associates Nadine Le-Fort Piat (University Professor, ENSMM, Institut FEMTO-ST, Besançon, France) Guillaume Laurent (Associate Professor, ENSMM, Institut FEMTO-ST, Besançon, France)]]></summary></entry><entry><title type="html">European Classical Music Awards - Strings Award</title><link href="http://sherifdahroug.github.io/2024/02/08/European-Classical.html" rel="alternate" type="text/html" title="European Classical Music Awards - Strings Award" /><published>2024-02-08T00:00:00+01:00</published><updated>2024-02-08T00:00:00+01:00</updated><id>http://sherifdahroug.github.io/2024/02/08/European%20Classical</id><content type="html" xml:base="http://sherifdahroug.github.io/2024/02/08/European-Classical.html"><![CDATA[<section id="intro">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <img src="/img/news/news_european_platinum.png" alt="news_european_platinum"  style="height:100%;">
+            </div>
+
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_header.png" alt="news_header"  style="height:100%;">
+            </div>
+
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_european_specialprize.jpg" alt="news_european_specialprize"  style="height:100%;">
+            </div>
+
+            
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_artistdiploma.png" alt="news_artistdiploma"  style="height:100%;">
+            </div>
+
+            
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_europeandiploma.png" alt="news_europeandiploma"  style="height:100%;">
+            </div>
+        </div>
+    </div>
+</section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">World Master Open Music Competition</title><link href="http://sherifdahroug.github.io/2024/02/05/WORLDMASTER.html" rel="alternate" type="text/html" title="World Master Open Music Competition" /><published>2024-02-05T00:00:00+01:00</published><updated>2024-02-05T00:00:00+01:00</updated><id>http://sherifdahroug.github.io/2024/02/05/WORLDMASTER</id><content type="html" xml:base="http://sherifdahroug.github.io/2024/02/05/WORLDMASTER.html"><![CDATA[<section id="intro">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <img src="/img/news/news_worldmaster.png" alt="news_worldmaster"  style="height:100%;">
+            </div>
+
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_worldmastercertificate.png" alt="news_worldmastercertificate"  style="height:100%;">
+            </div>
+
+        </div>
+    </div>
+</section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Test 1</title><link href="http://sherifdahroug.github.io/2024/02/01/test1.html" rel="alternate" type="text/html" title="Test 1" /><published>2024-02-01T00:00:00+01:00</published><updated>2024-02-01T00:00:00+01:00</updated><id>http://sherifdahroug.github.io/2024/02/01/test1</id><content type="html" xml:base="http://sherifdahroug.github.io/2024/02/01/test1.html"><![CDATA[<section id="intro">
+    <div class="container">
+    </div>
+  </section>
+    
+  <!-- Smart Blocks associates Logo Section Start -->
+  <section id="intro">
+    <div class="container">
+        
+    </div>
+  </section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Euterpe Music Awards</title><link href="http://sherifdahroug.github.io/2023/11/30/EMA.html" rel="alternate" type="text/html" title="Euterpe Music Awards" /><published>2023-11-30T00:00:00+01:00</published><updated>2023-11-30T00:00:00+01:00</updated><id>http://sherifdahroug.github.io/2023/11/30/EMA</id><content type="html" xml:base="http://sherifdahroug.github.io/2023/11/30/EMA.html"><![CDATA[<section id="intro">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <img src="/img/news/news_ema.jpeg" alt="news_ema"  style="height:100%;">
+            </div>
+
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_emasilver.jpeg" alt="news_emasilver"  style="height:100%;">
+            </div>
+        </div>
+    </div>
+</section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Schola Cantorum de Paris</title><link href="http://sherifdahroug.github.io/2022/05/24/CONCERT.html" rel="alternate" type="text/html" title="Schola Cantorum de Paris" /><published>2022-05-24T00:00:00+02:00</published><updated>2022-05-24T00:00:00+02:00</updated><id>http://sherifdahroug.github.io/2022/05/24/CONCERT</id><content type="html" xml:base="http://sherifdahroug.github.io/2022/05/24/CONCERT.html"><![CDATA[<section id="intro">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <img src="/img/news/news_concert.jpg" alt="news_concert"  style="height:100%;">
+            </div>
+
+            <br>
+
+            
+            <div class="block">
+                <img src="/img/news/news_concertphoto.jpg" alt="news_concertphoto"  style="height:100%;">
+            </div>
+        </div>
+    </div>
+</section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Schola Cantorum de Paris</title><link href="http://sherifdahroug.github.io/2017/06/20/VIRTUOSITE.html" rel="alternate" type="text/html" title="Schola Cantorum de Paris" /><published>2017-06-20T00:00:00+02:00</published><updated>2017-06-20T00:00:00+02:00</updated><id>http://sherifdahroug.github.io/2017/06/20/VIRTUOSITE</id><content type="html" xml:base="http://sherifdahroug.github.io/2017/06/20/VIRTUOSITE.html"><![CDATA[<section id="intro">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <img src="/img/news/news_virtuosité.jpg" alt="news_virtuosité"  style="height:100%;">
+            </div>
+        </div>
+    </div>
+</section>]]></content><author><name>DAHROUG</name></author><summary type="html"><![CDATA[]]></summary></entry></feed>
