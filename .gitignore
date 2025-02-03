@@ -1,0 +1,17 @@
+# Ignore all `.log` files
+# *.log
+
+# Ignore the `node_modules` directory (useful for JavaScript projects)
+# node_modules/
+
+# Ignore environment files (useful for storing API keys, credentials, etc.)
+# .env
+
+
+.DS_Store
+/.DS_Store
+2017/06/.DS_Store
+img/.DS_Store
+img/postsMusic/.DS_Store
+postsMusic/.DS_Store
+projects/.DS_Store
