@@ -318,79 +318,100 @@
 </body>
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Album Announcement</title>
-  <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f9f9f9;
-      }
-      .album-announcement {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 40px 20px;
-          background-color: #fff;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .album-artwork {
-          max-width: 40%;
-          flex-shrink: 0;
-          margin-right: 20px;
-      }
-      .album-artwork img {
-          width: 100%;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      }
-      .album-details {
-          max-width: 60%;
-      }
-      .album-details h2 {
-          font-size: 28px;
-          margin-bottom: 15px;
-          color: #333;
-      }
-      .album-details p {
-          font-size: 16px;
-          margin-bottom: 20px;
-          color: #555;
-          line-height: 1.5;
-      }
-      .album-details button {
-          padding: 10px 20px;
-          background-color: #007bff;
-          border: none;
-          border-radius: 4px;
-          color: #fff;
-          font-size: 16px;
-          cursor: pointer;
-      }
-      .album-details button:hover {
-          background-color: #0056b3;
-      }
-  </style>
-</head>
-<body>
+<style>
+  .section-grammy-news {
+    background: #fdfaf6;
+    padding: 80px 20px;
+    border-top: 1px solid #e5ddd2;
+    font-family: 'Georgia', serif;
+  }
 
-  <section class="cd-announcement">
-      <div class="album-artwork">
-          <img src="img/postsMusic/albums/2024-10-18-Regards sur l'Horizon/regards.jpg" alt="New Album Artwork">
-      </div>
-      <div class="album-details">
-          <h2>New Album: "Regards sur l’Horizon"</h2>
-          <p>We are delighted to announce that the new album "Regards sur l’Horizon" has been honored with the Silver Medal at the esteemed Global Music Awards, held in La Jolla, California, USA.</p>
-          
-          <a class="btn btn-success" style="border-radius: 10px;"
-            href="https://distrokid.com/hyperfollow/sherifdahroug/regards-sur-lhorizon-2?fbclid=IwY2xjawH9i21leHRuA2FlbQIxMAABHa5Wj1hjnxAEEm5LyC42yOcImmGuY1L5mOaZnGd00qv8rBgNsaKx6wBqCQ_aem_lGOyGEG8Y4-f2C4odsrRUg" target="_blank">Listen now</a>
-      </div>
-  </section>
+  .news-bar {
+    background-color: #c19955;
+    padding: 12px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 6px;
+  }
 
-</body>
+  .news-title {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .news-content {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .news-image {
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  .news-text {
+    font-size: 1.5em;
+    color: #3c2f23;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .news-text strong {
+    color: #8c5e2d;
+    font-weight: bold;
+  }
+
+  .news-text p {
+    font-size: 16px;
+  }
+
+
+  .subtext {
+    font-size: 1em;
+    color: #665547;
+    font-style: italic;
+    margin-top: 12px;
+  }
+  
+  .highlight-grammy {
+    display: block;
+    margin: 1.5em 0;
+    padding: 1em;
+    background-color: #f6f1ea;
+    border-left: 4px solid #c19955;
+    font-weight: bold;
+    font-style: italic;
+  }
+</style>
+
+<section class="section-grammy-news">
+  <div class="news-bar">
+    <span class="news-title">Recording Academy / GRAMMYs®</span>
+  </div>
+
+  <div class="news-content">
+    <img src="img/homePage/VOTING-2.png" alt="Sherif Dahroug – Recording Academy Voting Member" class="news-image">
+
+    <div class="news-text">
+      <p>
+        In 2025, Sherif Dahroug was officially invited to join the Recording Academy / GRAMMYs® as a 
+        <strong>Voting Member (Class of 2025)</strong> — a distinction extended in recognition of his artistic vision  
+        and his contribution to the evolution of contemporary music on today’s global musical landscape. An opportunity to take part in a collective effort dedicated to honoring musical creation and supporting its evolution on a global scale. 
+      </p>
+    </div>
+  </div>
+</section>
+
+
 
 <head>
   <meta charset="UTF-8">
@@ -482,7 +503,6 @@
   </section>
 
 </body>
-</html>
 
 
 <head>
@@ -587,7 +607,8 @@
         <a href="https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB" target="_blank"> <i class="fab fa-apple fa-2x"></i> </a>
         <a href="https://deezer.page.link/cSHMG2FeyTUE5b7j9" target="_blank"> <i class="fab fa-deezer fa-2x"></i> </a> 
         <a href="https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=7GjAtk2cRHu8BdDQTgTvHw" target="_blank"> <i class="fab fa-spotify fa-2x"></i> </a>  
-        <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank"> <i class="fab fa-linkedin fa-2x"></i> </a>  
+        <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank"> <i class="fab fa-linkedin fa-2x"></i> </a>
+        <a href="https://www.instagram.com/sherif.dahroug/" target="_blank"> <i class="fab fa-instagram fa-2x"></i> </a>  
         <a href="https://www.facebook.com/cherif.dahroug" target="_blank"> <i class="fab fa-facebook fa-2x"></i> </a>
       </span>
 
