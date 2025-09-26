@@ -544,49 +544,7 @@
     a[href]:after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
   }
 </style>
-<!-- Modal: DICHOTOMY — Full Album Breakdown (WAV) -->
-  <div id="dichotomy-wav-overlay"
-      class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/70 p-4">
-    <div role="dialog" aria-modal="true" aria-labelledby="dichotomy-wav-title"
-        class="w-full max-w-2xl rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl overflow-hidden">
 
-      <!-- Header -->
-      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-        <h2 id="dichotomy-wav-title" class="text-base md:text-lg font-semibold">
-          DICHOTOMY — Full Album Breakdown (Chris Redjam, Soundcheck Radio · July 20, 2025)
-        </h2>
-        <button id="close-dichotomy-wav"
-          class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">
-          Close
-        </button>
-      </div>
-
-      <!-- Body -->
-      <div class="px-6 py-6 space-y-4">
-        <p class="text-sm text-neutral-300">
-          Stream the full broadcast breakdown in high quality WAV, directly on this page.
-        </p>
-
-        <!-- Audio player -->
-        <div class="rounded-2xl border border-white/10 p-4 bg-white/5">
-          <audio id="dichotomy-wav-player" controls preload="metadata" class="w-full">
-            <!-- Update the src to your hosted WAV path -->
-            <source src="/assets/fyc/Dichotomy-Breakdown-ChrisRedjam-SoundcheckRadio-20July2025.wav" type="audio/wav">
-            <!-- Optional secondary format if you have one -->
-            <!-- <source src="/assets/fyc/Dichotomy-Breakdown-ChrisRedjam-SoundcheckRadio-20July2025.mp3" type="audio/mpeg"> -->
-            Your browser does not support the audio element.
-          </audio>
-          <div class="mt-3 text-xs text-neutral-400">
-            If playback has issues, you can
-            <a class="underline hover:text-neutral-200"
-              href="/assets/fyc/Dichotomy-Breakdown-ChrisRedjam-SoundcheckRadio-20July2025.wav" download>
-              download the WAV here
-            </a>.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
