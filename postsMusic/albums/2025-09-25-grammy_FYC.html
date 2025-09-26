@@ -209,8 +209,16 @@
 
           <div class="mt-5 flex flex-wrap gap-3 text-sm">
             <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank">Liner notes / Label copy (PDF)</a>
+            
+            <!-- Modal trigger: Full Album Breakdown (WAV) -->
             <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsMusic/albums/2025-07-07-dichotomy.html" target="_blank">Read more</a>
             <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsPress/08-dichotomy-album-press.html" target="_blank">Press highlights</a>
+            <a class="px-4 py-2 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-400"
+              href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Chris Redjam-the Soundcheck show copie.wav"
+              target="_blank">
+              🎧 Full Album Breakdown — Chris Redjam (Soundcheck Radio, UK/USA · July 20, 2025)
+            </a>
+
           </div>
         </div>
       </article>
@@ -260,6 +268,13 @@
           <div class="mt-5 flex flex-wrap gap-3 text-sm">
             <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Sur le Fil de l'Aube - LABEL COPY .pdf" target="_blank">Liner notes / Label copy (PDF)</a>
             <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsPress/09-regards-album-press.html" target="_blank">Press highlights</a>
+            <a class="px-4 py-2 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-400"
+              href="/postsMusic/albums/2024-10-18-Regards sur l'Horizon.html"
+              target="_blank" rel="noopener">
+              🎧 Experience the complete EP — <em>Regards sur l’Horizon</em>
+            </a>
+
+
           </div>
         </div>
         <div class="order-1 md:order-2 relative rounded-3xl overflow-hidden shadow-2xl">
@@ -371,13 +386,18 @@
           </div>
           <div class="flex flex-col gap-3">
             <a class="px-5 py-3 rounded-2xl bg-white text-neutral-900 font-medium text-center hover:bg-neutral-200" href="mailto:ccdahroug@gmail.com?subject=FYC%2068th%20GRAMMY%C2%AE%20%E2%80%94%20Sherif%20Dahroug">Email the artist</a>
-            <a class="px-5 py-3 rounded-2xl border border-white/20 text-center hover:border-white/40" href="/assets/fyc/one-sheet.pdf" target="_blank">Download one‑sheet (PDF)</a>
+            
             <a class="px-5 py-3 rounded-2xl border border-white/20 text-center hover:border-white/40" 
               href="https://drive.google.com/drive/folders/1rWNZLfoe0BAF6qXpbF9G2e5i7K4u6fhT?usp=share_link" 
               target="_blank" 
               rel="noopener">
               Press kit (EPK)
             </a>
+            <!-- Trigger -->
+            <button id="open-onesheet"
+            class="px-5 py-3 rounded-2xl border border-white/20 hover:border-white/40">
+            View One-Sheet
+            </button>
 
           </div>
         </div>
@@ -401,5 +421,171 @@
       </div>
     </div>
   </footer>
+  <!-- Modal: One-Sheet Preview -->
+<div id="onesheet-overlay" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/70 p-4">
+  <div role="dialog" aria-modal="true" aria-labelledby="onesheet-title"
+       class="w-full max-w-3xl rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+      <h2 id="onesheet-title" class="text-xl font-semibold">For Your Consideration — 68th GRAMMY®</h2>
+      <div class="flex items-center gap-2">
+        <a href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank" rel="noopener"
+           class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Download Dichotomy PDF</a>
+           <a href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Sur le Fil de l'Aube - LABEL COPY .pdf" target="_blank" rel="noopener"
+           class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Download Sur le fil PDF</a>
+        <button id="print-onesheet"
+          class="text-sm px-3 py-1.5 rounded-xl bg-white text-neutral-900 hover:bg-neutral-200">Print / Save PDF</button>
+        <button id="close-onesheet"
+          class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Close</button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="px-6 py-6 space-y-6 print:space-y-4 print:p-6 print:bg-white print:text-black">
+      <!-- Artist -->
+      <div>
+        <h3 class="text-lg font-semibold">Sherif Dahroug — Concert Artist, Composer & Pianist</h3>
+        <p class="mt-2 text-neutral-300 print:text-black/90">
+          A contemporary voice rooted in ancient wisdom. Two submissions offered with gratitude for your kind consideration.
+        </p>
+      </div>
+
+      <!-- Submissions -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Dichotomy -->
+        <div class="rounded-2xl border border-white/10 p-4 print:border-black/10">
+          <div class="text-[11px] px-2 py-1 rounded bg-rose-400/10 text-rose-200 inline-block border border-rose-400/30 print:bg-rose-100 print:text-rose-800 print:border-rose-200">
+            Best Contemporary Instrumental Album
+          </div>
+          <h4 class="mt-2 text-lg font-semibold">Dichotomy — A Tone Poem of Five Metamorphoses</h4>
+          <ul class="mt-2 text-sm text-neutral-300 print:text-black/90 space-y-1">
+            <li>Total duration: 39′05″ · Release: July 7, 2025</li>
+            <li>Label/UPC: Lyre de Mercure · 199515343914</li>
+            <li>Composer/Piano: Sherif Dahroug</li>
+          </ul>
+          <div class="mt-3 text-sm">
+            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
+               href="https://music.apple.com/us/album/dichotomy/1824911949">Apple Music</a> ·
+            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
+               href="https://www.youtube.com/playlist?list=OLAK5uy_mqIfQt76vHMZZm5jWaTUvorWGMs26Bo6k">YouTube</a> ·
+            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
+               href="https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP">Spotify</a>
+          </div>
+        </div>
+
+        <!-- Sur le Fil de l’Aube -->
+        <div class="rounded-2xl border border-white/10 p-4 print:border-black/10">
+          <div class="text-[11px] px-2 py-1 rounded bg-rose-400/10 text-rose-200 inline-block border border-rose-400/30 print:bg-rose-100 print:text-rose-800 print:border-rose-200">
+            Best Instrumental Composition
+          </div>
+          <h4 class="mt-2 text-lg font-semibold">Sur le Fil de l’Aube — Vision II</h4>
+          <ul class="mt-2 text-sm text-neutral-300 print:text-black/90 space-y-1">
+            <li>Duration: 7′56″ · Release: Sept 20, 2024</li>
+            <li>Label/UPC: Lyre de Mercure · 198886928645 · ISRC: QZWFG2454025</li>
+            <li>Composer/Piano: Sherif Dahroug</li>
+          </ul>
+          <div class="mt-3 text-sm">
+            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
+               href="https://open.spotify.com/track/2M1C1U6wvx1ZcGwXsizFgm">Spotify</a> ·
+            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
+               href="https://distrokid.com/hyperfollow/sherifdahroug/sur-le-fil-de-laube">All Platforms</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Press (short) -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <blockquote class="rounded-2xl p-4 bg-white/5 border border-white/10 print:bg-white print:border-black/10">
+          <p class="text-neutral-200 print:text-black">“A transcendent experience… a sonic architecture that feels ancient and futuristic all at once.”</p>
+          <footer class="mt-2 text-xs text-neutral-400 print:text-black/70">— Selected Press</footer>
+        </blockquote>
+        <blockquote class="rounded-2xl p-4 bg-white/5 border border-white/10 print:bg-white print:border-black/10">
+          <p class="text-neutral-200 print:text-black">“With the grace of an ancient ritual and the depth of a contemporary meditation.”</p>
+          <footer class="mt-2 text-xs text-neutral-400 print:text-black/70">— Selected Press</footer>
+        </blockquote>
+      </div>
+
+      <!-- Contact -->
+      <div class="text-sm text-neutral-300 print:text-black/90">
+        Contact: <a href="mailto:ccdahroug@gmail.com" class="underline">ccdahroug@gmail.com</a> ·
+        More info: <a href="https://sherifdahroug.github.io" target="_blank" rel="noopener" class="underline">sherifdahroug.github.io</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS + Print CSS -->
+<script>
+  const overlay = document.getElementById('onesheet-overlay');
+  const openBtn = document.getElementById('open-onesheet');
+  const closeBtn = document.getElementById('close-onesheet');
+  const printBtn = document.getElementById('print-onesheet');
+
+  if (openBtn) openBtn.addEventListener('click', () => {
+    overlay.classList.remove('hidden'); overlay.classList.add('flex');
+  });
+  if (closeBtn) closeBtn.addEventListener('click', () => {
+    overlay.classList.add('hidden'); overlay.classList.remove('flex');
+  });
+  if (printBtn) printBtn.addEventListener('click', () => window.print());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlay.classList.add('hidden'); overlay.classList.remove('flex');
+    }
+  });
+</script>
+<style>
+  @media print {
+    body { background: white !important; }
+    #onesheet-overlay { position: static !important; inset: auto !important; background: white !important; }
+    #close-onesheet, #open-onesheet { display: none !important; }
+    a[href]:after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
+  }
+</style>
+<!-- Modal: DICHOTOMY — Full Album Breakdown (WAV) -->
+  <div id="dichotomy-wav-overlay"
+      class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/70 p-4">
+    <div role="dialog" aria-modal="true" aria-labelledby="dichotomy-wav-title"
+        class="w-full max-w-2xl rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl overflow-hidden">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h2 id="dichotomy-wav-title" class="text-base md:text-lg font-semibold">
+          DICHOTOMY — Full Album Breakdown (Chris Redjam, Soundcheck Radio · July 20, 2025)
+        </h2>
+        <button id="close-dichotomy-wav"
+          class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">
+          Close
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="px-6 py-6 space-y-4">
+        <p class="text-sm text-neutral-300">
+          Stream the full broadcast breakdown in high quality WAV, directly on this page.
+        </p>
+
+        <!-- Audio player -->
+        <div class="rounded-2xl border border-white/10 p-4 bg-white/5">
+          <audio id="dichotomy-wav-player" controls preload="metadata" class="w-full">
+            <!-- Update the src to your hosted WAV path -->
+            <source src="/assets/fyc/Dichotomy-Breakdown-ChrisRedjam-SoundcheckRadio-20July2025.wav" type="audio/wav">
+            <!-- Optional secondary format if you have one -->
+            <!-- <source src="/assets/fyc/Dichotomy-Breakdown-ChrisRedjam-SoundcheckRadio-20July2025.mp3" type="audio/mpeg"> -->
+            Your browser does not support the audio element.
+          </audio>
+          <div class="mt-3 text-xs text-neutral-400">
+            If playback has issues, you can
+            <a class="underline hover:text-neutral-200"
+              href="/assets/fyc/Dichotomy-Breakdown-ChrisRedjam-SoundcheckRadio-20July2025.wav" download>
+              download the WAV here
+            </a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
