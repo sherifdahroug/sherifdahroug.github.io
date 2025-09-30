@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    DICHOTOMY - A Tone Poem of Five Metamorphoses For Piano - Sherif DAHROUG
+    DICHOTOMY — A Tone Poem of Five Metamorphoses for Piano - Sherif DAHROUG
     
   </title>
 
@@ -86,7 +86,7 @@
       <div class="row">
           <div class="col-md-12">
               <div class="block">
-                  <h1 style="text-align: center; text-justify: left;">DICHOTOMY - A Tone Poem of Five Metamorphoses For Piano</h1>
+                  <h1 style="text-align: center; text-justify: left;">DICHOTOMY — A Tone Poem of Five Metamorphoses for Piano</h1>
                   <h2 style="text-align: center; text-justify: left;">The music, concept, narrative, and symbolism of Dichotomy are original creations by Sherif Dahroug</h2>
               </div>
           </div>
@@ -101,7 +101,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>DICHOTOMY - A Tone Poem of Five Metamorphoses For Piano</h1>
+            <h1>DICHOTOMY — A Tone Poem of Five Metamorphoses for Piano</h1>
             
             <h2 class="subheading">The music, concept, narrative, and symbolism of Dichotomy are original creations by Sherif Dahroug</h2>
             
@@ -115,385 +115,352 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 mx-auto">
 
-        <div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <br>
-            <br>
-            <img src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-front.png" alt="routy" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <br>
-            <br>
-            <img src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-back.png" alt="routy" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <br>
-    <br>
+        <div class="dicho" style="--hero-img: url('/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-front.png');">
 
-    <div class="col-md-6 col-sm-12">
-      <div class="block">
-          <br>
-          <br>
-          <img src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-sleevefront.png" alt="routy" style="width:100%;" align="middle">
+  <!-- Scoped styles -->
+  <style>
+    .dicho{
+      --bg-1:#0b0b0b;            /* near neutral-950 */
+      --bg-2:#111111;
+      --ink:#f2f2f2;
+      --muted:#c9c9c9;
+      --rose:#fb7185;            /* rose-400 */
+      --rose-deep:#e11d48;       /* rose-600 */
+      --br:24px;
+      --border:rgba(255,255,255,.10);
+      --border-2:rgba(255,255,255,.16);
+      color:var(--ink);
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      line-height: 1.6;
+    }
+    .d-wrap{max-width: 1100px; margin-inline: auto; padding-inline: 1rem;}
+
+    /* HERO */
+    .d-hero{
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      place-items: end center;
+      padding: 3.5rem 1rem 2.5rem;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .d-hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: var(--hero-img);
+      background-size: cover; background-position: center 28%;
+      filter: saturate(.95) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .d-hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(120% 70% at 50% 15%, rgba(0,0,0,.08), rgba(0,0,0,.6)),
+        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.75) 65%, rgba(0,0,0,.92));
+    }
+    .d-hero-card{
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem;
+      border-radius: var(--br);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(30,30,30,.65), rgba(20,20,20,.3));
+      backdrop-filter: blur(6px);
+      box-shadow: 0 18px 44px rgba(0,0,0,.35), 0 1px 0 var(--border-2) inset;
+    }
+    .d-title{font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 700; letter-spacing:.2px;}
+    .d-sub{margin-top:.4rem; color:var(--muted); font-size: clamp(.95rem, 2.4vw, 1.05rem);}
+    .d-cta-row{display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;}
+    .btn{
+      display:inline-block; text-decoration:none; font-weight:700;
+      padding:.85rem 1.2rem; border-radius: 999px; border:1px solid var(--border);
+      background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+      color:#0b0b0b; box-shadow: 0 10px 24px rgba(235,120,140,.22);
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); filter:brightness(1.05); box-shadow:0 16px 36px rgba(235,120,140,.28);}
+    .btn-ghost{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.08));
+      color:var(--ink);
+    }
+
+    /* SECTION WRAPPER */
+    .section{padding: clamp(2.5rem, 5vw, 4.5rem) 0; border-top:1px solid var(--border);}
+    .section h2{font-size: clamp(1.2rem, 3.4vw, 1.6rem); letter-spacing:.3px; margin-bottom: .75rem;}
+
+    /* LISTEN + CREDITS */
+    .d-listen-grid{
+      display:grid; gap:1rem;
+      grid-template-columns: 1fr;
+    }
+    @media(min-width:920px){
+      .d-listen-grid{ grid-template-columns: 1.2fr .8fr; }
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--br);
+      background:
+        radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.04), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08));
+      box-shadow: 0 18px 44px rgba(0,0,0,.35), 0 1px 0 var(--border-2) inset;
+      overflow:hidden;
+    }
+    .pad{padding:1rem;}
+    .btn-row{display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0 1rem;}
+    .btn-sm{
+      display:inline-block; text-decoration:none; font-weight:600;
+      padding:.6rem .9rem; border-radius:12px; border:1px solid var(--border);
+      background: rgba(255,255,255,.04); color:var(--ink);
+    }
+    .btn-sm:hover{ background: rgba(255,255,255,.08);}
+    .embed-wrap{
+      border-radius: 14px; overflow:hidden;
+      border:1px solid var(--border);
+      background: #000;
+    }
+    .note{font-size:.92rem; color:var(--muted);}
+
+    dl.dl{
+      display:grid; grid-template-columns: 1fr 1fr; gap:.6rem 1rem; margin:.6rem 0 1rem;
+      font-size:.98rem;
+    }
+    .dl dt{color:var(--muted);}
+    .dl dd{margin:0;}
+    details.dtl{
+      border:1px solid var(--border); border-radius:14px; padding:.75rem 1rem; margin-top:.5rem;
+      background: rgba(255,255,255,.03);
+    }
+    details[open].dtl{background: rgba(255,255,255,.05);}
+    .tracks{font-size:.95rem; color:var(--muted); padding-left:1rem; margin:.5rem 0;}
+
+    /* PROGRAM (movements) */
+    .prog-grid{display:grid; gap:.75rem;}
+    details.mv{
+      border:1px solid var(--border); border-radius:16px; overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08));
+    }
+    summary.mv-h{
+      list-style:none; cursor:pointer; padding: .9rem 1rem; font-weight:700;
+      display:flex; align-items:center; gap:.65rem;
+    }
+    summary.mv-h::-webkit-details-marker{display:none;}
+    .mv-body{padding: .25rem 1rem 1rem;}
+    .mv-quote{font-style: italic; color:var(--muted); margin-top:.4rem;}
+
+    /* GALLERY */
+    .gal{
+      display:grid; gap:.75rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media(min-width:880px){
+      .gal{ grid-template-columns: repeat(4, 1fr); }
+    }
+    .gal figure{margin:0; border-radius:18px; overflow:hidden; border:1px solid var(--border); background:#111;}
+    .gal img{display:block; width:100%; height:100%; object-fit:cover;}
+
+    /* VIDEOS */
+    .v-grid{display:grid; gap:.75rem; grid-template-columns: 1fr;}
+    @media(min-width:900px){ .v-grid{grid-template-columns:1fr 1fr;} }
+    .ratio{position:relative; width:100%; padding-top: 56.25%; border-radius:18px; overflow:hidden; border:1px solid var(--border);}
+    .ratio.r1{padding-top:100%;}
+    .ratio iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+
+    /* CTA buttons */
+    .cta-grid{display:grid; gap:.6rem; grid-template-columns:1fr; margin-top:.6rem;}
+    @media(min-width:720px){ .cta-grid{ grid-template-columns: 1fr 1fr; } }
+    .cta a{
+      display:block; text-decoration:none; text-align:center; padding:.9rem 1rem; font-weight:700;
+      border-radius:14px; border:1px solid var(--border);
+      background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+      color:#0b0b0b; box-shadow:0 10px 24px rgba(235,120,140,.22);
+    }
+    .cta a.alt{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.08));
+      color:var(--ink);
+    }
+
+    /* spacing helpers */
+    .mt-1{margin-top:.5rem;} .mt-2{margin-top:1rem;} .mt-3{margin-top:1.5rem;}
+    .mb-1{margin-bottom:.5rem;} .mb-2{margin-bottom:1rem;} .mb-3{margin-bottom:1.5rem;}
+  </style>
+
+  <!-- HERO -->
+  <section class="d-hero">
+    <div class="d-hero-card">
+      <h1 class="d-title">DICHOTOMY — A Tone Poem of Five Metamorphoses for Piano</h1>
+      <p class="d-sub">A contemporary ritual for solo piano where dualities — light/dark, earth/sky — are embraced as one living architecture of sound.</p>
+      <div class="d-cta-row">
+        <a class="btn" href="#listen">Listen</a>
+        <a class="btn btn-ghost" href="#program">Program Notes</a>
+        <a class="btn btn-ghost" href="/postsPress/08-dichotomy-album-press.html">Press Highlights</a>
       </div>
-  </div>
-  <div class="col-md-6 col-sm-12">
-      <div class="block">
-          <br>
-          <br>
-          <img src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-sleeveback.png" alt="routy" style="width:100%;" align="middle">
+    </div>
+  </section>
+
+  <!-- LISTEN + CREDITS -->
+  <section id="listen" class="section">
+    <div class="d-wrap">
+      <h2>Listen & Credits</h2>
+      <div class="d-listen-grid">
+
+        <!-- Streams -->
+        <div class="card pad">
+          <div class="btn-row">
+            <a class="btn-sm" href="https://music.apple.com/us/album/dichotomy/1824911949" target="_blank" rel="noopener">Apple Music</a>
+            <a class="btn-sm" href="https://www.youtube.com/playlist?list=OLAK5uy_mqIfQt76vHMZZm5jWaTUvorWGMs26Bo6k" target="_blank" rel="noopener">YouTube (Album)</a>
+            <a class="btn-sm" href="https://distrokid.com/hyperfollow/sherifdahroug/dichotomy" target="_blank" rel="noopener">All Platforms</a>
+            <a class="btn-sm" href="https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP" target="_blank" rel="noopener">Spotify (Artist)</a>
+          </div>
+
+          <div class="embed-wrap mb-2">
+            <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              height="300" style="width:100%; max-width:100%; border:0;"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/fr/album/dichotomy/1824911949"></iframe>
+          </div>
+
+          <div class="embed-wrap">
+            <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/album/783184701"
+              width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+          </div>
+
+          <p class="note mt-1">Tip: use headphones for the full harmonic and dynamic arc.</p>
+        </div>
+
+        <!-- Credits -->
+        <aside class="card pad">
+          <h3 class="mb-1">Album Details</h3>
+          <dl class="dl">
+            <dt>Total duration</dt><dd>39′05″</dd>
+            <dt>Release date</dt><dd>July 7, 2025</dd>
+            <dt>Composer / Piano</dt><dd>Sherif Dahroug</dd>
+            <dt>Label / UPC</dt><dd>Lyre de Mercure · 199515343914</dd>
+            <dt>Producer / Mastering</dt><dd>Sherif Dahroug</dd>
+            <dt>Artwork</dt><dd>Riham ElGamal</dd>
+          </dl>
+
+          <details class="dtl">
+            <summary><strong>Tracklist &amp; ISRC</strong></summary>
+            <ul class="tracks">
+              <li>Exordium: Horizon of the Two Sycamores — 9:03 — ISRC QZTBE2506893</li>
+              <li>Limen: Nile | Eridanus — 7:58 — ISRC QZTBE2506894</li>
+              <li>Elevatio: Nymphaea | Papyrus — 8:00 — ISRC QZTBE2506895</li>
+              <li>Coronatio: Polaris | Orion — 10:55 — ISRC QZTBE2506896</li>
+              <li>Epilogue: The Breath of Atum — 3:08 — ISRC QZTBE2506897</li>
+            </ul>
+          </details>
+
+          <div class="cta-grid mt-2">
+            <div class="cta"><a class="alt" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank" rel="noopener">Liner Notes (PDF)</a></div>
+            <div class="cta"><a class="alt" href="/postsMusic/albums/2025-09-25-grammy_FYC.html">Visit the FYC Page</a></div>
+          </div>
+        </aside>
+
       </div>
-  </div>
-  <br>
-  <br>
-  
-  <div style="text-align: center; margin: 4rem auto;">
-    <a href="/postsPress/08-dichotomy-album-press.html" 
-       style="
-         display: inline-block;
-         padding: 0.75rem 1.5rem;
-         background-color: #8a2c2f;
-         color: #fff;
-         font-family: 'Palatino Linotype', 'Book Antiqua', serif;
-         font-size: 1rem;
-         letter-spacing: 0.05em;
-         text-decoration: none;
-         border-radius: 2px;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-         transition: background-color 0.3s ease;
-       "
-       onmouseover="this.style.backgroundColor='#6e2227'"
-       onmouseout="this.style.backgroundColor='#8a2c2f'">
-       Explore Press Highlights and Impressions →
-    </a>
-  </div>
-  <br>
-  <div style="text-align: center; margin: 4rem auto;">
-    <a href="/postsMusic/albums/2025-09-25-grammy_FYC.html" 
-       style="
-         display: inline-block;
-         padding: 0.75rem 1.5rem;
-         background-color: #8a2c2f;
-         color: #fff;
-         font-family: 'Palatino Linotype', 'Book Antiqua', serif;
-         font-size: 1rem;
-         letter-spacing: 0.05em;
-         text-decoration: none;
-         border-radius: 2px;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-         transition: background-color 0.3s ease;
-       "
-       onmouseover="this.style.backgroundColor='#6e2227'"
-       onmouseout="this.style.backgroundColor='#8a2c2f'">
-       View the FYC Page →
-    </a>
-  </div>
-  <br>
-  
-    <div class="two-columns" style="column-count: 1; column-gap: 20px; text-align: justify;">
-        <p>Dichotomy
-          A is a sonic ritual — a vast inner temple where resound the echoes of the cosmos’ primordial birth. At its core pulses one of the most profound philosophical tenets of ancient Egypt: duality — that cosmic division between light and darkness, life and death, earth and sky.
-          Conceived as a cycle of five symbolic metamorphoses, this tonal poem unfolds as an impressionistic and ritualistic journey, where transcultural bimodality intertwines with the polar structures intrinsic to Egyptian thought. Its harmonic language flows through a fluid, cyclic polytonality, dissolving the boundaries between musical form and metaphysical quest.
-          The architecture of Dichotomy is built upon interactive and innovative forms, fusing the logic of classical structures with a contemplative vision inspired by the Coffin Texts and the mythic language of duality. It is an invitation to enter a meditative soundscape — where the listener becomes the initiate of the ritual.
-          Dichotomy… an existential voyage, a musical poem embodying the great cosmic dualities, as further illustrated in a companion work by the composer, also entitled Dichotomy, wherein music becomes the audible expression of an expanded philosophical meditation.
-        </p>
-        
-        Ritual Structure:
-        <ol type="I">
-          <li>Exordium: Horizon of the Two Sycamores</li>
-            <ol>
-              Philosophical Program:This movement opens the sound ritual with the mythic threshold of light and shadow: the "Two Sycamores" are ancient Egyptian symbols marking the eastern gate of the sky, where the sun is born. They are guardians of cosmic polarity. This “horizon” is the edge between existence and nonexistence, sky and earth, and serves as an invocation of Atum’s breath from the primordial waters. It is the first breath of the sacred word, born between Noun (the watery abyss) and the twin trees of daybreak.
-            </ol>
-            <ol>
-              “Between the two sycamores, Atum exhales the cosmos. The breath vibrates like a lyre between light and its reflection. Dichotomy begins not with rupture, but with summoning.”
-            </ol>
-          <li>Limen: Nile | Eridanus</li>
-            <ol>
-              Philosophical Program:This movement represents the liminal passage — both a geographical axis (the Nile) and a celestial axis (the mythical river Eridanus). It reflects on dual currents: earthly flow and cosmic drift, material water and astral river. This dichotomy underscores the ancient Egyptian view of the Nile as a mirror of the Milky Way, and thus, the soul’s journey through both terrestrial and divine fluidity.
-            </ol>
-            <ol>
-              “The Nile swells from the breast of Nun. As the sky opens, Eridanus answers with light. Duality becomes passage, not opposition.”
-            </ol>
-          <li>Elevatio: Nymphaea | Papyrus</li>
-            <ol>
-              Philosophical Program:Here, the music contemplates spiritual elevation through vegetal symbolism: the lotus (nymphaea) and the papyrus— sacred plants of rebirth and divine writing. The lotus blooms in the abyss, holding the sun god, while the papyrus is the medium of divine word. Together, they conjure a sound of ascent, a synthesis of sensory and cosmic illumination — image of the soul emerging from darkness through the power of vibration and writing.
-            </ol>
-            <ol>
-              “From the depths of Nun, the lotus eye opens. Papyrus sways beside it — the music of ink and breath. The scribe and the flower elevate existence.”
-            </ol>
-          <li>Coronatio: Polaris | Orion</li> 
-            <ol>
-              Philosophical Program:This movement marks the crowning of the soul’s journey, reflected in two celestial poles: Polaris, the fixed northern star of orientation, and Orion, the eternal constellation of Osiris. Together they establish the axis of immortality. Here, the sound ritual reaches its celestial geometry, expressing the Egyptian concept of Sah-Orion as Osiris ascending — a being crowned by his place among the imperishable stars.
-            </ol>
-            <ol>
-              “The crown is not placed but risen toward. In Polaris burns the eye that never sets; in Orion dances the god who was. Between them, coronation is the acknowledgment of eternal return.”
-            </ol>
-          <li>Epilogue: The Breath of Atum</li> 
-            <ol>
-              Philosophical Program:The final movement returns to the beginning — a metaphysical epilogue as genesis. The Breath of Atum represents the act of creation through exhalation, echoing the origin from silence. In the ritual logic, this breath does not end the journey but rather renders the cyclical architecture of time. Music returns to its primal state: not melody, but breath — a sacred wind sustaining the dichotomy between sound and silence, being and becoming.
-            </ol>
-            <ol>
-              “No conclusion, only breath. Atum exhales again. Not a finale — but a vow whispered across aeons. The world begins where it ends: in the breath.””
-            </ol>    
-        </ol>
-        
     </div>
-</div> 
+  </section>
 
-<br>
-<!-- Album Trailer Section -->
-<section id="facebook-trailers" style="padding: 4rem 2rem; background-color: #15152E; font-family: sans-serif;">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">🎬 Portal to the Album</h2>
-  
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
-    <div class="fb-video-card" onclick="openFbModal('PAGE_NAME', 'VIDEO_ID_1')">
-      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcherif.dahroug%2Fvideos%2F1107683611277045%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+  <!-- PROGRAM / MOVEMENTS -->
+  <section id="program" class="section">
+    <div class="d-wrap">
+      <h2>Program Notes — The Ritual Architecture</h2>
+      <p class="note mb-2">Dichotomy unfolds as five symbolic metamorphoses rooted in ancient Egyptian philosophy of duality — light/dark, earth/sky — expressed through fluid, cyclic polytonality and contemplative form.</p>
+
+      <div class="prog-grid">
+        <details class="mv">
+          <summary class="mv-h">I. Exordium — Horizon of the Two Sycamores</summary>
+          <div class="mv-body">
+            <p><strong>Philosophical program.</strong> The mythic threshold where the sun is born: two sycamores guard the eastern gate of the sky, axis of polarity and invocation of Atum’s first breath from the primordial waters.</p>
+            <p class="mv-quote">“Between the two sycamores, Atum exhales the cosmos. The breath vibrates like a lyre between light and its reflection.”</p>
+          </div>
+        </details>
+
+        <details class="mv">
+          <summary class="mv-h">II. Limen — Nile | Eridanus</summary>
+          <div class="mv-body">
+            <p><strong>Philosophical program.</strong> The liminal passage: the earthly river and its celestial mirror. The Nile and Eridanus flow as dual currents — material water and astral river — joining terrestrial journey with the soul’s traversal in light.</p>
+            <p class="mv-quote">“The Nile swells from the breast of Nun; Eridanus answers with light. Duality becomes passage, not opposition.”</p>
+          </div>
+        </details>
+
+        <details class="mv">
+          <summary class="mv-h">III. Elevatio — Nymphaea | Papyrus</summary>
+          <div class="mv-body">
+            <p><strong>Philosophical program.</strong> Elevation through vegetal symbolism: the lotus, cradle of the sun; the papyrus, medium of the divine word. The ascent unites illumination with inscription — breath and ink.</p>
+            <p class="mv-quote">“From the depths of Nun, the lotus eye opens. Papyrus sways beside it — the music of ink and breath.”</p>
+          </div>
+        </details>
+
+        <details class="mv">
+          <summary class="mv-h">IV. Coronatio — Polaris | Orion</summary>
+          <div class="mv-body">
+            <p><strong>Philosophical program.</strong> The crowning in celestial geometry: Polaris, fixed star of orientation; Orion, the eternal Osiris. Together they trace the axis of imperishability and the soul’s enthronement.</p>
+            <p class="mv-quote">“The crown is not placed but risen toward. In Polaris burns the eye that never sets; in Orion dances the god who was.”</p>
+          </div>
+        </details>
+
+        <details class="mv">
+          <summary class="mv-h">V. Epilogue — The Breath of Atum</summary>
+          <div class="mv-body">
+            <p><strong>Philosophical program.</strong> Return to origin: a genesis as epilogue. Creation through exhalation re-inscribes cyclical time. Music returns to breath — the sacred wind between sound and silence.</p>
+            <p class="mv-quote">“No conclusion, only breath. Atum exhales again: the world begins where it ends.”</p>
+          </div>
+        </details>
+      </div>
     </div>
-    <div class="fb-video-card" onclick="openFbModal('PAGE_NAME', 'VIDEO_ID_2')">
-      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcherif.dahroug%2Fvideos%2F787221323640368%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+  </section>
+
+  <!-- ARTWORK GALLERY -->
+  <section id="gallery" class="section">
+    <div class="d-wrap">
+      <h2>Edition Artwork</h2>
+      <div class="gal">
+        <figure><img loading="lazy" decoding="async" src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-front.png" alt="Dichotomy — front cover"></figure>
+        <figure><img loading="lazy" decoding="async" src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-back.png" alt="Dichotomy — back cover"></figure>
+        <figure><img loading="lazy" decoding="async" src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-sleevefront.png" alt="Dichotomy — sleeve front"></figure>
+        <figure><img loading="lazy" decoding="async" src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-sleeveback.png" alt="Dichotomy — sleeve back"></figure>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Modal Structure -->
-<div id="fbModal" class="modal">
-  <div class="modal-content">
-    <span class="close-button" onclick="closeFbModal()">&times;</span>
-    <div id="fbModalEmbed"></div>
-  </div>
-</div>
-
-<!-- Modal Styles -->
-<style>
-  .fb-video-card {
-    width: 500px;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .fb-video-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .fb-video-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modal-content {
-    position: relative;
-    max-width: 700px;
-    width: 90%;
-    animation: fadeIn 0.3s ease;
-  }
-
-  .modal iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-    border-radius: 10px;
-  }
-
-  .close-button {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-</style>
-
-<!-- Facebook SDK + Script -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"
-        nonce="FbVideoEmbed">
-</script>
-
-<script>
-  function openFbModal(page, videoId) {
-    const embedCode = `
-      <div class="fb-video" 
-           data-href="https://www.facebook.com/${page}/videos/${videoId}/" 
-           data-width="700" data-show-text="false" data-allowfullscreen="true">
-      </div>`;
-    document.getElementById('fbModalEmbed').innerHTML = embedCode;
-    document.getElementById('fbModal').style.display = 'flex';
-    FB.XFBML.parse(document.getElementById('fbModalEmbed'));
-  }
-
-  function closeFbModal() {
-    document.getElementById('fbModal').style.display = 'none';
-    document.getElementById('fbModalEmbed').innerHTML = '';
-  }
-</script>
-
-
-
-
-<div style="text-align: center; margin: 4rem auto;">
-  <a href="https://www.mixcloud.com/AspenWaiteRadio/soundcheck-with-chris-redjam-104/"
-     target="_blank" rel="noopener"
-     style="
-       display: inline-block;
-       padding: 0.8rem 1.6rem;
-       background-color: #8a2c2f;
-       color: #fefefe;
-       font-family: 'Palatino Linotype', 'Book Antiqua', serif;
-       font-size: 1rem;
-       letter-spacing: 0.04em;
-       text-decoration: none;
-       border-radius: 3px;
-       box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-       transition: background-color 0.3s ease;
-     "
-     onmouseover="this.style.backgroundColor='#5b4545'"
-     onmouseout="this.style.backgroundColor='#3b2f2f'">
-    ▶ Listen to the full album breakdown, aired on Aspen Waite Radio — a deep exploration of Dichotomy, from structure to symbolism, beginning at 1:15:50.
-  </a>
-</div>
-
-<br>
-<div class="row">
-  <style>
-    .music-button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #fff;
-      background-color: #0073e6;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
-    .music-button:hover {
-      background-color: #005bb5;
-      color: #000000;
-    }
-  </style>
-  <div class="container"  style="display: flex; align-items: center; justify-content: center;">
-    <a href="/postsBooks/dichotomie-grandhymn.html" target="_blank" class="music-button"> Discover the book that reflects the music’s philosophical origin</a>
-  </div>
-</div>
-<br>
-<br>
-
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-</head>
-
-<section style="max-width: 700px; margin: 0 auto; padding: 2em; text-align: center; font-family: 'Cormorant Garamond', serif; line-height: 1.6; color: #ffffff;">
-  <h2 style="font-size: 2em; margin-bottom: 1em;">Own the Ritual</h2>
-  <div class="two-columns" style="column-count: 1; column-gap: 20px; text-align: justify;">
-    <p>The Dichotomy vinyl edition is more than a recording — it is a sacred object. This collector’s release features the complete five-part sonic cycle on high-fidelity vinyl, accompanied by exclusive artwork evoking the ancient Egyptian vision of duality: the Two Sycamores, mirrored rivers of the Nile and Eridanus, the ascent through papyrus and water lilies, and the celestial crown beneath Polaris and Orion. Designed as both a meditative journey and a symbolic artifact, this edition invites you to hold the ritual in your hands.  
-    </p>
-
-<br>
-<br>
-
-<div class="row">
-  <!--
-  <style>
-    .music-button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #fff;
-      background-color: #0073e6;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
-    .music-button:hover {
-      background-color: #005bb5;
-      color: #000000;
-    }
-  </style>
-  -->
-  <div class="container"  style="display: flex; align-items: center; justify-content: center;">
-    <a href="https://elasticstage.com/sherifdahroug/releases/dichotomy-album" target="_blank" class="music-button">  Own the Vinyl & Artwork</a>
-  </div>
-</div>
-<br>
-<br>
-
-<div class="row">
-  <!--
-  <style>
-    .music-button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #fff;
-      background-color: #0073e6;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
-    .music-button:hover {
-      background-color: #005bb5;
-      color: #000000;
-    }
-  </style>
-  -->
-  <div class="container"  style="display: flex; align-items: center; justify-content: center;">
-    <a href="https://distrokid.com/hyperfollow/sherifdahroug/dichotomy" target="_blank" class="music-button"> Discover this opus on your favorite music platform</a>
-  </div>
-</div>
-
-<br>
-
-<div class="row">
-    <div class="col-md-12">            
-        <!-- copy from spotify->embed ablum, then past at line 30-->
-        <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/album/783184701" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+  <!-- VIDEOS -->
+  <section id="videos" class="section">
+    <div class="d-wrap">
+      <h2>Portal to the Album</h2>
+      <div class="v-grid">
+        <div class="ratio r1">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcherif.dahroug%2Fvideos%2F1107683611277045%2F&show_text=false&width=476&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="ratio r1">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcherif.dahroug%2Fvideos%2F787221323640368%2F&show_text=false&width=476&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <p class="note mt-2">Two short portals into the ritual — best experienced with headphones.</p>
     </div>
-</div>
+  </section>
 
-<br>
-
-<div class="row">
-    <div class="col-md-12">            
-      <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"  width="100%" height="300" frameborder="0" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/album/dichotomy/1824911949"></iframe>
+  <!-- CTAs -->
+  <section class="section">
+    <div class="d-wrap">
+      <h2>Explore Further</h2>
+      <div class="cta-grid">
+        <div class="cta"><a class="alt" href="https://www.mixcloud.com/AspenWaiteRadio/soundcheck-with-chris-redjam-104/" target="_blank" rel="noopener">▶ Album breakdown — Aspen Waite Radio (from 1:15:50)</a></div>
+        <div class="cta"><a class="alt" href="/postsBooks/dichotomie-grandhymn.html" target="_blank" rel="noopener">Discover the book behind the philosophy</a></div>
+        <div class="cta"><a href="https://elasticstage.com/sherifdahroug/releases/dichotomy-album" target="_blank" rel="noopener">Own the Vinyl & Artwork</a></div>
+        <div class="cta"><a class="alt" href="https://distrokid.com/hyperfollow/sherifdahroug/dichotomy" target="_blank" rel="noopener">Open in your favorite platform</a></div>
+      </div>
     </div>
+  </section>
+
 </div>
-
-
 
 
         <hr>

@@ -115,26 +115,172 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 mx-auto">
 
-        <section style="text-align:center; padding: 40px; background: #f8f8f8; font-family: 'Georgia', serif;">
-    <h2 style="font-size: 28px; margin-bottom: 10px; color:#2c2c2c;">
-      Winner · Best Composition · 2025
-    </h2>
-    <p style="font-size: 20px; font-style: italic; margin: 0; color:#444;">
-      Dichotomy: A Tone Poem of Five Metamorphoses
-    </p>
-    <p style="font-size: 18px; margin: 5px 0 20px; color:#666;">
-      by <strong>Sherif Dahroug</strong>
-    </p>
-    <a href="https://apolloawards.eu/results-2025/#winners2025" target="_blank" 
-       style="display: inline-block; padding: 12px 28px; background: #333; color: #fff; 
-              text-decoration: none; border-radius: 6px; font-size: 16px; letter-spacing: 0.5px;">
-      View Official Winners
-    </a>
-  </section>
-  
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-    
-  
+<div class="fyc-award">
+  <style>
+    .fyc-award{
+      /* FYC palette */
+      --bg-top:#0f0f1b;
+      --bg-mid:#15152e;
+      --bg-btm:#111118;
+      --paper:#f7f4ee;     /* ivory card */
+      --ink:#2b211c;       /* warm text on ivory */
+      --muted:#6f645c;
+      --rose:#8a2c2f;      /* accent */
+      --rose-ink:#6e2227;
+      --gold:#c5a46d;      /* soft gold */
+      --line:rgba(255,255,255,.12);
+      --shadow:0 14px 38px rgba(0,0,0,.22);
+
+      background: linear-gradient(180deg,var(--bg-top),var(--bg-mid) 40%,var(--bg-btm));
+      padding: clamp(1.25rem, 3vw, 2rem) 0 3.25rem;
+      color:#fff;
+      font-family:"Libre Baskerville", Georgia, "Times New Roman", serif;
+      line-height:1.7;
+    }
+    .fyc-award .wrap{
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 3vw, 1.25rem);
+    }
+
+    /* Header */
+    .fyc-award header{ text-align:center; margin: .25rem 0 2rem; }
+    .fyc-award .medal{
+      width: 90px; height: 90px; margin: 0 auto 1rem; border-radius: 50%;
+      background: radial-gradient(80% 80% at 30% 30%, #f5e7cb, #b69457 55%, #8a6a35 100%);
+      border: 1px solid rgba(0,0,0,.15);
+      box-shadow: 0 6px 16px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.35);
+      display: grid; place-items: center; position: relative;
+    }
+    .fyc-award .medal:after{
+      content:"✶";
+      position:absolute; inset:auto auto 8px auto; left:0; right:0;
+      text-align:center; color:#3b2c0f; opacity:.7; font-size:.95rem; letter-spacing:.1em;
+    }
+    .fyc-award .medal .year{ font-family:"Cormorant Garamond", serif; font-weight:600; color:#2b1e10; font-size:1.35rem; line-height:1; }
+    .fyc-award .medal small{ display:block; margin-top:.15rem; font-size:.7rem; letter-spacing:.12em; color:#3b2c0f; text-transform:uppercase; }
+
+    .fyc-award h1{
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
+      font-size: clamp(1.7rem, 3.6vw, 2.35rem);
+      margin: .2rem 0 .35rem;
+      letter-spacing:.2px;
+    }
+    .fyc-award .subtitle{
+      color:#d9d8df;
+      font-size: clamp(.98rem, 1.6vw, 1.06rem);
+    }
+    .fyc-award .rule{
+      width:min(140px, 20vw); height:1px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* Award card */
+    .fyc-award .card{
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.1rem, 2.8vw, 1.6rem) clamp(1.1rem, 3.2vw, 1.8rem);
+      margin: 1.3rem auto 0;
+    }
+    .fyc-award .ribbon{
+      display:inline-block;
+      background: linear-gradient(180deg, #9b3438, #7b262b);
+      color:#fff;
+      font-weight:700;
+      font-size: .82rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:.35rem .65rem;
+      border-radius: 6px;
+      margin-bottom:.8rem;
+      box-shadow: 0 6px 14px rgba(138,44,47,.25);
+    }
+    .fyc-award .work{
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
+      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+      margin:.25rem 0 .4rem;
+    }
+    .fyc-award .credit{
+      color: var(--muted);
+      font-size:.98rem;
+      margin: 0 0 .4rem;
+    }
+    .fyc-award .credit strong{ color: var(--rose-ink); }
+
+    /* CTA */
+    .fyc-award .cta{
+      display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;
+      margin-top: 1.1rem;
+    }
+    .fyc-award .btn{
+      appearance:none; border:none; cursor:pointer; text-decoration:none;
+      padding:.7rem 1.2rem; border-radius: 999px; font-weight:700;
+      font-size:.95rem; letter-spacing:.02em;
+      transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .fyc-award .btn.primary{
+      background: linear-gradient(180deg, #9b3438, #7b262b);
+      color:#fff; box-shadow: 0 10px 24px rgba(138,44,47,.28);
+    }
+    .fyc-award .btn.ghost{
+      background: transparent; color: var(--rose);
+      border:1px solid rgba(138,44,47,.45);
+    }
+    .fyc-award .btn:hover{ transform: translateY(-1px); }
+    .fyc-award .btn:focus-visible{ outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    /* Small print */
+    .fyc-award .foot{
+      text-align:center; color:#cfcde0; font-size:.9rem; margin-top:1.25rem;
+    }
+
+    @media (max-width: 520px){
+      .fyc-award .medal{ width:82px; height:82px; }
+    }
+  </style>
+
+  <div class="wrap">
+    <header>
+      <div class="medal" aria-hidden="true">
+        <div>
+          <div class="year">2025</div>
+          <small>Winner</small>
+        </div>
+      </div>
+      <h1>Apollo Global Music Awards</h1>
+      <div class="subtitle">Best Composition · Athens, Greece</div>
+      <div class="rule" aria-hidden="true"></div>
+    </header>
+
+    <article class="card">
+      <span class="ribbon">Winner</span>
+      <h2 class="work">Dichotomy — A Tone Poem of Five Metamorphoses</h2>
+      <p class="credit">by <strong>Sherif Dahroug</strong></p>
+
+      <div class="cta">
+        <a class="btn primary" href="https://apolloawards.eu/results-2025/#winners2025" target="_blank" rel="noopener" aria-label="View official winners on Apollo Awards website">
+          View Official Winners
+        </a>
+        <!-- Optional secondary action — remove if not needed
+        <a class="btn ghost" href="/postsMusic/albums/2025-07-07-dichotomy.html">
+          Discover the Work
+        </a>
+        -->
+      </div>
+    </article>
+
+    <p class="foot">Honoured by the Apollo Global Music Awards jury for outstanding original composition.</p>
+  </div>
+</div>
+
 
         <hr>
 

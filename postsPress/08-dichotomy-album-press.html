@@ -115,262 +115,300 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 mx-auto">
 
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Press – Sherif Dahroug</title>
+        <!-- FYC-style Press Page (scoped) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<div class="fyc-press">
 
   <style>
-    /* Base page style */
-    body {
-      background: #15152E;
-      color: #333;
-      font-family: 'Palatino Linotype','Book Antiqua', serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+    .fyc-press{
+      /* Palette */
+      --bg-top:#0f0f1b;          /* deep neutral */
+      --bg-mid:#15152e;          /* your site tone */
+      --bg-btm:#111118;
+      --paper:#f7f4ee;           /* ivory card */
+      --ink:#2b211c;             /* card text */
+      --muted:#6f645c;
+      --rose:#8a2c2f;            /* FYC accent */
+      --rose-ink:#6e2227;
+      --gold:#c5a46d;            /* subtle gold */
+      --line:rgba(255,255,255,.12);
+      --shadow:0 10px 30px rgba(0,0,0,.18);
+
+      background: linear-gradient(180deg,var(--bg-top),var(--bg-mid) 40%,var(--bg-btm));
+      padding: clamp(1.25rem, 3vw, 2rem) 0 3rem;
+      color:#fff;
+      font-family:"Libre Baskerville", Georgia, "Times New Roman", serif;
+      line-height:1.7;
     }
-    .container {
-      max-width: 720px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .fyc-press .wrap{max-width: 860px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 1.25rem);}
+
+    /* Header */
+    .fyc-press header{ text-align:center; margin: .25rem 0 1.75rem; }
+    .fyc-press h1{
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
+      font-size: clamp(1.7rem, 3.8vw, 2.4rem);
+      letter-spacing:.2px;
+      margin:0 0 .25rem;
     }
-    .page-header {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      letter-spacing: 0.05em;
-      color: #1e1e1e;
+    .fyc-press .subtitle{
+      color:#d9d8df;
+      font-size: clamp(.95rem, 1.6vw, 1.05rem);
+    }
+    .fyc-press .rule{
+      width:min(120px, 18vw); height:1px;
+      margin: .9rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
-    /* Quote blocks */
-    .quote {
-      background: #fff;
-      border-left: 10px solid #8a2c2f;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    /* Cards */
+    .fyc-press .stack{display:grid; gap: clamp(1rem, 2.4vw, 1.3rem);}
+    .fyc-press .card{
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(1rem, 2.6vw, 1.4rem) clamp(1rem, 3vw, 1.6rem);
+      position: relative;
     }
-    .quote p {
+    .fyc-press blockquote{
+      margin:0 0 .9rem 0;
       font-style: italic;
-      margin: 0 0 1rem;
-      quotes: “” ‘’;
+      font-size: clamp(.98rem, 1.8vw, 1.05rem);
     }
-    .quote p::before { content: open-quote; }
-    .quote p::after  { content: close-quote; }
-
-    .source {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    .source .origin {
-      font-weight: bold;
-      font-style: normal;
-      color: #8a2c2f;
-    }
-    .source a {
-      color: #8a2c2f;
-      text-decoration: none;
-      border-bottom: 1px dotted #8a2c2f;
-      transition: border-bottom-color 0.3s;
-    }
-    .source a:hover {
-      border-bottom-color: transparent;
+    .fyc-press blockquote:before{
+      content:"“";
+      position:absolute; left:.7rem; top:.2rem;
+      font-family:"Cormorant Garamond", serif;
+      font-size:2.2rem; color: var(--gold); line-height:1;
+      opacity:.6;
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-      .quote {
-        padding: 1rem;
-      }
-      .page-header {
-        font-size: 1.8rem;
-      }
+    /* Source row */
+    .fyc-press .source{
+      display:flex; gap:.75rem; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+      font-size:.95rem;
     }
-    .translation {
-      max-height: 200px;  /* Adjust this value for how many lines you want visible */
-      overflow-y: auto;
-      padding-right: 8px; /* prevents scrollbar from overlapping text */
+    .fyc-press .origin{
+      color: var(--rose-ink);
+      font-weight:700;
     }
+    .fyc-press a.more{
+      color: var(--rose-ink);
+      text-decoration:none;
+      border-bottom: 1px dotted var(--rose-ink);
+      padding-bottom:1px;
+    }
+    .fyc-press a.more:hover{ border-bottom-color: transparent; }
 
-    .translation p {
-      margin: 0;
-      line-height: 1.5;
+    /* Long excerpts (native toggle) */
+    .fyc-press details{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:12px;
+      padding:.8rem 1rem;
+      margin:.2rem 0 .8rem;
     }
+    .fyc-press details summary{
+      cursor:pointer;
+      font-weight:700;
+      color: var(--rose-ink);
+      list-style:none;
+    }
+    .fyc-press details summary::-webkit-details-marker{ display:none; }
+    .fyc-press details[open]{ box-shadow: 0 8px 22px rgba(0,0,0,.06); }
+    .fyc-press details p{ margin:.6rem 0 0; color: var(--ink); }
 
+    /* Soft separators (optional) */
+    .fyc-press .sep{ height:1px; background: var(--line); margin: .5rem 0; }
   </style>
-</head>
 
-<body>
-  <div class="container">
+  <div class="wrap">
+    <header>
+      <h1>Dichotomy</h1>
+      <div class="subtitle">Press Citations</div>
+      <div class="rule" aria-hidden="true"></div>
+    </header>
 
-    <section class="quote">
-      <p>Inventive arrangement and nouvelle vague quality...</p>
-      <div class="source">
-        <span class="origin">Chris Redjam, Soundcheck Radio Show (UK/USA)</span>
-        <a href="https://www.mixcloud.com/AspenWaiteRadio/soundcheck-with-chris-redjam-104/">
-          Listen from 1:15:50 →
-        </a>
-      </div>
-    </section>
-    
-    <section class="quote">
-      <p>Exordium doesn’t unfold like a typical composition. It pulses like a ceremonial awakening, blending impressionistic textures with transcultural harmonies and an eerie sense of space. Classical traditions are bent, stretched, and reimagined — with echoes of Debussy, ancient Middle Eastern music, and cinematic ambient forms bleeding into one another.
-        Each phrase feels symbolic, like part of a cosmic dialogue between light and dark, death and life, sky and earth. DAHROUG isn’t merely composing — he’s invoking something ancient and spiritual...
-       </p>
-      <div class="source">
-        <span class="origin">Vera Ayornu, Korliblog.com - United States</span>
-        <a href="https://korliblog.com/exordium-horizon-of-the-two-sycamores-buy/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+    <section class="stack">
 
-    <section class="quote">
-      <p>Sherif Dahroug continues to push the boundaries of contemporary music, crafting sonic sanctuaries that resonate with infinite depth...</p>
-      <div class="source">
-        <span class="origin">Mario Ferraioli, Jazz in Family magazine - Italy</span>
-        <a href="https://www.jazzinfamily.com/luglio-2025-groove-bonanza/#SherifDahroug" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Soundcheck / Chris Redjam -->
+      <article class="card">
+        <blockquote>Inventive arrangement and nouvelle vague quality...</blockquote>
+        <div class="source">
+          <span class="origin">Chris Redjam — Soundcheck Radio Show (UK/USA)</span>
+          <a class="more" href="https://www.mixcloud.com/AspenWaiteRadio/soundcheck-with-chris-redjam-104/" target="_blank" rel="noopener">Listen from 1:15:50 →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <p>Sherif Dahroug heads into the woods...</p>
-      <div class="source">
-        <span class="origin">Darryl Sterdan, Tinnitist - the Tinnitist Top 300 Playlist</span>
-        <a href="https://tinnitist.com/2025/07/14/groover-playlist-321-go-part-2/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Korliblog -->
+      <article class="card">
+        <details>
+          <summary>“Exordium” review — Korliblog (United States)</summary>
+          <p>
+            <em>Exordium</em> doesn’t unfold like a typical composition. It pulses like a ceremonial awakening, blending impressionistic textures with transcultural harmonies and an eerie sense of space… Each phrase feels symbolic, like part of a cosmic dialogue between light and dark, death and life, sky and earth. Dahroug isn’t merely composing — he’s invoking something ancient and spiritual…
+          </p>
+        </details>
+        <div class="source">
+          <span class="origin">Vera Ayornu — Korliblog.com (US)</span>
+          <a class="more" href="https://korliblog.com/exordium-horizon-of-the-two-sycamores-buy/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <p>
-        The acclaimed Franco-Egyptian producer, pianist, and composer returns with a new and somewhat abstract work. 
-        <em>Dichotomy</em>, the artist’s latest release, features five long instrumental piano tracks. 
-        It is a sonic ritual — a vast inner temple where the echoes of the cosmos’s primordial birth resound. 
-        Exploring the theme of duality, so central to Egyptian philosophy, the work presents a cycle of five symbolic metamorphoses. 
-        This tonal poem unfolds as an impressive, ritualistic journey, where transcultural bimodality weaves through 
-        the polar structures intrinsic to Egyptian thought — all delivered with great sensitivity at the piano.
-      </p>
-      <div class="source">
-        <span class="origin">Hominis Canidae — Brazilian independent music journal (July 30, 2025)</span>
-        <a href="https://www.hominiscanidae.org/2025/07/gringos-de-julho-ta-cansado-da-mesmice.html#:~:text=Sherif%20DAHROUG%20-%20DICHOTOMY" target="_blank" rel="noopener">Read original →</a>
-      </div>
-    </section>
-    
-    
-    
-    <section class="quote">
-      <p>Mr. Sherif Dahroug is a non-series composer and an award-winning composer and author. He is also an artist who successfully navigates other cultural spheres. "Exordium: Horizon Of The Sycamores" is an opening track from his conceptual album "Dichotomy..." The music created by this author touches on the elements of the avant-garde, non-classical variety, where there are many other expressive elements that are difficult to describe, because the author's approach expands the boundaries of standard forms. The plot of the album, as well as these themes, was moved to ancient Egypt, and the filmic story of the complete concept requires a serious approach to the music, which this author markets. Serious work with many segments of music from the future.</p>
-      <div class="source">
-        <span class="origin">Branimir Lokner, timemachinemusic.org - Belgrade</span>
-        <a href="https://www.instagram.com/p/DMBRIcKA3PQ/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Jazz in Family -->
+      <article class="card">
+        <blockquote>Sherif Dahroug continues to push the boundaries of contemporary music, crafting sonic sanctuaries that resonate with infinite depth...</blockquote>
+        <div class="source">
+          <span class="origin">Mario Ferraioli — Jazz in Family (Italy)</span>
+          <a class="more" href="https://www.jazzinfamily.com/luglio-2025-groove-bonanza/#SherifDahroug" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <p>...This dynamic interaction lets the neoclassical basis expand while the jazz elements offer surprising life and complexity, almost like short improvisations against a typically sad background. The tune carries an ancient mystery, triggering images of Egyptian heritage and metaphysical broadness. This is ideal because it appears on DAHROUG’s album Dichotomy, which the artist describes as “a contemporary classical & avant-garde tone poem, a five-part sonic metamorphosis on ancient Egyptian duality.” The music wonderfully expresses that duality: restriction and dynamism, heritage and modernity, mystery and revelation...</p>
-      <div class="source">
-        <span class="origin">Skylight Magazine (Greece), September 28, 2025.</span>
-        <a href="https://www.instagram.com/p/DMBRIcKA3PQ/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Tinnitist -->
+      <article class="card">
+        <blockquote>Sherif Dahroug heads into the woods...</blockquote>
+        <div class="source">
+          <span class="origin">Darryl Sterdan — Tinnitist (Top 300 Playlist)</span>
+          <a class="more" href="https://tinnitist.com/2025/07/14/groover-playlist-321-go-part-2/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <p>A transcendent experience… a sonic architecture that feels ancient and futuristic all at once. Bold, cohesive, and uniquely poetic.</p>
-      <div class="source">
-        <span class="origin">Pyaar Music Records & YV Art Spot Magazine - United States</span>
-        <a href="https://www.facebook.com/cherif.dahroug/posts/pfbid02onAEWsF32DByExHQGZUxHSAz5Aicv6hZqHhuUxYQ2hZFriTvjmkVHbxwN8haEc8Yl" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Hominis Canidae (long) -->
+      <article class="card">
+        <details>
+          <summary>Album feature — Hominis Canidae (Brazil)</summary>
+          <p>
+            The acclaimed Franco-Egyptian producer, pianist, and composer returns with a new and somewhat abstract work. <em>Dichotomy</em> features five long instrumental piano tracks — a sonic ritual where echoes of the cosmos’s primordial birth resound. Exploring duality, central to Egyptian philosophy, the work presents a cycle of five symbolic metamorphoses… all delivered with great sensitivity at the piano.
+          </p>
+        </details>
+        <div class="source">
+          <span class="origin">Hominis Canidae — Independent Music Journal (Jul 30, 2025)</span>
+          <a class="more" href="https://www.hominiscanidae.org/2025/07/gringos-de-julho-ta-cansado-da-mesmice.html#:~:text=Sherif%20DAHROUG%20-%20DICHOTOMY" target="_blank" rel="noopener">Read original →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <p>... the definition of dichotomy established by the ritual structure — not as a moment of rupture, but one of summoning dissonant parts of a whole. There’s this gradual construction aspect to it that doesn’t feel dragged nor tiring, yet fluid and storytelling, with very much detail and care.
-        The dissonant chord being played repeatedly alongside the harmonious and mysterious melody creates this urgent sense to it, while still guiding the listener through the ups and downs of the tale being told...
-      </p>
-      <div class="source">
-        <span class="origin">Tiny B., Sound Expert & Journalist, São Paulo - Brazil </span>
-        <a href="https://www.facebook.com/cherif.dahroug/videos/1286414023125210/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Time Machine Music / Lokner -->
+      <article class="card">
+        <blockquote>
+          Mr. Sherif Dahroug is a non-series and award-winning composer and author… “Exordium: Horizon Of The Sycamores” opens his conceptual album “Dichotomy.” The music touches on avant-garde, non-classical elements, expanding standard forms. The album’s narrative draws on ancient Egypt — a cinematic concept demanding serious listening.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Branimir Lokner — TimeMachineMusic (Belgrade)</span>
+          <a class="more" href="https://www.instagram.com/p/DMBRIcKA3PQ/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <p>This composition stands out as a deeply emotional and technically accomplished work of instrumental classical music. From the opening notes, it reveals a profound command of musical storytelling—marked by expressive phrasing, dynamic control, and subtle nuance. Without lyrics, the piece evokes a vivid, immersive atmosphere, telling its story with clarity and resonance.
-        Despite focusing primarily on electronic music, we recognize in this work a singular artistic voice—one that deserves recognition beyond genre boundaries. It is a moving, captivating piece from a composer with both vision and mastery.”
-      </p>
-      <div class="source">
-        <span class="origin">Beat Radio Show - Switzerland</span>
-        <a href="https://www.facebook.com/cherif.dahroug/videos/1286414023125210/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-    <section class="quote">
-      <p>
-        The album was featured on <strong>Episode 2 of The Mark &amp; Wayne Show</strong>, airing Sundays on Glacer FM at exactly 10:15 p.m. EST (America/New_York time zone).  
-        For more details, visit <a href="http://www.glacerfm.com" target="_blank" rel="noopener">www.glacerfm.com</a>.
-      </p>
-      <div class="source">
-        <span class="origin">The Mark &amp; Wayne Show, Glacer FM — July 27, 2025</span>
-        <a href="https://www.instagram.com/reel/DMm5IouSVd1" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-    
+      <!-- Skylight (Greece) -->
+      <article class="card">
+        <blockquote>
+          This dynamic interaction lets the neoclassical basis expand while jazz elements offer surprising life and complexity… The tune carries an ancient mystery, triggering images of Egyptian heritage and metaphysical breadth… The music wonderfully expresses duality: restriction and dynamism, heritage and modernity, mystery and revelation.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Skylight Magazine — Greece (Sep 28, 2025)</span>
+          <a class="more" href="https://www.instagram.com/p/DMBRIcKA3PQ/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <div class="translation"></div>
-      <p>Sounds like a deeply ambitious and strikingly cohesive piece of work. It manages to feel both ancient and modern — merging impressionistic classical language with something far more metaphysical and expansive. The influence of ritual is felt not just in the structural pacing, but in the emotional depth of each transition — like moving through different ceremonial thresholds.
-        There’s a strong sense of narrative tension throughout, yet it's presented in a way that avoids cliché, leaning instead into abstraction and evocative sonic imagery. The instrumentation and pacing invite close, uninterrupted listening — this is music that rewards patience and immersion.
-        It’s rare to hear contemporary classical compositions that feel this conceptually complete, while still leaving space for mystery and interpretation. The exploration of duality doesn’t just inform the theme; it’s embedded in the way dissonance and consonance play off each other, how textures rise and fall, and how silence is used as its own form of contrast.
-        I can definitely see this resonating with platforms that focus on avant-garde, experimental, and philosophical sound art. It’s the kind of work that asks listeners to slow down and feel...</p>
-      <div class="source">
-        <span class="origin">Giovanni Coppola, Journalist & Music Critic (Rolling Stone / VICE, UK)</span>
-        <a href="https://www.facebook.com/cherif.dahroug/videos/787221323640368/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Pyaar / YV Art Spot -->
+      <article class="card">
+        <blockquote>A transcendent experience… a sonic architecture that feels ancient and futuristic at once. Bold, cohesive, and uniquely poetic.</blockquote>
+        <div class="source">
+          <span class="origin">Pyaar Music Records & YV Art Spot Magazine — United States</span>
+          <a class="more" href="https://www.facebook.com/cherif.dahroug/posts/pfbid02onAEWsF32DByExHQGZUxHSAz5Aicv6hZqHhuUxYQ2hZFriTvjmkVHbxwN8haEc8Yl" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <div class="translation"></div>
-      <p>Composer Sherif Dahroug presents DICHOTOMY – A Tone Poem of Five Metamorphoses for Piano, a 39-minute sonic ritual exploring cosmic dualities inspired by ancient Egypt. Weaving transcultural polytonality and ritualistic architecture, Dahroug creates a meditative soundscape where light, dark, life, and death converge. Released on July 7, 2025, the work reflects his meticulous blend of scientific precision and poetic vision, cementing his status as a leading contemporary composer.</p>
-      <div class="source">
-        <span class="origin">Indiefferential Magazine US, August 2025 -Best Releases-</span>
-        <a href="https://www.facebook.com/cherif.dahroug/videos/787221323640368/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
+      <!-- Tiny B. (Brazil) -->
+      <article class="card">
+        <blockquote>
+          The definition of dichotomy is established by the ritual structure — not rupture, but summoning dissonant parts of a whole… The repeated dissonant chord with a harmonious, mysterious melody creates urgency while guiding the listener through the tale’s rises and falls.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Tiny B. — Sound Expert & Journalist (São Paulo)</span>
+          <a class="more" href="https://www.facebook.com/cherif.dahroug/videos/1286414023125210/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
 
-    <section class="quote">
-      <div class="translation"></div>
-      <p>Featured in <strong>Best Undiscovered Releases</strong> by Bad Architect Records.</p>
-      <div class="source">
-        <span class="origin">Bad Architect Records</span>
-        <a href="https://badarchitectrecords.blog/post/791915360591970304/check-out-this-new-track-exordium-horizon-of-the" target="_blank" rel="noopener">Read more →</a>
-      </div>
+      <!-- Beat Radio (Switzerland) -->
+      <article class="card">
+        <blockquote>
+          A deeply emotional and technically accomplished work of instrumental classical music… a vivid, immersive atmosphere told with clarity and resonance. A singular artistic voice that deserves recognition beyond genre boundaries.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Beat Radio Show — Switzerland</span>
+          <a class="more" href="https://www.facebook.com/cherif.dahroug/videos/1286414023125210/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Glacer FM -->
+      <article class="card">
+        <blockquote>
+          The album was featured on <strong>Episode 2 of The Mark &amp; Wayne Show</strong>, airing Sundays on Glacer FM at 10:15 p.m. EST.
+        </blockquote>
+        <div class="source">
+          <span class="origin">The Mark &amp; Wayne Show — Glacer FM (Jul 27, 2025)</span>
+          <a class="more" href="http://www.glacerfm.com" target="_blank" rel="noopener">glacerfm.com →</a>
+        </div>
+      </article>
+
+      <!-- Giovanni Coppola (long) -->
+      <article class="card">
+        <details>
+          <summary>Review note — Giovanni Coppola (UK)</summary>
+          <p>
+            Sounds like a deeply ambitious and strikingly cohesive piece of work… ritual felt in pacing and transitions, abstraction and evocative imagery, instrumentation that invites close, uninterrupted listening. Rare to hear contemporary classical works this conceptually complete while leaving space for mystery and interpretation.
+          </p>
+        </details>
+        <div class="source">
+          <span class="origin">Giovanni Coppola — Journalist & Music Critic (Rolling Stone / VICE)</span>
+          <a class="more" href="https://www.facebook.com/cherif.dahroug/videos/787221323640368/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Indiefferential Magazine -->
+      <article class="card">
+        <blockquote>
+          Composer Sherif Dahroug presents <em>DICHOTOMY – A Tone Poem of Five Metamorphoses for Piano</em>, a 39-minute sonic ritual exploring cosmic dualities inspired by ancient Egypt… a meditative soundscape where light, dark, life, and death converge.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Indiefferential Magazine — US (Aug 2025 — Best Releases)</span>
+          <a class="more" href="https://www.facebook.com/cherif.dahroug/videos/787221323640368/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Bad Architect Records -->
+      <article class="card">
+        <blockquote>Featured in <strong>Best Undiscovered Releases</strong> by Bad Architect Records.</blockquote>
+        <div class="source">
+          <span class="origin">Bad Architect Records</span>
+          <a class="more" href="https://badarchitectrecords.blog/post/791915360591970304/check-out-this-new-track-exordium-horizon-of-the" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Vybz FM -->
+      <article class="card">
+        <blockquote><em>The whole piece feels intentional — honest, immersive, and strikingly real.</em></blockquote>
+        <div class="source">
+          <span class="origin">Vybz FM — Radio Nigeria (Aug 2025)</span>
+          <a class="more" href="https://vybzfm.com/index.php/blog-sidebar/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- CITIZEN:KANE -->
+      <article class="card">
+        <blockquote><em>A very compelling track, with a progression that unfolds beautifully and maintains a strong, captivating flow.</em></blockquote>
+        <div class="source">
+          <span class="origin">CITIZEN:KANE — Radio (Portugal)</span>
+          <a class="more" href="https://open.spotify.com/playlist/0pGQXRepoennJ4niZIVuk1?si=4d34970a984741c3&nd=1&dlsi=79137db38f9b465c" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </article>
+
     </section>
-    
-    <section class="quote">
-      <div class="translation"></div>
-      <p><em>The whole piece feels intentional. Not following trends, it crafts a sound that is honest, immersive, and strikingly real.</em></p>
-      <div class="source">
-        <span class="origin">Vybz fm, Radio Nigeria — August 2025</span>
-        <a href="https://vybzfm.com/index.php/blog-sidebar/" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-    
-    <section class="quote">
-      <div class="translation"></div>
-      <p><em>"A very compelling track, with a progression that unfolds beautifully and maintains a strong, captivating flow."</em></p>
-      <div class="source">
-        <span class="origin">CITIZEN:KANE, Radio Station Portugal</span>
-        <a href="https://open.spotify.com/playlist/0pGQXRepoennJ4niZIVuk1?si=4d34970a984741c3&nd=1&dlsi=79137db38f9b465c" target="_blank" rel="noopener">Listen →</a>
-      </div>
-    </section>
-    
-    
-    
-    
   </div>
-</body>
-</html>
+</div>
 
 
         <hr>

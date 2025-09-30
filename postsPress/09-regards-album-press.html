@@ -115,198 +115,236 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 mx-auto">
 
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Press – Sherif Dahroug</title>
+        <!-- FYC-style Press Page (scoped) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<div class="fyc-press">
 
   <style>
-    /* Base page style */
-    body {
-      background: #15152E;
-      color: #333;
-      font-family: 'Palatino Linotype','Book Antiqua', serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+    .fyc-press{
+      /* Palette */
+      --bg-top:#0f0f1b;          /* deep neutral */
+      --bg-mid:#15152e;          /* your existing page tone */
+      --bg-btm:#111118;
+      --paper:#f7f4ee;           /* ivory card */
+      --ink:#2b211c;             /* card text */
+      --muted:#6f645c;
+      --rose:#8a2c2f;            /* FYC accent */
+      --rose-ink:#6e2227;
+      --gold:#c5a46d;            /* subtle gold */
+      --line:rgba(255,255,255,.12);
+      --shadow:0 10px 30px rgba(0,0,0,.18);
+
+      background: linear-gradient(180deg,var(--bg-top),var(--bg-mid) 40%,var(--bg-btm));
+      padding: clamp(1.25rem, 3vw, 2rem) 0 3rem;
+      color:#fff;
+      font-family:"Libre Baskerville", Georgia, "Times New Roman", serif;
+      line-height:1.7;
     }
-    .container {
-      max-width: 720px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .fyc-press .wrap{max-width: 860px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 1.25rem);}
+
+    /* Header */
+    .fyc-press header{ text-align:center; margin: .25rem 0 1.75rem; }
+    .fyc-press h1{
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
+      font-size: clamp(1.7rem, 3.8vw, 2.4rem);
+      letter-spacing:.2px;
+      margin:0 0 .25rem;
     }
-    .page-header {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      letter-spacing: 0.05em;
-      color: #1e1e1e;
+    .fyc-press .subtitle{
+      color:#d9d8df;
+      font-size: clamp(.95rem, 1.6vw, 1.05rem);
+    }
+    .fyc-press .rule{
+      width:min(120px, 18vw); height:1px;
+      margin: .9rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
-    /* Quote blocks */
-    .quote {
-      background: #fff;
-      border-left: 10px solid #8a2c2f;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    /* Quote cards */
+    .fyc-press .stack{display:grid; gap: clamp(1rem, 2.4vw, 1.3rem);}
+    .fyc-press .card{
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(1rem, 2.6vw, 1.4rem) clamp(1rem, 3vw, 1.6rem);
+      position: relative;
     }
-    .quote p {
+
+    .fyc-press blockquote{
+      margin:0 0 .9rem 0;
       font-style: italic;
-      margin: 0 0 1rem;
-      quotes: “” ‘’;
+      font-size: clamp(.98rem, 1.8vw, 1.05rem);
     }
-    .quote p::before { content: open-quote; }
-    .quote p::after  { content: close-quote; }
-
-    .source {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    .source .origin {
-      font-weight: bold;
-      font-style: normal;
-      color: #8a2c2f;
-    }
-    .source a {
-      color: #8a2c2f;
-      text-decoration: none;
-      border-bottom: 1px dotted #8a2c2f;
-      transition: border-bottom-color 0.3s;
-    }
-    .source a:hover {
-      border-bottom-color: transparent;
+    .fyc-press blockquote:before{
+      content:"“";
+      position:absolute; left:.7rem; top:.2rem;
+      font-family:"Cormorant Garamond", serif;
+      font-size:2.2rem; color: var(--gold); line-height:1;
+      opacity:.6;
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-      .quote {
-        padding: 1rem;
-      }
-      .page-header {
-        font-size: 1.8rem;
-      }
+    /* Source row */
+    .fyc-press .source{
+      display:flex; gap:.75rem; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+      font-size:.95rem;
     }
-    .translation {
-  max-height: 200px;  /* Adjust this value for how many lines you want visible */
-  overflow-y: auto;
-  padding-right: 8px; /* prevents scrollbar from overlapping text */
-}
+    .fyc-press .origin{
+      color: var(--rose-ink);
+      font-weight:700;
+    }
+    .fyc-press a.more{
+      color: var(--rose-ink);
+      text-decoration:none;
+      border-bottom: 1px dotted var(--rose-ink);
+      padding-bottom:1px;
+    }
+    .fyc-press a.more:hover{ border-bottom-color: transparent; }
 
-.translation p {
-  margin: 0;
-  line-height: 1.5;
-}
+    /* Long excerpt toggle (native, no JS) */
+    .fyc-press details{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:12px;
+      padding:.8rem 1rem;
+      margin:.2rem 0 .8rem;
+    }
+    .fyc-press details summary{
+      cursor:pointer;
+      font-weight:700;
+      color: var(--rose-ink);
+      list-style:none;
+    }
+    .fyc-press details summary::-webkit-details-marker{ display:none; }
+    .fyc-press details[open]{ box-shadow: 0 8px 22px rgba(0,0,0,.06); }
+    .fyc-press details p{ margin:.6rem 0 0; color: var(--ink); }
 
+    /* Soft separators (optional) */
+    .fyc-press .sep{
+      height:1px; background: var(--line);
+      margin: clamp(.5rem, 2vw, .8rem) 0;
+    }
   </style>
-</head>
 
-<body>
-  <div class="container">
+  <div class="wrap">
+    <header>
+      <h1>Regards sur l’Horizon</h1>
+      <div class="subtitle">Press Highlights</div>
+      <div class="rule" aria-hidden="true"></div>
+    </header>
 
+    <section class="stack">
 
-    <section class="quote">
-      <p>Sherif Dahroug creates a work that is more than just a background score; it is a trip full of strong feelings and self-critical moments… It strikes a balance between harmony and triggering strong feelings, inviting the listener to enter the first light of dawn....</p>
-      <div class="source">
-        <span class="origin">Skylight Magazine, July 2025</span>
-        <a href="https://skylight.gr/index.php/2025/07/24/sherif-dahroug-sur-le-fil-de-laube/" target="_blank" rel="noopener">Read more →</a>
-      </div>
+      <!-- Skylight Magazine -->
+      <article class="card">
+        <blockquote>
+          Sherif Dahroug creates a work that is more than just a background score; it is a trip full of strong feelings and self-critical moments… It strikes a balance between harmony and triggering strong feelings, inviting the listener to enter the first light of dawn....
+        </blockquote>
+        <div class="source">
+          <span class="origin">Skylight Magazine — July 2025</span>
+          <a class="more" href="https://skylight.gr/index.php/2025/07/24/sherif-dahroug-sur-le-fil-de-laube/" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- VAULT LAB (long excerpt wrapped in details) -->
+      <article class="card">
+        <details>
+          <summary>Full review excerpt — VAULT LAB Magazine (Italy)</summary>
+          <p>
+            With the grace of an ancient ritual and the depth of a contemporary meditation, “Sur le Fil de l’Aube” emerges as one of the most evocative piano compositions in recent years. Written by Franco-Egyptian composer and artist Sherif Dahroug, the piece is the second movement of the EP <em>Regards sur l’Horizon – Three Visions for Piano</em>, winner of the 2024 Global Music Award in California.
+          </p>
+          <p>
+            Released in September 2024, this work stands at the heart of contemporary avant-garde music, tracing a sonic bridge between Egyptian cosmology, universal spirituality, and inner exploration. “Sur le Fil de l’Aube” — literally on the thread of dawn — moves with a light yet solemn step along the boundary between darkness and light, between the end of what has been and the beginning of what is to come…
+          </p>
+          <p>
+            The piano keys are not merely played, but invoked; the notes emerge like slow breaths from a world in transformation… The project as a whole unfolds as a spiritual journey, where life and death, memory and intuition, matter and spirit intertwine.
+          </p>
+          <p>
+            Dahroug’s aesthetic, refined and intense, moves between contemporary classical music, electronic suggestions, and minimalism… His poetics speak to those who seek in music not only beauty, but experience, reflection, and transformation.
+          </p>
+          <p>
+            With <em>Sur le Fil de l’Aube</em>, Sherif Dahroug invites us to remain in attentive listening, to walk respectfully across the thresholds of the world, and to search, in music, for an answer to our eternal need for balance and beauty.
+          </p>
+        </details>
+        <div class="source">
+          <span class="origin">VAULT LAB Magazine — Italy, Aug 2025</span>
+          <a class="more" href="https://vaultlab.it/2025/08/08/estate-in-ascolto-le-scelte-musicali-di-vault-lab/#:~:text=Sherif%20Dahroug%20%E2%80%93%20%E2%80%9CSur%20le%20Fil%20de%20l%E2%80%99Aube%E2%80%9D%3A%20una%20visione%20per%20pianoforte%20al%20confine%20dell%E2%80%99alba" target="_blank" rel="noopener">Read original →</a>
+        </div>
+      </article>
+
+      <!-- NewIndieRadar -->
+      <article class="card">
+        <blockquote>
+          “Sur le Fil de l'Aube” by Sherif DAHROUG quickly emerges as a truly excellent piano composition, capturing our attention with remarkable virtuosity and speed… distinctive, deliberately placed dissonances lend the work its unique harmonic character.
+        </blockquote>
+        <div class="source">
+          <span class="origin">NewIndieRadar.com — Germany, Sept 5, 2025</span>
+          <a class="more" href="https://newindieradar.com/post/793920570219724800/neuerscheinung-sur-le-fil-de-laube-von-sherif" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Jazz in Family -->
+      <article class="card">
+        <blockquote>
+          A mystical journey between ancient and contemporary….
+        </blockquote>
+        <div class="source">
+          <span class="origin">Mario Ferraioli — Jazz in Family (Italy)</span>
+          <a class="more" href="https://www.jazzinfamily.com/settembre-2025-groove-bonanza/#SherifDahroug" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Free Indie Culture -->
+      <article class="card">
+        <blockquote>
+          Sherif Dahroug is an internationally acclaimed composer, author, and concert artist… his work reflects a unique synthesis of scientific precision and poetic vision. Listen to “Sur le Fil de l’Aube”.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Free Indie Culture — Italy</span>
+          <a class="more" href="https://www.facebook.com/photo/?fbid=783651941085607&set=a.127012723416202" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Tinnitist -->
+      <article class="card">
+        <blockquote>
+          The Tinnitist Top 300 …
+        </blockquote>
+        <div class="source">
+          <span class="origin">Darryl Sterdan — Tinnitist (USA)</span>
+          <a class="more" href="https://tinnitist.com/2025/09/02/groover-playlist-328-september-girls-boys-part-3/#:~:text=Sherif%20Dahroug%20%7C%20Sur%20le%20Fil%20de%20l'Aube" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Frequenze Musicali -->
+      <article class="card">
+        <blockquote>
+          The fluidity of the structure makes time seem to flow differently, transforming the listening into a suspended and intensely evocative experience...
+        </blockquote>
+        <div class="source">
+          <span class="origin">Frequenze Musicali — Italy, Sept 2025</span>
+          <a class="more" href="https://www.facebook.com/cantantie.bandemergenti/posts/pfbid0mg64NgAoYqZ4sJ1Qoghf4x7Gm8xxMzmRfrKF8LpYBrd8Xy49cEvYVE8QFX3ZbxZvl" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Espressioni Musicali -->
+      <article class="card">
+        <blockquote>
+          An EP that creates very intense and pleasant atmospheric moods, crafting a surreal ambiance that deeply touches the soul.
+        </blockquote>
+        <div class="source">
+          <span class="origin">Espressioni Musicali — Italy, July 27, 2025</span>
+          <a class="more" href="https://www.facebook.com/marta.chioschi/posts/pfbid0fCpcB2CMNgYh6Ftr4mPGY3M5tpJkh63M3A4RzjekVznhMgQHoJPqBHX7yS8FWk4Pl" target="_blank" rel="noopener">Read more →</a>
+        </div>
+      </article>
+
     </section>
-
-    <section class="quote">
-      <div class="translation">
-        <p>
-          With the grace of an ancient ritual and the depth of a contemporary meditation, “Sur le Fil de l’Aube” emerges as one of the most evocative piano compositions in recent years. Written by Franco-Egyptian composer and artist Sherif Dahroug, the piece is the second movement of the EP Regards sur l’Horizon – Three Visions for Piano, winner of the 2024 Global Music Award in California.
-    
-          Released in September 2024, this work stands at the heart of contemporary avant-garde music, tracing a sonic bridge between Egyptian cosmology, universal spirituality, and inner exploration.
-          
-          “Sur le Fil de l’Aube” — literally on the thread of dawn — moves with a light yet solemn step along the boundary between darkness and light, between the end of what has been and the beginning of what is to come. It is within this fragile and sacred space that Sherif Dahroug places his vision: an archetypal figure, a mediator between opposites, listening to the world in silence and returning it in the form of music.
-          
-          The piano keys are not merely played, but invoked; the notes emerge like slow breaths from a world in transformation, like distant echoes of Ra ascending on the horizon, like silver threads stretched between sky and earth. All is immersed in a suspended, almost mystical atmosphere, where every pause is charged with meaning.
-          
-          The piece is part of the EP Regards sur l’Horizon, a pianistic triptych in which Dahroug explores, through sound, three symbolic moments of the cyclical nature of time and human experience. If “Sur le Fil de l’Aube” represents the threshold of beginning, the project as a whole unfolds as a spiritual journey, where life and death, memory and intuition, matter and spirit intertwine.
-          
-          Dahroug’s aesthetic, refined and intense, moves between contemporary classical music, electronic suggestions, and minimalism. Yet what strikes most is the depth with which the composer conveys philosophical and spiritual concepts through an essential, pure sonic language, far from ornament or virtuosity for its own sake.
-          
-          Sherif Dahroug’s career is in constant ascent: in 2025, he was officially invited to join the Recording Academy / GRAMMYs® as a voting member — a recognition that affirms the value of his contribution to the global contemporary music scene. His poetics speak to those who seek in music not only beauty, but experience, reflection, and transformation.
-          
-          With Sur le Fil de l’Aube, Sherif Dahroug invites us to remain in attentive listening, to walk respectfully across the thresholds of the world, and to search, in music, for an answer to our eternal need for balance and beauty.
-        </p>
-      </div>
-      <div class="source">
-        <span class="origin">VAULT LAB Magazine, Italy - August 2025</span>
-        <a href="https://vaultlab.it/2025/08/08/estate-in-ascolto-le-scelte-musicali-di-vault-lab/#:~:text=Sherif%20Dahroug%20%E2%80%93%20%E2%80%9CSur%20le%20Fil%20de%20l%E2%80%99Aube%E2%80%9D%3A%20una%20visione%20per%20pianoforte%20al%20confine%20dell%E2%80%99alba" 
-           target="_blank" rel="noopener">Read original →</a>
-      </div>
-    </section>
-    
-    <section class="quote">
-      <p>
-        Sur le Fil de l'Aube” by Sherif DAHROUG quickly emerges as a truly excellent piano composition, capturing our attention with remarkable virtuosity and speed. The dynamics and high precision embodied in this impressively performed and composed neoclassical piece are indeed difficult to put into words.
-        Equally striking are the distinctive, deliberately placed dissonances, which lend the work its unique harmonic character. Have a listen, and stay tuned for more new releases from Sherif DAHROUG on Spotify!
-      </p>
-      <div class="source">
-        <span class="origin">NewIndieRadar.com, Media Outlet / Journalist , Germany — September 5th, 2025</span>
-        <a href="https://newindieradar.com/post/793920570219724800/neuerscheinung-sur-le-fil-de-laube-von-sherif" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-    
-    <section class="quote">
-      <p>a mystical journey between ancient and contemporary....</p>
-      <div class="source">
-        <span class="origin">Mario Ferraioli, Jazz in Family magazine - Italy</span>
-        <a href="https://www.jazzinfamily.com/settembre-2025-groove-bonanza/#SherifDahroug" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-
-    <section class="quote">
-      <p>Sherif Dahroug is an internationally acclaimed composer, author, and concert artist, widely recognized for his profound and original voice in contemporary classical music. Trained as a naval architect before devoting himself fully to music, his work reflects a unique synthesis of scientific precision and poetic vision.
-        Listen to “Sur le Fil de l’Aube”</p>
-      <div class="source">
-        <span class="origin">Free Indie Culture, Media Outlet/Journalist- Italy</span>
-        <a href="https://www.facebook.com/photo/?fbid=783651941085607&set=a.127012723416202" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-
-    <section class="quote">
-      <p>The Tinnitist Top 300 ...</p>
-      <div class="source">
-        <span class="origin">Darryl Sterdan, Tinnitist - USA</span>
-        <a href="https://tinnitist.com/2025/09/02/groover-playlist-328-september-girls-boys-part-3/#:~:text=Sherif%20Dahroug%20%7C%20Sur%20le%20Fil%20de%20l'Aube" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-
-    <section class="quote">
-      <p>
-        The fluidity of the structure makes time seem to flow differently, transforming the listening into a suspended and intensely evocative experience...
-      </p>
-      <div class="source">
-        <span class="origin">Frequenze Musicali, Media Outlet / Journalist (collected from Groover, Italy) — September, 2025</span>
-        <a href="https://www.facebook.com/cantantie.bandemergenti/posts/pfbid0mg64NgAoYqZ4sJ1Qoghf4x7Gm8xxMzmRfrKF8LpYBrd8Xy49cEvYVE8QFX3ZbxZvl" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-
-    <section class="quote">
-      <p>
-        An EP that creates very intense and pleasant atmospheric moods,  
-        crafting a surreal ambiance that deeply touches the soul.
-      </p>
-      <div class="source">
-        <span class="origin">Espressioni Musicali, Media Outlet / Journalist (collected from Groover, Italy) — July 27, 2025</span>
-        <a href="https://www.facebook.com/marta.chioschi/posts/pfbid0fCpcB2CMNgYh6Ftr4mPGY3M5tpJkh63M3A4RzjekVznhMgQHoJPqBHX7yS8FWk4Pl" target="_blank" rel="noopener">Read more →</a>
-      </div>
-    </section>
-    
-
-
   </div>
-</body>
-</html>
+</div>
 
 
         <hr>
