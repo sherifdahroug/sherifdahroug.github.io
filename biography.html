@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    Sherif DAHROUG
+    Biography – Sherif Dahroug - Sherif DAHROUG
+    
   </title>
 
   <meta name="description" content="Sherif Dahroug, globally celebrated composer and concert master, is making groundbreaking strides within the international community of accomplished musician...">
@@ -79,703 +80,391 @@
 </nav>
 
 
-    <!DOCTYPE html>
+    <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Biography – Sherif Dahroug</title>
+  <meta name="description" content="Biography of composer & concert artist Sherif Dahroug — awards, education, philosophy, galleries, and press images."/>
   <style>
+    /* ====== Design tokens ====== */
+    :root {
+      --bg: #0e0d0c;           /* deep neutral */
+      --panel: #141311;        /* card */
+      --text: #f5f4f3;         /* main text */
+      --muted: #c9c3bc;        /* muted text */
+      --accent: #e6b8a2;       /* warm rose-beige */
+      --accent-2: #b5835a;     /* warm bronze */
+      --maxw: 72rem;           /* ~1152px */
+    }
+
+    /* ====== Base ====== */
+    html { color-scheme: dark; }
+    * { box-sizing: border-box; }
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #fafafa;
+      margin: 0; font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      line-height: 1.7; color: var(--text); background: var(--bg);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
+    a { color: var(--accent); text-underline-offset: 3px; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ====== Layout ====== */
+    .container { max-width: var(--maxw); margin-inline: auto; padding: 2rem 1rem; }
+    .section { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,.06); }
+    .card { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 1.25rem; }
+
+    /* ====== Typography ====== */
+    h1, h2, h3 { margin: 0 0 .75rem; font-weight: 650; letter-spacing: .2px; }
+    h1 { font-size: clamp(1.9rem, 2.5vw + 1rem, 3rem); line-height: 1.15; }
+    h2 { font-size: clamp(1.4rem, 1.5vw + .9rem, 2rem); color: var(--accent); }
+    h3 { font-size: clamp(1.1rem, 1.1vw + .85rem, 1.4rem); color: #e9e6e3; }
+    .lead { color: var(--muted); font-size: clamp(1rem, .5vw + .95rem, 1.15rem); }
+    p { margin: 0 0 1rem; text-align: justify; }
+
+    /* ====== Hero ====== */
+    .hero { position: relative; min-height: 60vh; display: grid; place-items: center; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: url('/img/Bio photos/bio-herobanner.jpg') center 30%/cover no-repeat;
+      filter: saturate(0.9) contrast(1.05);
+      transform: scale(1.02);
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #3c2f2f;
+    .hero::after { /* vignette */
+      content: ""; position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 20%, rgba(0,0,0,.05), rgba(0,0,0,.7));
     }
-    .intro {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+    .hero-inner { position: relative; text-align: center; padding: 2rem; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: .75rem; color: rgba(255,255,255,.8); }
+    .kicker { display: inline-block; margin-top: .5rem; padding: .4rem .75rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; font-size: .85rem; color: var(--text); backdrop-filter: blur(6px); background: rgba(20,19,17,.35); }
+
+    /* ====== Grid & columns ====== */
+    .twocol { column-count: 2; column-gap: 2rem; }
+    .twocol > * { break-inside: avoid; }
+    @media (max-width: 900px){ .twocol { column-count: 1; } }
+
+    /* ====== Galleries ====== */
+    .gallery { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .gallery a { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+    .gallery img { transition: transform .35s ease, opacity .35s ease; }
+    .gallery a:hover img { transform: scale(1.03); opacity: .92; }
+
+    /* CSS-only lightbox using :target */
+    .lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.9); z-index: 60; padding: 2rem; }
+    .lightbox img { max-width: min(1200px, 92vw); max-height: 85vh; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+    .lightbox:target { display: flex; }
+    .close { position: fixed; top: 18px; right: 22px; font-size: 32px; color: white; text-decoration: none; line-height: 1; }
+
+    /* ====== Utilities ====== */
+    .center { text-align: center; }
+    .muted { color: var(--muted); }
+    .spacer-sm { height: 1rem; }
+    .spacer-md { height: 2rem; }
+    .btn {
+      display: inline-block; padding: .8rem 1.2rem; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #130f0c; font-weight: 700; border: none; text-decoration: none;
+      box-shadow: 0 10px 24px rgba(229, 185, 160, .18);
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
     }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: #444;
-    }
-    p {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      .intro, p { font-size: 0.95rem; }
-      .section h2 { font-size: 1.3rem; }
-      .container { padding: 1.5rem 0.75rem; }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 16px 30px rgba(229, 185, 160, .22); }
+
+    /* ====== Print ====== */
+    @media print {
+      body { background: white; color: #111; }
+      .hero, .lightbox, .close { display: none !important; }
+      .section { border: none; padding: 1.5rem 0; }
+      a::after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
     }
   </style>
 </head>
 <body>
-<section id="intro">
+
+  <!-- Hero -->
+  <header class="hero" role="banner" aria-label="Biography hero image">
+    <div class="hero-inner">
+      <div class="eyebrow">Sherif Dahroug</div>
+      <h1>ABOUT THE ARTIST</h1>
+      <div class="kicker">Biography</div>
+    </div>
+  </header>
+
+  <!-- Intro / Bio -->
+  <section class="section" id="bio">
     <div class="container">
-
-        <div class="row">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Hero Banner</title>
-            <style>
-                body, html {
-                    margin: 0;
-                    padding: 0;
-                    height: 100%;
-                    font-family: Arial, sans-serif;
-                }
-                .hero {
-                    position: relative;
-                    width: 100%;
-                    height: 100vh;
-                    background: url('img/Bio photos/bio-herobanner.jpg') no-repeat center 30%/cover;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    color: white;
-                    font-size: 2rem;
-                    font-weight: bold;
-                }
-                .content {
-                    height: 10vh;
-                    background: white;
-                    padding: 20px;
-                }
-            </style>
-          </head>
-          <body>
-              <div class="hero" id="hero">
-                  
-              </div>
-              <div class="content">
-                  
-              </div>
-              <script>
-                  window.addEventListener('scroll', function() {
-                      let scrollValue = window.scrollY;
-                      let opacity = 1 - scrollValue / 1500;
-                      document.getElementById('hero').style.opacity = opacity;
-                  });
-              </script>
-          </body>
-          <br>
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Biography – Sherif Dahroug</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      line-height: 1.6;
-      margin: 0;
-      background-color: #fdfdfd;
-      color: #111;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      text-align: center; color: #111;
-    }
-
-    h3 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: normal;
-      color: #555;
-    }
-
-    .two-columns {
-      column-count: 2;
-      column-gap: 2rem;
-    }
-
-    .highlight-grammy {
-      display: block;
-      padding: 1rem;
-      margin: 1rem 0;
-      background-color: #f6f1ea;
-      border-left: 4px solid #c19955;
-      font-style: italic;
-      font-size: 0.95rem;
-      break-inside: avoid;
-    }
-
-    p {
-      text-align: justify;
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .two-columns {
-        column-count: 1;
-      }
-    }
-    .highlight-title {
-    background-color: #171310; /* light warm beige */
-    border-left: 5px solid #732721; /* soft golden border */
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: #3c2f2f;
-    font-weight: bold;
-    font-size: 1.8rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-  </style>
-</head>
-<body>
-    <div class="container">
-        <div class="highlight-title">
-          <h1>ABOUT THE ARTIST</h1>
+      <div class="card">
+        <h2>Biography</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            Sherif Dahroug is an internationally acclaimed composer and concert artist whose visionary work marks a major advancement in contemporary music. Originally trained as a naval architect, he earned a Master’s degree in Naval Architecture and Hydrodynamics with honors before fully dedicating himself to the pursuit of art and music. This remarkable journey reflects his relentless quest for excellence, swiftly establishing him as a prominent figure on the international music scene.
+          </p>
+          <p>
+            A recipient of numerous prestigious accolades and major awards, Sherif Dahroug has been honored with the Diamond Prize for Composition at the Classical Music Awards in London and the Grand Prize of the New York International Music Competition. Among his many distinctions are Platinum Absolute First Prizes at the World Master Open, as well as multiple Gold and Silver honors from esteemed competitions across Europe, Russia, and the United States.
+          </p>
+          <p>
+            In 2025, he was awarded the Absolute First Platinum Prize at the European Symphony Architect Awards for his opus and album <em>Dichotomie</em>. Further recognizing his artistic influence, the jury named him "Artist of the Month" at the European Classical Music Awards. These same awards later declared him the Annual Diamond Prize Winner and bestowed upon him the distinguished title of "Composer of the Year" at the 2024 Annual Grand Prix.
+          </p>
+          <p class="muted card" style="margin: .5rem 0;">
+            In 2025, Sherif Dahroug was invited to join the Recording Academy / GRAMMYs® as a <strong>Voting Member</strong>, honoring his artistic vision and global impact on contemporary music.
+          </p>
+          <p>
+            His album <em>Regards sur l’Horizon</em>, honored by the Global Music Awards, has already established itself as a landmark in contemporary musical creation. His academic journey, shaped by studies at the Schola Cantorum, the École Normale de Musique de Paris, and the Royal Academy of Music in London, placed him under the tutelage of eminent mentors—heirs to the legendary traditions of Sergiu Celibidache, Nadia Boulanger, and Olivier Messiaen.
+          </p>
+          <p>
+            Decorated with the highest honors and degrees, he embodies a refined musicianship where rigor and creative freedom intertwine. Beyond music, Sherif Dahroug is a philosopher and author whose literary work expands the boundaries of artistic creation.
+          </p>
+          <p>
+            His latest book, <em>Dichotomie: Grand Hymne des Deux Terres</em>, stands as a bold and singular masterpiece, fusing poetry, philosophy, and mysticism to offer a uniquely immersive experience. More than just an exploration of ancient Egyptian thought, this work revives it through an incantatory language, a labyrinthine structure, and a contemplative aesthetic, elevating duality as a foundational principle of both art and existence.
+          </p>
+          <p>
+            His earlier book, <em>In Pursuit of a Sonic Architectonics</em>, serves as a bold manifesto that transcends traditional boundaries of creation. Drawing from the rich symbolism and philosophy of ancient Egypt, it bridges transcendental contemplation with technical realization, transforming contradictions and dissonances into spaces of unprecedented beauty.
+          </p>
+          <p>
+            An insatiable explorer of the correspondences between sound, space, and transcendence, Sherif Dahroug pursues a vision where each creation becomes a timeless sonic architecture, a sanctuary open to infinity.
+          </p>
         </div>
-        <h3>BIOGRAPHY</h3>
-      </div>      
+      </div>
+    </div>
+  </section>
 
-    <div class="two-columns">
-      <p>
-        Sherif Dahroug is an internationally acclaimed composer and concert artist whose visionary work marks a major advancement in contemporary music. Originally trained as a naval architect, he earned a Master’s degree in Naval Architecture and Hydrodynamics with honors before fully dedicating himself to the pursuit of art and music. This remarkable journey reflects his relentless quest for excellence, swiftly establishing him as a prominent figure on the international music scene.
-      </p>
+  <!-- Image break -->
+  <section class="section" aria-label="Bio image">
+    <div class="container">
+      <img src="/img/Bio photos/bio01.jpg" alt="Sherif Dahroug portrait" loading="lazy" decoding="async">
+    </div>
+  </section>
 
-      <p>
-        A recipient of numerous prestigious accolades and major awards, Sherif Dahroug has been honored with the Diamond Prize for Composition at the Classical Music Awards in London and the Grand Prize of the New York International Music Competition. Among his many distinctions are Platinum Absolute First Prizes at the World Master Open, as well as multiple Gold and Silver honors from esteemed competitions across Europe, Russia, and the United States.
-      </p>
+  <!-- Distinctions -->
+  <section class="section" id="distinctions">
+    <div class="container">
+      <div class="card">
+        <h2>A Constellation of Distinctions</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            Sherif Dahroug has established himself as one of the most distinguished artists of his generation, earning over 26 prestigious awards in both composition and performance. His exceptional artistry has been recognized across Europe, Russia, and the United States, where he has consistently received top honors for his visionary contributions to music.
+          </p>
+          <p>
+            In the field of composition, Dahroug has been awarded some of the highest distinctions, including the Diamond Prize and the title of Composer of the Year from the European Classical Music Awards, as well as the institution’s Annual Grand Prix. His work has also been honored with the Diamond Prize – World Exceptional Musicians from the World Organization of Music Competitions and the Diamond Prize from the World Classical Music Awards. Further accolades include the Visionary Innovation Special Award, the Platinum Prize at the Saint-Saëns International Music Competition, and the Platinum Absolute First Prize at the World Master Open Music Competition in London.
+          </p>
+          <p>
+            Among his other achievements, he has received the Grand Prix and the Distinguished Creativity Award from the World Grand Prix International Music Competition for Composition, as well as a Silver Medal from the Global Music Awards in California.
+          </p>
+          <p>
+            Dahroug’s accomplishments in performance are equally remarkable, with numerous first and grand prizes from some of the world’s most prestigious competitions. He has won the Gold First Prize at the Virtuoso International Music Awards in London and the First Prize at the Medici International Music Competition. His accolades also include the Grand Prix at the New York Classical Music Competition, the First Prize at the London International Music Competition, and the First Prize at the IV Lugano International Music Competition in Switzerland.
+          </p>
+          <p>
+            Additional distinctions include the Diamond Grand Prix from the Royal VanBach International Music Competition in Amsterdam, the Platinum First Prize at the World Grand Prix I.M.C. – Professional in London, and the Special International Career Project Award from the IV Lugano International Music Competition.
+          </p>
+          <p>
+            Further recognition has come in the form of the Platinum Award – Strings from the European Classical Music Awards, the Platinum First Prize from the European Classical Music Artists Awards, and several Silver Prizes from the Vienna International Mozart Competition, the International Moscow Music Competition, the Euterpe Music Awards, and the New York International Music Competition.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p>
-        In 2025, he was awarded the Absolute First Platinum Prize at the European Symphony Architect Awards for his opus and album Dichotomie. Further recognizing his artistic influence, the jury named him "Artist of the Month" at the European Classical Music Awards. These same awards later declared him the Annual Diamond Prize Winner and bestowed upon him the distinguished title of "Composer of the Year" at the 2024 Annual Grand Prix.
-      </p>
-      <br>
+  <!-- Image break -->
+  <section class="section" aria-label="Bio image">
+    <div class="container">
+      <img src="/img/Bio photos/bio03.jpg" alt="Sherif Dahroug performing" loading="lazy" decoding="async">
+    </div>
+  </section>
 
-      <div class="highlight-grammy">
-        In 2025, Sherif Dahroug was invited to join the Recording Academy / GRAMMYs® as a <strong>Voting Member</strong>, honoring his artistic vision and global impact on contemporary music.
+  <!-- Heritage & Excellence -->
+  <section class="section" id="heritage">
+    <div class="container">
+      <div class="card">
+        <h2>Heritage and Excellence</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            In 2022, he was unanimously awarded the <em>Diplôme de Concert</em> from the Schola Cantorum in Paris, the highest artistic distinction of this prestigious institution—along with doctoral studies. In the arts, this recognition is regarded as an acknowledgment of excellence comparable to the highest academic achievements.
+          </p>
+          <p>
+            In 2017, he earned the <em>Diplôme de Virtuosité</em>, equivalent to a post‑Master of Arts (HEM), representing the pinnacle of advanced musical training.
+          </p>
+          <p>
+            In 2009, after completing advanced diplomas in performance and composition at the London Royal Academy of Music, he moved to Paris with a scholarship from the École Normale de Musique. Between 2009 and 2015, he refined his craft under the tutelage of Maestros François Martin and Tania Chagnot, earning the <em>Brevet d’Exécution</em> and the <em>Diplôme d’Exécution</em>.
+          </p>
+          <p>
+            In 2014, he achieved the <em>Diplôme d’Harmonie et d’Analyse Musicale</em> under the mentorship of Maestros Narcis Bonet and Jean‑Dominique Pasquet. In 2011, he completed a <em>Diplôme d’Histoire</em> under the supervision of Frank Torres.
+          </p>
+          <p>
+            These accolades attest to a synthesis of technical virtuosity, interpretative depth, and intellectual rigor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <section class="section" aria-label="Bio image">
+    <div class="container">
+      <img src="/img/Bio photos/bio04.jpg" alt="Piano study" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Alexandria – Paris -->
+  <section class="section" id="alexandria-paris">
+    <div class="container">
+      <div class="card">
+        <h2>Alexandria – Paris</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            Originally from Alexandria, Egypt, Sherif Dahroug began his formal musical training at the Alexandria Conservatory of Music, where he also held a teaching position. Under the mentorship of the composer Ramz Sabry Samy, he deepened his studies in harmony and composition.
+          </p>
+          <p>
+            From 2006 to 2009, as an educator at both the Alexandria Conservatory and the Bibliotheca Alexandrina, he founded an ensemble that infused the city’s classical music scene with renewed energy.
+          </p>
+          <p>
+            His dedication earned him a scholarship from the École Normale de Musique de Paris. In 2011, he represented Alexandria at the ECUME Festival in Genoa, Italy, performing at the historic Paganini Theatre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <section class="section" aria-label="Bio image">
+    <div class="container">
+      <img src="/img/Bio photos/bio05.jpg" alt="Concert hall photo" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Art as a Quest -->
+  <section class="section" id="quest">
+    <div class="container">
+      <div class="card">
+        <h2>Art as a Quest</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            Beyond performance and composition, Sherif Dahroug embraces a vision where music intertwines with philosophy, visual arts, architecture, and astronomy. By transcending traditional boundaries, he crafts a language that speaks to the soul as much as to the intellect.
+          </p>
+          <p>
+            His musical universe spans neo‑impressionism to innovative theatrical soundscapes. Recent works (2023–2024) such as <em>Philae</em>, <em>Hiérakonpolis</em>, <em>Abydos</em>, <em>ATUM</em>, and <em>Eirene – Old Comedy!</em> exemplify his versatility.
+          </p>
+          <p>
+            These compositions reveal a mastery of technique and artistic sensitivity that pushes the boundaries of contemporary music, inviting contemplation of the interconnectedness between disciplines, humanity, and the cosmos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <section class="section" aria-label="Bio image">
+    <div class="container">
+      <img src="/img/Bio photos/bio08.jpg" alt="Studio photo" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Ancient Egypt -->
+  <section class="section" id="egypt">
+    <div class="container">
+      <div class="card">
+        <h2>Ancient Egypt as a Source of Awakening</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            Deeply inspired by ancient Egypt, Sherif Dahroug delves into its astronomy, philosophy, and hieroglyphic writing. Since 2016, his blog <em>Meditations on Egyptian Wisdom</em> has cultivated a community drawn to his perspective.
+          </p>
+          <p>
+            Drawing from the astronomy, history, and philosophy of this civilization, he infuses his musical creations with a timeless and universal dimension.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <section class="section" aria-label="Bio image">
+    <div class="container">
+      <img src="/img/Bio photos/bio09.jpg" alt="Manuscript and notes" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section class="section" id="books">
+    <div class="container">
+      <div class="card">
+        <h2>A Pen in Search of Architectonics</h2>
+        <div class="spacer-sm"></div>
+        <div class="twocol">
+          <p>
+            <em>In Search of a Sonic Architectonic</em> is the fruit of eight years of research and reflection, inviting readers on an introspective journey where architecture, astronomy, philosophy, and music converge.
+          </p>
+          <p>
+            The work also features the monumental <em>Regards sur l’Horizon – Opus Magistralis</em>, composed of twenty movements and spanning over two hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Gallery -->
+  <section class="section" id="press-gallery" aria-labelledby="press-title">
+    <div class="container">
+      <h2 id="press-title">The Official Press Vault</h2>
+      <div class="spacer-md"></div>
+      <div class="gallery">
+        <a href="#press1"><img src="/img/Press Gallery/Press1.jpg" alt="Press photo 1" loading="lazy" decoding="async"></a>
+        <a href="#press2"><img src="/img/Press Gallery/Press2.jpg" alt="Press photo 2" loading="lazy" decoding="async"></a>
+        <a href="#press3"><img src="/img/Press Gallery/Press3.jpg" alt="Press photo 3" loading="lazy" decoding="async"></a>
+        <a href="#press4"><img src="/img/Press Gallery/Press04.jpg" alt="Press photo 4" loading="lazy" decoding="async"></a>
+        <a href="#press5"><img src="/img/Press Gallery/Press05.jpg" alt="Press photo 5" loading="lazy" decoding="async"></a>
+        <a href="#press6"><img src="/img/Press Gallery/Press06.jpg" alt="Press photo 6" loading="lazy" decoding="async"></a>
       </div>
 
-      <br>
-      
-
-      <p>
-        His album <em>Regards sur l’Horizon</em>, honored by the Global Music Awards, has already established itself as a landmark in contemporary musical creation. His academic journey, shaped by studies at the Schola Cantorum, the École Normale de Musique de Paris, and the Royal Academy of Music in London, placed him under the tutelage of eminent mentors—heirs to the legendary traditions of Sergiu Celibidache, Nadia Boulanger, and Olivier Messiaen.
-      </p>
-
-      <p>
-        Decorated with the highest honors and degrees, he embodies a refined musicianship where rigor and creative freedom intertwine. Beyond music, Sherif Dahroug is a philosopher and author whose literary work expands the boundaries of artistic creation.
-      </p>
-
-      <p>
-        His latest book, <em>Dichotomie: Grand Hymne des Deux Terres</em>, stands as a bold and singular masterpiece, fusing poetry, philosophy, and mysticism to offer a uniquely immersive experience. More than just an exploration of ancient Egyptian thought, this work revives it through an incantatory language, a labyrinthine structure, and a contemplative aesthetic, elevating duality as a foundational principle of both art and existence.
-      </p>
-
-      <p>
-        His earlier book, <em>In Pursuit of a Sonic Architectonics</em>, serves as a bold manifesto that transcends traditional boundaries of creation. Drawing from the rich symbolism and philosophy of ancient Egypt, it bridges transcendental contemplation with technical realization, transforming contradictions and dissonances into spaces of unprecedented beauty.
-      </p>
-
-      <p>
-        An insatiable explorer of the correspondences between sound, space, and transcendence, Sherif Dahroug pursues a vision where each creation becomes a timeless sonic architecture, a sanctuary open to infinity.
-      </p>
+      <!-- Lightboxes -->
+      <div id="press1" class="lightbox" aria-label="Press photo 1"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press1.jpg" alt="Press photo 1 large"></div>
+      <div id="press2" class="lightbox" aria-label="Press photo 2"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press2.jpg" alt="Press photo 2 large"></div>
+      <div id="press3" class="lightbox" aria-label="Press photo 3"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press3.jpg" alt="Press photo 3 large"></div>
+      <div id="press4" class="lightbox" aria-label="Press photo 4"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press04.jpg" alt="Press photo 4 large"></div>
+      <div id="press5" class="lightbox" aria-label="Press photo 5"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press05.jpg" alt="Press photo 5 large"></div>
+      <div id="press6" class="lightbox" aria-label="Press photo 6"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press06.jpg" alt="Press photo 6 large"></div>
     </div>
-  </div>
+  </section>
+
+  <!-- Artisan's Lens Gallery -->
+  <section class="section" id="lens" aria-labelledby="lens-title">
+    <div class="container">
+      <h2 id="lens-title">The Artisan's Lens</h2>
+      <div class="spacer-md"></div>
+      <div class="gallery">
+        <a href="#lens2"><img src="/img/The Artisan's Lens/Lens02.jpg" alt="Lens photo 2" loading="lazy" decoding="async"></a>
+        <a href="#lens3"><img src="/img/The Artisan's Lens/Lens03.jpg" alt="Lens photo 3" loading="lazy" decoding="async"></a>
+        <a href="#lens4"><img src="/img/The Artisan's Lens/Lens04.jpg" alt="Lens photo 4" loading="lazy" decoding="async"></a>
+        <a href="#lens5"><img src="/img/The Artisan's Lens/Lens05.jpg" alt="Lens photo 5" loading="lazy" decoding="async"></a>
+        <a href="#lens6"><img src="/img/The Artisan's Lens/Lens06.jpg" alt="Lens photo 6" loading="lazy" decoding="async"></a>
+        <a href="#lens7"><img src="/img/The Artisan's Lens/Lens07.jpg" alt="Lens photo 7" loading="lazy" decoding="async"></a>
+      </div>
+
+      <!-- Lightboxes -->
+      <div id="lens2" class="lightbox" aria-label="Lens photo 2"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens02.jpg" alt="Lens photo 2 large"></div>
+      <div id="lens3" class="lightbox" aria-label="Lens photo 3"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens03.jpg" alt="Lens photo 3 large"></div>
+      <div id="lens4" class="lightbox" aria-label="Lens photo 4"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens04.jpg" alt="Lens photo 4 large"></div>
+      <div id="lens5" class="lightbox" aria-label="Lens photo 5"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens05.jpg" alt="Lens photo 5 large"></div>
+      <div id="lens6" class="lightbox" aria-label="Lens photo 6"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens06.jpg" alt="Lens photo 6 large"></div>
+      <div id="lens7" class="lightbox" aria-label="Lens photo 7"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens07.jpg" alt="Lens photo 7 large"></div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section class="section center" id="download">
+    <div class="container">
+      <a class="btn" href="/img/news/bio-March25.pdf" download="Sherif_Dahroug_Bio_March25.pdf">Download Biography (PDF)</a>
+      <div class="spacer-sm"></div>
+      <p class="muted center">High‑resolution press biography for media use.</p>
+    </div>
+  </section>
+
 </body>
 </html>
 
-</section>
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Press Photo Gallery</title>
-  <style>
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: "Garamond", serif;
-          background-color: #111;
-          color: white;
-          text-align: center;
-          padding: 50px;
-      }
-
-      h1 {
-          margin-bottom: 20px;
-          font-size: 2.5rem; color: #fafafa;
-      }
-
-      .gallery {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 15px;
-          padding: 20px;
-          max-width: 1200px;
-          margin: auto;
-      }
-
-      .gallery img {
-          width: 100%;
-          height: auto;
-          border-radius: 10px;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-          cursor: pointer;
-      }
-
-      .gallery img:hover {
-          transform: scale(1.05);
-          opacity: 0.8;
-      }
-
-      /* Lightbox effect */
-      .lightbox {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.9);
-          display: none;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-      }
-
-      .lightbox img {
-          max-width: 80%;
-          max-height: 80%;
-          border-radius: 10px;
-      }
-
-      .lightbox:target {
-          display: flex;
-      }
-
-      .close {
-          position: absolute;
-          top: 20px;
-          right: 40px;
-          font-size: 30px;
-          color: white;
-          text-decoration: none;
-      }
-  </style>
-<br>
-</head>
-<body>
-
-  <h1>The Official Press Vault</h1>
-
-
-  <div class="gallery">
-      <a href="#img1"><img src="img/Press Gallery/Press1.jpg" alt="img/Press Gallery/Press1.jpg"></a>
-      <a href="#img2"><img src="img/Press Gallery/Press2.jpg" alt="img/Press Gallery/Press2.jpg"></a>
-      <a href="#img3"><img src="img/Press Gallery/Press3.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-      <a href="#img4"><img src="img/Press Gallery/Press04.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-      <a href="#img5"><img src="img/Press Gallery/Press05.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-      <a href="#img06"><img src="img/Press Gallery/Press06.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-  </div>
-
-  <!-- Lightbox Modals -->
-  <div id="img1" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="/img/Press Gallery/Press1.jpg" alt="Press Photo 1">
-  </div>
-
-  <div id="img2" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="/img/Press Gallery/Press2.jpg" alt="Press Photo 2">
-  </div>
-
-  <div id="img3" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="/img/Press Gallery/Press3.jpg" alt="Press Photo 3">
-  </div>
-
-  <div id="img4" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="/img/Press Gallery/Press04.jpg" alt="Press Photo 4">
-  </div>
-
-  <div id="img5" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="/img/Press Gallery/Press05.jpg" alt="Press Photo 5">
-  </div>
-
-  <div id="img6" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="/img/Press Gallery/Press06.jpg" alt="Press Photo 6">
-  </div>
-</body>
-
-
-<section id="intro">
-    <div class="container">
-        <div class="row">
-
-            <div class="block">
-                <img src="/img/Bio photos/bio01.jpg" alt="biography_header"  style="max-width: 100%;">
-            </div>
-            <br>
-
-            <div class="two-columns">  
-                <h3>A Constellation of Distinctions</h3>
-                <p style="text-align: justify;">
-                    Sherif Dahroug has established himself as one of the most distinguished artists of his generation, earning over 26 prestigious awards in both composition and performance. His exceptional artistry has been recognized across Europe, Russia, and the United States, where he has consistently received top honors for his visionary contributions to music.
-                    In the field of composition, Dahroug has been awarded some of the highest distinctions, including the Diamond Prize and the title of Composer of the Year from the European Classical Music Awards, as well as the institution’s Annual Grand Prix. His work has also been honored with the Diamond Prize – World Exceptional Musicians from the World Organization of Music Competitions and the Diamond Prize from the World Classical Music Awards. Further accolades include the Visionary Innovation Special Award, the Platinum Prize at the Saint-Saëns International Music Competition, and the Platinum Absolute First Prize at the World Master Open Music Competition in London. Among his other achievements, he has received the Grand Prix and the Distinguished Creativity Award from the World Grand Prix International Music Competition for Composition, as well as a Silver Medal from the Global Music Awards in California.
-                    Dahroug’s accomplishments in performance are equally remarkable, with numerous first and grand prizes from some of the world’s most prestigious competitions. He has won the Gold First Prize at the Virtuoso International Music Awards in London and the First Prize at the Medici International Music Competition. His accolades also include the Grand Prix at the New York Classical Music Competition, the First Prize at the London International Music Competition, and the First Prize at the IV Lugano International Music Competition in Switzerland. Additional distinctions include the Diamond Grand Prix from the Royal VanBach International Music Competition in Amsterdam, the Platinum First Prize at the World Grand Prix I.M.C. – Professional in London, and the Special International Career Project Award from the IV Lugano International Music Competition. Further recognition has come in the form of the Platinum Award – Strings from the European Classical Music Awards, the Platinum First Prize from the European Classical Music Artists Awards, and several Silver Prizes from the Vienna International Mozart Competition, the International Moscow Music Competition, the Euterpe Music Awards, and the New York International Music Competition.
-                    Beyond these achievements, Dahroug has received special distinctions highlighting his influence and impact on the world of classical music. These include the Artist of the Month Special Award from the European Classical Music Awards, the Regional Representative Special Prize, and the R.R. Paris, France Special Prize from the European Classical Music Artists Awards.
-                    With a career marked by an exceptional number of prestigious honors, Sherif Dahroug continues to redefine artistic excellence, leaving an enduring legacy in the world of classical music.
-                </p>                     
-            </div>
-
-            <br>
-            <br>
-
-
-            <div class="block">
-                <img src="/img/Bio photos/bio03.jpg" alt="biography_header"  style="max-width: 100%;">
-            </div>
-            <br>
-
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>Heritage and Excellence</h3>
-                <p style="text-align: justify;">
-                  In 2022, he was unanimously awarded the Diplôme de Concert from the Schola Cantorum in Paris, the highest artistic distinction of this prestigious institution—along with doctoral studies—. In the arts, this recognition is regarded as an acknowledgment of excellence comparable to the highest academic achievements. This honor underscores Dahroug's exceptional virtuosity and artistic mastery, cultivated under the guidance of Maestros Pascal Boels (interpretation), Jean-Pierre Wallez (chamber music and conducting), and Narcis Bonet and Michel Denis (composition, analysis, orchestral conducting).
-                    In 2017, he earned the The Diplôme de Virtuosité, equivalent to a post-Master of Arts (HEM), represents the pinnacle of advanced musical training, crowning an extensive education and remarkable artistic accomplishment.
-                    Dahroug’s musical journey, marked by an unwavering pursuit of excellence, is further enriched by his prestigious education. In 2009, after completing advanced diplomas in performance and composition at the London Royal Academy of Music, he moved to Paris with a scholarship from the École Normale de Musique. Between 2009 and 2015, he refined his craft under the tutelage of Maestros François Martin and Tania Chagnot, earning the Brevet d’Exécution and the Diplôme d’Exécution.
-                    His musical exploration also includes a robust theoretical foundation. In 2014, he achieved the Diplôme d’Harmonie et d’Analyse Musicale under the mentorship of Maestros Narcis Bonet and Jean-Dominique Pasquet, organist of the Oratoire du Louvre. In 2011, he completed a Diplôme d’Histoire under the supervision of Frank Torres, deepening his understanding of the roots and evolution of musical art.
-                    These accolades, earned at emblematic institutions and under the guidance of exceptional masters, attest to a rare synthesis of technical virtuosity, interpretative depth, and intellectual rigor.
-                    
-                </p>                     
-            </div>
-            <br>
-            
-            <br>  
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>Alexandria - Paris</h3>
-                <p style="text-align: justify;">Originally from Alexandria, Egypt, Sherif Dahroug began his formal musical training at the Alexandria Conservatory of Music, where he not only honed his craft but also held a teaching position. Under the mentorship of the distinguished Egyptian composer Ramz Sabry Samy, he deepened his studies in harmony and composition, refining his musical voice within the rich artistic landscape of his hometown.
-
-                  From 2006 to 2009, his tenure as an educator at both the Alexandria Conservatory and the Bibliotheca Alexandrina was marked by a pivotal contribution to the city’s classical music scene. He founded an ensemble that infused Alexandria’s musical tradition with renewed energy and passion, elevating its presence with dynamic and expressive performances.
-                  
-                  His dedication to both performance and pedagogy earned him a prestigious scholarship from the École Normale de Musique de Paris, where he pursued advanced studies, further expanding his artistic horizons. In 2011, he brought Alexandria’s musical heritage to the international stage, representing his city at the ECUME Festival in Genoa, Italy, with a performance at the historic Paganini Theatre. This milestone underscored his ability to bridge cultures through music, carrying forward the legacy of his hometown while embracing a broader, global artistic vision.   
-                </p>                     
-            </div>
-            <br>
-            <br>
-
-            <div class="block">
-                <img src="/img/Bio photos/bio04.jpg" alt="biography_header"  style="max-width: 100%;">
-            </div>
-            <br>
-
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>Art as a Quest</h3>
-                <p style="text-align: justify;">Beyond performance and composition, Sherif Dahroug embraces a vision where music intertwines with philosophy, visual arts, architecture, and even astronomy. This fascination with interdisciplinary connections reflects a profound artistic quest that fosters boundless creativity. By transcending the boundaries of traditional genres, Dahroug explores uncharted musical perspectives, crafting a language that speaks to the soul as much as to the intellect.
-                    His rich and multifaceted musical universe spans from neo-impressionism to innovative theatrical soundscapes. Each composition becomes a bridge between disciplines, demonstrating a remarkable ability to reinvent styles and forms. Among his recent works (2023–2024), pieces such as Philae, Hiérakonpolis, Abydos, ATUM, and Eirene – Old Comedy! exemplify his versatility and commitment to capturing the essence of art as an eternal quest.
-                    These compositions, imbued with meticulous reflection, reveal a mastery of technique and artistic sensitivity that pushes the conventional boundaries of contemporary music. Far from being mere pieces, they transform into immersive experiences, inviting profound contemplation of the interconnectedness between disciplines, humanity, and the cosmos.
-                    
-                </p>                     
-            </div>
-            <br>
-            <br>
-
-            <div class="block">
-                <img src="/img/Bio photos/bio05.jpg" alt="biography_header"  style="max-width: 100%;">
-            </div>
-            <br>
-
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>Regards sur l’Horizon</h3>
-                <p style="text-align: justify;">The album Regards sur l’Horizon by the internationally acclaimed Egyptian composer and artist has been awarded the Silver Medal in the Composition category at the prestigious Global Music Awards in La Jolla, California, USA. This recognition places Dahroug among esteemed company, shared with legends such as Gheorghe Zamfir and renowned ensembles like the London Symphony Orchestra, the Royal Philharmonic Orchestra, and the Prague Sinfonietta.
-                    Celebrating an achievement that transcends boundaries, Regards sur l’Horizon masterfully bridges tradition and modernity. The Global Music Awards, which honor worldwide musical excellence, have marked this album as an exceptional accomplishment.
-                    By representing both Egypt and France on the global stage, this work embodies a universal celebration of creativity and artistic diversity, resonating with an enduring timelessness.
-                    
-                </p>                     
-            </div>
-            <br>
-            <br>
-
-            
-            <br>
-
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>The Art of Variations</h3>
-                <p style="text-align: justify;">The album The Art of Variations, a live recording released under the Lyre de Mercure label, showcases a masterful performance by the artist. It features a trilogy of iconic masterpieces from the musical repertoire, offering a fresh and insightful interpretation of these celebrated works.
-                    Hailed by critics, the album was described by the Global Influential Times in April 2024 as a “magnificent, insightful, and powerful musical interpretation... a true contribution to universal cultural heritage,” highlighting the depth of Dahroug’s artistic vision.
-                    This recording embodies a bold musical exploration that transcends traditional boundaries. Through his nuanced understanding of the pieces, Dahroug uncovers often-overlooked subtleties while breathing new life into classical compositions. His approach enriches the listening experience, transforming the album into a profound reflection and emotional journey.
-                    With The Art of Variations, Dahroug demonstrates his unique ability to delve into the intricacies of classical works while infusing them with his artistic perspective. The album stands as a significant testament to the evolution of music, serving as a bridge between eras and affirming the essential role of art in preserving tradition and fostering innovation within global culture.                    
-                </p>                     
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Press Photo Gallery</title>
-  <style>
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: "Garamond", serif;
-          background-color: #111;
-          color: white;
-          text-align: center;
-          padding: 50px;
-      }
-
-      h1 {
-          margin-bottom: 20px;
-          font-size: 2.5rem;
-      }
-
-      .gallery {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 15px;
-          padding: 20px;
-          max-width: 1200px;
-          margin: auto;
-      }
-
-      .gallery img {
-          width: 100%;
-          height: auto;
-          border-radius: 10px;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-          cursor: pointer;
-      }
-
-      .gallery img:hover {
-          transform: scale(1.05);
-          opacity: 0.8;
-      }
-
-      /* Lightbox effect */
-      .lightbox {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.9);
-          display: none;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-      }
-
-      .lightbox img {
-          max-width: 80%;
-          max-height: 80%;
-          border-radius: 10px;
-      }
-
-      .lightbox:target {
-          display: flex;
-      }
-
-      .close {
-          position: absolute;
-          top: 20px;
-          right: 40px;
-          font-size: 30px;
-          color: white;
-          text-decoration: none;
-      }
-  </style>
-<br>
-</head>
-<body>
-
-  <h1>The Artisan's Lens</h1>
-
-
-  <div class="gallery">
-    
-      <a href="#img2"><img src="img/The Artisan's Lens/Lens02.jpg" alt="img/Press Gallery/Press2.jpg"></a>
-      <a href="#img3"><img src="img/The Artisan's Lens/Lens03.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-      <a href="#img4"><img src="img/The Artisan's Lens/Lens04.jpg" alt="img/Press Gallery/press04.jpg"></a>
-      <a href="#img5"><img src="img/The Artisan's Lens/Lens05.jpg" alt="img/Press Gallery/press05.jpg"></a>
-      <a href="#img6"><img src="img/The Artisan's Lens/Lens06.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-      <a href="#img7"><img src="img/The Artisan's Lens/Lens07.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-      
-  </div>
-
-  <!-- Lightbox Modals -->
-
-
-  <div id="img2" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="img/The Artisan's Lens/Lens02.jpg" alt="Press Photo 2">
-  </div>
-
-  <div id="img3" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="img/The Artisan's Lens/Lens03.jpg" alt="Press Photo 3">
-  </div>
-
-  <div id="img4" class="lightbox">
-      <a href="#" class="close">&times;</a>
-      <img src="img/The Artisan's Lens/Lens04.jpg" alt="Press Photo 4">
-  </div>
-
-  <div id="img5" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="img/The Artisan's Lens/Lens05.jpg" alt="Press Photo 5">
-</div>
-
-<div id="img6" class="lightbox">
-  <a href="#" class="close">&times;</a>
-  <img src="img/The Artisan's Lens/Lens06.jpg" alt="Press Photo 6">
-</div>
-
-<div id="img7" class="lightbox">
-<a href="#" class="close">&times;</a>
-<img src="img/The Artisan's Lens/Lens07.jpg" alt="Press Photo 6">
-</div>
-
-
-<br>
-<br>
-
-</body>
-
-
-<section id="intro">
-  <div class="container">
-            <div class="row">
-            <div class="block">
-              <img src="/img/Bio photos/bio08.jpg" alt="biography_header"  style="max-width: 100%;">
-            </div>
-            <br>
-
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>From Oceans to Music</h3>
-                <p style="text-align: justify;">Sherif Dahroug, a trained naval architect, holds a Master’s degree in Naval Hydrodynamics, awarded with honors in 2006. He also carries the prestigious title of GMRINA from the Royal Institution of Naval Architects. His career includes work as a maritime expert at the esteemed Hellenic classification society and an academic position teaching naval design in specialized studio courses.
-                  His path in naval architecture was more than a profession—it was a calling shaped by both lineage and environment. Born into a family where the sea was not just a livelihood but a legacy, he grew up immersed in the world of maritime expertise. His father, an eminent figure in the Egyptian naval forces, exposed him from an early age to the intricate realities of shipbuilding, hydrodynamics, and the discipline of naval engineering.
-
-                  Yet, his upbringing was equally steeped in a rich intellectual and artistic tradition. His family possessed an immense bibliotheca, a treasure trove of universal literature that spanned Russian novelists, French poets, British classics, and the profound intellectual traditions of Egypt. This vast literary heritage nurtured a mind attuned to both the precision of science and the boundless realm of artistic expression. It was within this dual inheritance—technical mastery and poetic introspection—that he found a rare equilibrium, shaping his worldview and, ultimately, his creative identity.
-                  
-                  Though his career began in naval architecture, the echoes of music, literature, and philosophy remained ever-present, guiding him toward his true passion: composition. In his music, one can sense the meticulous structure of an engineer intertwined with the expressive depth of a poet—a synthesis of two worlds seamlessly woven into sound.                    
-                </p>                     
-            </div>
-            <br>
-
-            <br>
-            
-            <br>
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>Ancient Egypt as a Source of Awakening</h3>
-                <p style="text-align: justify;">Deeply inspired by ancient Egypt, Sherif Dahroug delves into its astronomy, philosophy, and hieroglyphic writing with unbounded curiosity. This personal journey has led him to author scientific articles that shed light on the profound influence of astronomical knowledge on Egyptian philosophical thought.
-                    In 2016, he founded his blog, Meditations on Egyptian Wisdom, which has since cultivated a dedicated community drawn to his unique perspective. Drawing from the astronomy, history, and philosophy of this remarkable civilization, Dahroug infuses his musical creations with a timeless and universal dimension.
-                                       
-                </p>                     
-            </div>
-            <br>
-
-            <br>
-
-            <div class="block">
-                <img src="/img/Bio photos/bio09.jpg" alt="biography_header"  style="max-width: 100%;">
-            </div>
-            <br>
-
-            <div class="two-columns" style="column-count: 2; column-gap: 20px;">  
-                <h3>A Pen in Search of Architectonics</h3>
-                <p style="text-align: justify;">Sherif Dahroug, already celebrated for his musical and artistic achievements, unveils a new dimension of his talent with the release of his rare and groundbreaking book, In Search of a Sonic Architectonic. The fruit of eight years of meticulous research and profound reflection, this work invites readers on an introspective journey. Through writing that combines depth and poetry, Dahroug explores the subtle connections between architecture, astronomy, philosophy, and music, weaving a universal vision where thought becomes vibration, and music transforms into a timeless structure.
-                    Inspired by the wisdom of ancient Egypt and grounded in a contemporary perspective, this first volume embarks on a bold quest: to unveil universal beauty and eternity. Addressing the challenges of modern humanity, Dahroug envisions a harmonious future where science and creativity dance in symbiosis, offering a unique perspective on sonic architectonics.
-                    The book also features an exceptional musical work, Regards sur l’Horizon – Opus Magistralis, composed of twenty movements. Spanning over two hours, this monumental piece constructs an initiatory journey through the sacred sites of ancient Egypt, connecting these places of memory with sonic resonances that reveal their philosophical essence.
-                    Richly illustrated by the author, this masterpiece fuses thought and art, sound and image. The original illustrations embody a poetic vision, transforming architectural forms into sensory gateways and inviting readers into an immersive and unparalleled experience.                                        
-                </p>                     
-            </div>
-            <br>
-            <br>
-
-              
-        </div>
-    </div>
-</section>
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biography Page</title>
-  <style>
-    .download-button {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      background: linear-gradient(45deg, #6a5acd, #4169e1);
-      border: none;
-      border-radius: 25px;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .download-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-      color: black;
-    }
-
-    .download-button:active {
-      transform: scale(0.95);
-    }
-  </style>
-</head>
-<body>
-  <div style="text-align: center; margin-top: 50px;">
-    <a class="download-button" href="img/news/bio-March25.pdf" download="Sherif_Dahroug_Bio_March25.pdf">
-      Download Biography
-    </a>
-  </div>
-</body>
 
     <!-- Footer -->
 

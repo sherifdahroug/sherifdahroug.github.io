@@ -322,103 +322,7 @@
 
 </body>
 
-
-<style>
-  .section-grammy-news {
-    background: #3B322D;
-    padding: 80px 20px;
-    border-top: 0px solid #e5ddd2;
-    font-family: 'Georgia', serif;
-  }
-
-  .news-bar {
-    background-color: #3837F4;
-    padding: 12px 20px;
-    text-align: center;
-    margin-bottom: 40px;
-    border-radius: 6px;
-  }
-
-  .news-title {
-    font-size: 1.4em;
-    text-transform: uppercase;
-    color: #A9DEE5;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  .news-content {
-    max-width: 960px;
-    color: #ffffff;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .news-image {
-    max-width: 500px;
-    width: 100%;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  }
-
-  .news-text {
-    font-size: 1.5em;
-    color: #ffffff;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: justify;
-  }
-
-  .news-text strong {
-    color: #F26749;
-    font-weight: bold;
-  }
-
-  .news-text p {
-    font-size: 16px;
-    color: #A9DEE5;
-  }
-
-
-  .subtext {
-    font-size: 1em;
-    color: #A9DEE5;
-    font-style: italic;
-    margin-top: 12px;
-  }
-  
-  .highlight-grammy {
-    display: block;
-    margin: 1.5em 0;
-    padding: 1em;
-    background-color: #f6f1ea;
-    border-left: 4px solid #c19955;
-    font-weight: bold;
-    font-style: italic;
-  }
-</style>
-
-<section class="section-grammy-news">
-  <div class="news-bar">
-    <span class="news-title">Recording Academy / GRAMMYs®</span>
-  </div>
-
-  <div class="news-content">
-    <img src="img/homePage/VOTING-2.png" alt="Sherif Dahroug – Recording Academy Voting Member" class="news-image">
-
-    <div class="news-text">
-      <p>
-        In 2025, Sherif Dahroug was officially invited to join the Recording Academy / GRAMMYs® as a 
-        <strong>Voting Member (Class of 2025)</strong> — a distinction extended in recognition of his artistic vision  
-        and his contribution to the evolution of contemporary music on today’s global musical landscape. An opportunity to take part in a collective effort dedicated to honoring musical creation and supporting its evolution on a global scale. 
-      </p>
-    </div>
-  </div>
-</section>
-
-
+<!-- ✂️ Removed the GRAMMY Voting Member CSS + section here -->
 
 <head>
   <meta charset="UTF-8">
@@ -463,34 +367,68 @@
 </head>
 <body>
   
-<!-- Homepage: FYC Highlight -->
-<section class="py-20 bg-gradient-to-b from-neutral-950 via-rose-950/10 to-neutral-950 border-t border-white/5">
-  <div class="mx-auto max-w-4xl px-4 text-center">
-    <!-- Flyer -->
-    <div class="mx-auto max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-      <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png"
-           alt="For Your Consideration — Sherif Dahroug"
-           class="w-full h-auto object-contain" />
+<!-- === FYC HIGHLIGHT (matches FYC page vibe; no Tailwind needed) === -->
+<style>
+  /* Scoped styles to avoid conflicts */
+  .fyc2 { 
+    background: linear-gradient(180deg, #0b0b0b 0%, rgba(82,10,22,.10) 40%, #0f0e0d 100%);
+    border-top: 1px solid rgba(255,255,255,.10);
+    padding: 4rem 1rem;
+  }
+  .fyc2-wrap { max-width: 64rem; margin: 0 auto; text-align: center; }
+  .fyc2-card {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.10);
+    background:
+      radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.04), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08));
+    box-shadow: 0 18px 44px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.18) inset;
+  }
+  .fyc2-img { display:block; width:100%; height:auto; }
+  .fyc2-cta {
+    display: inline-block;
+    margin-top: 1.1rem;
+    padding: .9rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 700;
+    color: #0a0a0a;           /* black text on rose gradient */
+    text-decoration: none;
+    background: linear-gradient(135deg, #e11d48, #fb7185);  /* rose-600 -> rose-400 */
+    box-shadow: 0 12px 26px rgba(235,120,140,.22);
+    transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+  }
+  .fyc2-cta:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 16px 34px rgba(235,120,140,.28); }
+  .fyc2-note { margin-top:.5rem; font-size:.9rem; opacity:.7; }
+  @media (min-width: 768px){ .fyc2{ padding: 5rem 1.25rem; } }
+</style>
+
+<section class="fyc2" aria-labelledby="fyc-heading">
+  <div class="fyc2-wrap">
+    <figure class="fyc2-card" style="max-width:720px;margin-inline:auto;">
+      <img
+        class="fyc2-img"
+        src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png"
+        alt="For Your Consideration — Sherif Dahroug"
+        loading="lazy"
+        decoding="async">
+    </figure>
+
+    <div class="fyc2-note" id="fyc-heading" aria-hidden="true">
+      For Your Consideration
     </div>
 
-    <!-- Button -->
-    <div class="mt-8 flex justify-center">
-      <a href="/postsMusic/albums/2025-09-25-grammy_FYC.html"
-         class="relative inline-block px-10 py-3 rounded-full bg-gradient-to-r from-rose-600 to-rose-400 text-black font-medium tracking-wide shadow-lg hover:shadow-xl hover:from-rose-500 hover:to-rose-300 transition">
-         <span class="relative z-10">Enter the FYC Page</span>
-         <span class="absolute inset-0 rounded-full bg-white/10 blur-md opacity-30"></span>
+    <p>
+      <a class="fyc2-cta" href="/postsMusic/albums/2025-09-25-grammy_FYC.html">
+        Enter the FYC Page
       </a>
-    </div>
-    
+    </p>
   </div>
 </section>
-
-
-
+<!-- === /FYC HIGHLIGHT === -->
 
 
   <section class="cd-announcement">
-    
     <section class="quotes-section">
         <h2>Press & Critical Insights</h2>
         
@@ -534,7 +472,6 @@
     <div class="source">- The Global Influential Times – April 2024.</div>
   </div>
     </section>
-
   </section>
 
 </body>
@@ -970,7 +907,6 @@
         text-decoration: underline;
     }*/
 </style>
-
 
 
     <!-- Footer -->

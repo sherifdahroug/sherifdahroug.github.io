@@ -6,14 +6,15 @@
   <title>For Your Consideration — 68th GRAMMY® | Sherif Dahroug</title>
   <meta name="description" content="FYC — Two submissions by composer & pianist Sherif Dahroug: DICHOTOMY (Best Contemporary Instrumental Album) and Sur le Fil de l’Aube (Best Instrumental Composition). Stream, read credits, and download one‑sheet & liner notes." />
 
-  <!-- Open Graph -->
+  <!-- Canonical & Social -->
+  <link rel="canonical" href="https://yourdomain.com/fyc-grammy-68" />
   <meta property="og:title" content="FYC — 68th GRAMMY® | Sherif Dahroug" />
   <meta property="og:description" content="Two submissions: DICHOTOMY (Best Contemporary Instrumental Album) · Sur le Fil de l’Aube (Best Instrumental Composition)." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yourdomain.com/fyc-grammy-68" />
   <meta property="og:image" content="https://yourdomain.com/assets/fyc/cover-share.jpg" />
+  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FYC — 68th GRAMMY® | Sherif Dahroug" />
   <meta name="twitter:description" content="DICHOTOMY · Sur le Fil de l’Aube — stream & credits" />
@@ -23,12 +24,19 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Tailwind CSS (CDN) -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
+    :root { color-scheme: dark; }
     @media print {
       .no-print { display:none !important; }
       .print-bg { background: white !important; }
       a[href]:after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
+      blockquote, article, .rounded-3xl { break-inside: avoid; }
+      body { background: white !important; }
+      #onesheet-overlay { position: static !important; inset: auto !important; background: white !important; }
+      #close-onesheet, #open-onesheet { display: none !important; }
     }
   </style>
 
@@ -40,16 +48,29 @@
     "name": "Sherif Dahroug",
     "jobTitle": "Composer & Pianist",
     "url": "https://yourdomain.com",
+    "sameAs": [
+      "https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP",
+      "https://music.apple.com/fr/artist/sherif-dahroug/1714110248",
+      "https://www.instagram.com/sherif.dahroug/",
+      "https://www.linkedin.com/in/sherif-dahroug-88820b139/"
+    ],
     "worksFeatured": [
       {
         "@type": "MusicAlbum",
-        "name": "Dichotomy",
+        "name": "Dichotomy — A Tone Poem of Five Metamorphoses for Piano",
         "byArtist": {"@type": "Person", "name": "Sherif Dahroug"},
         "image": "https://yourdomain.com/assets/fyc/dichotomy-cover.jpg",
         "genre": "Contemporary Instrumental",
         "datePublished": "2025-07-07",
         "url": "https://yourdomain.com/fyc-grammy-68#work-dichotomy",
-        "numTracks": 5
+        "numTracks": 5,
+        "recordLabel": "Lyre de Mercure",
+        "offers": {"@type":"Offer","url":"https://music.apple.com/us/album/dichotomy/1824911949"},
+        "workExample": {
+          "@type": "MusicRelease",
+          "catalogNumber": "199515343914",
+          "musicReleaseFormat": "DigitalFormat"
+        }
       },
       {
         "@type": "MusicComposition",
@@ -60,7 +81,8 @@
         "genre": "Instrumental",
         "datePublished": "2024-09-20",
         "url": "https://yourdomain.com/fyc-grammy-68#work-aube",
-        "duration": "PT7M56S"
+        "duration": "PT7M56S",
+        "isrcCode": "QZWFG2454025"
       }
     ]
   }
@@ -68,10 +90,10 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 antialiased">
   <!-- Top bar -->
-  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-white/5">
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 bg-neutral-950/80 border-b border-white/5">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
       <a href="/" class="text-sm tracking-wider uppercase text-neutral-300 hover:text-white">Sherif Dahroug</a>
-      <nav class="flex items-center gap-4 text-sm">
+      <nav class="flex items-center gap-4 text-sm" aria-label="Primary">
         <a href="#works" class="hover:text-white text-neutral-300">Submissions</a>
         <a href="#press" class="hover:text-white text-neutral-300">Press</a>
         <a href="#about" class="hover:text-white text-neutral-300">About</a>
@@ -80,329 +102,343 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="print-bg relative overflow-hidden">
-    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="text-xs tracking-widest text-rose-300/90">FOR YOUR CONSIDERATION — 68TH GRAMMY®</p>
-          <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Two Submissions by <span class="text-rose-300">Sherif Dahroug</span></h1>
-          <p class="mt-4 text-neutral-300 md:text-lg">A contemporary voice rooted in ancient wisdom. Please find below a concise overview for voting members: streams, credits, liner notes, and a one‑sheet.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#works" class="px-5 py-3 rounded-2xl bg-white text-neutral-900 font-medium hover:bg-neutral-200">
-              Discover the submissions
-            </a>
+  <main id="main">
+    <!-- Hero -->
+    <section class="print-bg relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p class="text-xs tracking-widest text-rose-300/90">FOR YOUR CONSIDERATION — 68TH GRAMMY®</p>
+            <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Two Submissions by <span class="text-rose-300">Sherif Dahroug</span></h1>
+            <p class="mt-4 text-neutral-300 md:text-lg">A contemporary voice rooted in ancient wisdom. Please find below a concise overview for voting members: streams, credits, liner notes, and a one‑sheet.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#works" class="px-5 py-3 rounded-2xl bg-white text-neutral-900 font-medium hover:bg-neutral-200">
+                Discover the submissions
+              </a>
 
-            <a href="https://drive.google.com/drive/folders/1rWNZLfoe0BAF6qXpbF9G2e5i7K4u6fhT?usp=share_link" 
-              target="_blank" 
-              rel="noopener" 
-              class="px-5 py-3 rounded-2xl border border-white/20 hover:border-white/40">
-              Press kit (EPK)
-            </a>
+              <a href="https://drive.google.com/drive/folders/1rWNZLfoe0BAF6qXpbF9G2e5i7K4u6fhT?usp=share_link" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="px-5 py-3 rounded-2xl border border-white/20 hover:border-white/40">
+                Press kit (EPK)
+              </a>
 
+            </div>
+            <p class="mt-4 text-xs text-neutral-400">Category eligibility and placement per Academy rules. This page is informational for voting members.</p>
           </div>
-          <p class="mt-4 text-xs text-neutral-400">Category eligibility and placement per Academy rules. This page is informational for voting members.</p>
-        </div>
-        <div class="relative aspect-[4/3] md:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-          <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/VOTING-3.png" alt="Artwork collage — Dichotomy & Sur le Fil de l’Aube" class="w-full h-full object-cover" />
+          <div class="relative aspect-[4/3] md:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+            <picture>
+              <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/VOTING-3.png" type="image/avif">
+              <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/VOTING-3.png" type="image/webp">
+              <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/VOTING-3.png" alt="Artwork collage — Dichotomy & Sur le Fil de l’Aube" class="w-full h-full object-cover" width="1200" height="1600" fetchpriority="high" loading="eager" decoding="async" sizes="(min-width: 768px) 40vw, 100vw" />
+            </picture>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- Platforms row -->
- 
-<!-- Artist’s Vision -->
-<section class="py-16 md:py-24 border-t border-white/5">
-  <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-2xl md:text-3xl font-semibold">Artist’s Vision</h2>
+    <!-- Artist’s Vision -->
+    <section class="py-16 md:py-24 border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold">Artist’s Vision</h2>
 
-    <p class="mt-4 text-neutral-300">
-      My music is born as a sanctuary of sound — a place where silence turns into breath, and breath into resonance.  
-      Each composition is written as a living architecture, carrying the memory of ancient rituals and the promise of new horizons.
-    </p>
+        <p class="mt-4 text-neutral-300">
+          My music is born as a sanctuary of sound — a place where silence turns into breath, and breath into resonance.  
+          Each composition is written as a living architecture, carrying the memory of ancient rituals and the promise of new horizons.
+        </p>
 
-    <p class="mt-4 text-neutral-300">
-      I seek to offer more than melodies: to create thresholds of experience, where listeners step beyond the everyday and encounter a space of wonder, intimacy, and cosmic dialogue.  
-      This is my devotion — to let music become a vessel of light, carrying both mystery and truth.
-    </p>
+        <p class="mt-4 text-neutral-300">
+          I seek to offer more than melodies: to create thresholds of experience, where listeners step beyond the everyday and encounter a space of wonder, intimacy, and cosmic dialogue.  
+          This is my devotion — to let music become a vessel of light, carrying both mystery and truth.
+        </p>
 
-    <p class="mt-6 text-neutral-300">
-      Guided by the timeless principles of proportion, form, and symbolism, I shape sound as one might design an enduring work of architecture.  
-      Every interval, harmony, and silence is placed with purpose, creating spaces where the listener can reflect, connect, and be moved.
-    </p>
+        <p class="mt-6 text-neutral-300">
+          Guided by the timeless principles of proportion, form, and symbolism, I shape sound as one might design an enduring work of architecture.  
+          Every interval, harmony, and silence is placed with purpose, creating spaces where the listener can reflect, connect, and be moved.
+        </p>
 
-    <p class="mt-4 text-neutral-300">
-      Rooted in traditions where art, philosophy, and spirituality converge, my aim is to create works that transcend the moment of their creation.  
-      Whether commissioned for a personal vision, a public event, or an artistic collaboration, each composition is conceived as an enduring presence—one that carries the resonance of the past, speaks to the present, and projects into the infinite horizon.
-    </p>
+        <p class="mt-4 text-neutral-300">
+          Rooted in traditions where art, philosophy, and spirituality converge, my aim is to create works that transcend the moment of their creation.  
+          Whether commissioned for a personal vision, a public event, or an artistic collaboration, each composition is conceived as an enduring presence—one that carries the resonance of the past, speaks to the present, and projects into the infinite horizon.
+        </p>
 
-    <blockquote class="mt-8 border-l-2 border-rose-400 pl-4 italic text-neutral-200">
-      “From music is born the silent logos of the cosmos; each note echoes its architecture.”  
-      <span class="block mt-2 text-sm text-neutral-400">— S. Dahroug</span>
-    </blockquote>
-  </div>
-</section>
-
-  <!-- Submissions -->
-  <section id="works" class="py-16 md:py-24 border-t border-white/5">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold">Submissions</h2>
-      <p class="mt-2 text-neutral-300">Click a card to stream and view detailed credits.</p>
-
-      <!-- DICHOTOMY (Album) -->
-      <article id="work-dichotomy" class="mt-10 grid md:grid-cols-2 gap-10 items-start">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/dichotomy-artwork-front.png" alt="Dichotomy album cover" class="w-full h-full object-cover" />
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs px-2 py-1 rounded-full bg-rose-400/10 text-rose-200 border border-rose-400/30">Submission #1</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-neutral-200 border border-white/10">Best Contemporary Instrumental Album</span>
-          </div>
-          <h3 class="mt-3 text-3xl font-semibold">DICHOTOMY — A Tone Poem of Five Metamorphoses for Piano</h3>
-          <p class="mt-3 text-neutral-300">A contemporary ritual for solo piano where dualities — light/dark, earth/sky — are embraced as one living architecture of sound.</p>
-
-          <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <div>
-              <dt class="text-neutral-400">Total duration</dt>
-              <dd class="text-neutral-100">39′05″</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Release date</dt>
-              <dd class="text-neutral-100">July 7, 2025</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Composer / Piano</dt>
-              <dd class="text-neutral-100">Sherif Dahroug</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Label / UPC</dt>
-              <dd class="text-neutral-100">Lyre de Mercure · 199515343914</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Producer / Mastering</dt>
-              <dd class="text-neutral-100">Sherif Dahroug</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Artwork</dt>
-              <dd class="text-neutral-100">Riham ElGamal</dd>
-            </div>
-          </dl>
-
-          <div class="mt-5 grid sm:grid-cols-3 gap-3">
-            <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-white text-neutral-900 font-medium hover:bg-neutral-200" href="https://music.apple.com/us/album/dichotomy/1824911949" target="_blank" rel="noopener">Apple Music</a>
-            <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://www.youtube.com/playlist?list=OLAK5uy_mqIfQt76vHMZZm5jWaTUvorWGMs26Bo6k" target="_blank" rel="noopener">YouTube (Album)</a>
-            <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP" target="_blank" rel="noopener">Spotify (Artist)</a>
-          </div>
-
-          <details class="mt-6 open:bg-white/5 open:rounded-2xl open:p-4">
-            <summary class="cursor-pointer text-sm text-neutral-300">Track list & ISRC</summary>
-            <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300">
-              <li>Exordium: Horizon of the Two Sycamores — 9:03 — ISRC QZTBE2506893</li>
-              <li>Limen: Nile | Eridanus — 7:58 — ISRC QZTBE2506894</li>
-              <li>Elevatio: Nymphaea | Papyrus — 8:00 — ISRC QZTBE2506895</li>
-              <li>Coronatio: Polaris | Orion — 10:55 — ISRC QZTBE2506896</li>
-              <li>Epilogue: The Breath of Atum — 3:08 — ISRC QZTBE2506897</li>
-            </ul>
-          </details>
-
-          <div class="mt-5 flex flex-wrap gap-3 text-sm">
-            <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank">Liner notes / Label copy (PDF)</a>
-            <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsMusic/albums/2025-07-07-dichotomy.html" target="_blank">Read more</a>
-            <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsPress/08-dichotomy-album-press.html" target="_blank">Press highlights</a>
-            <a href="https://www.mixcloud.com/AspenWaiteRadio/soundcheck-with-chris-redjam-104/"
-              target="_blank" rel="noopener"
-              class="inline-block px-4 py-2 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-400">
-              ▶ Listen to the full Album breakdown — Aspen Waite Radio (Chris Redjam — The Soundcheck Show, beginning at 1:15:50)
-            </a>
-
-
-          </div>
-        </div>
-      </article>
-
-      <!-- Divider -->
-      <div class="my-14 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-      <!-- SUR LE FIL DE L’AUBE (Composition) -->
-      <article id="work-aube" class="grid md:grid-cols-2 gap-10 items-start">
-        <div class="order-2 md:order-1">
-          <div class="flex items-center gap-2">
-            <span class="text-xs px-2 py-1 rounded-full bg-rose-400/10 text-rose-200 border border-rose-400/30">Submission #2</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-neutral-200 border border-white/10">Best Instrumental Composition</span>
-          </div>
-          <h3 class="mt-3 text-3xl font-semibold">Sur le Fil de l’Aube — Vision II from <em>Regards sur l’Horizon</em></h3>
-          <p class="mt-3 text-neutral-300">A threshold piece: the first breath of light over the horizon, written as a contemplative arc between darkness and dawn.</p>
-
-          <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <div>
-              <dt class="text-neutral-400">Duration</dt>
-              <dd class="text-neutral-100">7′56″</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Release date</dt>
-              <dd class="text-neutral-100">September 20, 2024</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Composer / Piano</dt>
-              <dd class="text-neutral-100">Sherif Dahroug</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">Label / UPC</dt>
-              <dd class="text-neutral-100">Lyre de Mercure · 198886928645</dd>
-            </div>
-            <div>
-              <dt class="text-neutral-400">ISRC</dt>
-              <dd class="text-neutral-100">QZWFG2454025</dd>
-            </div>
-          </dl>
-
-          <div class="mt-5 grid sm:grid-cols-3 gap-3">
-            <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-white text-neutral-900 font-medium hover:bg-neutral-200" href="https://open.spotify.com/track/2M1C1U6wvx1ZcGwXsizFgm" target="_blank" rel="noopener">Play on Spotify</a>
-            <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://distrokid.com/hyperfollow/sherifdahroug/sur-le-fil-de-laube" target="_blank" rel="noopener">All platforms</a>
-            <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsMusic/albums/2024-09-20-Sur%20le%20Fil%20de%20l'Aube.html" target="_blank" rel="noopener">Read more</a>
-          </div>
-
-          <div class="mt-5 flex flex-wrap gap-3 text-sm">
-            <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Sur le Fil de l'Aube - LABEL COPY .pdf" target="_blank">Liner notes / Label copy (PDF)</a>
-            <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsPress/09-regards-album-press.html" target="_blank">Press highlights</a>
-            <a class="px-4 py-2 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-400"
-              href="/postsMusic/albums/2024-10-18-Regards sur l'Horizon.html"
-              target="_blank" rel="noopener">
-              🎧 Experience the complete EP — <em>Regards sur l’Horizon</em>
-            </a>
-          </div>
-        </div>
-        
-        <div class="order-1 md:order-2 relative rounded-3xl overflow-hidden shadow-2xl">
-          <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/regards.png" alt="Sur le Fil de l’Aube cover" class="w-full h-full object-cover" />
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Press & recognition -->
-  <section id="press" class="py-16 md:py-24 border-t border-white/5">
-    <div class="mx-auto max-w-6xl px-4">
-      <h2 class="text-2xl md:text-3xl font-semibold">Press & Recognition</h2>
-  
-      <!-- Press Quotes -->
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“A transcendent experience… a sonic architecture that feels ancient and futuristic all at once.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">— Giovanni Coppola, Rolling Stone / VICE (UK)</footer>
+        <blockquote class="mt-8 border-l-2 border-rose-400 pl-4 italic text-neutral-200">
+          “From music is born the silent logos of the cosmos; each note echoes its architecture.”  
+          <span class="block mt-2 text-sm text-neutral-400">— S. Dahroug</span>
         </blockquote>
-      
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“… Dahroug isn’t merely composing — he’s invoking something ancient and spiritual.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">— Vera Ayornu, Korliblog.com (United States)</footer>
-        </blockquote>
+      </div>
+    </section>
 
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“A truly exquisite piano composition, with striking virtuosity and precision… the marked, deliberately placed dissonances make the work so harmonically unique.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">— VAULT LAB Magazine (Italy)</footer>
-        </blockquote>
+    <!-- Submissions -->
+    <section id="works" class="py-16 md:py-24 border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold">Submissions</h2>
+        <p class="mt-2 text-neutral-300">Click a card to stream and view detailed credits.</p>
+
+        <!-- DICHOTOMY (Album) -->
+        <article id="work-dichotomy" class="mt-10 grid md:grid-cols-2 gap-10 items-start">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <picture>
+              <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/dichotomy-artwork-front.png" type="image/avif">
+              <source srcset="//img/postsMusic/albums/2025-09-25-Grammy_FYC/dichotomy-artwork-front.png" type="image/webp">
+              <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/dichotomy-artwork-front.png" alt="Dichotomy album cover" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" decoding="async" sizes="(min-width: 768px) 50vw, 100vw" />
+            </picture>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-rose-400/10 text-rose-200 border border-rose-400/30">Submission #1</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-neutral-200 border border-white/10">Best Contemporary Instrumental Album</span>
+            </div>
+            <h3 class="mt-3 text-3xl font-semibold">DICHOTOMY — A Tone Poem of Five Metamorphoses for Piano</h3>
+            <p class="mt-3 text-neutral-300">A contemporary ritual for solo piano where dualities — light/dark, earth/sky — are embraced as one living architecture of sound.</p>
+
+            <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <dt class="text-neutral-400">Total duration</dt>
+                <dd class="text-neutral-100">39′05″</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Release date</dt>
+                <dd class="text-neutral-100">July 7, 2025</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Composer / Piano</dt>
+                <dd class="text-neutral-100">Sherif Dahroug</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Label / UPC</dt>
+                <dd class="text-neutral-100">Lyre de Mercure · 199515343914</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Producer / Mastering</dt>
+                <dd class="text-neutral-100">Sherif Dahroug</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Artwork</dt>
+                <dd class="text-neutral-100">Riham ElGamal</dd>
+              </div>
+            </dl>
+
+            <div class="mt-5 grid sm:grid-cols-3 gap-3">
+              <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-white text-neutral-900 font-medium hover:bg-neutral-200" href="https://music.apple.com/us/album/dichotomy/1824911949" target="_blank" rel="noopener noreferrer">Apple Music</a>
+              <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://www.youtube.com/playlist?list=OLAK5uy_mqIfQt76vHMZZm5jWaTUvorWGMs26Bo6k" target="_blank" rel="noopener noreferrer">YouTube (Album)</a>
+              <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP" target="_blank" rel="noopener noreferrer">Spotify (Artist)</a>
+            </div>
+
+            <details class="mt-6 open:bg-white/5 open:rounded-2xl open:p-4">
+              <summary class="cursor-pointer text-sm text-neutral-300">Track list & ISRC</summary>
+              <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300">
+                <li>Exordium: Horizon of the Two Sycamores — 9:03 — ISRC QZTBE2506893</li>
+                <li>Limen: Nile | Eridanus — 7:58 — ISRC QZTBE2506894</li>
+                <li>Elevatio: Nymphaea | Papyrus — 8:00 — ISRC QZTBE2506895</li>
+                <li>Coronatio: Polaris | Orion — 10:55 — ISRC QZTBE2506896</li>
+                <li>Epilogue: The Breath of Atum — 3:08 — ISRC QZTBE2506897</li>
+              </ul>
+            </details>
+
+            <div class="mt-5 flex flex-wrap gap-3 text-sm">
+              <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank" rel="noopener noreferrer">Liner notes / Label copy (PDF)</a>
+              <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsMusic/albums/2025-07-07-dichotomy.html" target="_blank" rel="noopener noreferrer">Read more</a>
+              <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsPress/08-dichotomy-album-press.html" target="_blank" rel="noopener noreferrer">Press highlights</a>
+              <a href="https://www.mixcloud.com/AspenWaiteRadio/soundcheck-with-chris-redjam-104/"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-block px-4 py-2 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-400">
+                ▶ Listen to the full Album breakdown — Aspen Waite Radio (Chris Redjam — The Soundcheck Show, beginning at 1:15:50)
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Divider -->
+        <div class="my-14 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <!-- SUR LE FIL DE L’AUBE (Composition) -->
+        <article id="work-aube" class="grid md:grid-cols-2 gap-10 items-start">
+          <div class="order-2 md:order-1">
+            <div class="flex items-center gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-rose-400/10 text-rose-200 border border-rose-400/30">Submission #2</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-neutral-200 border border-white/10">Best Instrumental Composition</span>
+            </div>
+            <h3 class="mt-3 text-3xl font-semibold">Sur le Fil de l’Aube — Vision II from <em lang="fr">Regards sur l’Horizon</em></h3>
+            <p class="mt-3 text-neutral-300">A threshold piece: the first breath of light over the horizon, written as a contemplative arc between darkness and dawn.</p>
+
+            <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <dt class="text-neutral-400">Duration</dt>
+                <dd class="text-neutral-100">7′56″</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Release date</dt>
+                <dd class="text-neutral-100">September 20, 2024</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Composer / Piano</dt>
+                <dd class="text-neutral-100">Sherif Dahroug</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">Label / UPC</dt>
+                <dd class="text-neutral-100">Lyre de Mercure · 198886928645</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-400">ISRC</dt>
+                <dd class="text-neutral-100">QZWFG2454025</dd>
+              </div>
+            </dl>
+
+            <div class="mt-5 grid sm:grid-cols-3 gap-3">
+              <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-white text-neutral-900 font-medium hover:bg-neutral-200" href="https://open.spotify.com/track/2M1C1U6wvx1ZcGwXsizFgm" target="_blank" rel="noopener noreferrer">Play on Spotify</a>
+              <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://distrokid.com/hyperfollow/sherifdahroug/sur-le-fil-de-laube" target="_blank" rel="noopener noreferrer">All platforms</a>
+              <a class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsMusic/albums/2024-09-20-Sur%20le%20Fil%20de%20l'Aube.html" target="_blank" rel="noopener noreferrer">Read more</a>
+            </div>
+
+            <div class="mt-5 flex flex-wrap gap-3 text-sm">
+              <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Sur le Fil de l'Aube - LABEL COPY .pdf" target="_blank" rel="noopener noreferrer">Liner notes / Label copy (PDF)</a>
+              <a class="px-4 py-2 rounded-xl border border-white/20 hover:border-white/40" href="https://sherifdahroug.github.io/postsPress/09-regards-album-press.html" target="_blank" rel="noopener noreferrer">Press highlights</a>
+              <a class="px-4 py-2 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-400"
+                href="/postsMusic/albums/2024-10-18-Regards sur l'Horizon.html"
+                target="_blank" rel="noopener noreferrer">
+                🎧 Experience the complete EP — <em lang="fr">Regards sur l’Horizon</em>
+              </a>
+            </div>
+          </div>
           
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“…Sherif Dahroug continues to push the boundaries of contemporary music, crafting sonic sanctuaries that resonate with infinite depth.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">— Mario Ferraioli, Jazz in Family (Italy)</footer>
-        </blockquote>
-
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“Sounds like a deeply ambitious and strikingly cohesive piece of work… rare to hear contemporary classical compositions that feel this conceptually complete, while still leaving space for mystery and interpretation.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">—  Indiefferential Magazine (United States)</footer>
-        </blockquote>
-
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“The opening piano line is sensitive and romantic… almost cinematic, symbolizing the unpredictable nature of life itself. Despite its strong neoclassical foundation, the composition’s structure shows progressive influences… striking a balance between harmony and strong feelings, inviting the listener to enter the first light of dawn.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">—   Skylight Magazine (Greece)</footer>
-        </blockquote>
-
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“A truly exquisite piano composition, with striking virtuosity and precision… the marked, deliberately placed dissonances make the work so harmonically unique.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">—    New Indie Radar (Germany)</footer>
-        </blockquote>
-        
-        <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
-          <p class="text-neutral-200">“Dichotomy… is a sonic ritual — a vast inner temple where the echoes of the cosmos’s primordial birth resound… delivered with great sensitivity at the piano.”</p>
-          <footer class="mt-3 text-sm text-neutral-400">—    Hominis Canidae (Brazil)</footer>
-        </blockquote>
-      </div>
-  
-      <!-- Awards & Honors -->
-      <div class="mt-10 rounded-3xl p-6 bg-white/5 border border-white/10">
-        <h3 class="text-neutral-200 font-medium">Prizes & Awards</h3>
-        <ul class="mt-3 text-sm text-neutral-300 list-disc pl-5">
-          <li><em>Dichotomy</em> — 2025 Winner — Best Composition, Apollo Global Music Awards - Athens, Greece</li>
-          <li><em>Dichotomy</em> — Platinum Absolute First Prize, European Symphony Architect Awards - London, UK</li>
-          <li><em>Regards sur l’Horizon</em> (including *Sur le Fil de l’Aube*) — The 2024 Global Music Awards - California, USA</li>
-          <li><em>Regards sur l’Horizon</em> (including *Sur le Fil de l’Aube*) — Diamond Prize, World Exceptional Musicians - London, UK</li>
-        </ul>
-      </div>
-  
-      <div class="mt-8 text-sm text-neutral-400">
-        Full list of recognitions available upon request.
-      </div>
-    </div>
-  </section>
-  
-
-  <!-- About -->
-  <section id="about" class="py-16 md:py-24 border-t border-white/5">
-    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-10 items-start">
-      <!-- Image -->
-      <div class="md:w-1/3">
-        <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png"
-             alt="Sherif Dahroug portrait"
-             class="rounded-3xl w-full h-auto object-contain">
-      </div>
-  
-      <!-- Text -->
-      <div class="md:w-2/3">
-        <h2 class="text-2xl md:text-3xl font-semibold">About the Artist</h2>
-        <p class="mt-4 text-neutral-300">
-          Sherif Dahroug is a Paris-based concert artist, composer dedicating his life to the art of music. His creations unfold as a living architecture where ancient wisdom, poetic vision and rigorous technique converge. Originally trained as a naval architect, he carried the precision of engineering into his artistic path, transforming it into sound. His studies at the Schola Cantorum, the École Normale de Musique de Paris and the Royal Academy of Music in London placed him in the lineage of Celibidache, Messiaen and Boulanger, while his work has been honored with more than twenty-six international prizes, including the Diamond Prize for Composition, the Grand Prize of the New York International Music Competition and the Platinum Absolute First Prize of the European Symphony Architect Awards for <em>Dichotomy</em>.
-        </p>
-        <p class="mt-4 text-neutral-300">
-          Born in Alexandria and later settling in Paris on a scholarship, he bridges the heritage of Egypt with European craft in a singular voice that is both timeless and contemporary. Also an author and philosopher, he explores sound, symbolism and transcendence in writing as in performance. In every composition, Sherif Dahroug seeks a threshold where structure meets mystery and intellect meets intuition, inviting listeners into a space where the cosmic and the intimate resonate as one.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  
-
-  <!-- Contact / CTA -->
-  <section id="contact" class="py-16 md:py-24 border-t border-white/5">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="rounded-3xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/10 p-8 md:p-10">
-        <div class="grid md:grid-cols-3 gap-6 items-center">
-          <div class="md:col-span-2">
-            <h2 class="text-2xl md:text-3xl font-semibold">GRAMMY® Voting Members</h2>
-            <p class="mt-3 text-neutral-300">Thank you for your time and consideration. For hi‑res audio, printed scores, session notes, or interview requests, please reach out directly.</p>
-            <p class="mt-2 text-xs text-neutral-400">Please vote according to personal evaluation and Academy guidelines. This page is informational for consideration.</p>
+          <div class="order-1 md:order-2 relative rounded-3xl overflow-hidden shadow-2xl">
+            <picture>
+              <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/regards.png" type="image/avif">
+              <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/regards.png" type="image/webp">
+              <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/regards.png" alt="Sur le Fil de l’Aube cover" class="w-full h-full object-cover" width="1200" height="1200" loading="lazy" decoding="async" sizes="(min-width: 768px) 50vw, 100vw" />
+            </picture>
           </div>
-          <div class="flex flex-col gap-3">
-            <a class="px-5 py-3 rounded-2xl bg-white text-neutral-900 font-medium text-center hover:bg-neutral-200" href="mailto:ccdahroug@gmail.com?subject=FYC%2068th%20GRAMMY%C2%AE%20%E2%80%94%20Sherif%20Dahroug">Email the artist</a>
-            
-            <a class="px-5 py-3 rounded-2xl border border-white/20 text-center hover:border-white/40" 
-              href="https://drive.google.com/drive/folders/1rWNZLfoe0BAF6qXpbF9G2e5i7K4u6fhT?usp=share_link" 
-              target="_blank" 
-              rel="noopener">
-              Press kit (EPK)
-            </a>
-            <!-- Trigger -->
-            <button id="open-onesheet"
-            class="px-5 py-3 rounded-2xl border border-white/20 hover:border-white/40">
-            View One-Sheet
-            </button>
+        </article>
+      </div>
+    </section>
 
+    <!-- Press & recognition -->
+    <section id="press" class="py-16 md:py-24 border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold">Press & Recognition</h2>
+    
+        <!-- Press Quotes -->
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“A transcendent experience… a sonic architecture that feels ancient and futuristic all at once.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">— Giovanni Coppola, Rolling Stone / VICE (UK)</footer>
+          </blockquote>
+        
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“… Dahroug isn’t merely composing — he’s invoking something ancient and spiritual.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">— Vera Ayornu, Korliblog.com (United States)</footer>
+          </blockquote>
+
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“A truly exquisite piano composition, with striking virtuosity and precision… the marked, deliberately placed dissonances make the work so harmonically unique.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">— VAULT LAB Magazine (Italy)</footer>
+          </blockquote>
+            
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“…Sherif Dahroug continues to push the boundaries of contemporary music, crafting sonic sanctuaries that resonate with infinite depth.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">— Mario Ferraioli, Jazz in Family (Italy)</footer>
+          </blockquote>
+
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“Sounds like a deeply ambitious and strikingly cohesive piece of work… rare to hear contemporary classical compositions that feel this conceptually complete, while still leaving space for mystery and interpretation.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">—  Indiefferential Magazine (United States)</footer>
+          </blockquote>
+
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“The opening piano line is sensitive and romantic… almost cinematic, symbolizing the unpredictable nature of life itself. Despite its strong neoclassical foundation, the composition’s structure shows progressive influences… striking a balance between harmony and strong feelings, inviting the listener to enter the first light of dawn.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">—   Skylight Magazine (Greece)</footer>
+          </blockquote>
+
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“A truly exquisite piano composition, with striking virtuosity and precision… the marked, deliberately placed dissonances make the work so harmonically unique.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">—    New Indie Radar (Germany)</footer>
+          </blockquote>
+          
+          <blockquote class="rounded-3xl p-6 bg-white/5 border border-white/10">
+            <p class="text-neutral-200">“Dichotomy… is a sonic ritual — a vast inner temple where the echoes of the cosmos’s primordial birth resound… delivered with great sensitivity at the piano.”</p>
+            <footer class="mt-3 text-sm text-neutral-400">—    Hominis Canidae (Brazil)</footer>
+          </blockquote>
+        </div>
+    
+        <!-- Awards & Honors -->
+        <div class="mt-10 rounded-3xl p-6 bg-white/5 border border-white/10">
+          <h3 class="text-neutral-200 font-medium">Prizes & Awards</h3>
+          <ul class="mt-3 text-sm text-neutral-300 list-disc pl-5">
+            <li><em>Dichotomy</em> — 2025 Winner — Best Composition, Apollo Global Music Awards - Athens, Greece</li>
+            <li><em>Dichotomy</em> — Platinum Absolute First Prize, European Symphony Architect Awards - London, UK</li>
+            <li><em>Regards sur l’Horizon</em> (including <em lang="fr">Sur le Fil de l’Aube</em>) — The 2024 Global Music Awards - California, USA</li>
+            <li><em>Regards sur l’Horizon</em> (including <em lang="fr">Sur le Fil de l’Aube</em>) — Diamond Prize, World Exceptional Musicians - London, UK</li>
+          </ul>
+        </div>
+    
+        <div class="mt-8 text-sm text-neutral-400">
+          Full list of recognitions available upon request.
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- About -->
+    <section id="about" class="py-16 md:py-24 border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-10 items-start">
+        <!-- Image -->
+        <div class="md:w-1/3">
+          <picture>
+            <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png" type="image/avif">
+            <source srcset="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png" type="image/webp">
+            <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png"
+                 alt="Sherif Dahroug portrait"
+                 class="rounded-3xl w-full h-auto object-contain"
+                 width="1000" height="1400" loading="lazy" decoding="async">
+          </picture>
+        </div>
+    
+        <!-- Text -->
+        <div class="md:w-2/3">
+          <h2 class="text-2xl md:text-3xl font-semibold">About the Artist</h2>
+          <p class="mt-4 text-neutral-300">
+            Sherif Dahroug is a Paris-based concert artist, composer dedicating his life to the art of music. His creations unfold as a living architecture where ancient wisdom, poetic vision and rigorous technique converge. Originally trained as a naval architect, he carried the precision of engineering into his artistic path, transforming it into sound. His studies at the Schola Cantorum, the École Normale de Musique de Paris and the Royal Academy of Music in London placed him in the lineage of Celibidache, Messiaen and Boulanger, while his work has been honored with more than twenty-six international prizes, including the Diamond Prize for Composition, the Grand Prize of the New York International Music Competition and the Platinum Absolute First Prize of the European Symphony Architect Awards for <em>Dichotomy</em>.
+          </p>
+          <p class="mt-4 text-neutral-300">
+            Born in Alexandria and later settling in Paris on a scholarship, he bridges the heritage of Egypt with European craft in a singular voice that is both timeless and contemporary. Also an author and philosopher, he explores sound, symbolism and transcendence in writing as in performance. In every composition, Sherif Dahroug seeks a threshold where structure meets mystery and intellect meets intuition, inviting listeners into a space where the cosmic and the intimate resonate as one.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-16 md:py-24 border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="rounded-3xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/10 p-8 md:p-10">
+          <div class="grid md:grid-cols-3 gap-6 items-center">
+            <div class="md:col-span-2">
+              <h2 class="text-2xl md:text-3xl font-semibold">GRAMMY® Voting Members</h2>
+              <p class="mt-3 text-neutral-300">Thank you for your time and consideration. For hi‑res audio, printed scores, session notes, or interview requests, please reach out directly.</p>
+              <p class="mt-2 text-xs text-neutral-400">Please vote according to personal evaluation and Academy guidelines. This page is informational for consideration.</p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <a class="px-5 py-3 rounded-2xl bg-white text-neutral-900 font-medium text-center hover:bg-neutral-200" href="mailto:ccdahroug@gmail.com?subject=FYC%2068th%20GRAMMY%C2%AE%20%E2%80%94%20Sherif%20Dahroug">Email the artist</a>
+              
+              <a class="px-5 py-3 rounded-2xl border border-white/20 text-center hover:border-white/40" 
+                href="https://drive.google.com/drive/folders/1rWNZLfoe0BAF6qXpbF9G2e5i7K4u6fhT?usp=share_link" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                Press kit (EPK)
+              </a>
+              <!-- Trigger -->
+              <button type="button" id="open-onesheet"
+              class="px-5 py-3 rounded-2xl border border-white/20 hover:border-white/40">
+              View One-Sheet
+              </button>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="py-10 border-t border-white/5">
     <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -410,139 +446,154 @@
       <div class="flex items-center gap-4 text-sm">
         <p>
           Find me on:
-          <a href="https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB" target="_blank" rel="noopener">Apple Music</a> ·
-          <a href="https://deezer.page.link/cSHMG2FeyTUE5b7j9" target="_blank" rel="noopener">Deezer</a> ·
-          <a href="https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=7GjAtk2cRHu8BdDQTgTvHw" target="_blank" rel="noopener">Spotify</a> ·
-          <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank" rel="noopener">LinkedIn</a> ·
-          <a href="https://www.instagram.com/sherif.dahroug/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB" target="_blank" rel="noopener noreferrer">Apple Music</a> ·
+          <a href="https://deezer.page.link/cSHMG2FeyTUE5b7j9" target="_blank" rel="noopener noreferrer">Deezer</a> ·
+          <a href="https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=7GjAtk2cRHu8BdDQTgTvHw" target="_blank" rel="noopener noreferrer">Spotify</a> ·
+          <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+          <a href="https://www.instagram.com/sherif.dahroug/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </p>
         
       </div>
     </div>
   </footer>
+
   <!-- Modal: One-Sheet Preview -->
-<div id="onesheet-overlay" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/70 p-4">
-  <div role="dialog" aria-modal="true" aria-labelledby="onesheet-title"
-       class="w-full max-w-3xl rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl overflow-hidden">
+  <div id="onesheet-overlay" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/70 p-4" role="dialog" aria-modal="true" aria-labelledby="onesheet-title" aria-describedby="onesheet-desc">
+    <div class="w-full max-w-3xl rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl overflow-hidden">
 
-    <!-- Header -->
-    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-      <h2 id="onesheet-title" class="text-xl font-semibold">For Your Consideration — 68th GRAMMY®</h2>
-      <div class="flex items-center gap-2">
-        <a href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank" rel="noopener"
-           class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Download Dichotomy PDF</a>
-           <a href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Sur le Fil de l'Aube - LABEL COPY .pdf" target="_blank" rel="noopener"
-           class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Download Sur le fil PDF</a>
-        <button id="print-onesheet"
-          class="text-sm px-3 py-1.5 rounded-xl bg-white text-neutral-900 hover:bg-neutral-200">Print / Save PDF</button>
-        <button id="close-onesheet"
-          class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Close</button>
-      </div>
-    </div>
-
-    <!-- Content -->
-    <div class="px-6 py-6 space-y-6 print:space-y-4 print:p-6 print:bg-white print:text-black">
-      <!-- Artist -->
-      <div>
-        <h3 class="text-lg font-semibold">Sherif Dahroug — Concert Artist, Composer & Pianist</h3>
-        <p class="mt-2 text-neutral-300 print:text-black/90">
-          A contemporary voice rooted in ancient wisdom. Two submissions offered with gratitude for your kind consideration.
-        </p>
-      </div>
-
-      <!-- Submissions -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Dichotomy -->
-        <div class="rounded-2xl border border-white/10 p-4 print:border-black/10">
-          <div class="text-[11px] px-2 py-1 rounded bg-rose-400/10 text-rose-200 inline-block border border-rose-400/30 print:bg-rose-100 print:text-rose-800 print:border-rose-200">
-            Best Contemporary Instrumental Album
-          </div>
-          <h4 class="mt-2 text-lg font-semibold">Dichotomy — A Tone Poem of Five Metamorphoses</h4>
-          <ul class="mt-2 text-sm text-neutral-300 print:text-black/90 space-y-1">
-            <li>Total duration: 39′05″ · Release: July 7, 2025</li>
-            <li>Label/UPC: Lyre de Mercure · 199515343914</li>
-            <li>Composer/Piano: Sherif Dahroug</li>
-          </ul>
-          <div class="mt-3 text-sm">
-            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
-               href="https://music.apple.com/us/album/dichotomy/1824911949">Apple Music</a> ·
-            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
-               href="https://www.youtube.com/playlist?list=OLAK5uy_mqIfQt76vHMZZm5jWaTUvorWGMs26Bo6k">YouTube</a> ·
-            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
-               href="https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP">Spotify</a>
-          </div>
-        </div>
-
-        <!-- Sur le Fil de l’Aube -->
-        <div class="rounded-2xl border border-white/10 p-4 print:border-black/10">
-          <div class="text-[11px] px-2 py-1 rounded bg-rose-400/10 text-rose-200 inline-block border border-rose-400/30 print:bg-rose-100 print:text-rose-800 print:border-rose-200">
-            Best Instrumental Composition
-          </div>
-          <h4 class="mt-2 text-lg font-semibold">Sur le Fil de l’Aube — Vision II</h4>
-          <ul class="mt-2 text-sm text-neutral-300 print:text-black/90 space-y-1">
-            <li>Duration: 7′56″ · Release: Sept 20, 2024</li>
-            <li>Label/UPC: Lyre de Mercure · 198886928645 · ISRC: QZWFG2454025</li>
-            <li>Composer/Piano: Sherif Dahroug</li>
-          </ul>
-          <div class="mt-3 text-sm">
-            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
-               href="https://open.spotify.com/track/2M1C1U6wvx1ZcGwXsizFgm">Spotify</a> ·
-            <a class="underline hover:opacity-80" target="_blank" rel="noopener"
-               href="https://distrokid.com/hyperfollow/sherifdahroug/sur-le-fil-de-laube">All Platforms</a>
-          </div>
+      <!-- Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h2 id="onesheet-title" class="text-xl font-semibold">For Your Consideration — 68th GRAMMY®</h2>
+        <div class="flex items-center gap-2">
+          <a href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/LABEL COPY - Dichotomy.pdf" target="_blank" rel="noopener noreferrer"
+             class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Download Dichotomy PDF</a>
+             <a href="/img/postsMusic/albums/2025-09-25-Grammy_FYC/Sur le Fil de l'Aube - LABEL COPY .pdf" target="_blank" rel="noopener noreferrer"
+             class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Download Sur le fil PDF</a>
+          <button type="button" id="print-onesheet"
+            class="text-sm px-3 py-1.5 rounded-xl bg-white text-neutral-900 hover:bg-neutral-200">Print / Save PDF</button>
+          <button type="button" id="close-onesheet"
+            class="text-sm px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40">Close</button>
         </div>
       </div>
 
-      <!-- Press (short) -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <blockquote class="rounded-2xl p-4 bg-white/5 border border-white/10 print:bg-white print:border-black/10">
-          <p class="text-neutral-200 print:text-black">“A transcendent experience… a sonic architecture that feels ancient and futuristic all at once.”</p>
-          <footer class="mt-2 text-xs text-neutral-400 print:text-black/70">— Selected Press</footer>
-        </blockquote>
-        <blockquote class="rounded-2xl p-4 bg-white/5 border border-white/10 print:bg-white print:border-black/10">
-          <p class="text-neutral-200 print:text-black">“With the grace of an ancient ritual and the depth of a contemporary meditation.”</p>
-          <footer class="mt-2 text-xs text-neutral-400 print:text-black/70">— Selected Press</footer>
-        </blockquote>
-      </div>
+      <!-- Content -->
+      <div class="px-6 py-6 space-y-6 print:space-y-4 print:p-6 print:bg-white print:text-black">
+        <!-- Description for a11y -->
+        <p id="onesheet-desc" class="sr-only">Modal preview of two submissions and quick links to PDFs and streaming platforms.</p>
 
-      <!-- Contact -->
-      <div class="text-sm text-neutral-300 print:text-black/90">
-        Contact: <a href="mailto:ccdahroug@gmail.com" class="underline">ccdahroug@gmail.com</a> ·
-        More info: <a href="https://sherifdahroug.github.io" target="_blank" rel="noopener" class="underline">sherifdahroug.github.io</a>
+        <!-- Artist -->
+        <div>
+          <h3 class="text-lg font-semibold">Sherif Dahroug — Concert Artist, Composer & Pianist</h3>
+          <p class="mt-2 text-neutral-300 print:text-black/90">
+            A contemporary voice rooted in ancient wisdom. Two submissions offered with gratitude for your kind consideration.
+          </p>
+        </div>
+
+        <!-- Submissions -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Dichotomy -->
+          <div class="rounded-2xl border border-white/10 p-4 print:border-black/10">
+            <div class="text-[11px] px-2 py-1 rounded bg-rose-400/10 text-rose-200 inline-block border border-rose-400/30 print:bg-rose-100 print:text-rose-800 print:border-rose-200">
+              Best Contemporary Instrumental Album
+            </div>
+            <h4 class="mt-2 text-lg font-semibold">Dichotomy — A Tone Poem of Five Metamorphoses</h4>
+            <ul class="mt-2 text-sm text-neutral-300 print:text-black/90 space-y-1">
+              <li>Total duration: 39′05″ · Release: July 7, 2025</li>
+              <li>Label/UPC: Lyre de Mercure · 199515343914</li>
+              <li>Composer/Piano: Sherif Dahroug</li>
+            </ul>
+            <div class="mt-3 text-sm">
+              <a class="underline hover:opacity-80" target="_blank" rel="noopener noreferrer"
+                 href="https://music.apple.com/us/album/dichotomy/1824911949">Apple Music</a> ·
+              <a class="underline hover:opacity-80" target="_blank" rel="noopener noreferrer"
+                 href="https://www.youtube.com/playlist?list=OLAK5uy_mqIfQt76vHMZZm5jWaTUvorWGMs26Bo6k">YouTube</a> ·
+              <a class="underline hover:opacity-80" target="_blank" rel="noopener noreferrer"
+                 href="https://open.spotify.com/artist/5lfYCR7bcX4Dbn2Dm29HHP">Spotify</a>
+            </div>
+          </div>
+
+          <!-- Sur le Fil de l’Aube -->
+          <div class="rounded-2xl border border-white/10 p-4 print:border-black/10">
+            <div class="text-[11px] px-2 py-1 rounded bg-rose-400/10 text-rose-200 inline-block border border-rose-400/30 print:bg-rose-100 print:text-rose-800 print:border-rose-200">
+              Best Instrumental Composition
+            </div>
+            <h4 class="mt-2 text-lg font-semibold">Sur le Fil de l’Aube — Vision II</h4>
+            <ul class="mt-2 text-sm text-neutral-300 print:text-black/90 space-y-1">
+              <li>Duration: 7′56″ · Release: Sept 20, 2024</li>
+              <li>Label/UPC: Lyre de Mercure · 198886928645 · ISRC: QZWFG2454025</li>
+              <li>Composer/Piano: Sherif Dahroug</li>
+            </ul>
+            <div class="mt-3 text-sm">
+              <a class="underline hover:opacity-80" target="_blank" rel="noopener noreferrer"
+                 href="https://open.spotify.com/track/2M1C1U6wvx1ZcGwXsizFgm">Spotify</a> ·
+              <a class="underline hover:opacity-80" target="_blank" rel="noopener noreferrer"
+                 href="https://distrokid.com/hyperfollow/sherifdahroug/sur-le-fil-de-laube">All Platforms</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Press (short) -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <blockquote class="rounded-2xl p-4 bg-white/5 border border-white/10 print:bg-white print:border-black/10">
+            <p class="text-neutral-200 print:text-black">“A transcendent experience… a sonic architecture that feels ancient and futuristic all at once.”</p>
+            <footer class="mt-2 text-xs text-neutral-400 print:text-black/70">— Selected Press</footer>
+          </blockquote>
+          <blockquote class="rounded-2xl p-4 bg-white/5 border border-white/10 print:bg-white print:border-black/10">
+            <p class="text-neutral-200 print:text-black">“With the grace of an ancient ritual and the depth of a contemporary meditation.”</p>
+            <footer class="mt-2 text-xs text-neutral-400 print:text-black/70">— Selected Press</footer>
+          </blockquote>
+        </div>
+
+        <!-- Contact -->
+        <div class="text-sm text-neutral-300 print:text-black/90">
+          Contact: <a href="mailto:ccdahroug@gmail.com" class="underline">ccdahroug@gmail.com</a> ·
+          More info: <a href="https://sherifdahroug.github.io" target="_blank" rel="noopener noreferrer" class="underline">sherifdahroug.github.io</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- JS + Print CSS -->
-<script>
-  const overlay = document.getElementById('onesheet-overlay');
-  const openBtn = document.getElementById('open-onesheet');
-  const closeBtn = document.getElementById('close-onesheet');
-  const printBtn = document.getElementById('print-onesheet');
+  <!-- JS: Modal a11y + focus trap -->
+  <script>
+    const overlay = document.getElementById('onesheet-overlay');
+    const openBtn = document.getElementById('open-onesheet');
+    const closeBtn = document.getElementById('close-onesheet');
+    const printBtn = document.getElementById('print-onesheet');
+    const main = document.getElementById('main');
+    let lastFocus;
 
-  if (openBtn) openBtn.addEventListener('click', () => {
-    overlay.classList.remove('hidden'); overlay.classList.add('flex');
-  });
-  if (closeBtn) closeBtn.addEventListener('click', () => {
-    overlay.classList.add('hidden'); overlay.classList.remove('flex');
-  });
-  if (printBtn) printBtn.addEventListener('click', () => window.print());
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      overlay.classList.add('hidden'); overlay.classList.remove('flex');
+    function isOpen(){ return overlay.classList.contains('flex') && !overlay.classList.contains('hidden'); }
+
+    function openModal() {
+      lastFocus = document.activeElement;
+      overlay.classList.remove('hidden'); overlay.classList.add('flex');
+      main?.setAttribute('aria-hidden','true'); main?.setAttribute('inert','');
+      document.body.style.overflow = 'hidden';
+      const first = overlay.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
+      first && first.focus();
     }
-  });
-</script>
-<style>
-  @media print {
-    body { background: white !important; }
-    #onesheet-overlay { position: static !important; inset: auto !important; background: white !important; }
-    #close-onesheet, #open-onesheet { display: none !important; }
-    a[href]:after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
-  }
-</style>
+    function closeModal() {
+      overlay.classList.add('hidden'); overlay.classList.remove('flex');
+      main?.removeAttribute('aria-hidden'); main?.removeAttribute('inert');
+      document.body.style.overflow = '';
+      lastFocus && lastFocus.focus();
+    }
+    function trapFocus(e) {
+      if (!isOpen()) return;
+      const focusables = overlay.querySelectorAll('a,button,[tabindex]:not([tabindex="-1"])');
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+      if (e.key === 'Escape') closeModal();
+    }
 
-
+    openBtn?.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    overlay?.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    printBtn?.addEventListener('click', () => window.print());
+    document.addEventListener('keydown', trapFocus, {passive:false});
+  </script>
 </body>
 </html>
