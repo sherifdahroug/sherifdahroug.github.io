@@ -118,7 +118,7 @@
         <head>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;500&display=swap" rel="stylesheet">
   <style>
-    /* ===== GLOBAL / BACKGROUND ===== */
+    /* ===== BACKGROUND AND GLOBAL STYLE ===== */
     body {
       margin: 0;
       color: #f6f6f6;
@@ -127,19 +127,14 @@
       position: relative;
       overflow-x: hidden;
     }
+
     body::before {
       content: "";
       position: fixed;
-      inset: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: radial-gradient(circle at 30% 40%, rgba(0,0,0,0.6) 0%, rgba(3,6,10,0.92) 100%);
       backdrop-filter: blur(8px);
       z-index: -1;
-      /* movement of veil */
-      animation: veilDrift 30s infinite alternate ease-in-out;
-    }
-    @keyframes veilDrift {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(-20px, 20px); }
     }
 
     h1, h2 {
@@ -160,12 +155,35 @@
       backdrop-filter: blur(10px);
     }
 
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .image-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
     .two-columns {
       text-align: justify;
       line-height: 1.8;
       font-size: 1.1rem;
     }
 
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    /* Buttons */
     .music-button {
       display: inline-block;
       padding: 0.9rem 2rem;
@@ -191,59 +209,38 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
-    .audio-toggle {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      padding: 0.8rem 1.2rem;
-      border-radius: 30px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      z-index: 9999;
-      transition: background 0.3s ease, transform 0.3s ease;
+    /* Video cards */
+    .fb-video-card {
+      width: 460px;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .audio-toggle:hover {
-      background: rgba(0,0,0,0.8);
-      transform: scale(1.05);
-    }
-
-    /* Fade-in scroll animations */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-    }
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .fb-video-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.45);
     }
 
     @media (max-width: 768px) {
       .section { padding: 2rem 1rem; }
       h1 { font-size: 1.9rem; }
       h2 { font-size: 1.3rem; }
+      .fb-video-card { width: 100%; }
     }
   </style>
 </head>
 
-<body>
+<!-- ===== HERO SECTION ===== -->
+<section class="section" style="text-align:center;">
+  <h1>Essentia Polaris</h1>
+  <h2>Poème sonore philosophique en cinq tableaux pour piano</h2>
 
-  <!-- Audio toggle & hidden audio -->
-  <button class="audio-toggle" id="audioToggle">🔊 Play Ambient</button>
-  <audio id="ambientAudio" loop>
-    <source src="YOUR_AUDIO_URL_HERE.mp3" type="audio/mpeg">
-    <!-- You can add .ogg fallback if available -->
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- === HEADER / INTRO === -->
-  <section class="section fade-section" id="intro">
-    <h1>Essentia Polaris</h1>
-    <h2>Poème sonore philosophique en cinq tableaux pour piano</h2>
-  </section>
+  <div class="image-grid">
+    <img src="/img/postsMusic/albums/2025-07-03-polaris/polaris-vinyl-9.png" alt="polaris-vinyl-9">
+    <img src="/img/postsMusic/albums/2025-07-03-polaris/polaris-vinyl-10.png" alt="polaris-vinyl-10">
+    <img src="/img/postsMusic/albums/2025-07-03-polaris/polaris-vinyl-11.png" alt="polaris-vinyl-11">
+    <img src="/img/postsMusic/albums/2025-07-03-polaris/polaris-vinyl-13.png" alt="polaris-vinyl-13">
+  </div>
 
   <!-- === PROGRAM NOTES (all your text) === -->
   <section class="section fade-section" id="program-notes">
@@ -315,6 +312,52 @@
       </ol>
     </div>
   </section>
+
+<!-- ===== TRAILER SECTION ===== -->
+<section class="section" style="background:rgba(10,15,20,0.6); text-align:center;">
+  <h2>🎬 Portal to the Album</h2>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;">
+    <div class="fb-video-card">
+      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https://www.facebook.com/cherif.dahroug/videos/521665820901176/&show_text=false&width=476&t=0" allowfullscreen></iframe>
+    </div>
+    <div class="fb-video-card">
+      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https://www.facebook.com/cherif.dahroug/videos/604539538792664/&show_text=false&width=476&t=0" allowfullscreen></iframe>
+    </div>
+    <div class="fb-video-card">
+      <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https://www.facebook.com/cherif.dahroug/videos/1023197063170994/&show_text=false&width=476&t=0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOK LINK ===== -->
+<section class="section" style="text-align:center;">
+  <a href="/postsBooks/dichotomie-grandhymn.html" target="_blank" class="music-button">
+    Discover the book that reflects the music’s philosophical origin
+  </a>
+</section>
+
+<!-- ===== VINYL SECTION ===== -->
+<section class="section" style="text-align:center;">
+  <h2>Own the Ritual</h2>
+  <div class="two-columns">
+    <p>
+      The <em>Essentia Polaris</em> vinyl edition is more than a recording — it is a sacred object, crafted for those who seek sound as ritual...  
+      <em>Essentia Polaris</em> on vinyl is a mirror, a barque, a veil — an offering to the listener who dares to enter the space-between.
+    </p>
+  </div>
+
+  <br>
+  <a href="https://elasticstage.com/sherifdahroug/releases/essentia-polaris-album" target="_blank" class="music-button">Own the Vinyl & Artwork</a>
+  <br><br>
+  <a href="https://distrokid.com/hyperfollow/sherifdahroug/essentia-polaris" target="_blank" class="music-button">Discover this opus on your favorite music platform</a>
+  <br><br>
+  <iframe src="https://open.spotify.com/embed/album/4JIyAkP78fyfaQn0SaOv46?utm_source=generator" height="352"></iframe>
+  <br><br>
+  <iframe src="https://embed.music.apple.com/fr/album/essentia-polaris/1824594723" height="450"></iframe>
+</section>
+
+
+  
 
   <!-- === EMBED PLAYER SECTION (SPOTIFY / APPLE) if desired below ... -->
 
