@@ -195,45 +195,61 @@
       <div class="card">
         <h2>Biography</h2>
         <div class="spacer-sm"></div>
+  
+        <!-- exact two columns on large screens, single column on phones -->
+        <style>
+          #bio .twocol{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+          }
+          @media (max-width: 900px){
+            #bio .twocol{ grid-template-columns: 1fr; }
+          }
+        </style>
+  
         <div class="twocol">
-          <p>
-            Sherif Dahroug is an internationally acclaimed composer and concert artist whose visionary work marks a major advancement in contemporary music. Originally trained as a naval architect, he earned a Master’s degree in Naval Architecture and Hydrodynamics with honors before fully dedicating himself to the pursuit of art and music. This remarkable journey reflects his relentless quest for excellence, swiftly establishing him as a prominent figure on the international music scene.
-          </p>
-          <p>
-            A recipient of numerous prestigious accolades and major awards, Sherif Dahroug has been honored with the Diamond Prize for Composition at the Classical Music Awards in London and the Grand Prize of the New York International Music Competition. Among his many distinctions are Platinum Absolute First Prizes at the World Master Open, as well as multiple Gold and Silver honors from esteemed competitions across Europe, Russia, and the United States.
-          </p>
-          <p>
-            He was further distinguished by the <em>Médaille de Platine</em> of the French <em>Société Académique Arts, Sciences et Lettres</em> — the society’s highest honor, bestowed at the summit of its distinctions in recognition of an exceptional contribution to art and thought.
-          </p>
-          <p>
-            In 2025, he was awarded the Absolute First Platinum Prize at the European Symphony Architect Awards for his opus and album <em>Dichotomie</em>. Further recognizing his artistic influence, the jury named him "Artist of the Month" at the European Classical Music Awards. These same awards later declared him the Annual Diamond Prize Winner and bestowed upon him the distinguished title of "Composer of the Year" at the 2024 Annual Grand Prix.
-          </p>
-          <p class="muted card" style="margin: .5rem 0;">
-            In 2025, Sherif Dahroug was invited to join the Recording Academy / GRAMMYs® as a <strong>Voting Member</strong>, honoring his artistic vision and global impact on contemporary music.
-          </p>
-          <p>
-            His album <em>Regards sur l’Horizon</em>, honored by the Global Music Awards, has already established itself as a landmark in contemporary musical creation. His academic journey, shaped by studies at the Schola Cantorum, the École Normale de Musique de Paris, and the Royal Academy of Music in London, placed him under the tutelage of eminent mentors—heirs to the legendary traditions of Sergiu Celibidache, Nadia Boulanger, and Olivier Messiaen.
-          </p>
-          <p>
-            Decorated with the highest honors and degrees, he embodies a refined musicianship where rigor and creative freedom intertwine. Beyond music, Sherif Dahroug is a philosopher and author whose literary work expands the boundaries of artistic creation.
-          </p>
-          <p>
-            His book, <em>Dichotomie: Grand Hymne des Deux Terres</em>, stands as a bold and singular masterpiece, fusing poetry, philosophy, and mysticism to offer a uniquely immersive experience. More than just an exploration of ancient Egyptian thought, this work revives it through an incantatory language, a labyrinthine structure, and a contemplative aesthetic, elevating duality as a foundational principle of both art and existence.
-          </p>
-          <p>
-            His earlier book, <em>In Pursuit of a Sonic Architectonics</em>, serves as a bold manifesto that transcends traditional boundaries of creation. Drawing from the rich symbolism and philosophy of ancient Egypt, it bridges transcendental contemplation with technical realization, transforming contradictions and dissonances into spaces of unprecedented beauty.
-          </p>
-          <p>
-            An insatiable explorer of the correspondences between sound, space, and transcendence, Sherif Dahroug pursues a vision where each creation becomes a timeless sonic architecture, a sanctuary open to infinity.
-          </p>
-          <p>
-            His most recent book, <em>Hathor, Iyri — À l’aube du Vin de Lumière</em>, inaugurates a new philosophical and literary form conceived by the author — the <em>Hiérodrame Tragique – Poème Mystère</em>. Rooted in the great Greco-Egyptian traditions, this genre unites myth, ritual, and philosophy into a sacred dramaturgy where the act of creation becomes a passage between art, thought, and the divine.
-          </p>
-          
+          <!-- Column 1 -->
+          <div>
+            <p>Sherif Dahroug is an internationally acclaimed composer and concert artist whose visionary work marks a major advancement in contemporary music. Originally trained as a naval architect, he earned a Master’s degree in Naval Architecture and Hydrodynamics with honors before fully dedicating himself to the pursuit of art and music. This remarkable journey reflects his relentless quest for excellence, swiftly establishing him as a prominent and rare figure on the international music scene.</p>
+  
+            <p>A recipient of numerous prestigious accolades and major awards, Sherif Dahroug has been honored with the Diamond Prize for Composition at the Classical Music Awards in London and the Grand Prize of the New York International Music Competition. Among his many distinctions are Platinum Absolute First Prizes at the World Master Open, as well as multiple Gold and Silver honors from esteemed competitions across Europe, Russia, and the United States.</p>
+  
+            <p>He was further distinguished by the Médaille de Platine of the French Société Académique Arts, Sciences et Lettres — the society’s highest honor, bestowed at the summit of its distinctions in recognition of an exceptional contribution to art and thought.</p>
+  
+            <p>In 2025, he was awarded the Absolute First Platinum Prize at the European Symphony Architect Awards for his opus and album <em>Dichotomie</em>. Further recognizing his artistic influence, the jury named him “Artist of the Month” at the European Classical Music Awards. These same awards later declared him the Annual Diamond Prize Winner and bestowed upon him the distinguished title of “Composer of the Year” at the 2024 Annual Grand Prix.</p>
+  
+            <p>In 2025, Sherif Dahroug was invited to join the Recording Academy / GRAMMYs® as a Voting Member, honoring his artistic vision and global impact on contemporary music.</p>
+  
+            <p>His album <em>Regards sur l’Horizon</em>, honored by the Global Music Awards, has already established itself as a landmark in contemporary musical creation. <p></p>His academic journey, shaped by studies at the Schola Cantorum, the École Normale de Musique de Paris, and the Royal Academy of Music in London, placed him under the tutelage of eminent mentors—heirs to the legendary traditions of Sergiu Celibidache, Nadia Boulanger, and Olivier Messiaen.</p>
+  
+            <p>Decorated with the highest honors and degrees, he embodies a refined musicianship where rigor and creative freedom intertwine. Beyond music, Sherif Dahroug is a philosopher and author whose literary work expands the boundaries of artistic creation.</p>
+          </div>
+  
+          <!-- Column 2 -->
+          <div>
+            <p>His book, <em>Dichotomie: Grand Hymne des Deux Terres</em>, stands as a bold and singular masterpiece, fusing poetry, philosophy, and mysticism to offer a uniquely immersive experience. More than just an exploration of ancient Egyptian thought, this work revives it through an incantatory language, a labyrinthine structure, and a contemplative aesthetic, elevating duality as a foundational principle of both art and existence.</p>
+  
+            <p>His earlier book, <em>In Pursuit of a Sonic Architectonics</em>, serves as a bold manifesto that transcends traditional boundaries of creation. Drawing from the rich symbolism and philosophy of ancient Egypt, it bridges transcendental contemplation with technical realization, transforming contradictions and dissonances into spaces of unprecedented beauty.</p>
+  
+            <p>An insatiable explorer of the correspondences between sound, space, and transcendence, Sherif Dahroug pursues a vision where each creation becomes a timeless sonic architecture, a sanctuary open to infinity.</p>
+  
+            <p>His most recent book, <em>Hathor, Iyri — À l’aube du Vin de Lumière</em>, inaugurates a new philosophical and literary form conceived by the author — the <em>Hiérodrame Tragique – Poème Mystère</em>. Rooted in the great Greco-Egyptian traditions, this genre unites myth, ritual, and philosophy into a sacred dramaturgy where the act of creation becomes a passage between art, thought, and the divine.</p>
+  
+            <p><strong>Lyre de Mercure — Éditions, Musique, Arts &amp; Innovation</strong></p>
+  
+            <p>Sherif Dahroug is the <strong>founder and director</strong> of <em>Lyre de Mercure</em>, an independent artistic and editorial house dedicated to the cultivation, production, and transmission of works of high artistic and intellectual value.</p>
+  
+            <p>Conceived as a space of convergence between music, literature, the arts, and innovation, Lyre de Mercure supports creations that resist immediacy and fashion, favoring depth, coherence, and long-term cultural resonance. Its mission is to accompany artists and authors in the development of singular languages, where rigor of form, symbolic density, and freedom of creation are inseparable.</p>
+  
+            <p>Through music production, editorial work, interdisciplinary collaboration, and the realization of projects integrating sound, text, image, and space, Lyre de Mercure affirms a commitment to works conceived for transmission — creations designed to endure, to be inhabited, and to contribute meaningfully to contemporary culture.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  
+  
   
 
   <!-- Image break -->
