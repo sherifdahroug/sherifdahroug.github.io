@@ -94,14 +94,21 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            background: url('img/concert/Concert-2400scale.jpg') no-repeat center 30%/cover; /* Replace 'your-photo.jpg' */
+            background-image: url('img/homePage/asl4.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: no-repeat center 20%/cover; /* moves image DOWN to reveal face */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             transition: opacity 0.8s ease-in-out;
         }
+        @media (max-width: 768px) {
+        .hero { background-position: center 15%; }
+        }
 
+        
       /* Content section */
       .content {
           height: 15vh;

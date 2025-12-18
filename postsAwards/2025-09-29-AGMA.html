@@ -138,11 +138,27 @@
       color:#fff;
       font-family:"Libre Baskerville", Georgia, "Times New Roman", serif;
       line-height:1.7;
+      overflow:hidden;
+      position:relative;
     }
     .fyc-award .wrap{
-      max-width: 880px;
+      max-width: 920px;
       margin: 0 auto;
       padding: 0 clamp(1rem, 3vw, 1.25rem);
+      position:relative;
+      z-index:1;
+    }
+
+    /* Subtle prestige glow */
+    .fyc-award:before{
+      content:"";
+      position:absolute;
+      inset:-40% -20% auto -20%;
+      height: 520px;
+      background: radial-gradient(closest-side, rgba(197,164,109,.18), transparent 70%);
+      filter: blur(2px);
+      pointer-events:none;
+      z-index:0;
     }
 
     /* Header */
@@ -165,7 +181,7 @@
     .fyc-award h1{
       font-family:"Cormorant Garamond", serif;
       font-weight:600;
-      font-size: clamp(1.7rem, 3.6vw, 2.35rem);
+      font-size: clamp(1.75rem, 3.8vw, 2.45rem);
       margin: .2rem 0 .35rem;
       letter-spacing:.2px;
     }
@@ -174,7 +190,7 @@
       font-size: clamp(.98rem, 1.6vw, 1.06rem);
     }
     .fyc-award .rule{
-      width:min(140px, 20vw); height:1px;
+      width:min(160px, 22vw); height:1px;
       margin: 1rem auto 0;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
@@ -184,11 +200,46 @@
       background: var(--paper);
       color: var(--ink);
       border: 1px solid rgba(0,0,0,.06);
-      border-radius: 18px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
-      padding: clamp(1.1rem, 2.8vw, 1.6rem) clamp(1.1rem, 3.2vw, 1.8rem);
+      padding: clamp(1.15rem, 2.9vw, 1.7rem) clamp(1.1rem, 3.2vw, 1.9rem);
       margin: 1.3rem auto 0;
     }
+
+    /* NEW: medal photo block (elegant, small, clickable) */
+    .fyc-award .photo-row{
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(16px, 3vw, 26px);
+      align-items: start;
+    }
+    .fyc-award .photo{
+      width: 220px;
+      margin: 0 auto;
+      text-align:center;
+    }
+    .fyc-award .photo a{ text-decoration:none; color:inherit; display:block; }
+    .fyc-award .frame{
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(197,164,109,.35);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+    }
+    .fyc-award .photo img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .fyc-award .photo figcaption{
+      margin-top: 10px;
+      font-size: .92rem;
+      color: #7b726b;
+      letter-spacing:.02em;
+    }
+
     .fyc-award .ribbon{
       display:inline-block;
       background: linear-gradient(180deg, #9b3438, #7b262b);
@@ -199,26 +250,26 @@
       text-transform:uppercase;
       padding:.35rem .65rem;
       border-radius: 6px;
-      margin-bottom:.8rem;
+      margin: 0 0 .8rem;
       box-shadow: 0 6px 14px rgba(138,44,47,.25);
     }
     .fyc-award .work{
       font-family:"Cormorant Garamond", serif;
       font-weight:600;
-      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
-      margin:.25rem 0 .4rem;
+      font-size: clamp(1.18rem, 2.2vw, 1.42rem);
+      margin:.15rem 0 .4rem;
     }
     .fyc-award .credit{
       color: var(--muted);
       font-size:.98rem;
-      margin: 0 0 .4rem;
+      margin: 0 0 .6rem;
     }
     .fyc-award .credit strong{ color: var(--rose-ink); }
 
     /* CTA */
     .fyc-award .cta{
-      display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;
-      margin-top: 1.1rem;
+      display:flex; gap:.75rem; justify-content:flex-start; flex-wrap:wrap;
+      margin-top: 1.05rem;
     }
     .fyc-award .btn{
       appearance:none; border:none; cursor:pointer; text-decoration:none;
@@ -242,6 +293,12 @@
       text-align:center; color:#cfcde0; font-size:.9rem; margin-top:1.25rem;
     }
 
+    @media (max-width: 720px){
+      .fyc-award .photo-row{ grid-template-columns: 1fr; }
+      .fyc-award .photo{ width: min(260px, 78vw); }
+      .fyc-award .cta{ justify-content:center; }
+      .fyc-award .card{ text-align:center; }
+    }
     @media (max-width: 520px){
       .fyc-award .medal{ width:82px; height:82px; }
     }
@@ -261,19 +318,39 @@
     </header>
 
     <article class="card">
-      <span class="ribbon">Winner</span>
-      <h2 class="work">Dichotomy — A Tone Poem of Five Metamorphoses</h2>
-      <p class="credit">by <strong>Sherif Dahroug</strong></p>
+      <div class="photo-row">
 
-      <div class="cta">
-        <a class="btn primary" href="https://apolloawards.eu/results-2025/#winners2025" target="_blank" rel="noopener" aria-label="View official winners on Apollo Awards website">
-          View Official Winners
-        </a>
-        <!-- Optional secondary action — remove if not needed
-        <a class="btn ghost" href="/postsMusic/albums/2025-07-07-dichotomy.html">
-          Discover the Work
-        </a>
-        -->
+        <!-- Medal Photo (replace the src + href with your file) -->
+        <figure class="photo">
+          <a href="/img/news/AGMA-medal.png" target="_blank" rel="noopener" aria-label="View medal photo">
+            <div class="frame">
+              <img
+                src="/img/news/AGMA-medal.png"
+                alt="Medal photo — Apollo Global Music Awards"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>Medal photo (click to view)</figcaption>
+          </a>
+        </figure>
+
+        <div>
+          <span class="ribbon">Winner</span>
+          <h2 class="work">Dichotomy — A Tone Poem of Five Metamorphoses</h2>
+          <p class="credit">by <strong>Sherif Dahroug</strong></p>
+
+          <div class="cta">
+            <a class="btn primary" href="https://apolloawards.eu/results-2025/#winners2025" target="_blank" rel="noopener" aria-label="View official winners on Apollo Awards website">
+              View Official Winners
+            </a>
+            <!-- Optional secondary action — remove if not needed
+            <a class="btn ghost" href="/postsMusic/albums/2025-07-07-dichotomy.html">
+              Discover the Work
+            </a>
+            -->
+          </div>
+        </div>
+
       </div>
     </article>
 
