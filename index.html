@@ -108,51 +108,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
-            <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sherif Dahroug",
-        "url": "https://sherifdahroug.github.io/biography",
-        "image": "https://sherifdahroug.github.io/path-to-official-photo.jpg",
-        "sameAs": [
-            "https://www.facebook.com/your-official-page",
-            "https://www.instagram.com/your-official-page",
-            "https://www.linkedin.com/in/your-profile"
-        ],
-        "jobTitle": ["Composer", "Pianist", "Concert Guitarist", "Naval Architect"],
-        "hasOccupation": [
-            {
-            "@type": "Occupation",
-            "name": "Pianist"
-            },
-            {
-            "@type": "Occupation",
-            "name": "Composer"
-            },
-            {
-            "@type": "Occupation",
-            "name": "Naval Architect"
-            }
-        ],
-        "knowsAbout": [
-            "Sonic Architectonics",
-            "Piano Performance",
-            "Classical Composition",
-            "Hydrodynamics",
-            "Ancient Egyptian Philosophy"
-        ],
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Schola Cantorum de Paris"
-        },
-        "award": [
-            "Diamond Prize for Composition",
-            "Diplôme de Concert (Unanimous)",
-            "Composer of the Year 2024"
-        ]
-        }
-        </script>
+        
 
         <!-- Home Post List -- >
         
@@ -355,6 +311,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elegant Homepage</title>
   <style>
+    /* === Signature Seal === */
+    /* Add/replace these rules in your existing CSS */
+
+/* Make the hero center its content perfectly */
+.hero{
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  text-align: center;
+}
+
+/* === Signature Seal — White Background Edition === */
+.signature-seal{
+  position: relative;
+  margin: 0 auto;
+  padding: 3.5rem 4rem;
+  max-width: 900px;
+  text-align: center;
+  isolation: isolate;
+}
+
+/* Architectural shadow field */
+.signature-seal::before{
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0.10) 0%,
+      rgba(0,0,0,0.06) 30%,
+      rgba(0,0,0,0.03) 48%,
+      rgba(0,0,0,0.01) 62%,
+      transparent 72%
+    );
+  filter: blur(42px);
+  z-index: -2;
+}
+
+/* Subtle architectural resonance (stone halo) */
+.signature-seal::after{
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(0,0,0,0.045),
+      rgba(0,0,0,0.015),
+      rgba(0,0,0,0.045)
+    );
+  opacity: 0.35;
+  filter: blur(55px);
+  animation: slowOrbit 140s linear infinite;
+  z-index: -3;
+}
+
+/* Typography — adapted for white */
+.signature-seal blockquote{
+  font-family: "Cormorant Garamond", "Garamond", serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  line-height: 1.55;
+  letter-spacing: 0.035em;
+  color: #111;
+  margin: 0;
+}
+
+.signature-seal cite{
+  display: block;
+  margin-top: 1.6rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+}
+
+/* Ultra-slow motion */
+@keyframes slowOrbit{
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* Entrance animation */
+@keyframes fadeInSeal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
       * {
           margin: 0;
           padding: 0;
@@ -410,7 +461,21 @@
     
         
   </div>
-
+  
+  <br>   
+  <hr>
+  <br> 
+  <div class="signature-seal">
+    <blockquote>
+      From music is born the silent logos of the cosmos;<br>
+      each note echoes its architecture.
+    </blockquote>
+    <cite>— Sherif Dahroug</cite>
+  </div>
+  
+  <br>   
+  <hr>
+  <br> 
 
   <script>
     window.addEventListener('scroll', function() {
