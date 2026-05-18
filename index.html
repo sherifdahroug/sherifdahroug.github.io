@@ -79,1212 +79,1282 @@
 </nav>
 
 
-    <!-- Page Header -->
-<!--  -->
-<!-- <header class="masthead" style="background-image: url('/img/homePage/imHomePage_v10.jpg')"> -->
-<!--
-<header class="masthead" style="background-image: url('/img/homePage/imHomePage_v10.jpg'); opacity: 1; color: black; background-size: 100% 105%;">  
-  
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <!-- <h1>Sherif DAHROUG</h1>
-            
-            <span class="subheading">Sherif Dahroug, globally celebrated composer and concert master, is making groundbreaking strides within the international community of accomplished musicians. Originally trained as a naval architect, he earned a Master’s degree in Naval Architecture and Hydrodynamics with honors before dedicating his life to the pursuit of arts and music on the global stage. This remarkable transition reflects his profound commitment to artistic excellence, swiftly establishing him as a visionary in the world of music. Today, he is widely celebrated as a leading figure on the international music scene. A recipient of numerous prestigious accolades and major awards, Sherif Dahroug has been honored with the Diamond Prize for Composition at the Classical Music Awards in London and the Grand Prize of the New York International Music Competition. Among his many distinctions are Platinum Absolute First Prizes at the World Master Open and the European Classical Music Awards, as well as multiple Gold and Silver honors from esteemed competitions across Europe, Russia, and the United States. These achievements underscore his unparalleled mastery in performance and composition, solidifying his place among the most accomplished artists of his generation. Dahroug’s illustrious career stands as a testament to his exceptional artistic brilliance. His album Regards sur l’Horizon, awarded the Global Music Awards for composition, stands as a seal of his outstanding achievement, further cementing his reputation as a groundbreaking artist in the field. His education at renowned institutions such as the Schola Cantorum, the École Normale de Musique de Paris, and the Royal Academy of Music in London refined his craft under the tutelage of eminent mentors—heirs to the legendary traditions of Sergiu Celibidache, Nadia Boulanger, and Olivier Messiaen—earning him the highest honors and degrees. Beyond his celebrated career as a musician, Sherif Dahroug is also a philosopher-author. His book, In Pursuit of a Sonic Architectonics, serves as a bold manifesto that transcends traditional boundaries of creation. Drawing from the rich symbolism and philosophy of ancient Egypt, it bridges transcendental contemplation with technical realization, transforming contradictions and dissonances into spaces of unprecedented beauty. Unbound by convention, Dahroug elevates the enigma of sonic art, proposing a timeless aesthetic rooted in a vision of universal renewal. Through his work, he invites audiences to rethink the foundations of art, offering a boundless realm where every creation becomes an infinite journey of discovery.</span>
-             --
-            <h1 class="animated fadeInUp">Bassem DAHROUG</h1>
-            <span class="subheading fadeInUp">PhD - Mechatronics engineer</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
--->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!--
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+<style>
+:root{
+  --ink:#11100e;
+  --ink-soft:rgba(17,16,14,.72);
+  --ink-faint:rgba(17,16,14,.45);
+  --paper:#f7f3ed;
+  --paper-2:#fffaf2;
+  --stone:#d9d0c1;
+  --museum-red:#d1132a;
+  --platinum:#c9b58a;
+  --noir:#070707;
+  --line:rgba(17,16,14,.13);
+  --white-line:rgba(255,255,255,.14);
+  --shadow:0 32px 80px rgba(0,0,0,.18);
+  --serif:"Cormorant Garamond", Garamond, serif;
+  --sans:"Inter", Arial, sans-serif;
+  --max:1480px;
+}
 
-        
+/* ===== Layout protection against Jekyll default wrappers ===== */
 
-        <!-- Home Post List -- >
-        
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+  background:var(--paper);
+}
 
-        <article class="post-preview">
-          <a href="/2024/02/13/test2p.html">
-            <h2 class="post-title">Test 2p</h2>
-            
-            <h3 class="post-subtitle">XXX (a) passive experimental installation (b) view of one block Fig. 1 : Modular aerodynamic...</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            DAHROUG
-            
-            on
-            February 13, 2024 &middot; <span class="reading-time" title="Estimated read time">
-  
-   2 mins  read </span>
-            
-          </p>
-        </article>
+.page-content,
+.wrapper,
+.container,
+.post,
+.post-content{
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+}
 
-        <hr>
+.site-header,
+.site-footer{
+  display:none;
+}
 
-        
+/* ===== Base ===== */
 
-        <article class="post-preview">
-          <a href="/2024/02/13/test2.html">
-            <h2 class="post-title">News 2</h2>
-            
-            <h3 class="post-subtitle">Competetion XXX</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            DAHROUG
-            
-            on
-            February 13, 2024 &middot; <span class="reading-time" title="Estimated read time">
-  
-   1 min  read </span>
-            
-          </p>
-        </article>
+*{
+  box-sizing:border-box;
+}
 
-        <hr>
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 12% 4%, rgba(201,181,138,.22), transparent 25rem),
+    linear-gradient(180deg,var(--paper-2),var(--paper));
+  -webkit-font-smoothing:antialiased;
+}
 
-        
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:999;
+  opacity:.18;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
 
-        <article class="post-preview">
-          <a href="/2024/02/08/European-Classical.html">
-            <h2 class="post-title">European Classical Music Awards - Strings Award</h2>
-            
-            <h3 class="post-subtitle">Platinum Absolute First Prize, The Artist of the month Award, Region Representative Special Prize - London, United Kingdom</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            DAHROUG
-            
-            on
-            February 08, 2024 &middot; <span class="reading-time" title="Estimated read time">
-  
-   1 min  read </span>
-            
-          </p>
-        </article>
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-        <hr>
+img{
+  max-width:100%;
+  display:block;
+}
 
-        
+.homepage{
+  width:100vw;
+  max-width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  overflow:hidden;
+}
 
-        <article class="post-preview">
-          <a href="/2024/02/05/WORLDMASTER.html">
-            <h2 class="post-title">World Master Open Music Competition</h2>
-            
-            <h3 class="post-subtitle">Platinum Absolute First Prize, professional categorgy - London, United Kingdom</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            DAHROUG
-            
-            on
-            February 05, 2024 &middot; <span class="reading-time" title="Estimated read time">
-  
-   1 min  read </span>
-            
-          </p>
-        </article>
+.page-shell{
+  width:min(calc(100% - 2rem),var(--max));
+  margin-inline:auto;
+}
 
-        <hr>
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--museum-red);
+}
 
-        
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.65rem;
+  min-height:3.25rem;
+  padding:0 1.35rem;
+  border-radius:999px;
+  font-size:.78rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-weight:700;
+  border:1px solid currentColor;
+  transition:transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+}
 
-        <article class="post-preview">
-          <a href="/2024/02/01/test1.html">
-            <h2 class="post-title">Test 1</h2>
-            
-            <h3 class="post-subtitle">
-    
-    
-  
-    
-  
-  
-    
-        
-    
-  
-    
-  </h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            DAHROUG
-            
-            on
-            February 01, 2024 &middot; <span class="reading-time" title="Estimated read time">
-  
-   1 min  read </span>
-            
-          </p>
-        </article>
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(0,0,0,.14);
+}
 
-        <hr>
+.btn-dark{
+  background:var(--ink);
+  color:var(--paper);
+}
 
-        
+.btn-red{
+  background:var(--museum-red);
+  border-color:var(--museum-red);
+  color:white;
+}
 
-        <!-- Pager -- >
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="/posts">View All Posts &rarr;</a>
-        </div>
+/* ===== Navigation ===== */
 
-      </div>
-    </div>
-  </div>
--->
-  
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:80;
+  padding:1.05rem 0;
+  mix-blend-mode:difference;
+  color:#fff;
+}
 
-<head>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://sherifdahroug.github.io/#website",
-          "url": "https://sherifdahroug.github.io/",
-          "name": "Sherif Dahroug",
-          "inLanguage": "en",
-          "publisher": {
-            "@type": "Person",
-            "@id": "https://sherifdahroug.github.io/#sherif-dahroug"
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://sherifdahroug.github.io/#sherif-dahroug",
-          "name": "Sherif Dahroug",
-          "alternateName": [
-            "Sherif DAHROUG",
-            "شريف دحروج"
-          ],
-          "description": "An internationally acclaimed composer and concert artist whose visionary work marks a major contribution to contemporary music.",
-          "jobTitle": [
-            "Composer",
-            "Concert Artist",
-            "Pianist",
-            "Author",
-            "Philosopher"
-          ],
-          "image": "https://sherifdahroug.github.io/assets/img/press-photo-1.jpg",
-          "url": "https://sherifdahroug.github.io/",
-          "homeLocation": {
-            "@type": "City",
-            "name": "Paris"
-          },
-          "knowsLanguage": [
-            "en",
-            "fr",
-            "ar"
-          ],
-          "sameAs": [
-            "https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB",
-            "https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=7GjAtk2cRHu8BdDQTgTvHw",
-            "https://www.instagram.com/sherif.dahroug/",
-            "https://www.facebook.com/cherif.dahroug",
-            "https://deezer.page.link/cSHMG2FeyTUE5b7j9",
-            "https://www.linkedin.com/in/sherif-dahroug-88820b139/"
-          ]
-        }
-      ]
-    }
-    </script>
-                     
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Homepage</title>
-  <style>
-    /* === Signature Seal === */
-    /* Add/replace these rules in your existing CSS */
+.nav-inner{
+  width:min(calc(100% - 2rem),var(--max));
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:1rem;
+}
 
-/* Make the hero center its content perfectly */
+.brand{
+  font-family:var(--serif);
+  font-size:1.42rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+
+.nav-links{
+  display:flex;
+  justify-content:flex-end;
+  gap:1.1rem;
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.nav-index{
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:rgba(255,255,255,.7);
+}
+
+/* ===== Hero ===== */
+
 .hero{
-  display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
-  text-align: center;
+  min-height:100svh;
+  position:relative;
+  background:#050505;
+  color:white;
+  isolation:isolate;
+  display:grid;
+  place-items:end center;
+  overflow:hidden;
 }
 
-/* === Signature Seal — White Background Edition === */
-.signature-seal{
-  position: relative;
-  margin: 0 auto;
-  padding: 3.5rem 4rem;
-  max-width: 900px;
-  text-align: center;
-  isolation: isolate;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  background:url('/img/homePage/Home.jpg') center 30% / cover no-repeat;
+  filter:grayscale(.08) contrast(1.05) brightness(.78);
+  transform:scale(1.02);
 }
 
-/* Architectural shadow field */
-.signature-seal::before{
-  content: "";
-  position: absolute;
-  inset: -30%;
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
   background:
-    radial-gradient(circle at center,
-      rgba(0,0,0,0.10) 0%,
-      rgba(0,0,0,0.06) 30%,
-      rgba(0,0,0,0.03) 48%,
-      rgba(0,0,0,0.01) 62%,
-      transparent 72%
-    );
-  filter: blur(42px);
-  z-index: -2;
+    linear-gradient(90deg, rgba(0,0,0,.74), rgba(0,0,0,.18) 48%, rgba(0,0,0,.66)),
+    linear-gradient(180deg, rgba(0,0,0,.52), transparent 34%, rgba(0,0,0,.85));
 }
 
-/* Subtle architectural resonance (stone halo) */
-.signature-seal::after{
-  content: "";
-  position: absolute;
-  inset: -18%;
+.modulor-grid{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:.22;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.11) 1px, transparent 1px);
+  background-size:clamp(4rem,8vw,9rem) clamp(4rem,8vw,9rem);
+  mask-image:linear-gradient(180deg,transparent,black 15%,black 78%,transparent);
+}
+
+.hero-content{
+  width:min(calc(100% - 2rem),var(--max));
+  padding:9rem 0 5rem;
+  display:grid;
+  grid-template-columns:1fr;
+  align-items:end;
+}
+
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(4.25rem,12.5vw,13.5rem);
+  line-height:.77;
+  letter-spacing:-.075em;
+  font-weight:300;
+  text-wrap:balance;
+}
+
+.hero-title span{
+  display:block;
+  padding-left:clamp(0rem,10vw,12rem);
+}
+
+.hero-panel{
+  position:relative;
+  z-index:3;
+  border-left:1px solid var(--white-line);
+  padding-left:1.5rem;
+  max-width:30rem;
+  justify-self:end;
+  margin-top:2rem;
+  margin-bottom:clamp(.35rem,2vw,2rem);
+  background:linear-gradient(90deg, rgba(0,0,0,.18), transparent);
+  backdrop-filter:blur(1px);
+}
+
+.hero-panel p{
+  margin-top:1rem;
+  color:rgba(255,255,255,.72);
+  line-height:1.85;
+  font-weight:300;
+}
+
+.scroll-note{
+  position:absolute;
+  bottom:1.3rem;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:.62rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+
+/* ===== Signature ===== */
+
+.signature{
+  padding:clamp(4rem,9vw,8rem) 0;
+  background:linear-gradient(180deg,var(--paper),#fff);
+}
+
+.signature-grid{
+  display:grid;
+  grid-template-columns:.33fr 1fr .33fr;
+  align-items:center;
+  gap:2rem;
+}
+
+.signature blockquote{
+  font-family:var(--serif);
+  text-align:center;
+  font-size:clamp(2rem,4.5vw,5.3rem);
+  line-height:1.03;
+  letter-spacing:-.035em;
+  font-weight:300;
+  margin:0;
+}
+
+.signature cite{
+  display:block;
+  margin-top:2rem;
+  text-align:center;
+  font-style:normal;
+  font-size:.75rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  font-weight:700;
+}
+
+.vertical-rule{
+  height:16rem;
+  width:1px;
+  background:linear-gradient(transparent,var(--line),transparent);
+  justify-self:center;
+}
+
+/* ===== Sections ===== */
+
+.section{
+  padding:clamp(5rem,9vw,10rem) 0;
+  border-top:1px solid var(--line);
+}
+
+.section-head{
+  display:grid;
+  grid-template-columns:.52fr 1fr;
+  gap:clamp(2rem,6vw,8rem);
+  align-items:end;
+  margin-bottom:clamp(2rem,5vw,5rem);
+}
+
+.section-title{
+  font-family:var(--serif);
+  font-weight:300;
+  letter-spacing:-.045em;
+  line-height:.93;
+  font-size:clamp(3rem,7.2vw,8rem);
+  margin:0;
+}
+
+.section-intro{
+  color:var(--ink-soft);
+  line-height:1.85;
+  max-width:44rem;
+  font-weight:300;
+  margin:0;
+}
+
+/* ===== Platinum ===== */
+
+.platinum{
+  position:relative;
+  overflow:hidden;
   background:
-    conic-gradient(
-      from 0deg,
-      rgba(0,0,0,0.045),
-      rgba(0,0,0,0.015),
-      rgba(0,0,0,0.045)
-    );
-  opacity: 0.35;
-  filter: blur(55px);
-  animation: slowOrbit 140s linear infinite;
-  z-index: -3;
+    linear-gradient(90deg, rgba(247,243,237,.96), rgba(247,243,237,.88) 48%, rgba(247,243,237,.98)),
+    url('/img/homePage/asl5.JPG') center / cover fixed;
 }
 
-/* Typography — adapted for white */
-.signature-seal blockquote{
-  font-family: "Cormorant Garamond", "Garamond", serif;
-  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
-  line-height: 1.55;
-  letter-spacing: 0.035em;
-  color: #111;
-  margin: 0;
+.platinum::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(17,16,14,.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17,16,14,.045) 1px, transparent 1px);
+  background-size:clamp(4rem,7vw,8rem) clamp(4rem,7vw,8rem);
+  mask-image:linear-gradient(180deg, transparent, black 16%, black 84%, transparent);
 }
 
-.signature-seal cite{
-  display: block;
-  margin-top: 1.6rem;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(0,0,0,0.55);
+.platinum > .page-shell{
+  position:relative;
+  z-index:1;
 }
 
-/* Ultra-slow motion */
-@keyframes slowOrbit{
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+.medal-architecture{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(21rem,.92fr);
+  gap:clamp(1rem,2vw,1.6rem);
+  align-items:stretch;
 }
 
+.medal-monument{
+  position:relative;
+  border:1px solid var(--line);
+  background:#fff;
+  padding:clamp(.55rem,1vw,.9rem);
+  box-shadow:var(--shadow);
+}
 
-/* Entrance animation */
-@keyframes fadeInSeal {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
+.medal-monument::after{
+  content:"";
+  position:absolute;
+  inset:clamp(.55rem,1vw,.9rem);
+  border:1px solid rgba(255,255,255,.5);
+  pointer-events:none;
+}
+
+.medal-monument img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  object-position:center;
+  filter:saturate(.94) contrast(1.02);
+}
+
+.medal-side{
+  display:grid;
+  grid-template-rows:auto auto;
+  gap:clamp(1rem,2vw,1.6rem);
+}
+
+.museum-plaque{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(14px);
+  padding:clamp(1.4rem,3vw,3.2rem);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.museum-plaque h3{
+  margin:1.2rem 0 0;
+  font-family:var(--serif);
+  font-size:clamp(2.8rem,5.5vw,6.4rem);
+  line-height:.82;
+  letter-spacing:-.065em;
+  font-weight:300;
+  text-wrap:balance;
+}
+
+.museum-plaque p{
+  margin-top:1.4rem;
+  max-width:33rem;
+  color:var(--ink-soft);
+  line-height:1.85;
+  font-weight:300;
+}
+
+.plaque-meta{
+  margin-top:2rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.plaque-meta div{
+  background:rgba(255,255,255,.72);
+  padding:.95rem;
+}
+
+.plaque-meta span{
+  display:block;
+  font-size:.58rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  font-weight:800;
+  margin-bottom:.35rem;
+}
+
+.plaque-meta strong{
+  font-size:.82rem;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.medal-film{
+  border:1px solid var(--line);
+  background:#0a0a0a;
+  display:grid;
+  place-items:center;
+  padding:clamp(.7rem,1vw,1rem);
+  box-shadow:0 24px 70px rgba(0,0,0,.18);
+}
+
+.medal-film-inner{
+  width:min(100%,20rem);
+  aspect-ratio:267/476;
+  overflow:hidden;
+  background:#111;
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.medal-film iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.gallery-title-row{
+  margin-top:clamp(1.4rem,2.4vw,2.2rem);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  border-top:1px solid var(--line);
+  padding-top:1.2rem;
+}
+
+.gallery-title-row p{
+  color:var(--ink-faint);
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+  margin:0;
+}
+
+.gallery{
+  margin-top:1rem;
+  display:grid;
+  grid-template-columns:repeat(11,1fr);
+  gap:clamp(.45rem,.75vw,.75rem);
+}
+
+.gallery-img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  object-position:center;
+  border-radius:0;
+  cursor:zoom-in;
+  border:1px solid rgba(17,16,14,.12);
+  background:#fff;
+  padding:.18rem;
+  filter:saturate(.9) contrast(1.02);
+  transition:transform .35s ease, filter .35s ease, box-shadow .35s ease;
+}
+
+.gallery-img:hover{
+  transform:translateY(-4px);
+  filter:saturate(1.06) contrast(1.04);
+  box-shadow:0 18px 42px rgba(0,0,0,.18);
+}
+
+/* ===== FYC ===== */
+
+.fyc{
+  background:var(--noir);
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+
+.fyc::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(209,19,42,.42), transparent 34%),
+    radial-gradient(circle at 80% 80%, rgba(201,181,138,.16), transparent 30%);
+  filter:blur(40px);
+}
+
+.fyc-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:clamp(2rem,7vw,8rem);
+  align-items:center;
+}
+
+.fyc-card{
+  border:1px solid var(--white-line);
+  border-radius:2rem;
+  overflow:hidden;
+  background:rgba(255,255,255,.04);
+  box-shadow:0 28px 90px rgba(0,0,0,.42);
+  padding:.65rem;
+}
+
+.fyc-card img{
+  border-radius:1.45rem;
+}
+
+.fyc-copy h2{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(4rem,9vw,9rem);
+  line-height:.82;
+  letter-spacing:-.06em;
+  margin:0;
+}
+
+.fyc-copy p{
+  margin-top:1.5rem;
+  color:rgba(255,255,255,.7);
+  line-height:1.85;
+  max-width:38rem;
+  font-weight:300;
+}
+
+/* ===== Press ===== */
+
+.press{
+  background:#fff;
+}
+
+.quote-wall{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.quote-card{
+  background:#fff;
+  padding:clamp(1.35rem,2vw,2.3rem);
+  min-height:17rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.quote-card blockquote{
+  font-family:var(--serif);
+  font-size:clamp(1.35rem,1.75vw,2rem);
+  line-height:1.22;
+  font-weight:300;
+  color:var(--ink);
+  margin:0;
+}
+
+.quote-card figcaption{
+  margin-top:2rem;
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  font-weight:700;
+  line-height:1.7;
+}
+
+.quote-card.featured{
+  background:var(--ink);
+  color:white;
+  grid-column:span 2;
+}
+
+.quote-card.featured blockquote{
+  color:white;
+  font-size:clamp(1.8rem,3vw,3.4rem);
+}
+
+.quote-card.featured figcaption{
+  color:rgba(255,255,255,.55);
+}
+
+/* ===== Book ===== */
+
+.book{
+  background:linear-gradient(180deg,#fff,var(--paper));
+}
+
+.book-grid{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:clamp(2rem,6vw,7rem);
+  align-items:center;
+}
+
+.book-cover{
+  border-radius:1.8rem;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:white;
+  padding:.65rem;
+  transform:rotate(-1deg);
+}
+
+.book-cover img{
+  border-radius:1.2rem;
+}
+
+.book-copy h2{
+  font-family:var(--serif);
+  font-size:clamp(3rem,6vw,7rem);
+  font-weight:300;
+  line-height:.88;
+  letter-spacing:-.055em;
+  margin:0;
+}
+
+.book-copy p{
+  margin-top:1.8rem;
+  max-width:55rem;
+  color:var(--ink-soft);
+  line-height:1.9;
+  font-weight:300;
+}
+
+.meta-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  margin-top:2rem;
+  border:1px solid var(--line);
+}
+
+.meta-list div{
+  background:rgba(255,255,255,.65);
+  padding:1rem;
+}
+
+.meta-list span{
+  display:block;
+  font-size:.62rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  font-weight:700;
+  margin-bottom:.35rem;
+}
+
+.meta-list strong{
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--ink);
+}
+
+/* ===== Connect ===== */
+
+.connect{
+  background:var(--ink);
+  color:white;
+}
+
+.connect-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--white-line);
+  border:1px solid var(--white-line);
+}
+
+.connect-card{
+  background:#2c2b2b;
+  padding:clamp(2rem,4vw,4rem);
+  min-height:24rem;
+}
+
+.connect-card h2{
+  font-family:var(--serif);
+  font-size:clamp(3rem,6vw,6.5rem);
+  font-weight:300;
+  letter-spacing:-.05em;
+  line-height:.9;
+  margin:0;
+}
+
+.connect-card p{
+  margin-top:1.2rem;
+  color:rgba(255,255,255,.64);
+  line-height:1.8;
+  max-width:38rem;
+}
+
+.social-icons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.social-icons a{
+  color:white;
+}
+
+.contact-lines{
+  margin-top:2rem;
+  display:grid;
+  gap:.8rem;
+}
+
+.contact-lines a{
+  color:white;
+  border-bottom:1px solid var(--white-line);
+  padding-bottom:.55rem;
+}
+
+footer{
+  background:#050505;
+  color:rgba(255,255,255,.55);
+  padding:2rem 0;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+/* ===== Lightbox ===== */
+
+#lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:2rem;
+}
+
+#lightboxImg{
+  max-width:min(94vw,1200px);
+  max-height:86vh;
+  border-radius:1.2rem;
+  box-shadow:0 0 40px rgba(255,255,255,.15);
+}
+
+#closeLightbox{
+  position:absolute;
+  top:1.5rem;
+  right:2rem;
+  color:white;
+  font-size:2.4rem;
+  cursor:pointer;
+  font-family:var(--serif);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width:980px){
+  .nav-inner{
+    grid-template-columns:1fr auto;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .nav-index,
+  .nav-links{
+    display:none;
+  }
+
+  .hero-content,
+  .section-head,
+  .medal-architecture,
+  .fyc-grid,
+  .book-grid,
+  .connect-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-title span{
+    padding-left:0;
+  }
+
+  .hero-panel{
+    border-left:0;
+    border-top:1px solid var(--white-line);
+    padding:1.3rem 0 0;
+    justify-self:start;
+    max-width:42rem;
+    margin:2rem 0 0;
+    background:transparent;
+    backdrop-filter:none;
+  }
+
+  .signature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .vertical-rule{
+    height:1px;
+    width:100%;
+  }
+
+  .quote-wall{
+    grid-template-columns:1fr;
+  }
+
+  .quote-card.featured{
+    grid-column:span 1;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .medal-side{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+  }
+
+  .plaque-meta{
+    grid-template-columns:1fr;
+  }
+
+  .meta-list{
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: "Garamond", serif;
-          color: white;
-          background-color: #111;
-      }
-
-      /* Full-screen hero section with your personal photo */
-      .hero {
-          position: relative;
-          width: 100%;
-          height: 100vh;
-          background: url('img/homePage/Home.jpg') no-repeat center 30%/cover; /* Replace 'your-photo.jpg' */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          transition: opacity 0.8s ease-in-out;
-      }
-      
-
-      .hero h1 {
-          font-size: 3rem;
-          font-weight: 300;
-          background: rgba(0, 0, 0, 0.4);
-          padding: 20px 40px;
-          border-radius: 10px;
-      }
-
-      /* Content section */
-      .content {
-          height: 15vh;
-          padding: 50px;
-          background-color: white;
-          color: black;
-      }
-
-      /* Fade-out effect on scroll */
-      .fade-out {
-          opacity: 0;
-          pointer-events: none;
-      }
-  </style>
-</head>
-<body>
-
-  <div class="hero" id="hero">
-    
-        
-  </div>
-  
-  <br>   
-  <hr>
-  <br> 
-  <div class="signature-seal">
-    <blockquote>
-      From music is born the silent logos of the cosmos;<br>
-      each note echoes its architecture.
-    </blockquote>
-    <cite>— Sherif Dahroug</cite>
-  </div>
-  
-  <br>   
-  <hr>
-  <br> 
-
-  <script>
-    window.addEventListener('scroll', function() {
-        let scrollValue = window.scrollY;
-        let opacity = 1 - scrollValue / 1500;
-        document.getElementById('hero').style.opacity = opacity;
-    });
-  </script>
-
-</body>
-
-<!-- ✂️ Removed the GRAMMY Voting Member CSS + section here -->
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Press Quotes</title>
-  <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f9f9f9;
-      }
-      .quotes-section {
-          background-color: #fff;
-          padding: 40px 20px;
-          text-align: center;
-      }
-      .quotes-section h2 {
-          font-size: 28px;
-          color: #333;
-          margin-bottom: 30px;
-      }
-      .quote {
-          font-style: italic;
-          font-size: 18px;
-          color: #555;
-          margin-bottom: 20px;
-          line-height: 1.6;
-          text-align: justify center;
-      }
-      .quote::before, .quote::after {
-          content: '"';
-          color: #999;
-      }
-      .source {
-          font-weight: bold;
-          font-size: 16px;
-          color: #333;
-          margin-top: 10px;
-      }
-  </style>
-</head>
-<body>
-<!-- ===== Section Médaille de Platine ===== -->
-<section id="section-medaille" style="
-  font-family: 'Cormorant Garamond', serif;
-  background: 
-    linear-gradient(rgba(255, 248, 235, 0.65), rgba(255, 250, 245, 0.7)),
-    url('/img/homePage/asl5.JPG') center center / cover no-repeat fixed;
-  color: #1c1c1c;
-  padding: 80px 20px;
-  text-align: center;
-  overflow: hidden;
-  backdrop-filter: blur(4px);
-">
-
-  <h2 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 40px; letter-spacing: 0.5px;">
-    <span style="border-bottom: 2px solid #bfa67a; padding-bottom: 8px;">Remise de la Médaille de Platine</span><br>
-    <span style="font-size:1.3rem; color:#7a6a56;">Société Académique des Arts, Sciences et Lettres</span>
-  </h2>
-<!-- Main Medal Ceremony Photo -->
-<figure style="
-  max-width: 1100px;
-  margin: 0 auto 60px auto;
-  padding: 14px;
-  background: rgba(255, 255, 255, 0.65);
-  border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-  backdrop-filter: blur(6px);
-">
-
-  <img 
-    src="/img/homePage/IMG_2008 2.JPG"
-    alt="Remise de la Médaille de Platine — Société Académique des Arts, Sciences et Lettres"
-    style="
-      width: 100%;
-      height: auto;
-      aspect-ratio: 2137 / 1602;
-      object-fit: cover;
-      border-radius: 12px;
-      display: block;
-    "
-    loading="lazy"
-  />
-
-</figure>
-
-  <!-- YouTube Video Embed (Shorts Preview) -->
-<div class="video-wrapper" 
-style="max-width: 320px; margin: 0 auto 50px auto; border-radius: 16px; 
-       box-shadow: 0 8px 20px rgba(0,0,0,0.25); overflow: hidden;">
-<iframe 
-src="https://www.youtube.com/embed/2i5Sk9BhUBk"
-width="267" height="476"
-style="border:none; overflow:hidden; width:100%; height:auto; aspect-ratio:267/476; border-radius:16px;"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-</div>
-
-
-  <!-- Photo Gallery -->
-  <div class="gallery" 
-       style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); 
-              gap:10px; margin:0 auto 50px auto; max-width:900px;">
-    <img src="/img/homePage/ASL1.JPG" alt="Ambiance 1" class="gallery-img">
-    <img src="/img/homePage/asl2.JPG" alt="Ambiance 2" class="gallery-img">
-    <img src="/img/homePage/asl3.JPG" alt="Ambiance 3" class="gallery-img">
-    <img src="/img/homePage/asl5.JPG" alt="Ambiance 5" class="gallery-img">
-    <img src="/img/homePage/asl6.JPG" alt="Ambiance 6" class="gallery-img">
-    <img src="/img/homePage/asl7.JPG" alt="Ambiance 7" class="gallery-img">
-    <img src="/img/homePage/asl8.JPG" alt="Ambiance 8" class="gallery-img">
-    <img src="/img/homePage/asl9.JPG" alt="Ambiance 9" class="gallery-img">
-    <img src="/img/homePage/asl10.JPG" alt="Ambiance 10" class="gallery-img">
-    <img src="/img/homePage/asl11.JPG" alt="Ambiance 11" class="gallery-img">
-    <img src="/img/homePage/asl12.jpg" alt="Ambiance 12" class="gallery-img">
-  </div>
-
-  <!-- Lire le discours Button -->
-  <button onclick="toggleDiscours()" 
-    style="background: linear-gradient(135deg, #bfa67a, #9e845d); color: white; border:none; 
-           padding:14px 34px; font-size:1.1rem; border-radius:50px; cursor:pointer; 
-           box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:all 0.3s ease;">
-    Lire le discours
-  </button>
-
-  <!-- Discours -->
-  <div id="discours" 
-       style="display:none; max-width:850px; margin:50px auto 0 auto; text-align:justify; 
-              font-size:1.1rem; line-height:1.8; background-color:rgba(255,255,255,0.8); 
-              padding:40px 50px; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.05); 
-              backdrop-filter: blur(6px);">
-    <p>C’est pour moi un immense honneur d’annoncer que la Société Académique Arts-Sciences-Lettres (Paris) m’a décerné la Médaille de Platine,
-    sa plus haute distinction honorifique, au sommet des grades et des échelons de cette illustre institution fondée en 1915 et reconnue d’utilité publique, à l’occasion de sa Grande Fête Annuelle.
-    Cette distinction, d’une rareté particulière, consacre un parcours où les Arts, les Sciences et les Lettres ne sont plus des domaines séparés, mais les voix d’un même langage universel.</p>
-
-    <p>La Médaille de Platine symbolise pour moi l’union de ces trois sphères — la musique, la pensée et la connaissance — en un seul mouvement : celui de la quête intemporelle du sens, de la beauté et de la vérité.
-    Recevoir un tel honneur à un âge encore relativement jeune est une émotion profonde.
-    C’est le couronnement d’une vie consacrée à la création, à la recherche et à la transmission — une existence où chaque note, chaque idée et chaque silence furent mis au service des valeurs les plus exigeantes.</p>
-
-    <p>Cette reconnaissance est à la fois une couronne morale, un signe de confiance, et surtout une invitation à poursuivre — à œuvrer avec encore plus de rigueur, de lumière et d’amour du vrai.
-    Je tiens également à adresser mes félicitations les plus sincères à tous les autres lauréats de cette édition :
-    aux récipiendaires des médailles d’Étain, de Bronze (ex-Chevalier), d’Argent (ex-Officier), de Vermeil (ex-Commandeur) et d’Or (ex-Grand Officier).</p>
-
-    <p>Chacun de ces grades marque une étape essentielle dans la reconnaissance d’un engagement, d’un travail et d’un rayonnement personnel.
-    Nous partageons, malgré la diversité de nos disciplines, la même fidélité aux idéaux qui nous rassemblent : l’amour du savoir, la dignité de l’effort et la foi dans la création.</p>
-
-    <p>Au-delà des distinctions, cette cérémonie célèbre ce que l’humanité porte de plus précieux :
-    le désir de transmettre, la noblesse de penser et la joie de créer.
-    Je reçois cette Médaille de Platine avec humilité et gratitude, non comme une fin, mais comme un nouveau départ.
-    Puissent ces symboles, du Bronze au Platine, nous rappeler que la véritable excellence réside moins dans la récompense que dans la constance du don.</p>
-
-    <p>Si cette distinction me touche au plus profond, c’est qu’elle me relie à la source d’où je viens — à cette voix du Nil qui, depuis toujours, cherche à faire résonner l’universel dans le langage de la musique et de la pensée.
-    Je remercie profondément Monsieur Fernand Girard, président de ce prestigieux rassemblement, ainsi que la Commission Supérieure des Récompenses,
-    et j’adresse toute ma gratitude pour les mots d’éloge de l’illustre Monsieur François Tois.</p>
-
-    <p>Je salue également la présence de leurs Excellences les ambassadeurs d’Espagne, du Portugal, de Belgique et du Canada,
-    ainsi que l’astronaute Thomas Pesquet, à qui j’adresse mes félicitations pour sa Médaille de Grande Or, avec tout mon respect et mon admiration.
-    Enfin, j’exprime ma profonde reconnaissance au Comte Pierre Chéremetieff, architecte de grand cœur,
-    à qui j’ai eu l’honneur de dédicacer, au cours de la cérémonie, mon livre <em>À la quête d’une architectonique sonore</em>.</p>
-
-    <p>J’adresse mes remerciements les plus sincères à la Maison Bacqueville
-    pour la réalisation de la médaille et de l’insigne de la Société Académique Arts-Sciences-Lettres,
-    témoins précieux de ce moment d’honneur et de reconnaissance.</p>
-
-    <p style="text-align:right; font-weight:600; margin-top:30px;">
-    Avec une gratitude infinie et la lumière du cœur.<br>
-    <strong>Sherif Dahroug</strong><br>
-    Le samedi 11 octobre 2025
-    </p>
-  </div>
-
-  <!-- Lightbox Overlay -->
-  <div id="lightbox" 
-       style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-              background:rgba(0,0,0,0.9); align-items:center; justify-content:center; z-index:9999;">
-    <span id="closeLightbox" 
-          style="position:absolute; top:30px; right:40px; color:white; font-size:2rem; cursor:pointer;">
-      &times;
-    </span>
-    <img id="lightboxImg" src="" alt="" 
-         style="max-width:90%; max-height:85%; border-radius:12px; 
-                box-shadow:0 0 20px rgba(255,255,255,0.3); transition:opacity 0.5s;">
-  </div>
-
-  <script>
-    // Toggle discours visibility
-    function toggleDiscours() {
-      const d = document.getElementById('discours');
-      const btn = document.querySelector('button');
-      if (d.style.display === 'none' || d.style.display === '') {
-        d.style.display = 'block';
-        d.scrollIntoView({ behavior: 'smooth' });
-        btn.textContent = "Fermer le discours";
-        btn.style.background = "linear-gradient(135deg, #d7c08a, #bfa67a)";
-      } else {
-        d.style.display = 'none';
-        btn.textContent = "Lire le discours";
-        btn.style.background = "linear-gradient(135deg, #bfa67a, #9e845d)";
-      }
-    }
-
-    // Lightbox for gallery
-    const galleryImgs = document.querySelectorAll('.gallery-img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeLightbox = document.getElementById('closeLightbox');
-
-    galleryImgs.forEach(img => {
-      img.style.borderRadius = '10px';
-      img.style.cursor = 'zoom-in';
-      img.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
-      img.style.width = '100%';
-      img.style.height = 'auto';
-      img.style.objectFit = 'cover';
-      img.style.aspectRatio = '4/3';
-      img.addEventListener('mouseover', () => img.style.transform = 'scale(1.07)');
-      img.addEventListener('mouseout', () => img.style.transform = 'scale(1)');
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-      });
-    });
-
-    closeLightbox.addEventListener('click', () => lightbox.style.display = 'none');
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.style.display = 'none'; });
-  </script>
-</section>
-
-
-
-  
-<!-- === FYC HIGHLIGHT (refined background to match FYC cover) === -->
-<style>
-  /* Scoped styles to avoid conflicts */
-  .fyc2 { 
-    background: radial-gradient(circle at top center, rgba(255, 72, 100, 0.08), transparent 65%),
-                linear-gradient(180deg, #0b0b0b 0%, #141313 55%, #0b0b0b 100%);
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding: 4rem 1rem;
+@media (max-width:620px){
+  .page-shell{
+    width:min(calc(100% - 1.1rem),var(--max));
   }
-  .fyc2-wrap { 
-    max-width: 64rem; 
-    margin: 0 auto; 
-    text-align: center; 
+
+  .hero-content{
+    padding:7rem 0 4rem;
   }
-  .fyc2-card {
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.08);
-    background:
-      radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.05), transparent 60%),
-      linear-gradient(180deg, rgba(255,255,255,.025), rgba(0,0,0,.1));
-    box-shadow: 0 18px 44px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.14) inset;
+
+  .hero-title{
+    font-size:clamp(3.7rem,17vw,6.5rem);
   }
-  .fyc2-img { 
-    display:block; 
-    width:100%; 
-    height:auto; 
+
+  .section{
+    padding:4.2rem 0;
   }
-  .fyc2-cta {
-    display: inline-block;
-    margin-top: 1.1rem;
-    padding: .9rem 1.4rem;
-    border-radius: 999px;
-    font-weight: 700;
-    color: #0a0a0a;
-    text-decoration: none;
-    background: linear-gradient(135deg, #e11d48, #fb7185);
-    box-shadow: 0 12px 26px rgba(235,120,140,.22);
-    transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+
+  .section-head{
+    gap:2rem;
   }
-  .fyc2-cta:hover { 
-    transform: translateY(-2px); 
-    filter: brightness(1.05); 
-    box-shadow: 0 16px 34px rgba(235,120,140,.28); 
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
   }
-  .fyc2-note { 
-    margin-top:.5rem; 
-    font-size:.9rem; 
-    opacity:.7; 
+
+  .platforms,
+  .meta-list{
+    grid-template-columns:1fr;
   }
-  @media (min-width: 768px){ 
-    .fyc2{ padding: 5rem 1.25rem; } 
+
+  .connect-card{
+    min-height:auto;
   }
+}
 </style>
 
+<div class="homepage">
 
-<section class="fyc2" aria-labelledby="fyc-heading">
-  <div class="fyc2-wrap">
-    <figure class="fyc2-card" style="max-width:720px;margin-inline:auto;">
-      <img
-        class="fyc2-img"
-        src="/img/homePage/VOTING-2.png"
-        alt="For Your Consideration — Sherif Dahroug"
-        loading="lazy"
-        decoding="async">
-    </figure>
-
-    <div class="fyc2-note" id="fyc-heading" aria-hidden="true">
-      For Your Consideration
+<nav class="nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <div class="nav-index">Sonic Architectonics</div>
+    <a class="brand" href="#top" aria-label="Sherif Dahroug home">Sherif Dahroug</a>
+    <div class="nav-links">
+      <a href="#platinum">Medal</a>
+      <a href="#fyc">FYC</a>
+      <a href="#press">Press</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
     </div>
-
-    <p>
-      <a class="fyc2-cta" href="/postsMusic/albums/2025-09-25-grammy_FYC.html">
-        Enter the FYC Page
-      </a>
-    </p>
   </div>
-</section>
-<!-- === /FYC HIGHLIGHT === -->
+</nav>
 
+<main id="top">
 
-  <section class="cd-announcement">
-    <section class="quotes-section">
-        <h2>Press & Critical Insights</h2>
-        
+  <section class="hero" aria-label="Sherif Dahroug homepage hero">
+    <div class="modulor-grid" aria-hidden="true"></div>
 
-        <div class="quote">
-          "..Under his fingers, notes burst forth, stirring the depths of emotion, where passion and pleasure intertwine with pain and sorrow. He plays with melodies that transport us to the edges of beauty, brushing against the stars. The strings under his hands shape a music where harmony merges with the artist, the instrument dissolves into the sound, and the whole transforms into a musical state that enchants the mind and captivates the soul."
-          <div class="source">- Nisreen Mahran, Al-Ahram, December 15, 2023.</div>
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow">Composer · Concert Artist · Author</div>
+        <h1 class="hero-title">Sonic <span>Architectonics</span></h1>
       </div>
-        <div class="quote">
-            "His music weaves a narrative that reinvents the order of time, illuminating the depths of all desire and all mundanity. It reveals a musician of universal stature and a master of every element."
-            <div class="source">- Yasmin Magdi, Ministry of Culture Magazine, Issue 86, April 2016.</div>
-        </div>
 
-        <div class="quote">
-            "Winning the Special Prize for Distinguished Creativity in Composition, alongside four Platinum Prizes at the World Grand Prix, goes beyond mere achievement. It is a rare artistic phenomenon—a manifestation of genius that channels the power of nature and reflects a creative excellence of unparalleled magnitude, beyond words."
-            <div class="source">- Exclusive Journal of Laureates 2024, World Organization of Music Competitions – April 2024.</div>
-        </div>
-
-        <div class="quote">
-            "...He carries the poise of an artist who promises dreams, combined with the evident mastery of an erudite musician who imparts knowledge with a gentle touch, imbued with a disarming sense of understated authority."
-            <div class="source">- J. C. Dorge, French writer, article La Ronde Poétique, Paris concert, 2014.</div>
-        </div>
-
-        
-
-       <div class="quote">
-        "Dahroug's music is an inner journey where thought becomes music, seeking to connect architecture, astronomy, philosophy, and poetry."
-        <div class="source">- Névine Lamei, Al-Ahram Hebdo, December 16, 2024.</div>
+      <aside class="hero-panel">
+        <div class="eyebrow">Paris · Alexandria</div>
+        <p>
+          A contemporary classical universe guided by a quest for architectonic transcendence, drawing philosophy, astronomy, poetry, and the inner geometry of sound into a single luminous horizon.
+        </p>
+      </aside>
     </div>
 
-      <div class="quote">
-      "It is with genuine admiration that we acknowledge his exceptional talent, remarkable musicality, and accomplished technique."
-      <div class="source">- Wiener Internationaler Musikwettbewerb, 3 April 2024.</div>
-   </div>
-
-    <div class="quote">
-      "His innovative works—ranging from neo-impressionism to theatrical soundscapes—are redefining the landscape of contemporary classical music"
-      <div class="source">- ICON STORY Magazine, WOMCO – November 2024.</div>
-    </div>
-
-    <div class="quote">
-      "...A magnificent, insightful, and powerful musical interpretation... a true contribution to the universal cultural heritage."
-      <div class="source">- The Global Influential Times – April 2024.</div>
-    </div>
-    </section>
+    <div class="scroll-note">Scroll to enter</div>
   </section>
 
-</body>
+  <section class="signature" aria-label="Artist signature statement">
+    <div class="page-shell signature-grid">
+      <div class="vertical-rule" aria-hidden="true"></div>
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Book Announcement</title>
-  <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f9f9f9;
-      }
-      .book-announcement {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 40px 20px;
-          background-color: #fff;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          margin: 20px;
-      }
-      .book-artwork {
-          max-width: 40%;
-          flex-shrink: 0;
-          margin-right: 20px;
-      }
-      .book-artwork img {
-          width: 100%;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      }
-      .book-details {
-          max-width: 60%;
-      }
-      .book-details h2 {
-          font-size: 28px;
-          margin-bottom: 15px;
-          color: #333;
-      }
-      .book-details p {
-          font-size: 16px;
-          margin-bottom: 20px;
-          color: #555;
-          line-height: 1.5;
-      }
-      .book-details button {
-          padding: 10px 20px;
-          background-color: #28a745;
-          border: none;
-          border-radius: 4px;
-          color: #fff;
-          font-size: 16px;
-          cursor: pointer;
-      }
-      .book-details button:hover {
-          background-color: #218838;
-      }
-  </style>
-</head>
-<body>
-
-  <section class="book-announcement">
-      <div class="book-artwork">
-          <img src="img/postsBooks/annonce- archetectonique-15.png" alt="Book Cover">
+      <div>
+        <blockquote>
+          From music is born the silent logos of the cosmos;<br />
+          each note echoes its architecture.
+        </blockquote>
+        <cite>— Sherif Dahroug</cite>
       </div>
-      <div class="book-details">
-          <h2>New Book: "In Pursuit of a Sonic Architectonics"</h2>
-          <p>Dive into a Bold Reflection That Transcends Classical Aesthetic Boundaries
-            In Pursuit of a Sonic Architectonics neither seeks to conform to a rigid theoretical tradition nor to dismiss it. Its ambition? To explore beauty in its contradictions and dissonances, bridging contemplative reflection, with its transcendental dimensions, and the immanent demands of technical realization.
-            This book embarks on a rare and daring exercise, aiming for timeless universality while remaining deeply contextual—rooted in a symbolic and phenomenological interpretation. Drawing its essence from Egyptian philosophy, a millennia-old tradition of regeneration, it shapes an aesthetic where abstraction and mystery merge into an eternal language.
-            Like art itself, In Pursuit of a Sonic Architectonics creates a unique and intimate universe—a space of artistic liberation where every enigma becomes a suspended answer. Far from claiming to unravel the mysteries of its architectonic cosmos or dispel the philosophical aura of sonic art, it amplifies the mystery itself. This work stands as a profound and thoughtful alternative to the cultural alienation of our era.
-            Above all, In Pursuit of a Sonic Architectonics is a manifesto for an autonomous, liberated, and resolutely timeless sonic aesthetic. It is a vibrant call to reconnect with the roots of art and life, where the horizon of sonic creation transforms into a boundless territory.
-            In its quest for a new artistic vision, this book is both an invitation to exploration and a declaration for those daring enough to dream beyond established conventions.
-            In Pursuit of a Sonic Architectonics is ultimately a manifesto for an independent and enduringly relevant sonic aesthetic.
-            <br>
-            <br>
-            Publisher: Lyre de Mercure (November 29, 2024)
-            <br>
-            Language: French
-            <br>
-            ASIN: ‎B0DNWFQHV7ages
-            <br>
-            ISBN-13: ‎979-8345129029
-          </p>
-          <a class="btn btn-success" style="border-radius: 10px;"
-            href="https://amzn.eu/d/1zLUd9F" target="_blank">Order now</a>
-      </div>
+
+      <div class="vertical-rule" aria-hidden="true"></div>
+    </div>
   </section>
 
-</body>
-
-
-<section id="intro">
-  <div class="container">
-      
-    <center>
-      <h2>Connect with Us</h2>
-      <p>Follow us on your favorite platforms to stay updated with our latest releases and updates.</p>
-      
-      <span class="social-icons icon-circle icon-rotate list-inline">
-        <a href="https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB" target="_blank"> <i class="fab fa-apple fa-2x"></i> </a>
-        <a href="https://deezer.page.link/cSHMG2FeyTUE5b7j9" target="_blank"> <i class="fab fa-deezer fa-2x"></i> </a> 
-        <a href="https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=7GjAtk2cRHu8BdDQTgTvHw" target="_blank"> <i class="fab fa-spotify fa-2x"></i> </a>  
-        <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank"> <i class="fab fa-linkedin fa-2x"></i> </a>
-        <a href="https://www.instagram.com/sherif.dahroug/" target="_blank"> <i class="fab fa-instagram fa-2x"></i> </a>  
-        <a href="https://www.facebook.com/cherif.dahroug" target="_blank"> <i class="fab fa-facebook fa-2x"></i> </a>
-      </span>
-
-    </center>
-
-  </div>
-  
-</section>
-
-
-<div style="text-align: center; margin: 5rem 0; position: relative;">
-  <span style="background: #fff; padding: 0 1rem; font-size: 0.95rem; color: #666; font-style: italic;">
-    Patronage & Alliances
-  </span>
-  <hr style="border: none; border-top: 1px solid #ccc; position: absolute; top: 50%; left: 0; width: 100%; z-index: -1;">
-</div>
-
-
-<section style="
-  font-family: 'Garamond', serif; 
-  padding: 50px; 
-  background-color: #f9f9fb; 
-  color: #1e2a38; 
-  text-align: center;
-">
-  <h2 style="font-size: 2.2em; margin-bottom: 0.2em; color: #0d1b2a;">
-    Sponsorship &amp; Patronage Opportunities
-  </h2>
-  <p style="font-style: italic; font-size: 1.2em; margin-top: 0; color: #2f3e53;">
-    Align your name with internationally recognized artistry and cultural heritage.
-  </p>
-
-  <a href="img/homePage/Sponsorship Prospectus.pdf" 
-     style="display: inline-block; margin: 25px 0; padding: 14px 30px; 
-            background-color: #0D1B2A; color: #C5A46D; 
-            text-decoration: none; font-weight: bold; border-radius: 8px;
-            font-size: 0,9em; transition: background 0.3s;">
-    📄 Download Sponsorship Prospectus (PDF)
-  </a>
-
-  <p style="max-width: 700px; margin: 0 auto; line-height: 1.7; margin-top: 16px; color: #2f3e53;">
-    Sherif Dahroug’s music bridges centuries of tradition and contemporary innovation.  
-    By partnering with Sherif, you join a select circle of cultural patrons whose support preserves and advances the highest expressions of artistic excellence.  
-    This prospectus presents unique opportunities for collaboration, visibility, and lasting legacy through sponsorship.
-  </p>
-
-  <table style="
-  font-family: 'Garamond', serif;
-  border-collapse: collapse; 
-  width: 100%; 
-  max-width: 800px; 
-  margin: 40px auto; 
-  background-color: #0D1B2A; 
-  color: #C5A46D;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05),
-              inset 0 0 30px rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-">
-  <thead>
-    <tr style="
-      background-color: rgba(255, 255, 255, 0.05);
-      color: #C5A46D;
-    ">
-      <th style="
-        padding: 16px;
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.3),
-                     0 -1px 1px rgba(0,0,0,0.6);
-      ">
-        Tier
-      </th>
-      <th style="
-        padding: 16px;
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.3),
-                     0 -1px 1px rgba(0,0,0,0.6);
-      ">
-        Benefits
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <td style="
-        padding: 14px;
-        font-weight: bold;
-        color: #C5A46D;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.15),
-                     0 -1px 1px rgba(0,0,0,0.6);
-      ">
-        Cultural Partner
-      </td>
-      <td style="
-        padding: 14px;
-        color: #E8E6D8;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.1),
-                     0 -1px 1px rgba(0,0,0,0.5);
-      ">
-        Logo or name on public announcements &amp; digital media, VIP invitations
-      </td>
-    </tr>
-    <tr style="
-      background-color: rgba(255,255,255,0.03); 
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    ">
-      <td style="
-        padding: 14px;
-        font-weight: bold;
-        color: #C5A46D;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.15),
-                     0 -1px 1px rgba(0,0,0,0.6);
-      ">
-        Lead Patron
-      </td>
-      <td style="
-        padding: 14px;
-        color: #E8E6D8;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.1),
-                     0 -1px 1px rgba(0,0,0,0.5);
-      ">
-        Credit on album sleeve, logo on tour banners, media mentions
-      </td>
-    </tr>
-    <tr>
-      <td style="
-        padding: 14px;
-        font-weight: bold;
-        color: #C5A46D;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.15),
-                     0 -1px 1px rgba(0,0,0,0.6);
-      ">
-        Legacy Patron
-      </td>
-      <td style="
-        padding: 14px;
-        color: #E8E6D8;
-        text-shadow: 0 1px 1px rgba(255,255,255,0.1),
-                     0 -1px 1px rgba(0,0,0,0.5);
-      ">
-        Co-branding on major releases, private concert, press launch acknowledgment
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-  <a href="mailto:ccdahroug@gmail.com" style="
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #0D1B2A;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 3px;
-    transition: border-color 0.3s ease;
-    margin-left: 1rem;
-    display: inline-block;
-  "
-  onmouseover="this.style.borderColor='#004080';" 
-  onmouseout="this.style.borderColor='transparent';"
-  >
-  For serious inquiries and private discussions regarding sponsorship, please contact the artist directly &rsaquo;
-  </a>
-
-  
-</section>
-
-
-
-<!-- contact form start 
-<section id="contact-form">
-  <div class="container">
-    <h3> Contact </h3>
-    <div class="row">
-      <div class="col-md-6 col-sm-12">
-        <div class="block">
-          <form>
-            <div class="form-group">
-              <input id="fromClientName" type="text" class="form-control" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-              <input id="fromClientEmail" type="text" class="form-control" placeholder="Email Address">
-            </div>
-            <div class="form-group">
-              <input id="emailSubject" type="text" class="form-control" placeholder="Subject">
-            </div>
-          </form>
+  <section id="platinum" class="section platinum">
+    <div class="page-shell">
+      <header class="section-head">
+        <div>
+          <div class="eyebrow">Société Académique des Arts, Sciences et Lettres</div>
+          <h2 class="section-title">Platinum<br />Medal</h2>
         </div>
+
+        <p class="section-intro">
+          Remise de la Médaille de Platine — Société Académique des Arts, Sciences et Lettres. A museum wall composed of a monumental image, a precise curatorial plaque, a vertical film object, and a disciplined photographic archive.
+        </p>
+      </header>
+
+      <div class="medal-architecture">
+
+        <figure class="medal-monument">
+          <img src="/img/homePage/IMG_2008 2.JPG" alt="Remise de la Médaille de Platine — Société Académique des Arts, Sciences et Lettres" loading="lazy" decoding="async" />
+        </figure>
+
+        <aside class="medal-side" aria-label="Platinum Medal details">
+
+          <div class="museum-plaque">
+            <div>
+              <div class="eyebrow">Honour · Paris</div>
+              <h3>Une distinction tenue dans la lumière.</h3>
+
+              <p>
+                The annual awards ceremony marked a major artistic recognition: the conferral in Paris of the Médaille de Platine by the prestigious Société Académique Arts-Sciences-Lettres, the highest distinction within the institution’s hierarchy of honours, awarded under the High Patronage of the President of the French Republic and recognized by the Académie Française for exceptional contributions to art, science, and letters. The distinction honours a singular body of work in which these disciplines converge once more, reuniting worlds too often held apart and opening a rare dialogue between artistic creation, philosophical thought, and scientific imagination.
+              </p>
+            </div>
+
+           
+          </div>
+
+          <figure class="medal-film" aria-label="Ceremony video">
+            <div class="medal-film-inner">
+              <iframe src="https://www.youtube.com/embed/2i5Sk9BhUBk" title="Platinum Medal ceremony video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </figure>
+
+        </aside>
+
       </div>
 
-      <div class="col-md-6 col-sm-12">
-        <div class="block">
-          <form id="emailForm2"  method="post" action="submitEmail.php">
-            <div class="form-group-2">
-              <textarea id="emailMsg" class="form-control" rows="3" placeholder="Your Message"></textarea>
-            </div>
-            <button id="SubmitBtn" class="btn btn-default" type="submit">Send Message</button>
-          </form>
+      <div class="gallery-title-row">
+        <p>Photographic archive</p>
+        <p>Square study grid</p>
+      </div>
+
+      <div class="gallery" aria-label="Medal ceremony photo gallery">
+        <img src="/img/homePage/ASL1.JPG" alt="Ambiance 1" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl2.JPG" alt="Ambiance 2" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl3.JPG" alt="Ambiance 3" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl5.JPG" alt="Ambiance 5" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl6.JPG" alt="Ambiance 6" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl7.JPG" alt="Ambiance 7" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl8.JPG" alt="Ambiance 8" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl9.JPG" alt="Ambiance 9" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl10.JPG" alt="Ambiance 10" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl11.JPG" alt="Ambiance 11" class="gallery-img" loading="lazy" decoding="async">
+        <img src="/img/homePage/asl12.jpg" alt="Ambiance 12" class="gallery-img" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section id="fyc" class="section fyc">
+    <div class="page-shell fyc-grid">
+      <figure class="fyc-card">
+        <img src="/img/homePage/VOTING-2.png" alt="For Your Consideration — Sherif Dahroug" loading="lazy" decoding="async" />
+      </figure>
+
+      <div class="fyc-copy">
+        <div class="eyebrow">For Your Consideration</div>
+        <h2>FYC<br />2025</h2>
+        <p>FOR YOUR CONSIDERATION — 68TH GRAMMY®</p>
+        <p><a class="btn btn-red" href="/postsMusic/albums/2025-09-25-grammy_FYC.html">Enter the FYC Page</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="press" class="section press">
+    <div class="page-shell">
+      <header class="section-head">
+        <div>
+          <div class="eyebrow">Critical Insights</div>
+          <h2 class="section-title">Press<br />Room</h2>
+        </div>
+
+        
+      </header>
+
+      <div class="quote-wall">
+        <figure class="quote-card featured">
+          <blockquote>“Through a subtly experimental approach, Sherif Dahroug establishes a truly distinctive voice within contemporary neoclassical music.”</blockquote>
+          <figcaption>Berlin On Air · Germany · May 2026</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“His music weaves a narrative that reinvents the order of time.”</blockquote>
+          <figcaption>Yasmin Magdi · Ministry of Culture Magazine · April 2016</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“A magnificent, insightful, and powerful musical interpretation.”</blockquote>
+          <figcaption>The Global Influential Times · April 2024</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“A rare artistic phenomenon — a manifestation of genius.”</blockquote>
+          <figcaption>Exclusive Journal of Laureates · WOMCO · April 2024</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“His innovative works are redefining the landscape of contemporary classical music.”</blockquote>
+          <figcaption>ICON STORY Magazine · WOMCO · November 2024</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“Thought becomes music, seeking to connect architecture, astronomy, philosophy, and poetry.”</blockquote>
+          <figcaption>Névine Lamei · Al-Ahram Hebdo · December 2024</figcaption>
+        </figure>
+
+        <figure class="quote-card featured">
+          <blockquote>“Under his fingers, notes burst forth, stirring the depths of emotion… where harmony merges with the artist.”</blockquote>
+          <figcaption>Nisreen Mahran · Al-Ahram · December 15, 2023</figcaption>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>"It is with genuine admiration that we acknowledge his exceptional talent, remarkable musicality, and accomplished technique."</blockquote>
+          <figcaption>Wiener Internationaler Musikwettbewerb, 3 April 2024.</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>"...He carries the poise of an artist who promises dreams, combined with the evident mastery of an erudite musician who imparts knowledge with a gentle touch, imbued with a disarming sense of understated authority."</blockquote>
+          <figcaption>J. C. Dorge, French writer, article La Ronde Poétique, Paris concert, 2014.</figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>"...Sherif Dahroug continues to push the boundaries of contemporary music, crafting sonic sanctuaries that resonate with infinite depth..."</blockquote>
+          <figcaption>Mario Ferraioli — Jazz in Family (Italy), July 2025</figcaption>
+        </figure>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="section book">
+    <div class="page-shell book-grid">
+      <figure class="book-cover">
+        <img src="/img/postsBooks/annonce- archetectonique-15.png" alt="Book cover — In Pursuit of a Sonic Architectonics" loading="lazy" decoding="async" />
+      </figure>
+
+      <div class="book-copy">
+        <div class="eyebrow">Book</div>
+        <h2>In Pursuit of a Sonic Architectonics</h2>
+
+        <p>
+          A bold reflection that transcends classical aesthetic boundaries: neither conforming to a rigid theoretical tradition nor dismissing it, but exploring beauty through contradiction, dissonance, contemplation, and technical realization. Rooted in symbolic and phenomenological interpretation, the book proposes an autonomous, liberated, and timeless sonic aesthetic.
+        </p>
+
+        <div class="meta-list" aria-label="Book details">
+          <div><span>Publisher</span><strong>Lyre de Mercure</strong></div>
+          <div><span>Date</span><strong>Nov. 29, 2024</strong></div>
+          <div><span>Language</span><strong>French</strong></div>
+          <div><span>ISBN-13</span><strong>979-8345129029</strong></div>
+        </div>
+
+        <p><a class="btn btn-dark" href="https://amzn.eu/d/1zLUd9F" target="_blank" rel="noopener">Order Now</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section connect">
+    <div class="page-shell connect-grid">
+      <div class="connect-card">
+        <div class="eyebrow">Listen & Follow</div>
+        <h2>Connect</h2>
+
+        <p>
+          Follow the latest releases, writings, awards, and artistic announcements across the principal platforms.
+        </p>
+
+        <span class="social-icons icon-circle icon-rotate list-inline">
+          <a href="https://music.apple.com/fr/artist/sherif-dahroug/1714110248?l=en-GB" target="_blank" rel="noopener"><i class="fab fa-apple fa-2x"></i></a>
+          <a href="https://deezer.page.link/cSHMG2FeyTUE5b7j9" target="_blank" rel="noopener"><i class="fab fa-deezer fa-2x"></i></a>
+          <a href="https://open.spotify.com/intl-fr/artist/5lfYCR7bcX4Dbn2Dm29HHP?si=7GjAtk2cRHu8BdDQTgTvHw" target="_blank" rel="noopener"><i class="fab fa-spotify fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/sherif-dahroug-88820b139/" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://www.instagram.com/sherif.dahroug/" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="https://www.facebook.com/cherif.dahroug" target="_blank" rel="noopener"><i class="fab fa-facebook fa-2x"></i></a>
+        </span>
+      </div>
+
+      <div class="connect-card">
+        <div class="eyebrow">Reach Out & Press</div>
+        <h2>Contact</h2>
+
+        <p>
+          For inquiries, collaborations, artistic matters, press material, and media requests.
+        </p>
+
+        <div class="contact-lines">
+          <a href="mailto:ccdahroug@gmail.com">Artist · ccdahroug@gmail.com</a>
+          <a href="mailto:lyredemercure.editions@gmail.com">Press & Media · lyredemercure.editions@gmail.com</a>
+          <a href="https://drive.google.com/drive/folders/1aWVNSubV3Xxa36GjDp7t-SEbuL2ZWzJZ?usp=share_link" target="_blank" rel="noopener">Download Press Photos</a>
         </div>
       </div>
     </div>
-    
+  </section>
+
+</main>
+
+<footer>
+  <div class="page-shell footer-inner">
+    <span>© Sherif Dahroug</span>
+    <span>Music · Architecture · Cosmos</span>
   </div>
-</section>
--->
-<!--
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artist Newsletter Signup</title>
-  <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f9f9f9;
-          margin: 0;
-          padding: 0;
-      }
-      .newsletter-form {
-          max-width: 500px;
-          margin: 0 auto;
-      }
-      .newsletter-form h2 {
-          font-size: 24px;
-          margin-bottom: 15px;
-          color: #000000;
-      }
-      .newsletter-form input {
-          width: calc(100% - 20px);
-          padding: 10px;
-          margin-bottom: 15px;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          font-size: 14px;
-      }
-      .newsletter-form button {
-          width: 100%;
-          padding: 10px;
-          background-color: #e91e63;
-          border: none;
-          border-radius: 4px;
-          color: #fff;
-          font-size: 16px;
-          cursor: pointer;
-      }
-      .newsletter-form button:hover {
-          background-color: #c2185b;
-      }
-      .newsletter-text {
-          margin-top: 20px;
-          font-size: 14px;
-          color: #aaa;
-      }
-  </style>
-</head>
--->
+</footer>
 
-
-
-
-
-
-<div style="text-align: center; margin: 5rem 0; position: relative;">
-  <span style="background: #fff; padding: 0 1rem; font-size: 0.95rem; color: #666; font-style: italic;">
-    Reach Out & Press
-  </span>
-  <hr style="border: none; border-top: 1px solid #ccc; position: absolute; top: 50%; left: 0; width: 100%; z-index: -1;">
+<div id="lightbox" aria-hidden="true">
+  <span id="closeLightbox" aria-label="Close image">×</span>
+  <img id="lightboxImg" src="" alt="Expanded gallery image" />
 </div>
 
-<section class="contact-section">
-    <div class="container">
-        <h2>Contact the Artist</h2>
-        <p>For inquiries, collaborations, or any artistic matters, feel free to reach out.</p>
-        
-        <div class="contact-info">
-            <h3>Email</h3>
-            <p><strong>Artist:</strong> <a href="mailto:ccdahroug@gmail.com">ccdahroug@gmail.com</a></p>
-            <p><strong>Press & Media:</strong> <a href="mailto:lyredemercure.editions@gmail.com">lyredemercure.editions@gmail.com</a></p>
-        </div>
-        
-        <div class="press-kit">
-            <h3>Press Kit & Photos</h3>
-            <p>For high-quality press photos, please visit the link below:</p>
-            <p><a href="https://drive.google.com/drive/folders/1aWVNSubV3Xxa36GjDp7t-SEbuL2ZWzJZ?usp=share_link" target="_blank">Download Press Photos</a></p>
-        </div>
-    </div>
-</section>
+</div>
 
-<style>
-    .contact-section {
-        background: #f9f9f9;
-        padding: 40px;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        color: black;
-    }
-    .container {
-        max-width: 600px;
-        margin: auto;
-    }
-    h2 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-    p {
-        font-size: 16px;
-        color: #444;
-    }
-    .contact-info, .press-kit {
-        margin-top: 20px;
-        padding: 15px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    /*a {
-        color: #0056b3;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }*/
-</style>
+<script>
+const hero = document.querySelector('.hero');
 
+if(hero){
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY || 0;
+    const fade = Math.max(0, 1 - y / 1400);
+    hero.style.opacity = fade < .18 ? .18 : fade;
+  }, { passive: true });
+}
 
+const galleryImgs = document.querySelectorAll('.gallery-img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const closeLightbox = document.getElementById('closeLightbox');
+
+galleryImgs.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+  });
+});
+
+function closeGallery(){
+  lightbox.style.display = 'none';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImg.src = '';
+}
+
+if(closeLightbox){
+  closeLightbox.addEventListener('click', closeGallery);
+}
+
+if(lightbox){
+  lightbox.addEventListener('click', e => {
+    if(e.target === lightbox) closeGallery();
+  });
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeGallery();
+});
+</script>
 
     <!-- Footer -->
 

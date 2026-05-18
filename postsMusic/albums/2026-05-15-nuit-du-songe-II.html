@@ -1,0 +1,1939 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nuit du songe — album page by Sherif Dahroug, featuring vinyl livre artworks, program, listening links, trailers, and credits." />
+  <title>Nuit du songe | Sherif Dahroug</title>
+
+  <style>
+    :root {
+      --ink: #0f0e0c;
+      --paper: #f3eee4;
+      --paper-soft: #fbf7ee;
+      --stone: #d7cdbd;
+      --muted: #71695f;
+      --gold: #b99253;
+      --moon: #d8dde6;
+      --blue: #14223c;
+      --blue-soft: #263c63;
+      --red: #7f201d;
+      --shadow: 0 34px 90px rgba(15, 14, 12, .16);
+      --line: rgba(15, 14, 12, .12);
+      --glass: rgba(251, 247, 238, .76);
+      --max: 1220px;
+      --radius-xl: 40px;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --ease: cubic-bezier(.19, 1, .22, 1);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; background: var(--paper); }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, Helvetica Neue, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(216, 221, 230, .55), transparent 24%),
+        radial-gradient(circle at 88% 4%, rgba(185, 146, 83, .18), transparent 30%),
+        radial-gradient(circle at 42% 78%, rgba(20, 34, 60, .12), transparent 28%),
+        linear-gradient(135deg, #f6f0e5 0%, #e9dfcf 48%, #fbf7ee 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .075;
+      background-image:
+        linear-gradient(90deg, currentColor 1px, transparent 1px),
+        linear-gradient(currentColor 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 92%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 42vw;
+      height: 42vw;
+      min-width: 340px;
+      min-height: 340px;
+      right: -12vw;
+      top: 10vh;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(216,221,230,.48), rgba(216,221,230,.11) 42%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(2px);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page { position: relative; z-index: 1; min-height: 100vh; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: rgba(243, 238, 228, .72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 17px;
+      height: 17px;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      position: relative;
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .nav-links a { position: relative; padding-bottom: 4px; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--ink);
+      transition: width .35s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 92px 28px 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(330px, .88fr);
+      gap: 62px;
+      align-items: end;
+    }
+    .promo-photo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.promo-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter:
+    contrast(1.04)
+    saturate(.92)
+    brightness(.96);
+  transform: scale(1.02);
+  transition: transform 1.8s cubic-bezier(.19,1,.22,1);
+}
+
+.promo-photo:hover img {
+  transform: scale(1.06);
+}
+
+.promo-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.38),
+      transparent 42%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0,0,0,.16),
+      transparent 30%
+    );
+  pointer-events: none;
+}
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      font-size: clamp(68px, 12vw, 166px);
+      line-height: .79;
+      letter-spacing: -.085em;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.2px var(--ink);
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 36px 0 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(23px, 3.1vw, 40px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+    }
+
+    .hero-panel {
+      position: relative;
+
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 620px;
+
+      justify-self: end;
+
+      border-radius: 38px;
+      overflow: hidden;
+
+      background: #0b0b0b;
+
+      box-shadow:
+        0 38px 100px rgba(15,14,12,.18);
+
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .hero-panel::before,
+    .hero-panel::after {
+      display: none;
+    }
+    .promo-photo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      display: block;
+
+      filter:
+        contrast(1.02)
+        brightness(.94)
+        saturate(.88);
+
+      transform: scale(1.01);
+
+      transition:
+        transform 2.4s cubic-bezier(.19,1,.22,1);
+    }
+
+.promo-photo:hover img {
+  transform: scale(1.045);
+}
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(251,247,238,.14);
+      border-radius: calc(var(--radius-xl) - 16px);
+      pointer-events: none;
+    }
+
+    .album-data, .album-seal { position: relative; z-index: 1; }
+
+    .album-data {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: rgba(251,247,238,.64);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .album-seal {
+      align-self: flex-start;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      border: 1px solid rgba(251,247,238,.32);
+      display: grid;
+      place-items: center;
+      font-family: Georgia, 'Times New Roman', serif;
+      text-align: center;
+      font-size: 27px;
+      line-height: .95;
+      letter-spacing: -.04em;
+      transform: rotate(-9deg);
+    }
+    .manifesto-section {
+  padding-top: 30px;
+}
+
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 90px;
+    align-items: start;
+  }
+
+  .manifesto-side {
+    position: sticky;
+    top: 120px;
+  }
+
+  .manifesto-title {
+    margin: 18px 0 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 84px);
+    line-height: .92;
+    letter-spacing: -.06em;
+    font-weight: 400;
+  }
+
+  .manifesto-line {
+    width: 90px;
+    height: 1px;
+    background: var(--gold);
+
+    margin: 34px 0;
+  }
+
+  .manifesto-fragment {
+    color: var(--muted);
+
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  .manifesto-body {
+    max-width: 760px;
+  }
+
+  .manifesto-body p {
+    margin: 0 0 42px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 2vw, 31px);
+    line-height: 1.52;
+    letter-spacing: -.025em;
+
+    color: var(--ink);
+  }
+
+  .manifesto-dedication {
+    padding-top: 22px;
+
+    font-size: clamp(26px, 2.3vw, 38px) !important;
+    line-height: 1.34 !important;
+  }
+
+  @media (max-width: 980px) {
+
+    .manifesto-grid {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .manifesto-side {
+      position: relative;
+      top: auto;
+    }
+
+  }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 76px 28px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .34fr 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 42px;
+    }
+
+    .section-number {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      font-size: clamp(36px, 5.6vw, 78px);
+      line-height: .92;
+      letter-spacing: -.06em;
+    }
+
+    .folio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .folio {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: var(--glass);
+      border: 1px solid var(--line);
+      padding: 20px;
+      box-shadow: 0 22px 60px rgba(15,14,12,.09);
+      overflow: hidden;
+      transition: transform .7s var(--ease), box-shadow .7s var(--ease);
+    }
+
+    .folio:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 36px 100px rgba(15,14,12,.15);
+    }
+
+    .folio-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .art-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .artwork {
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(15,14,12,.14);
+      position: relative;
+      background:
+        radial-gradient(circle at 70% 24%, rgba(216,221,230,.82), transparent 18%),
+        linear-gradient(135deg, var(--blue), #0a0a0a 60%, #352317);
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+
+    .artwork.back {
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(135deg, #15110e, #192845 52%, #0a0a0a);
+      background-size: 28px 28px, 28px 28px, auto;
+    }
+
+    .artwork::before {
+      content: "";
+      position: absolute;
+      width: 64%;
+      height: 64%;
+      border-radius: 999px;
+      border: 1px solid rgba(251,247,238,.28);
+    }
+
+    .artwork::after {
+      content: "Replace with artwork image";
+      position: relative;
+      z-index: 1;
+      max-width: 150px;
+      color: rgba(251,247,238,.68);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.5;
+    }
+
+    .artwork img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .art-caption {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .program {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--line);
+      gap: 1px;
+    }
+
+    .track {
+      position: relative;
+
+      min-height: 320px;
+
+      background: var(--glass);
+
+      padding:
+        64px
+        18px
+        26px
+        18px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      overflow: hidden;
+
+      transition:
+        background .4s ease,
+        transform .4s ease;
+    }
+
+    .track:hover {
+      background: rgba(251,247,238,.95);
+      transform: translateY(-4px);
+    }
+
+    .track:hover { background: rgba(251,247,238,.95); transform: translateY(-4px); }
+
+    .track-number {
+      position: absolute;
+
+      top: 18px;
+      left: 18px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: .18em;
+
+      z-index: 3;
+    }
+
+    .track-title {
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(20px, 1.5vw, 28px);
+
+    line-height: .92;
+    letter-spacing: -.03em;
+
+    max-height: 100%;
+
+    overflow-wrap: break-word;
+
+    padding-top: 22px;
+    }
+    .sound-section {
+  padding-top: 40px;
+}
+
+  .sound-architecture {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 760px;
+    border-radius: var(--radius-xl);
+
+    padding: clamp(36px, 6vw, 84px);
+
+    display: grid;
+    grid-template-columns: .78fr 1.22fr;
+    gap: clamp(40px, 7vw, 100px);
+    align-items: center;
+
+    color: var(--paper-soft);
+
+    background:
+      radial-gradient(circle at 84% 18%, rgba(216,221,230,.20), transparent 24%),
+      linear-gradient(135deg, #090908 0%, #11100e 42%, #18243d 100%);
+
+    border: 1px solid rgba(251,247,238,.14);
+
+    box-shadow:
+      0 44px 120px rgba(15,14,12,.24),
+      inset 0 0 0 1px rgba(251,247,238,.04);
+  }
+
+  .sound-architecture::before {
+    content: "";
+    position: absolute;
+    inset: 28px;
+
+    border: 1px solid rgba(251,247,238,.10);
+    border-radius: calc(var(--radius-xl) - 18px);
+
+    pointer-events: none;
+  }
+
+  .sound-architecture::after {
+    content: "NUIT DU SONGE";
+    position: absolute;
+    left: clamp(30px, 5vw, 70px);
+    bottom: clamp(24px, 4vw, 54px);
+
+    font-size: clamp(44px, 9vw, 138px);
+    font-weight: 900;
+    letter-spacing: -.08em;
+    line-height: .8;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(251,247,238,.055);
+
+    pointer-events: none;
+  }
+
+  .sound-copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  .sound-copy h2 {
+    margin: 18px 0 0;
+
+    max-width: 540px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6vw, 92px);
+    line-height: .88;
+    letter-spacing: -.07em;
+    font-weight: 400;
+  }
+
+  .sound-copy p {
+    max-width: 520px;
+
+    margin: 30px 0 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(20px, 1.7vw, 27px);
+    line-height: 1.52;
+    letter-spacing: -.025em;
+
+    color: rgba(251,247,238,.66);
+  }
+
+  .sound-stage {
+    position: relative;
+    z-index: 2;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 34px;
+
+    background:
+      linear-gradient(90deg, rgba(251,247,238,.055) 1px, transparent 1px),
+      linear-gradient(rgba(251,247,238,.055) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, rgba(216,221,230,.08), transparent 58%);
+
+    background-size:
+      42px 42px,
+      42px 42px,
+      auto;
+
+    border: 1px solid rgba(251,247,238,.13);
+
+    overflow: hidden;
+
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.035),
+      0 28px 80px rgba(0,0,0,.22);
+  }
+
+  .bauhaus-disc {
+    position: absolute;
+    border-radius: 999px;
+    border: 1px solid rgba(251,247,238,.18);
+  }
+
+  .disc-one {
+    width: 74%;
+    height: 74%;
+    left: 13%;
+    top: 13%;
+
+    animation: noble-breath 9s ease-in-out infinite;
+  }
+
+  .disc-two {
+    width: 48%;
+    height: 48%;
+    left: 26%;
+    top: 26%;
+
+    border-color: rgba(185,146,83,.42);
+
+    animation: noble-breath 7s ease-in-out infinite reverse;
+  }
+
+  .disc-three {
+    width: 18%;
+    height: 18%;
+    left: 41%;
+    top: 41%;
+
+    background:
+      radial-gradient(circle, rgba(251,247,238,.86), rgba(185,146,83,.45) 42%, transparent 70%);
+
+    border: 0;
+
+    filter: blur(.2px);
+
+    animation: inner-light 5.6s ease-in-out infinite;
+  }
+
+  .axis {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, rgba(251,247,238,.20), transparent);
+  }
+
+  .axis-x {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+  }
+
+  .axis-y {
+    height: 100%;
+    width: 1px;
+    left: 50%;
+    top: 0;
+
+    background: linear-gradient(180deg, transparent, rgba(251,247,238,.20), transparent);
+  }
+
+  .sound-bars {
+    position: absolute;
+    inset: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    transform: rotate(-12deg);
+  }
+
+  .sound-bars span {
+    width: 6px;
+    height: calc(var(--h) * 1px);
+
+    border-radius: 999px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(185,146,83,.18),
+        rgba(216,221,230,.85),
+        rgba(185,146,83,.54)
+      );
+
+    transform-origin: center;
+
+    animation: measured-pulse 5.2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * -170ms);
+
+    opacity: .74;
+  }
+
+  .sound-caption {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+
+    color: rgba(251,247,238,.52);
+
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  @keyframes noble-breath {
+    0%, 100% {
+      transform: scale(.965);
+      opacity: .42;
+    }
+
+    50% {
+      transform: scale(1.025);
+      opacity: .82;
+    }
+  }
+
+  @keyframes inner-light {
+    0%, 100% {
+      transform: scale(.86);
+      opacity: .78;
+    }
+
+    50% {
+      transform: scale(1.13);
+      opacity: 1;
+    }
+  }
+
+  @keyframes measured-pulse {
+    0%, 100% {
+      transform: scaleY(.48);
+      opacity: .34;
+    }
+
+    50% {
+      transform: scaleY(1.05);
+      opacity: .86;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .sound-architecture {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .sound-stage {
+      max-width: 620px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .sound-caption {
+      flex-direction: column;
+    }
+  }
+  .critical-gateway {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: .26fr 1fr auto;
+  gap: clamp(24px, 5vw, 70px);
+  align-items: end;
+
+  min-height: 420px;
+
+  padding: clamp(32px, 6vw, 72px);
+
+  border-radius: var(--radius-xl);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(90deg, rgba(251,247,238,.055) 1px, transparent 1px),
+    linear-gradient(rgba(251,247,238,.055) 1px, transparent 1px),
+    radial-gradient(circle at 82% 18%, rgba(216,221,230,.18), transparent 26%),
+    linear-gradient(135deg, #0b0b0a 0%, #14120f 48%, #18243d 100%);
+
+  background-size:
+    44px 44px,
+    44px 44px,
+    auto,
+    auto;
+
+  color: var(--paper-soft);
+
+  border: 1px solid rgba(251,247,238,.14);
+
+  box-shadow:
+    0 38px 110px rgba(15,14,12,.22),
+    inset 0 0 0 1px rgba(251,247,238,.04);
+
+  transition:
+    transform .7s cubic-bezier(.19,1,.22,1),
+    box-shadow .7s cubic-bezier(.19,1,.22,1);
+}
+
+.critical-gateway:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 52px 140px rgba(15,14,12,.3),
+    inset 0 0 0 1px rgba(251,247,238,.06);
+}
+
+.critical-gateway::before {
+  content: "";
+
+  position: absolute;
+  inset: 26px;
+
+  border: 1px solid rgba(251,247,238,.1);
+  border-radius: calc(var(--radius-xl) - 16px);
+
+  pointer-events: none;
+}
+
+.critical-gateway::after {
+  content: "CRITICAL RECEPTION";
+
+  position: absolute;
+  left: clamp(28px, 5vw, 70px);
+  top: clamp(28px, 5vw, 64px);
+
+  font-size: clamp(46px, 9vw, 136px);
+  font-weight: 900;
+  line-height: .78;
+  letter-spacing: -.085em;
+
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(251,247,238,.06);
+
+  pointer-events: none;
+}
+
+.critical-index,
+.critical-main,
+.critical-action {
+  position: relative;
+  z-index: 2;
+}
+
+.critical-index {
+  display: grid;
+  gap: 12px;
+
+  color: rgba(251,247,238,.48);
+
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.critical-index span:first-child {
+  color: var(--gold);
+  font-size: 16px;
+}
+
+.critical-kicker {
+  margin: 0 0 18px;
+
+  color: var(--gold);
+
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.critical-main h2 {
+  max-width: 780px;
+
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+
+  font-size: clamp(34px, 5vw, 76px);
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+
+.critical-action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 15px 18px;
+
+  border: 1px solid rgba(251,247,238,.42);
+  border-radius: 999px;
+
+  color: rgba(251,247,238,.78);
+
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 11px;
+  font-weight: 900;
+
+  transition:
+    background .4s ease,
+    color .4s ease,
+    transform .4s ease;
+}
+.vinyl-editions {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(251,247,238,.14);
+}
+
+.vinyl-editions-head {
+  margin-bottom: 32px;
+}
+
+.vinyl-editions-head span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.vinyl-editions-head h3 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--paper-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4.4vw, 62px);
+  line-height: .92;
+  letter-spacing: -.055em;
+  font-weight: 400;
+}
+
+.vinyl-editions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.vinyl-edition {
+  display: block;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(251,247,238,.13);
+  background: rgba(251,247,238,.04);
+  transition: transform .6s cubic-bezier(.19,1,.22,1),
+              border-color .4s ease,
+              background .4s ease;
+}
+
+.vinyl-edition:hover {
+  transform: translateY(-8px);
+  border-color: rgba(251,247,238,.26);
+  background: rgba(251,247,238,.075);
+}
+
+.vinyl-edition img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.vinyl-edition-info {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+}
+
+.vinyl-edition-info strong {
+  color: var(--paper-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -.04em;
+  font-weight: 400;
+}
+
+.vinyl-edition-info span {
+  color: rgba(251,247,238,.52);
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: 10px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+@media (max-width: 880px) {
+  .vinyl-editions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.critical-gateway:hover .critical-action {
+  background: var(--paper-soft);
+  color: var(--ink);
+  transform: translateX(6px);
+}
+
+.critical-arrow {
+  font-size: 16px;
+}
+
+@media (max-width: 880px) {
+  .critical-gateway {
+    grid-template-columns: 1fr;
+  }
+
+  .critical-action {
+    justify-self: start;
+  }
+}
+
+.edition-panel {
+
+margin-top: 74px;
+padding-top: 52px;
+
+border-top: 1px solid rgba(251,247,238,.12);
+}
+
+.edition-head {
+margin-bottom: 34px;
+}
+
+.edition-kicker {
+
+display: inline-block;
+
+margin-bottom: 18px;
+
+color: var(--gold);
+
+text-transform: uppercase;
+letter-spacing: .18em;
+font-size: 10px;
+font-weight: 900;
+}
+
+.edition-head h3 {
+
+max-width: 680px;
+
+margin: 0;
+
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(30px, 4vw, 56px);
+line-height: .94;
+letter-spacing: -.05em;
+font-weight: 400;
+}
+
+.edition-grid {
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+
+gap: 18px;
+}
+
+.edition-card {
+
+position: relative;
+
+overflow: hidden;
+
+border-radius: 28px;
+
+padding: 24px;
+
+min-height: 320px;
+
+background:
+  linear-gradient(
+    135deg,
+    rgba(251,247,238,.04),
+    rgba(251,247,238,.02)
+  );
+
+border: 1px solid rgba(251,247,238,.1);
+
+transition:
+  transform .7s cubic-bezier(.19,1,.22,1),
+  border-color .5s ease,
+  background .5s ease;
+}
+
+.edition-card:hover {
+
+transform: translateY(-8px);
+
+border-color: rgba(251,247,238,.22);
+
+background:
+  linear-gradient(
+    135deg,
+    rgba(251,247,238,.08),
+    rgba(251,247,238,.03)
+  );
+}
+
+.edition-number {
+
+position: relative;
+z-index: 2;
+
+color: rgba(251,247,238,.82);
+
+font-family: Georgia, "Times New Roman", serif;
+font-size: 34px;
+line-height: .9;
+letter-spacing: -.05em;
+}
+
+.edition-object {
+
+position: absolute;
+
+width: 62%;
+aspect-ratio: 1 / 1;
+
+left: 50%;
+top: 52%;
+
+transform:
+  translate(-50%, -50%)
+  rotate(-8deg);
+
+border-radius: 12px;
+
+background:
+  linear-gradient(
+    135deg,
+    rgba(216,221,230,.18),
+    rgba(185,146,83,.08),
+    rgba(251,247,238,.03)
+  );
+
+border: 1px solid rgba(251,247,238,.12);
+
+box-shadow:
+  0 22px 60px rgba(0,0,0,.24);
+
+transition:
+  transform 1s cubic-bezier(.19,1,.22,1);
+}
+
+.edition-card:hover .edition-object {
+
+transform:
+  translate(-50%, -50%)
+  rotate(-2deg)
+  scale(1.03);
+}
+
+.edition-object::before {
+
+content: "";
+
+position: absolute;
+
+inset: 14%;
+
+border-radius: 999px;
+
+border: 1px solid rgba(251,247,238,.18);
+}
+
+.edition-object::after {
+
+content: "";
+
+position: absolute;
+
+width: 16%;
+aspect-ratio: 1 / 1;
+
+left: 50%;
+top: 50%;
+
+transform: translate(-50%, -50%);
+
+border-radius: 999px;
+
+background: rgba(251,247,238,.7);
+}
+
+.edition-meta {
+
+position: absolute;
+
+left: 24px;
+right: 24px;
+bottom: 22px;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+color: rgba(251,247,238,.52);
+
+text-transform: uppercase;
+letter-spacing: .14em;
+font-size: 10px;
+font-weight: 900;
+}
+
+@media (max-width: 880px) {
+
+.edition-grid {
+  grid-template-columns: 1fr;
+}
+
+}
+    .listen-panel {
+      border-radius: var(--radius-xl);
+      background: #11110f;
+      color: var(--paper-soft);
+      padding: clamp(34px, 6vw, 70px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: end;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .listen-panel::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 480px;
+      height: 480px;
+      border-radius: 999px;
+      border: 1px solid rgba(251,247,238,.12);
+    }
+
+    .listen-copy, .platforms { position: relative; z-index: 1; }
+
+    .listen-copy h2 {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: .9;
+      letter-spacing: -.065em;
+    }
+
+    .listen-copy p {
+      color: rgba(251,247,238,.64);
+      line-height: 1.8;
+      margin: 24px 0 0;
+      max-width: 500px;
+    }
+
+    .platforms {
+      display: grid;
+      gap: 12px;
+    }
+
+    .platform {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(251,247,238,.16);
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: 12px;
+      font-weight: 900;
+      transition: background .35s ease, color .35s ease, transform .35s ease;
+    }
+
+    .platform:hover {
+      transform: translateX(6px);
+      background: var(--paper-soft);
+      color: var(--ink);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .video-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--glass);
+      box-shadow: 0 24px 70px rgba(15,14,12,.1);
+    }
+
+    .video-frame {
+      aspect-ratio: 16 / 9;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(216,221,230,.58), transparent 20%),
+        linear-gradient(135deg, #0d0d0c, #182846 60%, #0b0b0b);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .video-frame iframe,
+    .video-frame video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+    }
+
+    .play-symbol {
+      width: 74px;
+      height: 74px;
+      border-radius: 999px;
+      border: 1px solid rgba(251,247,238,.45);
+      color: var(--paper-soft);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      padding-left: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-meta {
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .video-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .video-source {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .credits {
+      border-radius: var(--radius-xl);
+      background: var(--glass);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .credit-row {
+      display: grid;
+      grid-template-columns: .34fr 1fr;
+      gap: 24px;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .credit-row:last-child { border-bottom: 0; }
+
+    .credit-role {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .credit-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 28px 76px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1000px) {
+      .program { grid-template-columns: repeat(3, 1fr); }
+      .track-title { writing-mode: initial; transform: none; }
+      .track { min-height: 210px; }
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .section-head,
+      .folio-grid,
+      .listen-panel,
+      .video-grid,
+      .credit-row { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 420px; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 580px) {
+      .hero { padding-top: 62px; }
+      .program { grid-template-columns: 1fr; }
+      .track { min-height: auto; gap: 34px; }
+      .track-title { font-size: 31px; }
+      .footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Sherif Dahroug home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Sherif Dahroug
+        </a>
+        <nav class="nav-links" aria-label="Album page navigation">
+          <a href="#folio">Folio</a>
+          <a href="#program">Program</a>
+          <a href="#critical-reception-link">Press</a>
+          <a href="#listen">Listen</a>
+          <a href="#trailers">Trailers</a>
+          <a href="#credits">Credits</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="album-title">
+        <div class="reveal">
+          <div class="kicker">Album · Vinyl Livre I–III</div>
+          <h1 id="album-title">Nuit du <span>songe</span></h1>
+          <p class="hero-copy">
+            A New Opus in the Colors and Fragrances of Flowers, nine contemporary instrumental tableaux woven into a single labyrinthine opus exploring a nocturnal state of perception.
+          </p>
+        </div>
+
+        <aside class="hero-panel reveal promo-photo" aria-label="Album promotional photograph">
+
+          <img
+            src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/promo-vinyl-nuitdusonge.png"
+            alt="Promotional portrait for Nuit du songe by Sherif Dahroug"
+          />
+        
+        </aside>
+      </section>
+      </section>
+      <section class="section manifesto-section reveal" id="notes">
+
+        <div class="manifesto-grid">
+      
+          <div class="manifesto-side">
+            <div class="section-number">Prologue</div>
+      
+            <h2 class="manifesto-title">
+              Son, couleur et parfum des fleurs.
+            </h2>
+      
+            <div class="manifesto-line"></div>
+      
+            <p class="manifesto-fragment">
+              Nuit du Songe
+            </p>
+          </div>
+      
+          <div class="manifesto-body">
+      
+            <p>
+              Nom donné à un état de perception nocturne. Une conscience nyctique, en suspens, tendue entre errance et retour, entre le connu et l’inconnu.
+            </p>
+      
+            <p>
+              Dans cet intervalle où veille une présence, passent des marcheurs, sous des visages de lune, aux paupières de crépuscule ouvertes sur la nuit — et les couleurs vibrent, entre fauve et fleur.
+            </p>
+      
+            <p>
+              La mémoire enfante la couleur, phénomène intérieur de réceptivité. Un vent septentrional, portant le reflet d’un nymphéa, né d’une goutte de rosée, d’une étoile en larme.
+            </p>
+      
+            <p>
+              Et les cloches d’un collier, offert par une déesse à la beauté d’une fleur du soir, dont la voix parfumée anime — un vent de lumière, aux couleurs de l’aube, enfantant un chant d’oiseau souffle aux voiles d’une barque, vers un sud éternel dans la nuit du songe.
+            </p>
+      
+            <p>
+              Conçu comme une constellation de neuf tableaux instrumentaux contemporains en un opus unifié et labyrinthique, Nuit du Songe explore un état de perception nocturne suspendu entre l’errance et le retour, entre l’apparition et l’effacement.
+            </p>
+      
+            <p>
+              L’œuvre déploie un langage original de polytonalité modale où la couleur harmonique ne sert plus seulement la structure dramaturgique : elle en devient la source vivante, engendrant résonance, mémoire et métamorphose.
+            </p>
+      
+            <p>
+              À travers cette architecture sonore en perpétuelle transformation, le cycle habite un espace intérieur où le temps cesse d’être linéaire pour devenir spatial — sons, couleurs et parfums, distances et lumières voilées.
+            </p>
+      
+            <p>
+              Ni récit, ni abstraction pure, Nuit du Songe cherche à faire du son un lieu habitable — une région intérieure où les souvenirs se déposent comme des teintes mouvantes sur la conscience.
+            </p>
+      
+            <p>
+              Conçu à une époque marquée par la fracture, l’exil intérieur et l’épuisement spirituel, l’album demeure pourtant fidèle à une nécessité plus fragile et plus essentielle : celle de préserver un lieu pour l’art dans sa quête du vrai.
+            </p>
+      
+            <p class="manifesto-dedication">
+              Cette œuvre est dédiée aux artistes qui, dans la solitude, l’éloignement ou l’exil — de la terre ou du cœur — sont demeurés fidèles à la création.
+            </p>
+      
+            <p class="manifesto-dedication">
+              Que leur présence demeure.<br>
+              Et que leur désir de paix continue de vivre dans la conscience des hommes.
+            </p>
+      
+          </div>
+      
+        </div>
+      
+      </section>
+
+      <section id="folio" class="section" aria-labelledby="folio-title">
+        <div class="section-head reveal">
+          <div class="section-number">I · Vinyl Folio</div>
+          <h2 id="folio-title" class="section-title">Three livres, shaped by a nocturnal architecture of sound, memory, and harmonic colour.</h2>
+        </div>
+
+        <div class="folio-grid">
+          <article class="folio reveal">
+            <div class="folio-label"><span>Livre I</span><span>Cover / Back</span></div>
+            <div class="art-stack">
+              <div class="artwork cover">
+                <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-1.png" alt="Nuit du songe Livre I cover artwork"> 
+              </div>
+              <div class="art-caption"><span>Cover</span><span>Face A</span></div>
+              <div class="artwork back">
+                Replace with: <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-1-back.png" alt="Nuit du songe Livre I back artwork"> 
+              </div>
+              <div class="art-caption"><span>Back</span><span>Face B</span></div>
+            </div>
+          </article>
+
+          <article class="folio reveal">
+            <div class="folio-label"><span>Livre II</span><span>Cover / Back</span></div>
+            <div class="art-stack">
+              <div class="artwork cover">
+                Replace with: <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-2.png" alt="Nuit du songe Livre II cover artwork"> 
+              </div>
+              <div class="art-caption"><span>Cover</span><span>Face A</span></div>
+              <div class="artwork back">
+                 Replace with: <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-4.png" alt="Nuit du songe Livre II back artwork"> 
+              </div>
+              <div class="art-caption"><span>Back</span><span>Face B</span></div>
+            </div>
+          </article>
+
+          <article class="folio reveal">
+            <div class="folio-label"><span>Livre III</span><span>Cover / Back</span></div>
+            <div class="art-stack">
+              <div class="artwork cover">
+                Replace with: <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-3.png" alt="Nuit du songe Livre III cover artwork"> 
+              </div>
+              <div class="art-caption"><span>Cover</span><span>Face A</span></div>
+              <div class="artwork back">
+                Replace with: <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-6.png" alt="Nuit du songe Livre III back artwork"> 
+              </div>
+              <div class="art-caption"><span>Back</span><span>Face B</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="program" class="section" aria-labelledby="program-title">
+        <div class="section-head reveal">
+          <div class="section-number">II · Program</div>
+          <h2 id="program-title" class="section-title">Nine tracks arranged as a nocturnal architectural sequence.</h2>
+        </div>
+
+        <div class="program reveal" aria-label="Album program track list">
+          <article class="track"><div class="track-number">01</div><div class="track-title">Songe couleur d’aube</div></article>
+          <article class="track"><div class="track-number">02</div><div class="track-title">Reflets d’un nymphéa</div></article>
+          <article class="track"><div class="track-number">03</div><div class="track-title">Étoile en goutte de rosée</div></article>
+          <article class="track"><div class="track-number">04</div><div class="track-title">Collier aux cloches</div></article>
+          <article class="track"><div class="track-number">05</div><div class="track-title">Souffle septentrional</div></article>
+          <article class="track"><div class="track-number">06</div><div class="track-title">Visage de lune</div></article>
+          <article class="track"><div class="track-number">07</div><div class="track-title">Paupières du crépuscule</div></article>
+          <article class="track"><div class="track-number">08</div><div class="track-title">Nuit fauve</div></article>
+          <article class="track"><div class="track-number">09</div><div class="track-title">Fleur du soir</div></article>
+        </div>
+      </section>
+
+      <section id="critical-reception-link" class="section">
+        <a class="critical-gateway reveal" href="/postsPress/nuit-du-songe-press.html" aria-label="Open Critical Reception page">
+      
+          <div class="critical-index">
+            <span>III</span>
+            <span>Press Archive</span>
+          </div>
+      
+          <div class="critical-main">
+            <p class="critical-kicker">Critical Reception</p>
+      
+            <h2>
+              A curated constellation of press reflections, critical excerpts,
+              and external articles surrounding the album.
+            </h2>
+          </div>
+      
+          <div class="critical-action">
+            <span>Enter</span>
+            <span class="critical-arrow">↗</span>
+          </div>
+      
+        </a>
+      </section>
+
+      <section id="listen" class="section" aria-labelledby="listen-title">
+        <div class="listen-panel reveal">
+          <div class="listen-copy">
+            <div class="section-number">IV · Listening</div>
+            <h2 id="listen-title">Listen on your preferred platform.</h2>
+            <p>
+              Written for piano, prepared piano, church bells, choir and hybrid instruments, the work opens a dreamlike sonic space where colour, resonance and memory become living musical matter.
+            </p>
+          </div>
+          <div class="platforms" aria-label="Streaming platform links">
+            <a class="platform" href="https://open.spotify.com/intl-fr/album/5QMni4SXVVLEjgkKFZNqnz?si=SHjY0PzsTqCRXZVmrRS7ZA" target="_blank" rel="noopener noreferrer"><span>Spotify</span><span>↗</span></a>
+            <a class="platform" href="https://music.apple.com/fr/album/nuit-du-songe/6769498239" target="_blank" rel="noopener noreferrer"><span>Apple Music</span><span>↗</span></a>
+            <a class="platform" href="https://music.youtube.com/playlist?list=OLAK5uy_kzhwyZToi27TE_F9_e6cpbtVfpnD_9HSM&si=4TkByXdYyUyv34v3" target="_blank" rel="noopener noreferrer"><span>YouTube Music</span><span>↗</span></a>
+            <a class="platform" href="https://link.deezer.com/s/33iiVpimaZHxvbpG8evyq" target="_blank" rel="noopener noreferrer"><span>Deezer</span><span>↗</span></a>
+            <a class="platform" href="https://sherifdahroug.bandcamp.com/album/nuit-du-songe" target="_blank" rel="noopener noreferrer"><span>Bandcamp</span><span>↗</span></a>
+          </div>
+          <div class="vinyl-editions">
+
+            <div class="vinyl-editions-head">
+              <span>Vinyl Editions</span>
+              <h3>Acquire the three physical livres of Nuit du Songe.</h3>
+            </div>
+          
+            <div class="vinyl-editions-grid">
+          
+              <a class="vinyl-edition" href="https://elasticstage.com/sherifdahroug/releases/nuit-du-songe-livre-i-singleep" target="_blank" rel="noopener noreferrer">
+                <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-1.png" alt="Nuit du Songe Livre I vinyl cover">
+                <div class="vinyl-edition-info">
+                  <strong>Livre I</strong>
+                  <span>Acquire edition ↗</span>
+                </div>
+              </a>
+          
+              <a class="vinyl-edition" href="/https://elasticstage.com/sherifdahroug/releases/nuit-du-songe-livre-ii-singleep" target="_blank" rel="noopener noreferrer">
+                <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-2.png" alt="Nuit du Songe Livre II vinyl cover">
+                <div class="vinyl-edition-info">
+                  <strong>Livre II</strong>
+                  <span>Acquire edition ↗</span>
+                </div>
+              </a>
+          
+              <a class="vinyl-edition" href="https://elasticstage.com/sherifdahroug/releases/nuit-du-songe-livre-iii-singleep" target="_blank" rel="noopener noreferrer">
+                <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/vinyl-artwork-3.png" alt="Nuit du Songe Livre III vinyl cover">
+                <div class="vinyl-edition-info">
+                  <strong>Livre III</strong>
+                  <span>Acquire edition ↗</span>
+                </div>
+              </a>
+          
+            </div>
+          
+          </div>
+          
+          </div>
+        </div>
+      </section>
+
+      <section id="trailers" class="section" aria-labelledby="trailers-title">
+        <div class="section-head reveal">
+          <div class="section-number">V · Trailers</div>
+          <h2 id="trailers-title" class="section-title">Announcement films opening windows into the album.</h2>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <div class="video-frame">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1689734865503448%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+              <div class="play-symbol">▶</div>
+            </div>
+            <div class="video-meta"><div class="video-title">Trailer I</div><div class="video-source">Facebook</div></div>
+          </article>
+
+          <article class="video-card reveal">
+            <div class="video-frame">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1542800957363224%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+              <div class="play-symbol">▶</div>
+            </div>
+            <div class="video-meta"><div class="video-title">Trailer II</div><div class="video-source">Facebook</div></div>
+          </article>
+
+          <article class="video-card reveal">
+            <div class="video-frame">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1369845364979843%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+              <div class="play-symbol">▶</div>
+            </div>
+            <div class="video-meta"><div class="video-title">Trailer III</div><div class="video-source">Facebook</div></div>
+          </article>
+
+          <article class="video-card reveal">
+            <div class="video-frame">
+              <!-- Insert Facebook trailer iframe here -->
+              <div class="play-symbol">▶</div>
+            </div>
+            <div class="video-meta"><div class="video-title">Trailer IV</div><div class="video-source">Facebook</div></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="credits" class="section" aria-labelledby="credits-title">
+        <div class="section-head reveal">
+          <div class="section-number">VI · Credits</div>
+          <h2 id="credits-title" class="section-title">The hands, images, sounds, and production behind the album.</h2>
+        </div>
+
+        <div class="credits reveal">
+          <div class="credit-row"><div class="credit-role">COMPOSITION & DIRECTION</div><div class="credit-name">Sherif Dahroug</div></div>
+          <div class="credit-row"><div class="credit-role">OPUS TITLE</div><div class="credit-name">Nuit du songe</div></div>
+          <div class="credit-row"><div class="credit-role">TOTAL DURATION</div><div class="credit-name">47 minutes and 59 seconds</div></div>
+          <div class="credit-row"><div class="credit-role">PERFORMANCE</div><div class="credit-name">Sherif Dahroug & L'Ensemble de Montmartre</div></div>
+          <div class="credit-row"><div class="credit-role">FEATURING</div><div class="credit-name">Clara Lysander, Marianne Delcour, Julien Varennes, Théo Renaudin, Raphaël Mondière</div></div>
+          <div class="credit-row"><div class="credit-role">PRODUCTION</div><div class="credit-name">Lyre de Mercure</div></div>
+          <div class="credit-row"><div class="credit-role">Artwork</div><div class="credit-name">Sherif Dahrouge</div></div>
+          <div class="credit-row"><div class="credit-role">Recording / Mixing</div><div class="credit-name">Iyri Rosetaou & Carmen Rosetaou</div></div>
+          <div class="credit-row"><div class="credit-role">Mastering</div><div class="credit-name">Iyri Rosetaou & Carmen Rosetaou</div></div>
+          <div class="credit-row"><div class="credit-role">Video Trailers</div><div class="credit-name">Sherif Dahroug</div></div>
+          <div class="credit-row"><div class="credit-role">Label / Distribution</div><div class="credit-name">Lyre de Mercure</div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Sherif Dahroug</div>
+      <div>Nuit du songe · Album Page</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), index * 70);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .14 });
+
+    revealItems.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>

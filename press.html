@@ -90,427 +90,721 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
-        <div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/mbc-misr.jpg" alt="mbc-masr" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> TV Interview - MBC Masr With Sherif Aamer - 5th Dec 2025.</p></b>
-            <p>  Sherif Dahroug: Translating Architecture into Music — The Story Behind a French Distinction </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/mbc-masr.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
+        <style>
+  /* ==========================================================
+     PRESS PAGE — MET / SWISS EDITORIAL REDESIGN
+     Self-contained, page-scoped, Jekyll-safe.
+     No global body/html/head styling.
+     ========================================================== */
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/CultureNile.webp" alt="CultureNile" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> Nile TV Culture Feature</p></b>
-            <p>  Sherif Dahroug Honored with the Highest French Academic Distinction </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/Nileculture.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
+  .press-page {
+    --ink: #15130f;
+    --ink-soft: #3d3931;
+    --muted: #746d61;
+    --pale: #f5f1e8;
+    --paper: #fbf8f1;
+    --line: rgba(21, 19, 15, 0.16);
+    --line-strong: rgba(21, 19, 15, 0.34);
+    --accent: #8b6f3d;
+    --max: 1240px;
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/interview.jpg" alt="interview" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Press Highlights - Album release 2025 </p></b>
-            <p> Echoes of the album Dichotomy: selected quotes from radio, articles, blogs, and journals. </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/08-dichotomy-album-press.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    width: 100%;
+    color: var(--ink);
+    background:
+      linear-gradient(180deg, rgba(251, 248, 241, 0.92), rgba(251, 248, 241, 0.72));
+    font-family: inherit;
+  }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/presshilight.jpg" alt="presshilight" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Press Highlights - Album release 2024</p></b>
-            <p>Regards sur l’Horizon: Press Highlights & Impressions</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/09-regards-album-press.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+  .press-page,
+  .press-page * {
+    box-sizing: border-box;
+  }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/soundchech.jpg" alt="soundchech" style="width:100%;" align="middle">
+  .press-page a {
+    color: inherit;
+  }
+
+  .press-frame {
+    width: min(var(--max), calc(100% - 34px));
+    margin: 0 auto;
+    padding: clamp(54px, 8vw, 118px) 0 clamp(72px, 10vw, 144px);
+  }
+
+  /* ---------- Museum header ---------- */
+
+  .press-masthead {
+    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(16px, 2.2vw, 28px);
+    row-gap: 34px;
+    padding-bottom: clamp(44px, 7vw, 92px);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .press-museum-mark {
+    grid-column: 1 / span 1;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    color: var(--accent);
+    padding-top: 14px;
+  }
+
+  .press-heading-block {
+    grid-column: 3 / span 7;
+    max-width: 760px;
+  }
+
+  .press-eyebrow,
+  .press-entry__number,
+  .press-entry__date,
+  .press-gallery__number,
+  .press-index-label {
+    font-size: 0.68rem;
+    line-height: 1.3;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .press-title {
+    margin: 10px 0 0;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: clamp(3.8rem, 8vw, 7.8rem);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+    font-weight: 400;
+    max-width: 7ch;
+  }
+
+  .press-subtitle {
+    grid-column: 3 / span 5;
+    margin: 0;
+    max-width: 34rem;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.22rem, 2vw, 1.72rem);
+    line-height: 1.34;
+    color: var(--ink-soft);
+  }
+
+  .press-masthead-meta {
+    grid-column: 10 / span 2;
+    align-self: end;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  /* ---------- Lead pair ---------- */
+
+  .press-lead-grid {
+    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(16px, 2.2vw, 28px);
+    row-gap: clamp(34px, 5vw, 68px);
+    margin: clamp(52px, 8vw, 104px) 0 clamp(68px, 9vw, 128px);
+  }
+
+  .press-lead {
+    grid-column: span 6;
+    align-content: start;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: clamp(16px, 2vw, 26px);
+  }
+
+  .press-lead__image {
+    grid-column: 1 / -1;
+    position: relative;
+    overflow: hidden;
+    background: var(--pale);
+    aspect-ratio: 1.12 / 1;
+    margin-bottom: 28px;
+  }
+
+  .press-lead__image::after,
+  .press-gallery__tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(21, 19, 15, 0.08);
+    pointer-events: none;
+  }
+
+  .press-lead__image img,
+  .press-gallery__tile img,
+  .press-entry__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: grayscale(8%) saturate(0.82) contrast(0.95);
+    transition: transform 900ms cubic-bezier(.2,.7,.2,1), filter 900ms cubic-bezier(.2,.7,.2,1);
+  }
+
+  .press-lead:hover img,
+  .press-lead:focus-visible img,
+  .press-entry:hover img,
+  .press-entry:focus-visible img,
+  .press-gallery__tile:hover img,
+  .press-gallery__tile:focus-visible img {
+    transform: scale(1.028);
+    filter: grayscale(0%) saturate(0.96) contrast(1);
+  }
+
+  .press-lead__number {
+    grid-column: 1 / span 1;
+    color: var(--accent);
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .press-lead__text {
+    grid-column: 2 / -1;
+  }
+
+  .press-lead__title {
+    margin: 7px 0 0;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3vw, 3.3rem);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+  }
+
+  .press-lead__summary {
+    max-width: 31rem;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .press-link-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 28px;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .press-link-line::before {
+    content: '';
+    width: 42px;
+    height: 1px;
+    background: var(--ink);
+    transition: width 450ms ease;
+  }
+
+  a:hover .press-link-line::before,
+  a:focus-visible .press-link-line::before {
+    width: 70px;
+  }
+
+  /* ---------- Section titles ---------- */
+
+  .press-section-header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(16px, 2.2vw, 28px);
+    align-items: end;
+    padding-top: clamp(30px, 5vw, 58px);
+    border-top: 1px solid var(--line-strong);
+    margin-bottom: 18px;
+  }
+
+  .press-index-label {
+    grid-column: 1 / span 2;
+    color: var(--accent);
+  }
+
+  .press-section-title {
+    grid-column: 3 / span 5;
+    margin: 0;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6vw, 6.7rem);
+    line-height: 0.86;
+    letter-spacing: -0.075em;
+  }
+
+  .press-section-copy {
+    grid-column: 9 / span 3;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.68;
+  }
+
+  /* ---------- Accession list ---------- */
+
+  .press-entries {
+    border-top: 1px solid var(--line);
+  }
+
+  .press-entry {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(16px, 2.2vw, 28px);
+    align-items: center;
+    padding: clamp(26px, 4vw, 54px) 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+  }
+
+  .press-entry__number {
+    grid-column: 1 / span 1;
+    align-self: start;
+    color: var(--accent);
+  }
+
+  .press-entry__image {
+    grid-column: 2 / span 3;
+    overflow: hidden;
+    background: var(--pale);
+    aspect-ratio: 1.42 / 1;
+  }
+
+  .press-entry__content {
+    grid-column: 6 / span 4;
+    max-width: 34rem;
+  }
+
+  .press-entry__date {
+    margin-bottom: 10px;
+  }
+
+  .press-entry__title {
+    margin: 0;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2vw, 2.1rem);
+    line-height: 1.02;
+    letter-spacing: -0.042em;
+  }
+
+  .press-entry__summary {
+    margin: 13px 0 0;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.62;
+  }
+
+  .press-entry__action {
+    grid-column: 12 / span 1;
+    justify-self: end;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line-strong);
+    display: grid;
+    place-items: center;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: 1.35rem;
+    line-height: 1;
+    transition: background 350ms ease, color 350ms ease, border-color 350ms ease;
+  }
+
+  .press-entry:hover .press-entry__action,
+  .press-entry:focus-visible .press-entry__action {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  /* ---------- Gallery ---------- */
+
+  .press-gallery {
+    margin-top: clamp(76px, 11vw, 152px);
+  }
+
+  .press-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(12px, 1.8vw, 22px);
+    margin-top: clamp(32px, 5vw, 62px);
+  }
+
+  .press-gallery__tile {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: var(--pale);
+    text-decoration: none;
+    aspect-ratio: 1 / 1.18;
+  }
+
+  .press-gallery__tile:nth-child(12n + 1),
+  .press-gallery__tile:nth-child(12n + 8) {
+    grid-column: span 6;
+    aspect-ratio: 1.5 / 1;
+  }
+
+  .press-gallery__tile:nth-child(12n + 2),
+  .press-gallery__tile:nth-child(12n + 3),
+  .press-gallery__tile:nth-child(12n + 4),
+  .press-gallery__tile:nth-child(12n + 5),
+  .press-gallery__tile:nth-child(12n + 6),
+  .press-gallery__tile:nth-child(12n + 7),
+  .press-gallery__tile:nth-child(12n + 9),
+  .press-gallery__tile:nth-child(12n + 10),
+  .press-gallery__tile:nth-child(12n + 11),
+  .press-gallery__tile:nth-child(12n + 12) {
+    grid-column: span 3;
+  }
+
+  .press-gallery__number {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    z-index: 2;
+    padding: 8px 10px;
+    background: rgba(251, 248, 241, 0.88);
+    color: var(--ink);
+    letter-spacing: 0.12em;
+  }
+
+  .press-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(10, 9, 7, 0.94);
+  }
+
+  .press-lightbox:target {
+    display: flex;
+  }
+
+  .press-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+  }
+
+  .press-lightbox__close {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .press-lightbox__figure {
+    position: relative;
+    z-index: 1;
+  }
+
+  .press-lightbox img {
+    max-width: min(1120px, 92vw);
+    max-height: 86vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 34px 100px rgba(0,0,0,.45);
+  }
+
+  @media (max-width: 980px) {
+    .press-frame {
+      width: min(100% - 26px, 1120px);
+    }
+    .press-museum-mark,
+    .press-heading-block,
+    .press-subtitle,
+    .press-masthead-meta,
+    .press-index-label,
+    .press-section-title,
+    .press-section-copy {
+      grid-column: 1 / -1;
+    }
+
+    .press-title {
+      font-size: clamp(4.6rem, 19vw, 9rem);
+    }
+
+    .press-lead {
+      grid-column: 1 / -1;
+    }
+
+    .press-entry {
+      grid-template-columns: repeat(8, 1fr);
+      row-gap: 20px;
+    }
+
+    .press-entry__number {
+      grid-column: 1 / span 1;
+    }
+
+    .press-entry__image {
+      grid-column: 2 / span 3;
+    }
+
+    .press-entry__content {
+      grid-column: 5 / span 4;
+    }
+
+    .press-entry__action {
+      display: none;
+    }
+
+    .press-gallery__tile:nth-child(n) {
+      grid-column: span 6;
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .press-title {
+      max-width: none;
+    }
+    .press-frame {
+      width: min(100% - 22px, var(--max));
+      padding-top: 44px;
+    }
+
+    .press-masthead,
+    .press-lead-grid,
+    .press-section-header,
+    .press-entry {
+      display: block;
+    }
+
+    .press-museum-mark,
+    .press-subtitle,
+    .press-masthead-meta,
+    .press-section-copy {
+      margin-top: 24px;
+    }
+
+    .press-lead + .press-lead {
+      margin-top: 54px;
+    }
+
+    .press-lead__image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .press-lead__number,
+    .press-lead__text {
+      grid-column: auto;
+    }
+
+    .press-entry__image {
+      margin: 16px 0 18px;
+      aspect-ratio: 4 / 3;
+    }
+
+    .press-gallery__tile:nth-child(n) {
+      grid-column: span 12;
+    }
+  }
+</style>
+
+<section class="press-page" aria-labelledby="press-title">
+  <div class="press-frame">
+
+    <header class="press-masthead">
+      <div class="press-heading-block">
+        <div class="press-eyebrow">Press archive · Selected reception</div>
+        <h1 class="press-title" id="press-title">Press</h1>
+      </div>
+      
+      <div class="press-masthead-meta">
+        Official press vault<br>
+        Television · Radio · Journals · Reviews<br>
+        2016—2026
+      </div>
+    </header>
+
+    <section class="press-lead-grid" aria-label="Featured press">
+      <a class="press-lead" href="/postsPress/mbc-masr.html">
+        <figure class="press-lead__image">
+          <img src="/img/postsPress/mbc-misr.jpg" alt="MBC Masr interview" loading="lazy">
+        </figure>
+        
+        <div class="press-lead__text">
+          <div class="press-eyebrow">TV Interview · MBC Masr · 5 Dec 2025</div>
+          <h2 class="press-lead__title">Translating Architecture into Music</h2>
+          <p class="press-lead__summary">Sherif Dahroug with Sherif Aamer — the story behind a French distinction.</p>
+          <span class="press-link-line">Read</span>
         </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Chris Redjam — Soundcheck Radio Show (UK/USA)</p></b>
-            <p> Sherif Dahroug — an innovator, master of a nouvelle vague aesthetic</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/Soundcheck.html">Read<span class="d-none d-md-inline"> more</span> </a>
+      </a>
+
+      <a class="press-lead" href="/postsPress/Nileculture.html">
+        <figure class="press-lead__image">
+          <img src="/img/postsPress/CultureNile.webp" alt="Nile TV Culture feature" loading="lazy">
+        </figure>
+       
+        <div class="press-lead__text">
+          <div class="press-eyebrow">Television Feature · Nile TV Culture</div>
+          <h2 class="press-lead__title">Highest French Academic Distinction</h2>
+          <p class="press-lead__summary">A cultural feature honoring the artist’s distinction and artistic trajectory.</p>
+          <span class="press-link-line">Read</span>
         </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/Lite-Lounge-.jpg" alt="press-lite-lounge" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Lite Lounge with Dimitri K.(USA)</p></b>
-            <p> On the Philosophy of Musical Creationc</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/litelounge.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
+        <a class="press-lead__text" href="/postsPress/06-TenTV.html">
+            <figure class="press-entry__image"><img src="/img/postsPress/ten-logo.jpg" alt="Ten TV interview" loading="lazy"></figure>
+            <div class="press-entry__content"><div class="press-entry__date">TV Interview · 2022</div><h3 class="press-entry__title">From Engineering to Music</h3><p class="press-entry__summary">Egyptian Artist Sherif Dahroug Receives Prestigious French Medal.</p></div>
+            <div class="press-entry__action">→</div>
+          </a>
+      </a>
+    </section>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/vaultlab.jpg" alt="vaultlab" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Vault Lab (Oct 2025)</p></b>
-            <p> The sonic ritual of duality: between Egyptian tradition and European avant-garde </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/vaultlab-dichotomy.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/icon1.png" alt="aube" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Icon Story 2024 - the Journal of World Organisation of Music Competitions</p></b>
-            <p> Sherif Dahroug: A Visionary
-                Maestro of Classical Music </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/01-iconstory.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/ahramhebdo-poster.jpeg" alt="hebdo" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> Al-Ahram Hebdo, December 16, 2024.</p></b>
-            <p> Le compositeur égyptien Sherif Dahroug décroche une Médaille d'Argent aux Global Music Awards</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/02-alahramhebdo.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/shorouklogo.jpg" alt="alshorouk" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> Al-Shorouk Journal, December 16, 2024.</p></b>
-            <p> Sherif Dahroug Wins Silver at the "Global Music Awards" Competition in California</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/03-alshorouk.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/journal.jpg" alt="journal" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> World Grand Prix International Music Contest
-                Exclusive Journal 2024</p></b>
-            <p> An interview with the winner of the World Grand Prix</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/04-exclusivejournal.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/Ahram_Logo.jpg" alt="ahram-logo" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> Al-Ahram, December 15, 2023.</p></b>
-            <p>  Sherif Dahroug, winner of the silver award in the global "EMA" competition</p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/05-alahram.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/ten-logo.jpg" alt="ten-tv" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> TV Interview - Ten TV 2022.</p></b>
-            <p>  From Engineering to Music: Egyptian Artist Sherif Dahroug Receives Prestigious French Medal </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/06-TenTV.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsPress/fenoun-logo.jpg" alt="fenoun" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;"> Ministry of Culture Magazine, Issue 86, April 2016.</p></b>
-            <p>  A Tale of a Musical Phenomenon
-            </p>
-            <a class="btn-myBtn1s float-right" href="/postsPress/07-fenoun-masrya.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
-            <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Press Photo Gallery</title>
-              <style>
-                  * {
-                      margin: 0;
-                      padding: 0;
-                      box-sizing: border-box;
-                  }
-          
-                  body {
-                      font-family: "Garamond", serif;
-                      background-color: #111;
-                      color: white;
-                      text-align: center;
-                      padding: 50px;
-                  }
-          
-                  h1 {
-                      margin-bottom: 20px;
-                      font-size: 2.5rem;
-                  }
-          
-                  .gallery {
-                      display: grid;
-                      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                      gap: 15px;
-                      padding: 20px;
-                      max-width: 1200px;
-                      margin: auto;
-                  }
-          
-                  .gallery img {
-                      width: 100%;
-                      height: auto;
-                      border-radius: 10px;
-                      transition: transform 0.3s ease, opacity 0.3s ease;
-                      cursor: pointer;
-                  }
-          
-                  .gallery img:hover {
-                      transform: scale(1.05);
-                      opacity: 0.8;
-                  }
-          
-                  /* Lightbox effect */
-                  .lightbox {
-                      position: fixed;
-                      top: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
-                      background: rgba(0, 0, 0, 0.9);
-                      display: none;
-                      align-items: center;
-                      justify-content: center;
-                      z-index: 1000;
-                  }
-          
-                  .lightbox img {
-                      max-width: 80%;
-                      max-height: 80%;
-                      border-radius: 10px;
-                  }
-          
-                  .lightbox:target {
-                      display: flex;
-                  }
-          
-                  .close {
-                      position: absolute;
-                      top: 20px;
-                      right: 40px;
-                      font-size: 30px;
-                      color: white;
-                      text-decoration: none;
-                  }
-              </style>
-          <br>
-        </head>
-          <body>
-          
-              <h1>The Official Press Vault</h1>
-
-          
-              <div class="gallery">
-                  <a href="img1"><img src="img/Press Gallery/Press1.jpg" alt="Press Photo 1"></a>
-                  <a href="#img2"><img src="img/Press Gallery/Press2.jpg" alt="img/Press Gallery/Press2.jpg"></a>
-                  <a href="#img3"><img src="img/Press Gallery/Press3.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-                  <a href="#img4"><img src="img/Press Gallery/Press04.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-                  <a href="#img5"><img src="img/Press Gallery/Press05.jpg" alt="img/Press Gallery/Press3.jpg"></a>
-                  <a href="#img6"><img src="img/Press Gallery/Press06.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-                  <a href="#img7"><img src="img/Press Gallery/Press07.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-                  <a href="#img8"><img src="img/Press Gallery/Press08.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-                  <a href="#img9"><img src="img/Press Gallery/Press09.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-                  <a href="#img10"><img src="img/Press Gallery/Press10.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-                  <a href="#img11"><img src="img/Press Gallery/Press11.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-                  <a href="#img12"><img src="img/Press Gallery/Press12.jpg" alt="img/Press Gallery/Press06.jpg"></a>
-              </div>
-          
-              <!-- Lightbox Modals -->
-              <div id="img1" class="lightbox">
-                  <a href="#" class="close">&times;</a>
-                  <img src="img/Press Gallery/Press1.jpg" alt="Press Photo 1">
-              </div>
-          
-              <div id="img2" class="lightbox">
-                  <a href="#" class="close">&times;</a>
-                  <img src="img/Press Gallery/Press2.jpg" alt="Press Photo 2">
-              </div>
-          
-              <div id="img3" class="lightbox">
-                  <a href="#" class="close">&times;</a>
-                  <img src="img/Press Gallery/Press3.jpg" alt="Press Photo 3">
-              </div>
-          
-              <div id="img4" class="lightbox">
-                  <a href="#" class="close">&times;</a>
-                  <img src="img/Press Gallery/Press04.jpg" alt="Press Photo 4">
-              </div>
-
-              <div id="img5" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press05.jpg" alt="Press Photo 5">
-            </div>
-
-            <div id="img6" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press06.jpg" alt="Press Photo 6">
-            </div>
-
-            <div id="img7" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press07.jpg" alt="Press Photo 7">
-            </div>
-
-            <div id="img8" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press08.jpg" alt="Press Photo 8">
-            </div>
-
-            <div id="img9" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press09.jpg" alt="Press Photo 9">
-            </div>
-
-            <div id="img10" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press10.jpg" alt="Press Photo 10">
-            </div>
-
-            <div id="img11" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press11.jpg" alt="Press Photo 11">
-            </div>
-
-            <div id="img12" class="lightbox">
-                <a href="#" class="close">&times;</a>
-                <img src="img/Press Gallery/Press12.jpg" alt="Press Photo 12">
-            </div>
-
+    <section aria-labelledby="critical-register-title">
+      <header class="press-section-header">
+        <div class="press-index-label">Catalogue I</div>
+        <h2 class="press-section-title" id="critical-register-title">Critical register</h2>
+        <div class="press-masthead-meta">
+            Critics · Radio · Journals · Reviews . Blogs<br>
             
-          </body>
-<br>  
+          </div>
+        <p class="press-section-copy">
+         
+        </p>
+      </header>
+
+      <div class="press-entries">
+        <a class="press-entry" href="/postsPress/nuit-du-songe-press.html">
+          <div class="press-entry__number">12</div>
+          <figure class="press-entry__image"><img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/f4dc6b92-ad63-4dce-ba6f-b59e284ea28c.png" alt="Nuit du songe press anthology" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Album 2026</div><h3 class="press-entry__title">Collected Critical Writings — Nuit du songe</h3><p class="press-entry__summary">Reviews & Press Anthology.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/08-dichotomy-album-press.html">
+          <div class="press-entry__number">11</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/interview.jpg" alt="Dichotomy album press highlights" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Album Release 2025</div><h3 class="press-entry__title">Press Highlights — Dichotomy</h3><p class="press-entry__summary">Selected quotes from radio, articles, blogs, and journals.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/09-regards-album-press.html">
+          <div class="press-entry__number">10</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/presshilight.jpg" alt="Regards sur l’Horizon press highlights" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Album Release 2024</div><h3 class="press-entry__title">Regards sur l’Horizon</h3><p class="press-entry__summary">Press Highlights & Impressions.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/Soundcheck.html">
+          <div class="press-entry__number">09</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/soundchech.jpg" alt="Soundcheck Radio Show" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Radio · UK / USA</div><h3 class="press-entry__title">Chris Redjam — Soundcheck Radio Show</h3><p class="press-entry__summary">An innovator, master of a nouvelle vague aesthetic.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/litelounge.html">
+          <div class="press-entry__number">08</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/Lite-Lounge-.jpg" alt="Lite Lounge with Dimitri K" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Interview · USA</div><h3 class="press-entry__title">Lite Lounge with Dimitri K.</h3><p class="press-entry__summary">On the Philosophy of Musical Creation.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/vaultlab-dichotomy.html">
+          <div class="press-entry__number">07</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/vaultlab.jpg" alt="Vault Lab Dichotomy feature" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Vault Lab · Oct 2025</div><h3 class="press-entry__title">The sonic ritual of duality</h3><p class="press-entry__summary">Between Egyptian tradition and European avant-garde.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/01-iconstory.html">
+          <div class="press-entry__number">06</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/icon1.png" alt="Icon Story 2024" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Icon Story · 2024</div><h3 class="press-entry__title">A Visionary Maestro of Classical Music</h3><p class="press-entry__summary">The Journal of World Organisation of Music Competitions.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/02-alahramhebdo.html">
+          <div class="press-entry__number">05</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/ahramhebdo-poster.jpeg" alt="Al-Ahram Hebdo feature" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Al-Ahram Hebdo · 16 Dec 2024</div><h3 class="press-entry__title">Médaille d'Argent aux Global Music Awards</h3><p class="press-entry__summary">A French-language feature on the international distinction.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/03-alshorouk.html">
+          <div class="press-entry__number">04</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/shorouklogo.jpg" alt="Al-Shorouk Journal" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Al-Shorouk Journal · 16 Dec 2024</div><h3 class="press-entry__title">Silver at the Global Music Awards</h3><p class="press-entry__summary">Coverage of the California-based competition distinction.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/04-exclusivejournal.html">
+          <div class="press-entry__number">03</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/journal.jpg" alt="World Grand Prix International Music Contest journal" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Exclusive Journal · 2024</div><h3 class="press-entry__title">World Grand Prix International Music Contest</h3><p class="press-entry__summary">An interview with the winner of the World Grand Prix.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+        <a class="press-entry" href="/postsPress/05-alahram.html">
+          <div class="press-entry__number">02</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/Ahram_Logo.jpg" alt="Al-Ahram newspaper" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Al-Ahram · 15 Dec 2023</div><h3 class="press-entry__title">Silver award in the global EMA competition</h3><p class="press-entry__summary">Coverage of an international recognition.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+
+     
+
+        <a class="press-entry" href="/postsPress/07-fenoun-masrya.html">
+          <div class="press-entry__number">01</div>
+          <figure class="press-entry__image"><img src="/img/postsPress/fenoun-logo.jpg" alt="Ministry of Culture Magazine" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Ministry of Culture Magazine · Issue 86 · Apr 2016</div><h3 class="press-entry__title">A Tale of a Musical Phenomenon</h3><p class="press-entry__summary">An early press portrait from the Egyptian Ministry of Culture magazine.</p></div>
+          <div class="press-entry__action">→</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="press-gallery" aria-labelledby="press-gallery-title">
+      <header class="press-section-header">
+        <div class="press-index-label">Catalogue II</div>
+        <h2 class="press-section-title" id="press-gallery-title">Press vault</h2>
+        <p class="press-section-copy">Artist photo gallery assets</p>
+      </header>
+
+      <div class="press-gallery-grid">
+        <a class="press-gallery__tile" href="#press-img-1"><img src="/img/Press Gallery/Press1.jpg" alt="Press Photo 1" loading="lazy"><span class="press-gallery__number">I</span></a>
+        <a class="press-gallery__tile" href="#press-img-2"><img src="/img/Press Gallery/Press2.jpg" alt="Press Photo 2" loading="lazy"><span class="press-gallery__number">II</span></a>
+        <a class="press-gallery__tile" href="#press-img-3"><img src="/img/Press Gallery/Press3.jpg" alt="Press Photo 3" loading="lazy"><span class="press-gallery__number">III</span></a>
+        <a class="press-gallery__tile" href="#press-img-4"><img src="/img/Press Gallery/Press04.jpg" alt="Press Photo 4" loading="lazy"><span class="press-gallery__number">IV</span></a>
+        <a class="press-gallery__tile" href="#press-img-5"><img src="/img/Press Gallery/Press05.jpg" alt="Press Photo 5" loading="lazy"><span class="press-gallery__number">V</span></a>
+        <a class="press-gallery__tile" href="#press-img-6"><img src="/img/Press Gallery/Press06.jpg" alt="Press Photo 6" loading="lazy"><span class="press-gallery__number">VI</span></a>
+        <a class="press-gallery__tile" href="#press-img-7"><img src="/img/Press Gallery/Press07.jpg" alt="Press Photo 7" loading="lazy"><span class="press-gallery__number">VII</span></a>
+        <a class="press-gallery__tile" href="#press-img-8"><img src="/img/Press Gallery/Press08.jpg" alt="Press Photo 8" loading="lazy"><span class="press-gallery__number">VIII</span></a>
+        <a class="press-gallery__tile" href="#press-img-9"><img src="/img/Press Gallery/Press09.jpg" alt="Press Photo 9" loading="lazy"><span class="press-gallery__number">IX</span></a>
+        <a class="press-gallery__tile" href="#press-img-10"><img src="/img/Press Gallery/Press10.jpg" alt="Press Photo 10" loading="lazy"><span class="press-gallery__number">X</span></a>
+        <a class="press-gallery__tile" href="#press-img-11"><img src="/img/Press Gallery/Press11.jpg" alt="Press Photo 11" loading="lazy"><span class="press-gallery__number">XI</span></a>
+        <a class="press-gallery__tile" href="#press-img-12"><img src="/img/Press Gallery/Press12.jpg" alt="Press Photo 12" loading="lazy"><span class="press-gallery__number">XII</span></a>
+      </div>
+    </section>
+  </div>
+
+  <div id="press-img-1" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press1.jpg" alt="Press Photo 1"></div></div>
+  <div id="press-img-2" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press2.jpg" alt="Press Photo 2"></div></div>
+  <div id="press-img-3" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press3.jpg" alt="Press Photo 3"></div></div>
+  <div id="press-img-4" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press04.jpg" alt="Press Photo 4"></div></div>
+  <div id="press-img-5" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press05.jpg" alt="Press Photo 5"></div></div>
+  <div id="press-img-6" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press06.jpg" alt="Press Photo 6"></div></div>
+  <div id="press-img-7" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press07.jpg" alt="Press Photo 7"></div></div>
+  <div id="press-img-8" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press08.jpg" alt="Press Photo 8"></div></div>
+  <div id="press-img-9" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press09.jpg" alt="Press Photo 9"></div></div>
+  <div id="press-img-10" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press10.jpg" alt="Press Photo 10"></div></div>
+  <div id="press-img-11" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press11.jpg" alt="Press Photo 11"></div></div>
+  <div id="press-img-12" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press12.jpg" alt="Press Photo 12"></div></div>
+</section>
+
 
       </div>
     </div>

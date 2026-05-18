@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Press reviews and critical reception for the album Involution by Sherif Dahroug." />
+  <title>Press — Involution | Sherif Dahroug</title>
+
+  <style>
+    :root {
+      --ink: #11110f;
+      --paper: #f4f0e8;
+      --paper-soft: #fbf8f1;
+      --stone: #d8d0c2;
+      --muted: #6f685f;
+      --gold: #b88a44;
+      --red: #8f1f1b;
+      --blue: #1d3f72;
+      --black: #050505;
+      --glass: rgba(251, 248, 241, 0.72);
+      --line: rgba(17, 17, 15, 0.1);
+      --shadow: 0 28px 80px rgba(17, 17, 15, 0.13);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+      --max: 1180px;
+      --ease: cubic-bezier(.19, 1, .22, 1);
+    }
+
+    body.night {
+      --ink: #f5efe4;
+      --paper: #070707;
+      --paper-soft: #11100d;
+      --stone: #2a2721;
+      --muted: #aaa092;
+      --gold: #d4a75d;
+      --red: #b53a31;
+      --blue: #6e93cf;
+      --black: #f7f0e7;
+      --glass: rgba(17, 16, 13, 0.72);
+      --line: rgba(245, 239, 228, 0.12);
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Helvetica Neue, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(184, 138, 68, 0.18), transparent 24%),
+        radial-gradient(circle at 82% 8%, rgba(29, 63, 114, 0.13), transparent 28%),
+        linear-gradient(135deg, #f7f2e9 0%, #eee7da 48%, #faf7ef 100%);
+      overflow-x: hidden;
+      transition: background .9s var(--ease), color .9s var(--ease);
+    }
+
+    body.night {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(212, 167, 93, 0.12), transparent 24%),
+        radial-gradient(circle at 82% 8%, rgba(110, 147, 207, 0.13), transparent 28%),
+        linear-gradient(135deg, #040404 0%, #12100d 55%, #050505 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page { position: relative; min-height: 100vh; }
+
+    .grain {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(90deg, currentColor 1px, transparent 1px),
+        linear-gradient(currentColor 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 92%);
+    }
+
+    .cursor-orbit {
+      pointer-events: none;
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      z-index: 0;
+      left: var(--mx, 50%);
+      top: var(--my, 30%);
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(184,138,68,.18), transparent 68%);
+      filter: blur(4px);
+      transition: opacity .6s ease;
+      opacity: .9;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: color-mix(in srgb, var(--paper) 76%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mark {
+      width: 14px;
+      height: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .mark span:nth-child(1) { background: var(--red); }
+    .mark span:nth-child(2) { background: var(--blue); }
+    .mark span:nth-child(3) { background: var(--gold); }
+    .mark span:nth-child(4) { background: var(--black); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links a,
+    .mode-toggle {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 0;
+      background: var(--ink);
+      transition: width .35s ease;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    .mode-toggle {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--glass);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 96px 28px 72px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 56px;
+      align-items: end;
+    }
+
+    .hero::before {
+      content: "PRESS / PRESS / PRESS / PRESS / PRESS / PRESS";
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      top: 42px;
+      font-size: clamp(46px, 10vw, 138px);
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: -.09em;
+      color: transparent;
+      -webkit-text-stroke: 1px color-mix(in srgb, var(--ink) 8%, transparent);
+      white-space: nowrap;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, Times New Roman, serif;
+      font-weight: 400;
+      font-size: clamp(64px, 11vw, 154px);
+      line-height: .82;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-title em {
+      display: block;
+      font-style: normal;
+      color: transparent;
+      -webkit-text-stroke: 1.2px var(--ink);
+    }
+
+    .hero-copy {
+      font-family: Georgia, Times New Roman, serif;
+      font-size: clamp(22px, 3vw, 38px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      max-width: 680px;
+      margin-top: 36px;
+    }
+
+    .hero-card {
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transform: translateY(var(--float, 0px));
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0 34%, rgba(184,138,68,.18) 34% 35%, transparent 35% 100%),
+        linear-gradient(0deg, transparent 0 62%, rgba(143,31,27,.14) 62% 63%, transparent 63% 100%);
+      pointer-events: none;
+    }
+
+    .album-label {
+      position: relative;
+      z-index: 1;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 66px;
+    }
+
+    .album-name {
+      position: relative;
+      z-index: 1;
+      font-family: Georgia, Times New Roman, serif;
+      font-size: 44px;
+      line-height: .94;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .album-meta {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .archive-strip {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px 34px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr .8fr;
+      gap: 18px;
+    }
+
+    .archive-piece {
+      min-height: 160px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--glass);
+      box-shadow: 0 18px 50px rgba(17,17,15,.07);
+      padding: 22px;
+      transform: translateY(calc(var(--scroll-y, 0) * var(--speed, .02px)));
+      overflow: hidden;
+      position: relative;
+    }
+
+    .archive-piece::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .archive-piece strong {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: 11px;
+      margin-bottom: 32px;
+      color: var(--muted);
+    }
+
+    .archive-piece span {
+      font-family: Georgia, Times New Roman, serif;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 28px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .35fr 1fr;
+      gap: 34px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+
+    .section-number {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: Georgia, Times New Roman, serif;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: .95;
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      margin: 0;
+    }
+
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .quote-card {
+      grid-column: span 6;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      background: var(--glass);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 54px rgba(17,17,15,.075);
+      transition: transform .65s var(--ease), box-shadow .65s var(--ease), background .65s var(--ease);
+      opacity: 0;
+      transform: translateY(34px);
+    }
+
+    .quote-card.revealed,
+    .index-item.revealed,
+    .timeline-item.revealed { opacity: 1; transform: translateY(0); }
+
+    .quote-card.featured {
+      grid-column: span 12;
+      min-height: 430px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: end;
+      background:
+        linear-gradient(135deg, rgba(17,17,15,.96), rgba(46,43,38,.94)),
+        #11110f;
+      color: #fbf8f1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .quote-card.featured::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(244,240,232,.2);
+      border-radius: 999px;
+      right: -90px;
+      top: -90px;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-8px) scale(1.006);
+      box-shadow: 0 32px 82px rgba(17,17,15,.13);
+      background: color-mix(in srgb, var(--glass) 60%, white 40%);
+    }
+
+    body.night .quote-card:hover { background: rgba(24, 22, 18, .92); }
+
+    .quote-card.featured:hover {
+      background: linear-gradient(135deg, rgba(17,17,15,.98), rgba(46,43,38,.96));
+    }
+
+    .source {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .publication {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .date { color: var(--muted); font-size: 13px; }
+    .featured .date { color: rgba(244,240,232,.62); }
+
+    blockquote {
+      margin: 0;
+      font-family: Georgia, Times New Roman, serif;
+      font-size: clamp(25px, 3vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-card:not(.featured) blockquote { font-size: clamp(25px, 2.6vw, 36px); }
+
+    .quote-mark {
+      font-family: Georgia, Times New Roman, serif;
+      color: var(--gold);
+      font-size: 78px;
+      line-height: .7;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card-footer {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .critic { color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .featured .critic { color: rgba(244,240,232,.68); }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      padding: 12px 16px;
+      transition: transform .35s ease, background .35s ease, color .35s ease;
+    }
+
+    .read-link:hover { transform: translateX(4px); background: var(--ink); color: var(--paper-soft); }
+    .featured .read-link:hover { background: #fbf8f1; color: #11110f; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 54px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s var(--ease), transform .75s var(--ease);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      width: 17px;
+      height: 17px;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 12%, transparent);
+    }
+
+    .timeline-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--glass);
+      display: grid;
+      grid-template-columns: 150px 1fr auto;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .timeline-date {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .timeline-title {
+      font-family: Georgia, Times New Roman, serif;
+      font-size: 25px;
+      letter-spacing: -.035em;
+      line-height: 1.1;
+    }
+
+    .index-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .index-item {
+      background: var(--glass);
+      padding: 26px;
+      min-height: 188px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background .35s ease, opacity .75s var(--ease), transform .75s var(--ease);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .index-item:hover { background: color-mix(in srgb, var(--glass) 70%, white 30%); }
+    body.night .index-item:hover { background: rgba(24,22,18,.94); }
+
+    .index-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .index-pub {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .index-arrow { font-size: 20px; color: var(--gold); }
+
+    .index-title {
+      font-family: Georgia, Times New Roman, serif;
+      font-size: 24px;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+    }
+
+    .listening-room {
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--glass);
+      padding: clamp(28px, 5vw, 56px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .listening-room::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -55% auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+    }
+
+    .wave-field {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 34px;
+    }
+
+    .wave-field span {
+      display: block;
+      width: 100%;
+      height: calc(20px + var(--h) * 1px);
+      background: linear-gradient(to top, var(--gold), color-mix(in srgb, var(--gold) 20%, transparent));
+      transform-origin: bottom;
+      animation: breathe 3.8s ease-in-out infinite;
+      animation-delay: calc(var(--i) * -90ms);
+      border-radius: 999px 999px 0 0;
+      opacity: .58;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scaleY(.42); opacity: .34; }
+      50% { transform: scaleY(1); opacity: .82; }
+    }
+
+    .cta {
+      margin-top: 42px;
+      border-radius: var(--radius-lg);
+      background: #11110f;
+      color: #fbf8f1;
+      padding: clamp(34px, 6vw, 72px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 34px;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(244,240,232,.12);
+      border-radius: calc(var(--radius-lg) - 12px);
+      pointer-events: none;
+    }
+
+    .cta h2 {
+      position: relative;
+      margin: 0;
+      font-family: Georgia, Times New Roman, serif;
+      font-size: clamp(38px, 6vw, 86px);
+      line-height: .9;
+      font-weight: 400;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      position: relative;
+      max-width: 620px;
+      color: rgba(244,240,232,.68);
+      line-height: 1.75;
+      margin: 24px 0 0;
+    }
+
+    .footer {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 28px 70px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .section-head,
+      .quote-card.featured,
+      .cta,
+      .timeline-card { grid-template-columns: 1fr; }
+      .quote-card,
+      .quote-card.featured { grid-column: span 12; }
+      .index-list,
+      .archive-strip { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding-top: 64px; }
+      .quote-card,
+      .hero-card,
+      .cta,
+      .listening-room { border-radius: 24px; }
+      .quote-card { padding: 26px; }
+      .card-footer { align-items: flex-start; flex-direction: column; }
+      .footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-orbit" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Sherif Dahroug home">
+          <span class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          Sherif Dahroug
+        </a>
+        <div class="nav-actions">
+          <nav class="nav-links" aria-label="Press page navigation">
+            <a href="#critics">Critics</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#articles">Articles</a>
+            <a href="#contact">Press kit</a>
+          </nav>
+          <button class="mode-toggle" type="button" aria-label="Toggle exhibition night mode">Night</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <div class="kicker">Press Room</div>
+          <h1 id="page-title" class="hero-title">Critical <em>Reception</em></h1>
+          <p class="hero-copy">
+            A curated constellation of press reflections, critical excerpts, interviews, and external articles surrounding the album 
+            <strong> Nuit du Songe</strong>.
+          </p>
+        </div>
+
+        <aside class="hero-card parallax" aria-label="Album information">
+          <div class="album-label">Album</div>
+          <div class="album-name"> Nuit du Songe</div>
+          <div class="album-meta">
+            Sherif Dahroug<br />
+            A New Opus in the Colors and Fragrances of Flowers, nine contemporary instrumental tableaux woven into a single labyrinthine opus exploring a nocturnal state of perception.<br />
+            Press excerpts and critical responses
+          </div>
+        </aside>
+      </section>
+
+      <section class="archive-strip" aria-label="Archival fragments">
+        <div class="archive-piece" style="--speed: .018px">
+          <strong>Archive Fragment</strong>
+          <span>A chronological overview tracing publications, and critical reception.</span>
+        </div>
+        <div class="archive-piece" style="--speed: -.012px">
+          <strong>Radio & Media Interviews</strong>
+          <span>Broadcast appearances, interviews, conversations, and featured media segments dedicated to the album.</span>
+        </div>
+        <div class="archive-piece" style="--speed: .026px">
+          <strong>Awards & Distinctions</strong>
+          <span>International prizes, official selections, distinctions, and recognitions received by Nuit du Songe.</span>
+        </div>
+      </section>
+
+      <section id="critics" class="section" aria-labelledby="critics-title">
+        <div class="section-head">
+          <div class="section-number">I · Selected Quotes</div>
+          <h2 id="critics-title" class="section-title">The album, seen through the eyes of critics.</h2>
+        </div>
+
+        <div class="press-grid">
+          <article class="quote-card featured reveal">
+            <div>
+              <div class="source">
+                <span class="publication">Publication Name</span>
+                <span class="date">Month Year</span>
+              </div>
+              <blockquote>
+                <span class="quote-mark">“</span>
+                Replace this with the most powerful and prestigious quote about the album — the sentence that can stand as the page’s crown.
+              </blockquote>
+            </div>
+            <div class="card-footer">
+              <div class="critic">Critic Name · Full article title</div>
+              <a class="read-link" href="https://example.com" target="_blank" rel="noopener noreferrer">Read article →</a>
+            </div>
+          </article>
+
+          <article class="quote-card reveal">
+            <div>
+              <div class="source">
+                <span class="publication">Publication Name</span>
+                <span class="date">Month Year</span>
+              </div>
+              <blockquote>
+                <span class="quote-mark">“</span>
+                Insert a concise press excerpt here. Choose one vivid phrase that captures the critic’s perspective.
+              </blockquote>
+            </div>
+            <div class="card-footer">
+              <div class="critic">Critic Name · Article title</div>
+              <a class="read-link" href="https://example.com" target="_blank" rel="noopener noreferrer">Read article →</a>
+            </div>
+          </article>
+
+          <article class="quote-card reveal">
+            <div>
+              <div class="source">
+                <span class="publication">Publication Name</span>
+                <span class="date">Month Year</span>
+              </div>
+              <blockquote>
+                <span class="quote-mark">“</span>
+                Insert another quote here. The rhythm of the page works best with excerpts between 18 and 34 words.
+              </blockquote>
+            </div>
+            <div class="card-footer">
+              <div class="critic">Critic Name · Article title</div>
+              <a class="read-link" href="https://example.com" target="_blank" rel="noopener noreferrer">Read article →</a>
+            </div>
+          </article>
+
+          <article class="quote-card reveal">
+            <div>
+              <div class="source">
+                <span class="publication">— VaultLab, Italy</span>
+                <span class="date">May 2026</span>
+              </div>
+              <blockquote>
+                <span class="quote-mark">“</span>
+                “...Within an instrumental landscape often divided between accessible minimalism and difficult experimentation, Sherif Dahroug seeks a third path: complex, yet sensorial; contemporary, yet traversed by a subtle lyricism.”
+              </blockquote>
+            </div>
+            <div class="card-footer">
+              <div class="critic">Sherif Dahroug – “Songe couleur d’aube”</div>
+              <a class="read-link" href="https://vaultlab.it/2026/05/17/tra-sogno-rito-e-resistenza-nuove-traiettorie-indipendenti-tra-elettronica-folk-avanguardia-e-rock/?utm_source=chatgpt.com#:~:text=Sherif%20Dahroug%20%E2%80%93%20%E2%80%9CSonge%20couleur%20d%E2%80%99aube%E2%80%9D" target="_blank" rel="noopener noreferrer">Read article →</a>
+            </div>
+          </article>
+
+          <article class="quote-card reveal">
+            <div>
+              <div class="source">
+                <span class="publication">— Berlin On Air (Germany)</span>
+                <span class="date">May 2026</span>
+              </div>
+              <blockquote>
+                <span class="quote-mark">“</span>
+                "...Through a subtly experimental approach, Sherif Dahroug establishes a truly distinctive voice within contemporary neoclassical music." — Berlin On Air (Germany), May 2026
+              </blockquote>
+            </div>
+            <div class="card-footer">
+              <div class="critic">Sherif DAHROUG – Songe couleur d’aube (Klassik)</div>
+              <a class="read-link" href="https://www.berlinonair.cc/post/816851527093420032/sherif-dahroug-songe-couleur-daube-klassik" target="_blank" rel="noopener noreferrer">Read article →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="listening-room" aria-label="Sound architecture visualisation">
+          <div class="section-number">Sound Architecture</div>
+          <h2 class="section-title">The work seeks to create a space of habitation through sound, a nocturnal architecture suspended between memory, colour and fragrances of flowers transfigured into an original modal-polytonal language through which harmonic colour no longer merely supports the form, but gradually engenders it from within.</h2>
+          <div class="wave-field" aria-hidden="true">
+            <span style="--i:1;--h:44"></span><span style="--i:2;--h:70"></span><span style="--i:3;--h:32"></span><span style="--i:4;--h:86"></span><span style="--i:5;--h:54"></span><span style="--i:6;--h:98"></span><span style="--i:7;--h:42"></span><span style="--i:8;--h:76"></span><span style="--i:9;--h:62"></span><span style="--i:10;--h:90"></span><span style="--i:11;--h:36"></span><span style="--i:12;--h:68"></span><span style="--i:13;--h:50"></span><span style="--i:14;--h:82"></span><span style="--i:15;--h:40"></span><span style="--i:16;--h:74"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section" aria-labelledby="timeline-title">
+        <div class="section-head">
+          <div class="section-number">II · Editorial Timeline</div>
+          <h2 id="timeline-title" class="section-title">A chronological path through the album’s public life.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-date">May 2026</div>
+              <div class="timeline-title">“...A brilliant piano arrangement unfolds, alive with delicate playfulness and profound artistry...together with its remarkably sophisticated harmonic concept...”
+                — NewIndieRadar.com (Germany), May 2026</div>
+              <a class="read-link" href="https://newindieradar.com/post/816853050166771712/neuerscheinung-songe-couleur-daube-von-sherif" target="_blank" rel="noopener noreferrer">Open ↗</a>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-date">May 2026</div>
+              <div class="timeline-title">"...Through a subtly experimental approach, Sherif Dahroug establishes a truly distinctive voice within contemporary neoclassical music." — Berlin On Air (Germany), May 2026</div>
+              <a class="read-link" href="https://www.berlinonair.cc/post/816851527093420032/sherif-dahroug-songe-couleur-daube-klassik" target="_blank" rel="noopener noreferrer">Open ↗</a>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-date">May 2026</div>
+              <div class="timeline-title">“...Within an instrumental landscape often divided between accessible minimalism and difficult experimentation, Sherif Dahroug seeks a third path: complex, yet sensorial; contemporary, yet traversed by a subtle lyricism.”</div>
+              <a class="read-link" href="https://vaultlab.it/2026/05/17/tra-sogno-rito-e-resistenza-nuove-traiettorie-indipendenti-tra-elettronica-folk-avanguardia-e-rock/?utm_source=chatgpt.com#:~:text=Sherif%20Dahroug%20%E2%80%93%20%E2%80%9CSonge%20couleur%20d%E2%80%99aube%E2%80%9D" target="_blank" rel="noopener noreferrer">Open ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="articles" class="section" aria-labelledby="articles-title">
+        <div class="section-head">
+          <div class="section-number">III · External Links</div>
+          <h2 id="articles-title" class="section-title">A living archive of articles, reviews, and interviews.</h2>
+        </div>
+
+        <div class="index-list">
+          <a class="index-item reveal" href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <div class="index-top">
+              <span class="index-pub">Publication Name</span>
+              <span class="index-arrow">↗</span>
+            </div>
+            <div class="index-title">Article title or review headline</div>
+          </a>
+
+          <a class="index-item reveal" href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <div class="index-top">
+              <span class="index-pub">Publication Name</span>
+              <span class="index-arrow">↗</span>
+            </div>
+            <div class="index-title">Article title or interview headline</div>
+          </a>
+
+          <a class="index-item reveal" href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <div class="index-top">
+              <span class="index-pub">Publication Name</span>
+              <span class="index-arrow">↗</span>
+            </div>
+            <div class="index-title">Article title or critical essay headline</div>
+          </a>
+        </div>
+
+        <div id="contact" class="cta">
+          <div>
+            <h2>For press inquiries, interviews, and album materials.</h2>
+            <p>
+              Replace this paragraph with your preferred press contact details, EPK link, biography, album booklet, high-resolution images, or label information.
+            </p>
+          </div>
+          <a class="read-link" href="mailto:ccdahroug@gmail.com">Contact →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Sherif Dahroug</div>
+      <div>Press archive · Involution</div>
+    </footer>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const body = document.body;
+    const toggle = document.querySelector('.mode-toggle');
+    const revealItems = document.querySelectorAll('.reveal');
+    const heroCard = document.querySelector('.hero-card');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('night');
+      toggle.textContent = body.classList.contains('night') ? 'Day' : 'Night';
+    });
+
+    window.addEventListener('pointermove', (event) => {
+      root.style.setProperty('--mx', event.clientX + 'px');
+      root.style.setProperty('--my', event.clientY + 'px');
+    }, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      root.style.setProperty('--scroll-y', y);
+      if (heroCard) heroCard.style.setProperty('--float', Math.min(y * .035, 18) + 'px');
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('revealed'), index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
