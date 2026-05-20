@@ -80,472 +80,746 @@
 </nav>
 
 
-    <!-- Page Header -->
-  <header class="masthead"  style="background-color: #ffffff; padding-top: 100px; padding-bottom: 100px;">
-    <br>
-    <h1  style="color: black">ALBUMS</h1>
-  </header>
+    <style>
+    :root {
+        --met-paper: #f7f5f0;
+        --met-ink: #080808;
+        --met-muted: #5d5a55;
+        --met-hairline: rgba(8, 8, 8, .16);
+        --met-hairline-strong: rgba(8, 8, 8, .28);
+        --met-gold: #a07d45;
+    }
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+    body {
+        background: var(--met-paper);
+    }
 
-        <div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/promo-vinyl-nuitdusonge.png" alt="nuit" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">NUIT DU SONGE</p></b>
-            <p>A New Opus in the Colors and Fragrances of Flowers, nine contemporary instrumental tableaux woven into a single labyrinthine opus exploring a nocturnal state of perception.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2026-05-15-nuit-du-songe-II.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
+    .met-editorial-albums {
+        width: min(1680px, calc(100vw - 8vw));
+        margin: 0 auto;
+        padding: clamp(56px, 7vw, 120px) 0 clamp(80px, 9vw, 150px);
+        color: var(--met-ink);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png" alt="FYC" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">the 68th GRAMMY® Awards</p></b>
-            <p>For your kind consideration at the 68th GRAMMY® Awards: two submissions that embody my devotion to the art of music.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-09-25-grammy_FYC.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
+    .met-hero {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 960px) 1fr;
+        align-items: end;
+        gap: clamp(18px, 3vw, 54px);
+        padding-bottom: clamp(42px, 6vw, 88px);
+        border-bottom: 1px solid var(--met-hairline-strong);
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-front.png" alt="dichotomy-artwork-front" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Dichotomy</p></b>
-            <b><p style="font-size:1em;">A Tone Poem of Five Metamorphoses</p></b>
-            <p>The architecture of Dichotomy is one of interactive, innovative forms — where the logic of classical structures converges with an avant-garde philosophical framework...</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-07-07-dichotomy.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>
+    .met-kicker,
+    .met-count,
+    .met-album-index,
+    .met-album-link,
+    .met-marquee {
+        font-size: 11px;
+        line-height: 1;
+        letter-spacing: .24em;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-07-03-polaris/polaris-vinyl-9.png" alt="polaris-vinyl-9" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Essentia Polaris</p></b>
-            <b><p style="font-size:1em;">Poème sonore philosophique en cinq tableaux</p></b>
-            <p>A philosophical journey in five tableaux: Initium Silentii, Atrium Luminis, Columnae Mentis, Sacrarium Velatum, Revelatio Essentiae....</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-07-03-polaris.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-kicker {
+        color: var(--met-muted);
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        justify-self: start;
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-10-18-Regards sur l'Horizon/regards.png" alt="Regards" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Regards sur l'Horizon</p></b>
-            <p>A visionary avant-garde triptych for piano. On the Thread Between Dusk and Dawn</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-10-18-Regards sur l'Horizon.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-title-wrap {
+        text-align: center;
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-03-21-routy/routy.png" alt="routy" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Routy</p></b>
-            <p>In the Temple of Esna, where the echoes of the first breath still resonate, Shu rises as the breeze upon the horizon, and Tefnut flows as the tear of eternity. Between them, music pulses—a sacred harmony, the rhythm of creation reborn in the eternal cycle of transformation.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-03-19-routy.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-title-wrap h1 {
+        margin: 0;
+        font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+        font-size: clamp(72px, 13vw, 220px);
+        line-height: .76;
+        letter-spacing: .16em;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-03-07-dua/dua.png" alt="dua" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Dua</p></b>
-            <p> the eternal dance between darkness and light... </p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-03-07-dua.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-title-rule {
+        width: 42px;
+        height: 1px;
+        margin: clamp(28px, 3vw, 46px) auto 0;
+        background: var(--met-ink);
+        opacity: .42;
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-02-14-enfant/enfant.png" alt="enfant" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">L’Enfant Caché et la Fleur des Marais Sacrés</p></b>
-            <p>In the silent marshes, where dark waters whisper to the roots of the world, a small boat drifts gently... </p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-02-14-enfant.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-count {
+        justify-self: end;
+        color: var(--met-muted);
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2025-01-06-aubeEclose/auLac-27-2.png" alt="aube" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">L’Aube Éclose, Au Lotus de Memphis </p></b>
-            <p> A musical offering celebrating the divine birth... </p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2025-01-06-aubeEclose.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-marquee-wrap {
+        overflow: hidden;
+        border-bottom: 1px solid var(--met-hairline);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-12-27-Au Lac des Ibis/Au lac-6-2.png" alt="aulac" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Au Lac des Ibis, Une Plume Encrée</p></b>
-            <p> A New Opus that transcends music to offer a philosophical journey. </p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-12-27-Au Lac des Ibis.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-marquee {
+        display: flex;
+        width: max-content;
+        padding: 18px 0 17px;
+        color: var(--met-muted);
+        white-space: nowrap;
+        animation: met-marquee 42s linear infinite;
+    }
 
+    .met-marquee span {
+        padding-right: 3rem;
+    }
 
+    @keyframes met-marquee {
+        from { transform: translate3d(0,0,0); }
+        to { transform: translate3d(-50%,0,0); }
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-10-17-PecheurArgent/pecheur.png" alt="pecheur" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Pêcheur aux Filets d'Argent</p></b>
-            <p> The Culmination of an Exceptional Opus</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-10-17-PecheurArgent.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    .met-album-list {
+        border-bottom: 1px solid var(--met-hairline-strong);
+    }
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-10-04-souffle/souffle.png" alt="lesouffle" style="width:100%;" align="middle">
+    .met-album-row {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(180px, 410px) 68px minmax(280px, 1fr) minmax(120px, 190px);
+        gap: clamp(22px, 4vw, 82px);
+        align-items: center;
+        min-height: clamp(210px, 22vw, 360px);
+        padding: clamp(18px, 2.2vw, 34px) 0;
+        border-top: 1px solid var(--met-hairline);
+        isolation: isolate;
+    }
+
+    .met-album-row:first-child {
+        border-top: 0;
+    }
+
+    .met-album-row::before {
+        content: "";
+        position: absolute;
+        inset: 0 calc(-1 * clamp(18px, 4vw, 64px));
+        background: #fffdf8;
+        opacity: 0;
+        transform: scaleY(.94);
+        transition: opacity .45s ease, transform .45s ease;
+        z-index: -1;
+    }
+
+    .met-album-row:hover::before {
+        opacity: .58;
+        transform: scaleY(1);
+    }
+
+    .met-album-image {
+        display: block;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: #ebe6dc;
+        clip-path: inset(0 round 0);
+    }
+
+    .met-album-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: saturate(.86) contrast(.98);
+        transform: scale(1.002);
+        transition: transform .7s cubic-bezier(.19,1,.22,1), filter .7s ease;
+    }
+
+    .met-album-row:hover .met-album-image img {
+        transform: scale(1.045);
+        filter: saturate(.96) contrast(1.04);
+    }
+
+    .met-album-index {
+        align-self: start;
+        padding-top: clamp(10px, 1vw, 18px);
+        color: var(--met-muted);
+        letter-spacing: .16em;
+    }
+
+    .met-album-copy {
+        max-width: 640px;
+    }
+
+    .met-album-copy h2 {
+        margin: 0 0 12px;
+        font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+        font-size: clamp(28px, 3vw, 54px);
+        line-height: .94;
+        letter-spacing: .105em;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .met-album-subtitle {
+        margin: -2px 0 12px !important;
+        font-family: Didot, "Times New Roman", serif;
+        font-size: clamp(14px, 1.15vw, 18px) !important;
+        letter-spacing: .045em;
+        color: var(--met-ink) !important;
+    }
+
+    .met-album-copy p {
+        margin: 0;
+        color: #252321;
+        font-size: clamp(15px, 1.08vw, 19px);
+        line-height: 1.55;
+        letter-spacing: .015em;
+    }
+
+    .met-album-link {
+        justify-self: end;
+        display: inline-flex;
+        align-items: center;
+        gap: 22px;
+        color: var(--met-ink);
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .met-arrow {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 1px;
+        background: currentColor;
+        transition: width .35s ease;
+    }
+
+    .met-arrow::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid currentColor;
+        border-right: 1px solid currentColor;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .met-album-row:hover .met-arrow {
+        width: 58px;
+    }
+
+    @media (max-width: 991px) {
+        .met-editorial-albums {
+            width: min(760px, calc(100vw - 36px));
+        }
+
+        .met-hero {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .met-kicker {
+            writing-mode: initial;
+            transform: none;
+            justify-self: center;
+        }
+
+        .met-count {
+            justify-self: center;
+        }
+
+        .met-album-row {
+            grid-template-columns: 92px 1fr;
+            gap: 18px 22px;
+            min-height: unset;
+            padding: 28px 0;
+        }
+
+        .met-album-image {
+            grid-row: span 3;
+        }
+
+        .met-album-index {
+            align-self: auto;
+            padding-top: 0;
+        }
+
+        .met-album-copy {
+            grid-column: 2;
+        }
+
+        .met-album-link {
+            grid-column: 2;
+            justify-self: start;
+            margin-top: 4px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .met-title-wrap h1 {
+            letter-spacing: .11em;
+            font-size: clamp(52px, 18vw, 86px);
+        }
+
+        .met-album-row {
+            grid-template-columns: 1fr;
+        }
+
+        .met-album-image {
+            grid-row: auto;
+            width: 58%;
+            min-width: 190px;
+        }
+
+        .met-album-index,
+        .met-album-copy,
+        .met-album-link {
+            grid-column: 1;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .met-marquee { animation: none; }
+        .met-album-image img,
+        .met-album-row::before,
+        .met-arrow { transition: none; }
+    }
+</style>
+
+<section class="met-editorial-albums">
+    <header class="met-hero">
+        <div class="met-kicker">Sherif Dahroug</div>
+        <div class="met-title-wrap">
+            <h1>Albums</h1>
+            <div class="met-title-rule" aria-hidden="true"></div>
         </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Le Souffle Écarlate</p></b>
-            <p> With this opus, Sherif Dahroug invites listeners on a journey across the boundaries of existence, offering a bridge between the ancient and the modern, the earthly and the divine. </p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-10-04-souffle.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-09-20-Sur le Fil de l'Aube/sur le fil-2.png" alt="surlefil" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Sur le Fil de l'Aube</p></b>
-            <p> In "Sur le Fil de l'Aube", the artist have crafted a musical and metaphysical journey that taps into the deepest spiritual currents of ancient Egyptian cosmology. Through the lens of dawn, the album reflects on rebirth, balance, and the eternal quest for understanding. </p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-09-20-Sur le Fil de l'Aube.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <br>
-        <br>
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-09-09-aura/aura.jpg" alt="aura" style="width:100%;" align="middle">
+       
+    </header>
+
+    <div class="met-marquee-wrap" aria-hidden="true">
+        <div class="met-marquee">
+            <span>NUIT DU SONGE &nbsp; / &nbsp; the 68th GRAMMY® Awards &nbsp; / &nbsp; Dichotomy &nbsp; / &nbsp; Essentia Polaris &nbsp; / &nbsp; Regards sur l&#x27;Horizon &nbsp; / &nbsp; Routy &nbsp; / &nbsp; Dua &nbsp; / &nbsp; L’Enfant Caché et la Fleur des Marais Sacrés &nbsp; / &nbsp; L’Aube Éclose, Au Lotus de Memphis &nbsp; / &nbsp; Au Lac des Ibis, Une Plume Encrée &nbsp; / &nbsp; Pêcheur aux Filets d&#x27;Argent &nbsp; / &nbsp; Le Souffle Écarlate</span>
+            <span>NUIT DU SONGE &nbsp; / &nbsp; the 68th GRAMMY® Awards &nbsp; / &nbsp; Dichotomy &nbsp; / &nbsp; Essentia Polaris &nbsp; / &nbsp; Regards sur l&#x27;Horizon &nbsp; / &nbsp; Routy &nbsp; / &nbsp; Dua &nbsp; / &nbsp; L’Enfant Caché et la Fleur des Marais Sacrés &nbsp; / &nbsp; L’Aube Éclose, Au Lotus de Memphis &nbsp; / &nbsp; Au Lac des Ibis, Une Plume Encrée &nbsp; / &nbsp; Pêcheur aux Filets d&#x27;Argent &nbsp; / &nbsp; Le Souffle Écarlate</span>
         </div>
     </div>
 
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Une aura dans les ténèbres</p></b>
-            <p> This release is a journey towards the sound that illuminates the darkness of existence, the essence that resides in our memory—a symbol destined to embody all that we are. It is a force that defies storms, guiding the lost in the sea of life, reminding us that love is an irresistible miracle, a light in our darkness.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-09-09-aura.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+    <div class="met-album-list">
+        <article class="met-album-row" aria-label="NUIT DU SONGE">
+            <a class="met-album-image" href="/postsMusic/albums/2026-05-15-nuit-du-songe-II.html" aria-label="Read more about NUIT DU SONGE">
+                <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/promo-vinyl-nuitdusonge.png" alt="nuit" loading="lazy">
+            </a>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <br>
-        <br>
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-08-30-L'Ame de la Rose/amedelarose.png" alt="amedelarose" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">L'Âme de la Rose</p></b>
-            <p>  Yet, even in this moment of seeming defeat, the music of L’Âme de la Rose echoes with the promise of resurrection. For it is through this very sleep, this descent into the void, that Psyche is reborn. Like the rose, which must wither and die before it can bloom again, Psyche’s awakening from this deathly slumber becomes the final act of her metamorphosis.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-08-30-amedelarose.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+            <div class="met-album-index">023</div>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <br>
-        <br>
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-08-01-Nocturnal/nocturanl.png" alt="nocturanl" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Nocturnal, Leopard Guide</p></b>
-            <p>  is a musical reflection of this deep harmony between Osiris and Set, between renewal and protection. This album takes us on a journey through the night, where we realize that darkness and light, chaos and order, are not opposites but complements, and that the continuity of the universe depends on this sacred balance between forces.Composed and designed by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-08-01-Nocturnal.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+            <div class="met-album-copy">
+                <h2>NUIT DU SONGE</h2>
+                <p>A New Opus in the Colors and Fragrances of Flowers, nine contemporary instrumental tableaux woven into a single labyrinthine opus exploring a nocturnal state of perception.</p>
+            </div>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <br>
-        
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-08-08-Orpheus/Orpheus-5.png" alt="Orpheus-5" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Orpheus</p></b>
-            <p>  This final act, this tragic glance, was more than just the loss of Eurydice; it was the ultimate expression of human frailty. Orpheus, a man who had touched the divine, who had unlocked the secrets of the gods, was still, in the end, bound by the mortal weakness of doubt and fear. His story is not just about the power of love and music, but about the delicate balance between faith and despair, between the divine and the human.Composed and designed by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-08-08-Orpheus.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+            <a class="met-album-link" href="/postsMusic/albums/2026-05-15-nuit-du-songe-II.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="the 68th GRAMMY® Awards">
+            <a class="met-album-image" href="/postsMusic/albums/2025-09-25-grammy_FYC.html" aria-label="Read more about the 68th GRAMMY® Awards">
+                <img src="/img/postsMusic/albums/2025-09-25-Grammy_FYC/FYC-flyer.png" alt="FYC" loading="lazy">
+            </a>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-07-25-hypatia/hypatia.png" alt="hypatia" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Hypatia</p></b>
-            <p>  In the blood-red sunset of a night of the new moon, the beginning and end of the lunar phases, Hypatia sat upon the ruins of the Serapeum, its walls once echoing with her voice, imparting wisdom and learning. She prayed to her god for the last time, for tomorrow she would offer her body on the altar of the City of God... Alexandria. Tonight, Hypatia's spirit departed; they had only slain her mortal form. Music Crafted and composed by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-07-25-Hypatia.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+            <div class="met-album-index">GA/01</div>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2024-01-29-TheArtofVariations/art-awards.png" alt="albums_artofvariations1" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">The Art Of Variations</p></b>
-            <!--
-            <a href="/postsMusic/albums/2024-01-29-TheArtofVariations.html" target="">click here for more info!</a>
-            <br>
-            <a class="btn-myBtn1 float-left" href="/postsMusic/albums/2024-01-29-TheArtofVariations.html">More<span class="d-none d-md-inline"> info</span> </a>
-            -->
-            <p>"Magnificent, insightful and powerful musical interpretation, a true treasure contributing to the universal cultural heritage and accretion to the French national Biblioteca."  ...</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2024-01-29-TheArtofVariations.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>    
+            <div class="met-album-copy">
+                <h2>the 68th GRAMMY® Awards</h2>
+                <p>For your kind consideration at the 68th GRAMMY® Awards: two submissions that embody my devotion to the art of music.</p>
+            </div>
 
-<br>   
-<hr>
-<br>  
+            <a class="met-album-link" href="/postsMusic/albums/2025-09-25-grammy_FYC.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Dichotomy">
+            <a class="met-album-image" href="/postsMusic/albums/2025-07-07-dichotomy.html" aria-label="Read more about Dichotomy">
+                <img src="/img/postsMusic/albums/2025-07-07-dichotomy/dichotomy-artwork-front.png" alt="dichotomy-artwork-front" loading="lazy">
+            </a>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2023-12-02-Philae/philae.png" alt="philae" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Philae</p></b>
-            <p>  a remarkable artistic creation that transcends time and space. Crafted by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2023-12-02-Philae.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+            <div class="met-album-index">022</div>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <br>
-        <div class="block">
-            <img src="/img/postsMusic/albums/2023-12-01-Hiérakonpolis/Hiérakonpolis (2).png" alt="Hiérakonpolis (2)" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Hiérakonpolis</p></b>
-            <p> "Hierakonpolis" is not just a musical album; it is a spiritual epic that takes you on a journey through the heart of ancient Egypt. Sherif Dahroug's harmonic and melodic compositions offer a chance to explore the chronological narrative of divinity, duality, and transformation. We invite you to join us on this mystical journey and let the music of "Hierakonpolis" elevate your spirit to new heights. Music composed, designed and performed by Sherif DAHROUG ...</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2023-12-01-Hiérakonpolis.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>  
-<br>   
-<hr>
-<br>  
+            <div class="met-album-copy">
+                <h2>Dichotomy</h2>
+                <p class="met-album-subtitle">A Tone Poem of Five Metamorphoses</p>
+                <p>The architecture of Dichotomy is one of interactive, innovative forms — where the logic of classical structures converges with an avant-garde philosophical framework...</p>
+            </div>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2023-11-31-abydos/aBYDOS-ALBUM.png" alt="aBYDOS-ALBUM" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Abydos</p></b>
-            <p> This work is a tribute to the souls of the last Egyptians who journeyed to Abydos for pilgrimage. They were killed there by Byzantine emperors, and their funerals were not held until today. Music composed, designed and performed by Sherif DAHROUG ...</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2023-11-31-Abydos.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>   
+            <a class="met-album-link" href="/postsMusic/albums/2025-07-07-dichotomy.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Essentia Polaris">
+            <a class="met-album-image" href="/postsMusic/albums/2025-07-03-polaris.html" aria-label="Read more about Essentia Polaris">
+                <img src="/img/postsMusic/albums/2025-07-03-polaris/polaris-vinyl-9.png" alt="polaris-vinyl-9" loading="lazy">
+            </a>
 
-<br>   
-<hr>
-<br>  
+            <div class="met-album-index">021</div>
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2023-11-30-ATUM/atum-pyramids.png" alt="atum-pyramids" style="width:100%;" align="middle">
-        </div>
+            <div class="met-album-copy">
+                <h2>Essentia Polaris</h2>
+                <p class="met-album-subtitle">Poème sonore philosophique en cinq tableaux</p>
+                <p>A philosophical journey in five tableaux: Initium Silentii, Atrium Luminis, Columnae Mentis, Sacrarium Velatum, Revelatio Essentiae....</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2025-07-03-polaris.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Regards sur l&#x27;Horizon">
+            <a class="met-album-image" href="/postsMusic/albums/2024-10-18-Regards sur l'Horizon.html" aria-label="Read more about Regards sur l&#x27;Horizon">
+                <img src="/img/postsMusic/albums/2024-10-18-Regards sur l'Horizon/regards.png" alt="Regards" loading="lazy">
+            </a>
+
+            <div class="met-album-index">020</div>
+
+            <div class="met-album-copy">
+                <h2>Regards sur l&#x27;Horizon</h2>
+                <p>A visionary avant-garde triptych for piano. On the Thread Between Dusk and Dawn</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-10-18-Regards sur l'Horizon.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Routy">
+            <a class="met-album-image" href="/postsMusic/albums/2025-03-19-routy.html" aria-label="Read more about Routy">
+                <img src="/img/postsMusic/albums/2025-03-21-routy/routy.png" alt="routy" loading="lazy">
+            </a>
+
+            <div class="met-album-index">019</div>
+
+            <div class="met-album-copy">
+                <h2>Routy</h2>
+                <p>In the Temple of Esna, where the echoes of the first breath still resonate, Shu rises as the breeze upon the horizon, and Tefnut flows as the tear of eternity. Between them, music pulses—a sacred harmony, the rhythm of creation reborn in the eternal cycle of transformation.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2025-03-19-routy.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Dua">
+            <a class="met-album-image" href="/postsMusic/albums/2025-03-07-dua.html" aria-label="Read more about Dua">
+                <img src="/img/postsMusic/albums/2025-03-07-dua/dua.png" alt="dua" loading="lazy">
+            </a>
+
+            <div class="met-album-index">018</div>
+
+            <div class="met-album-copy">
+                <h2>Dua</h2>
+                <p>the eternal dance between darkness and light...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2025-03-07-dua.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="L’Enfant Caché et la Fleur des Marais Sacrés">
+            <a class="met-album-image" href="/postsMusic/albums/2025-02-14-enfant.html" aria-label="Read more about L’Enfant Caché et la Fleur des Marais Sacrés">
+                <img src="/img/postsMusic/albums/2025-02-14-enfant/enfant.png" alt="enfant" loading="lazy">
+            </a>
+
+            <div class="met-album-index">017</div>
+
+            <div class="met-album-copy">
+                <h2>L’Enfant Caché et la Fleur des Marais Sacrés</h2>
+                <p>In the silent marshes, where dark waters whisper to the roots of the world, a small boat drifts gently...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2025-02-14-enfant.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="L’Aube Éclose, Au Lotus de Memphis">
+            <a class="met-album-image" href="/postsMusic/albums/2025-01-06-aubeEclose.html" aria-label="Read more about L’Aube Éclose, Au Lotus de Memphis">
+                <img src="/img/postsMusic/albums/2025-01-06-aubeEclose/auLac-27-2.png" alt="aube" loading="lazy">
+            </a>
+
+            <div class="met-album-index">016</div>
+
+            <div class="met-album-copy">
+                <h2>L’Aube Éclose, Au Lotus de Memphis</h2>
+                <p>A musical offering celebrating the divine birth...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2025-01-06-aubeEclose.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Au Lac des Ibis, Une Plume Encrée">
+            <a class="met-album-image" href="/postsMusic/albums/2024-12-27-Au Lac des Ibis.html" aria-label="Read more about Au Lac des Ibis, Une Plume Encrée">
+                <img src="/img/postsMusic/albums/2024-12-27-Au Lac des Ibis/Au lac-6-2.png" alt="aulac" loading="lazy">
+            </a>
+
+            <div class="met-album-index">015</div>
+
+            <div class="met-album-copy">
+                <h2>Au Lac des Ibis, Une Plume Encrée</h2>
+                <p>A New Opus that transcends music to offer a philosophical journey.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-12-27-Au Lac des Ibis.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Pêcheur aux Filets d&#x27;Argent">
+            <a class="met-album-image" href="/postsMusic/albums/2024-10-17-PecheurArgent.html" aria-label="Read more about Pêcheur aux Filets d&#x27;Argent">
+                <img src="/img/postsMusic/albums/2024-10-17-PecheurArgent/pecheur.png" alt="pecheur" loading="lazy">
+            </a>
+
+            <div class="met-album-index">014</div>
+
+            <div class="met-album-copy">
+                <h2>Pêcheur aux Filets d&#x27;Argent</h2>
+                <p>The Culmination of an Exceptional Opus</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-10-17-PecheurArgent.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Le Souffle Écarlate">
+            <a class="met-album-image" href="/postsMusic/albums/2024-10-04-souffle.html" aria-label="Read more about Le Souffle Écarlate">
+                <img src="/img/postsMusic/albums/2024-10-04-souffle/souffle.png" alt="lesouffle" loading="lazy">
+            </a>
+
+            <div class="met-album-index">013</div>
+
+            <div class="met-album-copy">
+                <h2>Le Souffle Écarlate</h2>
+                <p>With this opus, Sherif Dahroug invites listeners on a journey across the boundaries of existence, offering a bridge between the ancient and the modern, the earthly and the divine.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-10-04-souffle.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Sur le Fil de l&#x27;Aube">
+            <a class="met-album-image" href="/postsMusic/albums/2024-09-20-Sur le Fil de l'Aube.html" aria-label="Read more about Sur le Fil de l&#x27;Aube">
+                <img src="/img/postsMusic/albums/2024-09-20-Sur le Fil de l'Aube/sur le fil-2.png" alt="surlefil" loading="lazy">
+            </a>
+
+            <div class="met-album-index">012</div>
+
+            <div class="met-album-copy">
+                <h2>Sur le Fil de l&#x27;Aube</h2>
+                <p>In &quot;Sur le Fil de l&#x27;Aube&quot;, the artist have crafted a musical and metaphysical journey that taps into the deepest spiritual currents of ancient Egyptian cosmology. Through the lens of dawn, the album reflects on rebirth, balance, and the eternal quest for understanding.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-09-20-Sur le Fil de l'Aube.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Une aura dans les ténèbres">
+            <a class="met-album-image" href="/postsMusic/albums/2024-09-09-aura.html" aria-label="Read more about Une aura dans les ténèbres">
+                <img src="/img/postsMusic/albums/2024-09-09-aura/aura.jpg" alt="aura" loading="lazy">
+            </a>
+
+            <div class="met-album-index">011</div>
+
+            <div class="met-album-copy">
+                <h2>Une aura dans les ténèbres</h2>
+                <p>This release is a journey towards the sound that illuminates the darkness of existence, the essence that resides in our memory—a symbol destined to embody all that we are. It is a force that defies storms, guiding the lost in the sea of life, reminding us that love is an irresistible miracle, a light in our darkness.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-09-09-aura.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="L&#x27;Âme de la Rose">
+            <a class="met-album-image" href="/postsMusic/albums/2024-08-30-amedelarose.html" aria-label="Read more about L&#x27;Âme de la Rose">
+                <img src="/img/postsMusic/albums/2024-08-30-L'Ame de la Rose/amedelarose.png" alt="amedelarose" loading="lazy">
+            </a>
+
+            <div class="met-album-index">010</div>
+
+            <div class="met-album-copy">
+                <h2>L&#x27;Âme de la Rose</h2>
+                <p>Yet, even in this moment of seeming defeat, the music of L’Âme de la Rose echoes with the promise of resurrection. For it is through this very sleep, this descent into the void, that Psyche is reborn. Like the rose, which must wither and die before it can bloom again, Psyche’s awakening from this deathly slumber becomes the final act of her metamorphosis.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-08-30-amedelarose.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Nocturnal, Leopard Guide">
+            <a class="met-album-image" href="/postsMusic/albums/2024-08-01-Nocturnal.html" aria-label="Read more about Nocturnal, Leopard Guide">
+                <img src="/img/postsMusic/albums/2024-08-01-Nocturnal/nocturanl.png" alt="nocturanl" loading="lazy">
+            </a>
+
+            <div class="met-album-index">009</div>
+
+            <div class="met-album-copy">
+                <h2>Nocturnal, Leopard Guide</h2>
+                <p>is a musical reflection of this deep harmony between Osiris and Set, between renewal and protection. This album takes us on a journey through the night, where we realize that darkness and light, chaos and order, are not opposites but complements, and that the continuity of the universe depends on this sacred balance between forces.Composed and designed by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-08-01-Nocturnal.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Orpheus">
+            <a class="met-album-image" href="/postsMusic/albums/2024-08-08-Orpheus.html" aria-label="Read more about Orpheus">
+                <img src="/img/postsMusic/albums/2024-08-08-Orpheus/Orpheus-5.png" alt="Orpheus-5" loading="lazy">
+            </a>
+
+            <div class="met-album-index">008</div>
+
+            <div class="met-album-copy">
+                <h2>Orpheus</h2>
+                <p>This final act, this tragic glance, was more than just the loss of Eurydice; it was the ultimate expression of human frailty. Orpheus, a man who had touched the divine, who had unlocked the secrets of the gods, was still, in the end, bound by the mortal weakness of doubt and fear. His story is not just about the power of love and music, but about the delicate balance between faith and despair, between the divine and the human.Composed and designed by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-08-08-Orpheus.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Hypatia">
+            <a class="met-album-image" href="/postsMusic/albums/2024-07-25-Hypatia.html" aria-label="Read more about Hypatia">
+                <img src="/img/postsMusic/albums/2024-07-25-hypatia/hypatia.png" alt="hypatia" loading="lazy">
+            </a>
+
+            <div class="met-album-index">007</div>
+
+            <div class="met-album-copy">
+                <h2>Hypatia</h2>
+                <p>In the blood-red sunset of a night of the new moon, the beginning and end of the lunar phases, Hypatia sat upon the ruins of the Serapeum, its walls once echoing with her voice, imparting wisdom and learning. She prayed to her god for the last time, for tomorrow she would offer her body on the altar of the City of God... Alexandria. Tonight, Hypatia&#x27;s spirit departed; they had only slain her mortal form. Music Crafted and composed by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-07-25-Hypatia.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="The Art Of Variations">
+            <a class="met-album-image" href="/postsMusic/albums/2024-01-29-TheArtofVariations.html" aria-label="Read more about The Art Of Variations">
+                <img src="/img/postsMusic/albums/2024-01-29-TheArtofVariations/art-awards.png" alt="albums_artofvariations1" loading="lazy">
+            </a>
+
+            <div class="met-album-index">006</div>
+
+            <div class="met-album-copy">
+                <h2>The Art Of Variations</h2>
+                <p>&quot;Magnificent, insightful and powerful musical interpretation, a true treasure contributing to the universal cultural heritage and accretion to the French national Biblioteca.&quot; ...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2024-01-29-TheArtofVariations.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Philae">
+            <a class="met-album-image" href="/postsMusic/albums/2023-12-02-Philae.html" aria-label="Read more about Philae">
+                <img src="/img/postsMusic/albums/2023-12-02-Philae/philae.png" alt="philae" loading="lazy">
+            </a>
+
+            <div class="met-album-index">005</div>
+
+            <div class="met-album-copy">
+                <h2>Philae</h2>
+                <p>a remarkable artistic creation that transcends time and space. Crafted by Sherif Dahroug in collaboration with the esteemed French Music Label Lyre de Mercure.</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2023-12-02-Philae.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Hiérakonpolis">
+            <a class="met-album-image" href="/postsMusic/albums/2023-12-01-Hiérakonpolis.html" aria-label="Read more about Hiérakonpolis">
+                <img src="/img/postsMusic/albums/2023-12-01-Hiérakonpolis/Hiérakonpolis (2).png" alt="Hiérakonpolis (2)" loading="lazy">
+            </a>
+
+            <div class="met-album-index">004</div>
+
+            <div class="met-album-copy">
+                <h2>Hiérakonpolis</h2>
+                <p>&quot;Hierakonpolis&quot; is not just a musical album; it is a spiritual epic that takes you on a journey through the heart of ancient Egypt. Sherif Dahroug&#x27;s harmonic and melodic compositions offer a chance to explore the chronological narrative of divinity, duality, and transformation. We invite you to join us on this mystical journey and let the music of &quot;Hierakonpolis&quot; elevate your spirit to new heights. Music composed, designed and performed by Sherif DAHROUG ...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2023-12-01-Hiérakonpolis.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Abydos">
+            <a class="met-album-image" href="/postsMusic/albums/2023-11-31-Abydos.html" aria-label="Read more about Abydos">
+                <img src="/img/postsMusic/albums/2023-11-31-abydos/aBYDOS-ALBUM.png" alt="aBYDOS-ALBUM" loading="lazy">
+            </a>
+
+            <div class="met-album-index">003</div>
+
+            <div class="met-album-copy">
+                <h2>Abydos</h2>
+                <p>This work is a tribute to the souls of the last Egyptians who journeyed to Abydos for pilgrimage. They were killed there by Byzantine emperors, and their funerals were not held until today. Music composed, designed and performed by Sherif DAHROUG ...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2023-11-31-Abydos.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="ATUM">
+            <a class="met-album-image" href="/postsMusic/albums/2023-11-30-ATUM.html" aria-label="Read more about ATUM">
+                <img src="/img/postsMusic/albums/2023-11-30-ATUM/atum-pyramids.png" alt="atum-pyramids" loading="lazy">
+            </a>
+
+            <div class="met-album-index">002</div>
+
+            <div class="met-album-copy">
+                <h2>ATUM</h2>
+                <p>A musical allegory that delves deep into the profound teachings of the School of Heliopolis, composed, designed and performed by Sherif DAHROUG ...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2023-11-30-ATUM.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
+        <article class="met-album-row" aria-label="Ëirene - Old comedy!">
+            <a class="met-album-image" href="/postsMusic/albums/2023-11-3-Eirene.html" aria-label="Read more about Ëirene - Old comedy!">
+                <img src="/img/postsMusic/albums/2023-11-3-Eirene/eirene-awards.png" alt="albums_eirene" loading="lazy">
+            </a>
+
+            <div class="met-album-index">001</div>
+
+            <div class="met-album-copy">
+                <h2>Ëirene - Old comedy!</h2>
+                <p>With a Bi-tonal, quasi new age Fantasia, comes the two mouvements Eirene -Old comedy! to sound design Aristophanes&#x27; abstruse play. A music offering, composed, designed and performed by Sherif DAHROUG ...</p>
+            </div>
+
+            <a class="met-album-link" href="/postsMusic/albums/2023-11-3-Eirene.html">
+                <span>Read more</span>
+                <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+        </article>
     </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">ATUM</p></b>
-            <p> A musical allegory that delves deep into the profound teachings of the School of Heliopolis, composed, designed and performed by Sherif DAHROUG ...</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2023-11-30-ATUM.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>   
-
-<br>   
-<hr>
-<br>  
-
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <img src="/img/postsMusic/albums/2023-11-3-Eirene/eirene-awards.png" alt="albums_eirene" style="width:100%;" align="middle">
-        </div>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="block">
-            <b><p style="font-size:1.5em;">Ëirene - Old comedy!</p></b>
-            <p>With a Bi-tonal, quasi new age Fantasia, comes the two mouvements Eirene -Old comedy! to sound design Aristophanes' abstruse play. A music offering, composed, designed and performed by Sherif DAHROUG ...</p>
-            <a class="btn-myBtn1s float-right" href="/postsMusic/albums/2023-11-3-Eirene.html">Read<span class="d-none d-md-inline"> more</span> </a>
-        </div>
-    </div>
-</div>   
-
-<br> 
-<br> 
-
-      </div>
-    </div>
-  </div>
-
+</section>
 
     <!-- Footer -->
 
