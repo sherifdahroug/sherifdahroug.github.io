@@ -1061,14 +1061,169 @@ footer{
       <aside class="hero-panel">
         <div class="eyebrow">Paris · Alexandria</div>
         <p>
-          "A contemporary classical universe guided by a quest for architectonic transcendence, drawing philosophy, astronomy, poetry, and the inner geometry of sound into a single luminous horizon."— Voxwave Magazine
+          "A contemporary classical universe guided by a quest for architectonic transcendence, drawing philosophy, astronomy, poetry, and the inner geometry of sound into a single luminous horizon." — Voxwave Magazine
         </p>
       </aside>
     </div>
 
     <div class="scroll-note">Scroll to enter</div>
   </section>
+  
+  <!-- ===== MET MARQUEE WRAP ===== -->
 
+<section class="met-marquee-wrap" aria-hidden="true">
+  <div class="met-marquee-border"></div>
+
+  <div class="met-marquee">
+    <div class="met-marquee-track">
+      <span>
+        SHERIF DAHROUG
+        <i></i>
+        NUIT DU SONGE · NEW ALBUM
+        <i></i>
+        A NEW OPUS IN THE COLORS AND FRAGRANCES OF FLOWERS
+        <i></i>
+        NINE CONTEMPORARY INSTRUMENTAL TABLEAUX WOVEN INTO A SINGLE LABYRINTHINE OPUS EXPLORING A NOCTURNAL STATE OF PERCEPTION
+        <i></i>
+        CONTEMPORARY CLASSICAL
+        <i></i>
+      </span>
+
+      <span>
+        SHERIF DAHROUG
+        <i></i>
+        SONIC ARCHITECTONICS
+        <i></i>
+        MUSIC · ARCHITECTURE · COSMOS
+        <i></i>
+        PARIS · ALEXANDRIA
+        <i></i>
+        CONTEMPORARY CLASSICAL
+        <i></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="met-marquee-border"></div>
+</section>
+
+<style>
+
+.met-marquee-wrap{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  background:#070707;
+  isolation:isolate;
+}
+
+.met-marquee-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
+  mix-blend-mode:screen;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size:7rem 100%;
+}
+
+.met-marquee-border{
+  height:1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.18),
+      transparent
+    );
+}
+
+.met-marquee{
+  position:relative;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:.9rem 0;
+}
+
+.met-marquee-track{
+  display:flex;
+  width:max-content;
+  animation:metMarquee 38s linear infinite;
+  will-change:transform;
+}
+
+.met-marquee span{
+  display:inline-flex;
+  align-items:center;
+  padding-right:2rem;
+
+  font-family:"Cormorant Garamond", serif;
+  font-size:clamp(1.1rem,2vw,2.4rem);
+  font-weight:300;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.92);
+}
+
+.met-marquee i{
+  width:.32rem;
+  height:.32rem;
+  margin:0 1rem;
+  border-radius:50%;
+
+  background:#c7ab72;
+
+  opacity:.85;
+
+  flex:none;
+}
+
+@keyframes metMarquee{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* ===== PREMIUM MOTION ===== */
+
+.met-marquee-wrap:hover .met-marquee-track{
+  animation-play-state:paused;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:640px){
+
+  .met-marquee{
+    padding:.72rem 0;
+  }
+
+  .met-marquee span{
+    font-size:1rem;
+    letter-spacing:.08em;
+  }
+
+  .met-marquee i{
+    margin:0 .8rem;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion:reduce){
+
+  .met-marquee-track{
+    animation:none;
+  }
+}
+
+</style>
   <section class="signature" aria-label="Artist signature statement">
     <div class="page-shell signature-grid">
       <div class="vertical-rule" aria-hidden="true"></div>
