@@ -388,6 +388,42 @@
         .met-album-row::before,
         .met-arrow { transition: none; }
     }
+    .fyc-marquee-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.fyc-image-marquee {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(244, 230, 220, 0.18);
+  background: rgba(5, 5, 5, 0.58);
+  backdrop-filter: blur(14px);
+}
+
+.fyc-image-marquee div {
+  display: flex;
+  width: max-content;
+  animation: fycImageMarquee 24s linear infinite;
+}
+
+.fyc-image-marquee span {
+  padding: 0.58rem 1rem;
+  white-space: nowrap;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 0.52rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(244, 230, 220, 0.72);
+}
+
+@keyframes fycImageMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 </style>
 
 <section class="met-editorial-albums">
@@ -408,6 +444,35 @@
     </div>
 
     <div class="met-album-list">
+        <article class="met-album-row" aria-label="NUIT DU SONGE">
+            <a class="met-album-image fyc-marquee-frame"
+               href="/postsMusic/albums/2026-05-28-nuit-du-songe-FYC.html"
+               aria-label="Read more about NUIT DU SONGE">
+          
+              <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/IMG_2540.jpg"
+                   alt="nuit"
+                   loading="lazy">
+          
+              <div class="fyc-image-marquee" aria-hidden="true">
+                <div>
+                  <span>FYC GRAMMY · NUIT DU SONGE · 69TH GRAMMY AWARDS® ·</span>
+                  <span>FYC GRAMMY · NUIT DU SONGE · 69TH GRAMMY AWARDS® ·</span>
+                </div>
+              </div>
+            </a>
+          
+            <div class="met-album-index">GA/02</div>
+          
+            <div class="met-album-copy">
+              <h2>NUIT DU SONGE</h2>
+              <p>“The new album by the Parisian composer and pianist Sherif Dahroug “Night of the Dream” (released under the French title “Nuit du Songe”) is precisely such a refined, tactile exploration of the nocturnal flora of the human subconscious, translated into the language of contemporary academic music.” — Helena Lynch, VOXwave Magazine, May, 19, 2026 </p>
+            </div>
+          
+            <a class="met-album-link" href="/postsMusic/albums/2026-05-28-nuit-du-songe-FYC.html">
+              <span>Read more</span>
+              <span class="met-arrow" aria-hidden="true"></span>
+            </a>
+          </article>
         <article class="met-album-row" aria-label="NUIT DU SONGE">
             <a class="met-album-image" href="/postsMusic/albums/2026-05-15-nuit-du-songe-II.html" aria-label="Read more about NUIT DU SONGE">
                 <img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/promo-vinyl-nuitdusonge.png" alt="nuit" loading="lazy">
