@@ -114,6 +114,11 @@
     color: inherit;
   }
 
+  .press-page a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
   .press-frame {
     width: min(var(--max), calc(100% - 34px));
     margin: 0 auto;
@@ -229,20 +234,27 @@
   }
 
   .press-lead__image img,
-  .press-gallery__tile img,
-  .press-entry__image img {
+  .press-gallery__tile img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
     filter: grayscale(8%) saturate(0.82) contrast(0.95);
     transition: transform 900ms cubic-bezier(.2,.7,.2,1), filter 900ms cubic-bezier(.2,.7,.2,1);
   }
 
+  .press-entry__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    filter: none;
+  }
+
   .press-lead:hover img,
   .press-lead:focus-visible img,
-  .press-entry:hover img,
-  .press-entry:focus-visible img,
   .press-gallery__tile:hover img,
   .press-gallery__tile:focus-visible img {
     transform: scale(1.028);
@@ -362,7 +374,7 @@
   .press-entry__image {
     grid-column: 2 / span 3;
     overflow: hidden;
-    background: var(--pale);
+    background: #fff;
     aspect-ratio: 1.42 / 1;
   }
 
@@ -628,7 +640,7 @@
         </figure>
         
         <div class="press-lead__text">
-          <div class="press-eyebrow">TV Interview · MBC Masr · 5 Dec 2025</div>
+          <div class="press-eyebrow">TV Interview · MBC Masr · December 5, 2025</div>
           <h2 class="press-lead__title">Translating Architecture into Music</h2>
           <p class="press-lead__summary">Sherif Dahroug with Sherif Aamer — the story behind a French distinction.</p>
           <span class="press-link-line">Read</span>
@@ -643,15 +655,9 @@
         <div class="press-lead__text">
           <div class="press-eyebrow">Television Feature · Nile TV Culture</div>
           <h2 class="press-lead__title">Highest French Academic Distinction</h2>
-          <p class="press-lead__summary">A cultural feature honoring the artist’s distinction and artistic trajectory.</p>
+          <p class="press-lead__summary">A cultural feature honoring Sherif Dahroug’s distinction and artistic trajectory.</p>
           <span class="press-link-line">Read</span>
         </div>
-
-        <a class="press-lead__text" href="/postsPress/06-TenTV.html">
-            <figure class="press-entry__image"><img src="/img/postsPress/ten-logo.jpg" alt="Ten TV interview" loading="lazy"></figure>
-            <div class="press-entry__content"><div class="press-entry__date">TV Interview · 2022</div><h3 class="press-entry__title">From Engineering to Music</h3><p class="press-entry__summary">Egyptian Artist Sherif Dahroug Receives Prestigious French Medal.</p></div>
-            <div class="press-entry__action">→</div>
-          </a>
       </a>
     </section>
 
@@ -675,11 +681,11 @@
           target="_blank"
           rel="noopener noreferrer">
 
-          <div class="press-entry__number">14</div>
+          <div class="press-entry__number">17</div>
 
           <figure class="press-entry__image">
             <img src="/img/postsPress/spin.svg"
-                alt="Sherif Dahroug featured and interviewed in SPIN Magazine"
+                alt="SPIN Magazine feature and interview with Sherif Dahroug"
                 loading="lazy">
           </figure>
 
@@ -699,7 +705,71 @@
 
           </div>
 
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
+        </a>
+
+        <a class="press-entry"
+          href="https://medium.com/authority-magazine/music-star-sherif-dahroug-of-lyre-de-mercure-on-the-five-things-you-need-to-shine-in-the-music-82a445932985"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="press-entry__number">16</div>
+
+          <figure class="press-entry__image">
+            <img src="/img/postsPress/authortity-mag-1024x538.jpg"
+                alt="Authority Magazine interview with Sherif Dahroug"
+                loading="lazy">
+          </figure>
+
+          <div class="press-entry__content">
+
+            <div class="press-entry__date">
+              Authority Magazine · August 13, 2026
+            </div>
+
+            <h3 class="press-entry__title">
+              “Music Star Sherif Dahroug of Lyre de Mercure on the Five Things You Need to Shine in the Music Industry”
+            </h3>
+
+            <p class="press-entry__summary">
+              Tavares Beverly — in-depth interview.
+            </p>
+
+          </div>
+
+          <div class="press-entry__action" aria-hidden="true">→</div>
+        </a>
+
+        <a class="press-entry"
+          href="https://www.modernclassicalmusic.com/the-nocturnal-architectures-of-memory-nuit-du-songe/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="press-entry__number">15</div>
+
+          <figure class="press-entry__image">
+            <img src="/img/postsPress/cropped-logo.jpg"
+                alt="Modern Classical Music review of Nuit du Songe by Sherif Dahroug"
+                loading="lazy">
+          </figure>
+
+          <div class="press-entry__content">
+
+            <div class="press-entry__date">
+              Modern Classical Music · May 23, 2026
+            </div>
+
+            <h3 class="press-entry__title">
+              “The Nocturnal Architectures of Memory”
+            </h3>
+
+            <p class="press-entry__summary">
+              Davide Fasiello — critical review of <em>Nuit du Songe</em>.
+            </p>
+
+          </div>
+
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry"
@@ -707,119 +777,135 @@
           target="_blank"
           rel="noopener noreferrer">
 
-          <div class="press-entry__number">13</div>
+          <div class="press-entry__number">14</div>
 
           <figure class="press-entry__image">
             <img src="/img/postsPress/voxmagazine.WEBP"
-                alt="Sherif Dahroug featured and interviewed in SPIN Magazine"
+                alt="Voxwave Magazine cover feature on Sherif Dahroug and Nuit du Songe"
                 loading="lazy">
           </figure>
 
           <div class="press-entry__content">
 
             <div class="press-entry__date">
-              the cover of Voxwave Magazine's Summer Edition.
+              Voxwave Magazine · Summer 2026 · Cover Feature
             </div>
 
             <h3 class="press-entry__title">
-              A major feature dedicated to Nuit du songe
+              “Nine States of the Night”
             </h3>
 
             <p class="press-entry__summary">
-              Helena Lynch  <em>“Nine States of the Night.”</em>.
+              Helena Lynch — a major feature dedicated to <em>Nuit du Songe</em>.
             </p>
 
           </div>
 
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
 
 
         <a class="press-entry" href="/postsPress/nuit-du-songe-press.html">
-          <div class="press-entry__number">12</div>
-          <figure class="press-entry__image"><img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/f4dc6b92-ad63-4dce-ba6f-b59e284ea28c.png" alt="Nuit du songe press anthology" loading="lazy"></figure>
-          <div class="press-entry__content"><div class="press-entry__date">Album 2026</div><h3 class="press-entry__title">Collected Critical Writings — Nuit du songe</h3><p class="press-entry__summary">Reviews & Press Anthology.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__number">13</div>
+          <figure class="press-entry__image"><img src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/f4dc6b92-ad63-4dce-ba6f-b59e284ea28c.png" alt="Nuit du Songe press anthology" loading="lazy"></figure>
+          <div class="press-entry__content"><div class="press-entry__date">Album 2026</div><h3 class="press-entry__title">Collected Critical Writings — Nuit du Songe</h3><p class="press-entry__summary">Reviews & Press Anthology.</p></div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/08-dichotomy-album-press.html">
-          <div class="press-entry__number">11</div>
+          <div class="press-entry__number">12</div>
           <figure class="press-entry__image"><img src="/img/postsPress/interview.jpg" alt="Dichotomy album press highlights" loading="lazy"></figure>
           <div class="press-entry__content"><div class="press-entry__date">Album Release 2025</div><h3 class="press-entry__title">Press Highlights — Dichotomy</h3><p class="press-entry__summary">Selected quotes from radio, articles, blogs, and journals.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/09-regards-album-press.html">
-          <div class="press-entry__number">10</div>
+          <div class="press-entry__number">11</div>
           <figure class="press-entry__image"><img src="/img/postsPress/presshilight.jpg" alt="Regards sur l’Horizon press highlights" loading="lazy"></figure>
           <div class="press-entry__content"><div class="press-entry__date">Album Release 2024</div><h3 class="press-entry__title">Regards sur l’Horizon</h3><p class="press-entry__summary">Press Highlights & Impressions.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/Soundcheck.html">
-          <div class="press-entry__number">09</div>
+          <div class="press-entry__number">10</div>
           <figure class="press-entry__image"><img src="/img/postsPress/soundchech.jpg" alt="Soundcheck Radio Show" loading="lazy"></figure>
           <div class="press-entry__content"><div class="press-entry__date">Radio · UK / USA</div><h3 class="press-entry__title">Chris Redjam — Soundcheck Radio Show</h3><p class="press-entry__summary">An innovator, master of a nouvelle vague aesthetic.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/litelounge.html">
-          <div class="press-entry__number">08</div>
+          <div class="press-entry__number">09</div>
           <figure class="press-entry__image"><img src="/img/postsPress/Lite-Lounge-.jpg" alt="Lite Lounge with Dimitri K" loading="lazy"></figure>
           <div class="press-entry__content"><div class="press-entry__date">Interview · USA</div><h3 class="press-entry__title">Lite Lounge with Dimitri K.</h3><p class="press-entry__summary">On the Philosophy of Musical Creation.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/vaultlab-dichotomy.html">
-          <div class="press-entry__number">07</div>
+          <div class="press-entry__number">08</div>
           <figure class="press-entry__image"><img src="/img/postsPress/vaultlab.jpg" alt="Vault Lab Dichotomy feature" loading="lazy"></figure>
-          <div class="press-entry__content"><div class="press-entry__date">Vault Lab · Oct 2025</div><h3 class="press-entry__title">The sonic ritual of duality</h3><p class="press-entry__summary">Between Egyptian tradition and European avant-garde.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__content"><div class="press-entry__date">Vault Lab · October 2025</div><h3 class="press-entry__title">The sonic ritual of duality</h3><p class="press-entry__summary">Between Egyptian tradition and European avant-garde.</p></div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/01-iconstory.html">
-          <div class="press-entry__number">06</div>
+          <div class="press-entry__number">07</div>
           <figure class="press-entry__image"><img src="/img/postsPress/icon1.png" alt="Icon Story 2024" loading="lazy"></figure>
           <div class="press-entry__content"><div class="press-entry__date">Icon Story · 2024</div><h3 class="press-entry__title">A Visionary Maestro of Classical Music</h3><p class="press-entry__summary">The Journal of World Organisation of Music Competitions.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/02-alahramhebdo.html">
-          <div class="press-entry__number">05</div>
+          <div class="press-entry__number">06</div>
           <figure class="press-entry__image"><img src="/img/postsPress/ahramhebdo-poster.jpeg" alt="Al-Ahram Hebdo feature" loading="lazy"></figure>
-          <div class="press-entry__content"><div class="press-entry__date">Al-Ahram Hebdo · 16 Dec 2024</div><h3 class="press-entry__title">Médaille d'Argent aux Global Music Awards</h3><p class="press-entry__summary">A French-language feature on the international distinction.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__content"><div class="press-entry__date">Al-Ahram Hebdo · December 16, 2024</div><h3 class="press-entry__title">Médaille d'Argent aux Global Music Awards</h3><p class="press-entry__summary">A French-language feature on the international distinction.</p></div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/03-alshorouk.html">
-          <div class="press-entry__number">04</div>
+          <div class="press-entry__number">05</div>
           <figure class="press-entry__image"><img src="/img/postsPress/shorouklogo.jpg" alt="Al-Shorouk Journal" loading="lazy"></figure>
-          <div class="press-entry__content"><div class="press-entry__date">Al-Shorouk Journal · 16 Dec 2024</div><h3 class="press-entry__title">Silver at the Global Music Awards</h3><p class="press-entry__summary">Coverage of the California-based competition distinction.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__content"><div class="press-entry__date">Al-Shorouk Journal · December 16, 2024</div><h3 class="press-entry__title">Silver at the Global Music Awards</h3><p class="press-entry__summary">Coverage of the California-based competition distinction.</p></div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/04-exclusivejournal.html">
-          <div class="press-entry__number">03</div>
+          <div class="press-entry__number">04</div>
           <figure class="press-entry__image"><img src="/img/postsPress/journal.jpg" alt="World Grand Prix International Music Contest journal" loading="lazy"></figure>
           <div class="press-entry__content"><div class="press-entry__date">Exclusive Journal · 2024</div><h3 class="press-entry__title">World Grand Prix International Music Contest</h3><p class="press-entry__summary">An interview with the winner of the World Grand Prix.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
         <a class="press-entry" href="/postsPress/05-alahram.html">
-          <div class="press-entry__number">02</div>
+          <div class="press-entry__number">03</div>
           <figure class="press-entry__image"><img src="/img/postsPress/Ahram_Logo.jpg" alt="Al-Ahram newspaper" loading="lazy"></figure>
-          <div class="press-entry__content"><div class="press-entry__date">Al-Ahram · 15 Dec 2023</div><h3 class="press-entry__title">Silver award in the global EMA competition</h3><p class="press-entry__summary">Coverage of an international recognition.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__content"><div class="press-entry__date">Al-Ahram · December 15, 2023</div><h3 class="press-entry__title">Silver award in the global EMA competition</h3><p class="press-entry__summary">Coverage of an international recognition.</p></div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
 
      
 
+
+        <a class="press-entry" href="/postsPress/06-TenTV.html">
+          <div class="press-entry__number">02</div>
+          <figure class="press-entry__image">
+            <img src="/img/postsPress/ten-logo.jpg"
+                 alt="Ten TV interview with Sherif Dahroug"
+                 loading="lazy">
+          </figure>
+          <div class="press-entry__content">
+            <div class="press-entry__date">Ten TV · Interview · 2022</div>
+            <h3 class="press-entry__title">From Engineering to Music</h3>
+            <p class="press-entry__summary">On Sherif Dahroug’s artistic trajectory and French distinction.</p>
+          </div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
+        </a>
+
         <a class="press-entry" href="/postsPress/07-fenoun-masrya.html">
           <div class="press-entry__number">01</div>
           <figure class="press-entry__image"><img src="/img/postsPress/fenoun-logo.jpg" alt="Ministry of Culture Magazine" loading="lazy"></figure>
-          <div class="press-entry__content"><div class="press-entry__date">Ministry of Culture Magazine · Issue 86 · Apr 2016</div><h3 class="press-entry__title">A Tale of a Musical Phenomenon</h3><p class="press-entry__summary">An early press portrait from the Egyptian Ministry of Culture magazine.</p></div>
-          <div class="press-entry__action">→</div>
+          <div class="press-entry__content"><div class="press-entry__date">Ministry of Culture Magazine · Issue 86 · April 2016</div><h3 class="press-entry__title">A Tale of a Musical Phenomenon</h3><p class="press-entry__summary">An early press portrait from the Egyptian Ministry of Culture magazine.</p></div>
+          <div class="press-entry__action" aria-hidden="true">→</div>
         </a>
       </div>
     </section>
@@ -861,7 +947,6 @@
   <div id="press-img-11" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press11.jpg" alt="Press Photo 11"></div></div>
   <div id="press-img-12" class="press-lightbox"><a class="press-lightbox__backdrop" href="#press-gallery-title" aria-label="Close image"></a><a href="#press-gallery-title" class="press-lightbox__close" aria-label="Close image">&times;</a><div class="press-lightbox__figure"><img src="/img/Press Gallery/Press12.jpg" alt="Press Photo 12"></div></div>
 </section>
-
 
     <!-- Footer -->
 
