@@ -1514,6 +1514,13 @@ footer{
     font-size: 16px;
   }
 }
+.fyc-preview-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
 </style>
 
 
@@ -1523,15 +1530,23 @@ footer{
     <div class="page-shell fyc-grid">
   
       <a class="fyc-card fyc-marquee-frame"
-         href="/postsMusic/albums/2026-05-28-nuit-du-songe-FYC.html"
-         aria-label="Enter the FYC Page">
-  
-        <img
-          src="/img/homePage/VOTING-2.png"
-          alt="For Your Consideration — Sherif Dahroug"
-          loading="lazy"
-          decoding="async" />
-  
+        href="/postsMusic/albums/2026-05-28-nuit-du-songe-FYC.html"
+        aria-label="Enter the FYC Page">
+
+        <video
+          class="fyc-preview-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/img/postsMusic/albums/2026-05-15-nuit-du-songe/art-promo.png">
+
+          <source
+            src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/NDS-OFFICIAL-3.mp4"
+            type="video/mp4" />
+        </video>
+
         <div class="fyc-image-marquee" aria-hidden="true">
           <div>
             <span>FYC GRAMMY · NUIT DU SONGE · GRAMMY AWARDS® ·</span>
@@ -1539,7 +1554,7 @@ footer{
             <span>FYC GRAMMY · NUIT DU SONGE · GRAMMY AWARDS® ·</span>
           </div>
         </div>
-  
+
       </a>
   
       <div class="fyc-copy">
