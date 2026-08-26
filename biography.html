@@ -88,105 +88,154 @@
   <title>Biography – Sherif Dahroug</title>
   <meta name="description" content="Biography of composer & concert artist Sherif Dahroug — awards, education, philosophy, galleries, and press images."/>
   <style>
-    /* ====== Design tokens ====== */
-    :root {
-      --bg: #0e0d0c;           /* deep neutral */
-      --panel: #141311;        /* card */
-      --text: #f5f4f3;         /* main text */
-      --muted: #c9c3bc;        /* muted text */
-      --accent: #e6b8a2;       /* warm rose-beige */
-      --accent-2: #b5835a;     /* warm bronze */
-      --maxw: 72rem;           /* ~1152px */
-    }
+:root{
+  --paper:#f7f5f0;
+  --ink:#0a0a0a;
+  --muted:#6a6761;
+  --line:rgba(10,10,10,.16);
+  --line-strong:rgba(10,10,10,.28);
+  --accent:#9b7a43;
+  --page:clamp(22px,5vw,84px);
+  --max:1520px;
+  --read:760px;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --display:Didot,"Bodoni 72","Bodoni MT","Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper);color-scheme:light}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--ink);color:var(--paper)}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
 
-    /* ====== Base ====== */
-    html { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      line-height: 1.7; color: var(--text); background: var(--bg);
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-    }
-    a { color: var(--accent); text-underline-offset: 3px; }
-    img { max-width: 100%; height: auto; display: block; }
+.museum-nav{
+  position:sticky;top:0;z-index:50;
+  width:min(var(--max),calc(100% - 2*var(--page)));
+  margin:0 auto;min-height:56px;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+  border-bottom:1px solid var(--line);
+  background:rgba(247,245,240,.94);backdrop-filter:blur(14px);
+  font-size:10px;line-height:1;letter-spacing:.20em;text-transform:uppercase;font-weight:500
+}
+.museum-nav a{text-decoration:none}
+.nav-links{display:flex;gap:clamp(18px,2.4vw,38px)}
 
-    /* ====== Layout ====== */
-    .container { max-width: var(--maxw); margin-inline: auto; padding: 2rem 1rem; }
-    .section { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,.06); }
-    .card { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 1.25rem; }
+.hero,.container,section[aria-label="Further reading"],.section[aria-label="Bio image"]{
+  width:min(var(--max),calc(100% - 2*var(--page)));margin:0 auto
+}
+.hero{padding:clamp(54px,8vw,120px) 0 0}
+.hero-inner{
+  display:grid;grid-template-columns:1fr minmax(0,1080px) 1fr;
+  align-items:end;gap:2rem;padding-bottom:clamp(38px,6vw,82px);
+  border-bottom:1px solid var(--line-strong)
+}
+.eyebrow{writing-mode:vertical-rl;transform:rotate(180deg);color:var(--muted);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.hero h1{grid-column:2;margin:0;text-align:center;font-family:var(--display);font-size:clamp(58px,10vw,170px);line-height:.82;letter-spacing:.10em;font-weight:300;text-transform:uppercase}
+.hero-inner::after{content:"Biography / Paris";justify-self:end;color:var(--muted);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.hero::after{content:"COMPOSER / CONCERT ARTIST / AUTHOR / LYRE DE MERCURE / PARIS";display:block;padding:17px 0 16px;border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;color:var(--muted);font-size:10px;letter-spacing:.20em;text-transform:uppercase}
 
-    /* ====== Typography ====== */
-    h1, h2, h3 { margin: 0 0 .75rem; font-weight: 650; letter-spacing: .2px; }
-    h1 { font-size: clamp(1.9rem, 2.5vw + 1rem, 3rem); line-height: 1.15; }
-    h2 { font-size: clamp(1.4rem, 1.5vw + .9rem, 2rem); color: var(--accent); }
-    h3 { font-size: clamp(1.1rem, 1.1vw + .85rem, 1.4rem); color: #e9e6e3; }
-    .lead { color: var(--muted); font-size: clamp(1rem, .5vw + .95rem, 1.15rem); }
-    p { margin: 0 0 1rem; text-align: justify; }
+.section{padding:clamp(76px,8vw,126px) 0}
+.card{display:grid;grid-template-columns:minmax(180px,320px) minmax(0,var(--read));column-gap:clamp(36px,7vw,108px);align-items:start;border-top:1px solid var(--line-strong);padding-top:clamp(22px,2.5vw,34px)}
+.card>h2{grid-column:1;margin:0;font-family:var(--display);font-size:clamp(29px,3vw,48px);line-height:1.02;letter-spacing:.055em;font-weight:300;text-transform:uppercase}
+.card>h2::before{display:block;margin-bottom:20px;color:var(--muted);font-family:var(--sans);font-size:9px;line-height:1;letter-spacing:.20em;text-transform:uppercase;font-weight:500}
+#short-bio h2::before{content:"01 / PROFILE"}#bio h2::before{content:"02 / BIOGRAPHY"}#distinctions h2::before{content:"03 / DISTINCTIONS"}#heritage h2::before{content:"04 / FORMATION"}#alexandria-paris h2::before{content:"05 / TRAJECTORY"}#quest h2::before{content:"06 / PRACTICE"}#egypt h2::before{content:"07 / SOURCES"}#books h2::before{content:"08 / WRITING"}
+.card>p,.twocol{grid-column:2}
+.card p{margin:0 0 1.35rem;color:#252321;font-size:clamp(15px,1.15vw,17px);line-height:1.72;letter-spacing:.003em;text-align:left!important;hyphens:none;overflow-wrap:anywhere}
+#short-bio .card>p{font-family:var(--display);font-size:clamp(18px,1.55vw,24px);line-height:1.58}
+#short-bio .card>p:first-of-type::first-letter{float:left;font-family:var(--display);font-size:4.1em;line-height:.78;padding:.08em .12em 0 0;color:var(--accent)}
+.twocol{display:block!important;max-width:var(--read);column-count:initial!important}
+.twocol>div{display:contents}
+#distinctions .twocol>p,#heritage .twocol>p,#alexandria-paris .twocol>p,#quest .twocol>p,#egypt .twocol>p,#books .twocol>p{padding-top:17px;margin-top:17px;border-top:1px solid rgba(10,10,10,.09)}
+.spacer-sm,.spacer-md{display:none}
 
-    /* ====== Hero ====== */
-    .hero { position: relative; min-height: 60vh; display: grid; place-items: center; overflow: hidden; }
-    .hero::before {
-      content: ""; position: absolute; inset: 0;
-      background: url('/img/Bio photos/bio-herobanner.jpg') center 30%/cover no-repeat;
-      filter: saturate(0.9) contrast(1.05);
-      transform: scale(1.02);
-    }
-    .hero::after { /* vignette */
-      content: ""; position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 20%, rgba(0,0,0,.05), rgba(0,0,0,.7));
-    }
-    .hero-inner { position: relative; text-align: center; padding: 2rem; }
-    .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: .75rem; color: rgba(255,255,255,.8); }
-    .kicker { display: inline-block; margin-top: .5rem; padding: .4rem .75rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; font-size: .85rem; color: var(--text); backdrop-filter: blur(6px); background: rgba(20,19,17,.35); }
+section[aria-label="Further reading"]{padding:0 0 clamp(74px,8vw,120px);border-bottom:1px solid var(--line)}
+section[aria-label="Further reading"] p{max-width:var(--read);margin:0 0 0 auto;color:var(--muted);font-family:var(--display);font-size:clamp(17px,1.35vw,21px);line-height:1.55;font-style:italic;text-align:left!important}
+body>br,body>hr{display:none}
 
-    /* ====== Grid & columns ====== */
-    .twocol { column-count: 2; column-gap: 2rem; }
-    .twocol > * { break-inside: avoid; }
-    @media (max-width: 900px){ .twocol { column-count: 1; } }
+.section[aria-label="Bio image"]{padding:clamp(20px,2.5vw,36px) 0 clamp(82px,8vw,130px)}
+.section[aria-label="Bio image"] .container{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,780px) minmax(0,1fr);border-top:1px solid var(--line);padding-top:clamp(18px,2.2vw,30px)}
+.section[aria-label="Bio image"] img{grid-column:2;width:100%;aspect-ratio:4/5;object-fit:cover;background:#ebe6dc;filter:saturate(.88) contrast(.99)}
 
-    /* ====== Galleries ====== */
-    .gallery { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
-    .gallery a { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
-    .gallery img { transition: transform .35s ease, opacity .35s ease; }
-    .gallery a:hover img { transform: scale(1.03); opacity: .92; }
 
-    /* CSS-only lightbox using :target */
-    .lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.9); z-index: 60; padding: 2rem; }
-    .lightbox img { max-width: min(1200px, 92vw); max-height: 85vh; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
-    .lightbox:target { display: flex; }
-    .close { position: fixed; top: 18px; right: 22px; font-size: 32px; color: white; text-decoration: none; line-height: 1; }
+/* FYC / current work — integrated museum object */
+.fyc{padding:0 0 clamp(84px,9vw,140px)}
+.fyc .page-shell{width:min(var(--max),calc(100% - 2*var(--page)));margin:0 auto}
+.fyc-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.72fr);gap:clamp(38px,6vw,104px);align-items:end;border-top:1px solid var(--line-strong);padding-top:clamp(22px,2.5vw,34px)}
+.fyc-card{position:relative;display:block;overflow:hidden;background:#111;text-decoration:none;aspect-ratio:16/10}
+.fyc-preview-video{display:block;width:100%;height:100%;object-fit:cover}
+.fyc-image-marquee{position:absolute;left:0;right:0;bottom:0;overflow:hidden;border-top:1px solid rgba(247,245,240,.45);background:rgba(0,0,0,.15);color:#fff;font-size:8px;line-height:1;letter-spacing:.20em;text-transform:uppercase;white-space:nowrap;backdrop-filter:blur(5px)}
+.fyc-image-marquee>div{display:flex;width:max-content;animation:fyc-marquee 20s linear infinite;padding:12px 0}
+.fyc-image-marquee span{padding-right:3.25rem}
+@keyframes fyc-marquee{to{transform:translateX(-33.333%)}}
+.fyc-copy{max-width:430px;padding-bottom:2px}
+.fyc-kicker{margin:0 0 22px;color:var(--muted);font-size:9px;line-height:1;letter-spacing:.20em;text-transform:uppercase;font-weight:500}
+.fyc h2{margin:0;font-family:var(--display);font-size:clamp(48px,5.2vw,86px);line-height:.86;letter-spacing:.035em;font-weight:300;text-transform:uppercase}
+.fyc-subtitle{margin:22px 0 0;color:var(--muted);font-size:9px;line-height:1;letter-spacing:.21em;text-transform:uppercase}
+.fyc-text{margin:28px 0 0;max-width:390px;color:#252321;font-size:clamp(14px,1vw,16px);line-height:1.65}
+.fyc .btn{display:inline-block;margin-top:30px;padding:0 0 8px;border-bottom:1px solid var(--ink);font-size:9px;line-height:1;letter-spacing:.19em;text-transform:uppercase;text-decoration:none}
+.fyc .btn:hover{opacity:.5}
 
-    /* ====== Utilities ====== */
-    .center { text-align: center; }
-    .muted { color: var(--muted); }
-    .spacer-sm { height: 1rem; }
-    .spacer-md { height: 2rem; }
-    .btn {
-      display: inline-block; padding: .8rem 1.2rem; border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #130f0c; font-weight: 700; border: none; text-decoration: none;
-      box-shadow: 0 10px 24px rgba(229, 185, 160, .18);
-      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-    }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 16px 30px rgba(229, 185, 160, .22); }
+@media(max-width:900px){
+  :root{--page:clamp(22px,5vw,42px)}
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:18px}
+  .eyebrow{writing-mode:initial;transform:none;justify-self:center}
+  .hero h1{grid-column:1;font-size:clamp(56px,13vw,118px)}
+  .hero-inner::after{justify-self:center}
+  .card{grid-template-columns:1fr;row-gap:28px}
+  .card>h2,.card>p,.twocol{grid-column:1}
+  .card>h2{max-width:560px}
+  .card p,.twocol{max-width:720px}
+  section[aria-label="Further reading"] p{margin-left:0}
+  .fyc-grid{grid-template-columns:1fr;align-items:start}
+  .fyc-copy{max-width:620px}
+}
 
-    /* ====== Print ====== */
-    @media print {
-      body { background: white; color: #111; }
-      .hero, .lightbox, .close { display: none !important; }
-      .section { border: none; padding: 1.5rem 0; }
-      a::after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
-    }
-  </style>
+@media(max-width:600px){
+  :root{--page:22px}
+  .museum-nav{min-height:50px;font-size:9px;letter-spacing:.16em}
+  .hero{padding-top:42px}
+  .hero-inner{padding-bottom:34px}
+  .hero h1{font-size:clamp(48px,16vw,82px);line-height:.88;letter-spacing:.065em}
+  .hero::after{padding:14px 0 13px;font-size:8px;letter-spacing:.14em;white-space:normal;line-height:1.55}
+  .section{padding:64px 0}
+  .card{padding-top:20px;row-gap:24px}
+  .card>h2{font-size:clamp(30px,10vw,42px);letter-spacing:.035em}
+  .card>h2::before{margin-bottom:14px;font-size:8px}
+  .card p{font-size:15px;line-height:1.66;margin-bottom:1.2rem}
+  #short-bio .card>p{font-size:18px;line-height:1.55}
+  #short-bio .card>p:first-of-type::first-letter{font-size:3.5em}
+  .section[aria-label="Bio image"]{padding-top:12px;padding-bottom:68px}
+  .section[aria-label="Bio image"] .container{grid-template-columns:1fr;padding-top:16px}
+  .section[aria-label="Bio image"] img{grid-column:1}
+  .fyc{padding-bottom:72px}
+  .fyc-grid{gap:28px;padding-top:18px}
+  .fyc-card{aspect-ratio:4/3}
+  .fyc h2{font-size:clamp(44px,15vw,72px)}
+  .fyc-text{margin-top:22px;font-size:15px}
+  .fyc .btn{margin-top:24px}
+  .fyc-image-marquee{font-size:7px}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fyc-image-marquee>div{animation:none}}
+</style>
 </head>
 <body>
+  <nav class="museum-nav" aria-label="Biography navigation">
+  <a href="#short-bio">Sherif Dahroug</a>
+  <div class="nav-links">
+    <a href="#fyc">Nuit du Songe</a><a href="#bio">Biography</a><a href="#distinctions">Distinctions</a><a href="#heritage">Formation</a><a href="#books">Writing</a>
+  </div>
+</nav>
 
-  <!-- Hero -->
-  <header class="hero" role="banner" aria-label="Biography hero image">
-    <div class="hero-inner">
-      <div class="eyebrow">Sherif Dahroug</div>
-      <h1>ABOUT THE ARTIST</h1>
-    </div>
-  </header>
+
+  <!-- Museum editorial hero -->
+<header class="hero" role="banner" aria-label="Biography">
+  <div class="hero-inner">
+    <div class="eyebrow">Sherif Dahroug</div>
+    <h1>Biography</h1>
+  </div>
+</header>
   <section class="section" id="short-bio">
     <div class="container">
       <div class="card">
@@ -218,25 +267,62 @@
       </div>
     </div>
   </section>
+
+  <!-- Current work / FYC -->
+  <section id="fyc" class="section fyc" aria-labelledby="fyc-title">
+    <div class="page-shell fyc-grid">
+
+      <a class="fyc-card fyc-marquee-frame"
+         href="/postsMusic/albums/2026-05-28-nuit-du-songe-FYC.html"
+         aria-label="Enter the Nuit du Songe FYC page">
+
+        <video
+          class="fyc-preview-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/img/postsMusic/albums/2026-05-15-nuit-du-songe/art-promo.png">
+          <source
+            src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/NDS-OFFICIAL-3.mp4"
+            type="video/mp4" />
+        </video>
+
+        <div class="fyc-image-marquee" aria-hidden="true">
+          <div>
+            <span>FYC GRAMMY · NUIT DU SONGE · GRAMMY AWARDS® ·</span>
+            <span>FYC GRAMMY · NUIT DU SONGE · GRAMMY AWARDS® ·</span>
+            <span>FYC GRAMMY · NUIT DU SONGE · GRAMMY AWARDS® ·</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="fyc-copy">
+        <div class="fyc-kicker">Current Work / For Your Consideration</div>
+        <h2 id="fyc-title">Nuit<br />du Songe</h2>
+        <p class="fyc-subtitle">GRAMMY AWARDS®</p>
+        <p class="fyc-text">
+          A nocturnal cycle of nine instrumental tableaux exploring
+          dream, fragrance, silence, and the inner architecture of night.
+        </p>
+        <p>
+          <a class="btn"
+             href="/postsMusic/albums/2026-05-28-nuit-du-songe-FYC.html">
+            Enter the FYC Page
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Intro / Bio -->
   <section class="section" id="bio">
     <div class="container">
       <div class="card">
         <h2>Biographical Note</h2>
         <div class="spacer-sm"></div>
-  
-        <!-- exact two columns on large screens, single column on phones -->
-         
-        <style>
-          #bio .twocol{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-          }
-          @media (max-width: 900px){
-            #bio .twocol{ grid-template-columns: 1fr; }
-          }
-        </style>
   
         <div class="twocol">
           <!-- Column 1 -->
@@ -251,7 +337,7 @@
   
             <p>In 2025, he was awarded the Absolute First Platinum Prize at the European Symphony Architect Awards for his opus and album <em>Dichotomie</em>. Further recognizing his artistic influence, the jury named him “Artist of the Month” at the European Classical Music Awards. These same awards later declared him the Annual Diamond Prize Winner and bestowed upon him the distinguished title of <strong>“Composer of the Year”</strong> at the 2024 Annual Grand Prix.</p>
   
-            <p>His album <em>Regards sur l’Horizon</em>, honored by </strong>the Global Music Awards</strong>, has already established itself as a landmark in contemporary musical creation. <p>
+            <p>His album <em>Regards sur l’Horizon</em>, honored by <strong>the Global Music Awards</strong>, has already established itself as a landmark in contemporary musical creation.</p>
 
             <p>In 2025, Sherif Dahroug was invited to join <strong>the Recording Academy / GRAMMYs®</strong> as a Voting Member, honoring his artistic vision and global impact on contemporary music.</p>
 
@@ -320,7 +406,7 @@
   <!-- Image break -->
   <section class="section" aria-label="Bio image">
     <div class="container">
-      <img src="/img/Bio photos/bio01.jpg" alt="Sherif Dahroug portrait" loading="lazy" decoding="async">
+      <img src="/img/Press Gallery/Press04.jpg" alt="Sherif Dahroug portrait" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -351,13 +437,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Image break -->
-  <section class="section" aria-label="Bio image">
-    <div class="container">
-      <img src="/img/Bio photos/bio03.jpg" alt="Sherif Dahroug performing" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -394,13 +473,6 @@
     </div>
   </section>
 
-  <!-- Image break -->
-  <section class="section" aria-label="Bio image">
-    <div class="container">
-      <img src="/img/Bio photos/bio04.jpg" alt="Piano study" loading="lazy" decoding="async">
-    </div>
-  </section>
-
   <!-- Alexandria – Paris -->
   <section class="section" id="alexandria-paris">
     <div class="container">
@@ -419,13 +491,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Image break -->
-  <section class="section" aria-label="Bio image">
-    <div class="container">
-      <img src="/img/Bio photos/bio05.jpg" alt="Concert hall photo" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -450,13 +515,6 @@
     </div>
   </section>
 
-  <!-- Image break -->
-  <section class="section" aria-label="Bio image">
-    <div class="container">
-      <img src="/img/Bio photos/bio08.jpg" alt="Studio photo" loading="lazy" decoding="async">
-    </div>
-  </section>
-
   <!-- Ancient Egypt -->
   <section class="section" id="egypt">
     <div class="container">
@@ -472,13 +530,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Image break -->
-  <section class="section" aria-label="Bio image">
-    <div class="container">
-      <img src="/img/Bio photos/bio09.jpg" alt="Manuscript and notes" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -499,67 +550,8 @@
       </div>
     </div>
   </section>
-
-  <!-- Press Gallery -->
-  <section class="section" id="press-gallery" aria-labelledby="press-title">
-    <div class="container">
-      <h2 id="press-title">The Official Press Vault</h2>
-      <div class="spacer-md"></div>
-      <div class="gallery">
-        <a href="#press1"><img src="/img/Press Gallery/Press1.jpg" alt="Press photo 1" loading="lazy" decoding="async"></a>
-        <a href="#press2"><img src="/img/Press Gallery/Press2.jpg" alt="Press photo 2" loading="lazy" decoding="async"></a>
-        <a href="#press3"><img src="/img/Press Gallery/Press3.jpg" alt="Press photo 3" loading="lazy" decoding="async"></a>
-        <a href="#press4"><img src="/img/Press Gallery/Press04.jpg" alt="Press photo 4" loading="lazy" decoding="async"></a>
-        <a href="#press5"><img src="/img/Press Gallery/Press05.jpg" alt="Press photo 5" loading="lazy" decoding="async"></a>
-        <a href="#press6"><img src="/img/Press Gallery/Press06.jpg" alt="Press photo 6" loading="lazy" decoding="async"></a>
-      </div>
-
-      <!-- Lightboxes -->
-      <div id="press1" class="lightbox" aria-label="Press photo 1"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press1.jpg" alt="Press photo 1 large"></div>
-      <div id="press2" class="lightbox" aria-label="Press photo 2"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press2.jpg" alt="Press photo 2 large"></div>
-      <div id="press3" class="lightbox" aria-label="Press photo 3"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press3.jpg" alt="Press photo 3 large"></div>
-      <div id="press4" class="lightbox" aria-label="Press photo 4"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press04.jpg" alt="Press photo 4 large"></div>
-      <div id="press5" class="lightbox" aria-label="Press photo 5"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press05.jpg" alt="Press photo 5 large"></div>
-      <div id="press6" class="lightbox" aria-label="Press photo 6"><a class="close" href="#">×</a><img src="/img/Press Gallery/Press06.jpg" alt="Press photo 6 large"></div>
-    </div>
-  </section>
-
-  <!-- Artisan's Lens Gallery -->
-  <section class="section" id="lens" aria-labelledby="lens-title">
-    <div class="container">
-      <h2 id="lens-title">The Artisan's Lens</h2>
-      <div class="spacer-md"></div>
-      <div class="gallery">
-        <a href="#lens2"><img src="/img/The Artisan's Lens/Lens02.jpg" alt="Lens photo 2" loading="lazy" decoding="async"></a>
-        <a href="#lens3"><img src="/img/The Artisan's Lens/Lens03.jpg" alt="Lens photo 3" loading="lazy" decoding="async"></a>
-        <a href="#lens4"><img src="/img/The Artisan's Lens/Lens04.jpg" alt="Lens photo 4" loading="lazy" decoding="async"></a>
-        <a href="#lens5"><img src="/img/The Artisan's Lens/Lens05.jpg" alt="Lens photo 5" loading="lazy" decoding="async"></a>
-        <a href="#lens6"><img src="/img/The Artisan's Lens/Lens06.jpg" alt="Lens photo 6" loading="lazy" decoding="async"></a>
-        <a href="#lens7"><img src="/img/The Artisan's Lens/Lens07.jpg" alt="Lens photo 7" loading="lazy" decoding="async"></a>
-      </div>
-
-      <!-- Lightboxes -->
-      <div id="lens2" class="lightbox" aria-label="Lens photo 2"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens02.jpg" alt="Lens photo 2 large"></div>
-      <div id="lens3" class="lightbox" aria-label="Lens photo 3"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens03.jpg" alt="Lens photo 3 large"></div>
-      <div id="lens4" class="lightbox" aria-label="Lens photo 4"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens04.jpg" alt="Lens photo 4 large"></div>
-      <div id="lens5" class="lightbox" aria-label="Lens photo 5"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens05.jpg" alt="Lens photo 5 large"></div>
-      <div id="lens6" class="lightbox" aria-label="Lens photo 6"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens06.jpg" alt="Lens photo 6 large"></div>
-      <div id="lens7" class="lightbox" aria-label="Lens photo 7"><a class="close" href="#">×</a><img src="/img/The Artisan's Lens/Lens07.jpg" alt="Lens photo 7 large"></div>
-    </div>
-  </section>
-
-  <!-- Download -->
-  <section class="section center" id="download">
-    <div class="container">
-      <a class="btn" href="/img/news/bio-March25.pdf" download="Sherif_Dahroug_Bio_March25.pdf">Download Full Biography (PDF)</a>
-      <div class="spacer-sm"></div>
-      <p class="muted center">High‑resolution press biography for media use.</p>
-    </div>
-  </section>
-
 </body>
 </html>
-
 
     <!-- Footer -->
 
