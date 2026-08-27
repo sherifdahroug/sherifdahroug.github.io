@@ -92,14 +92,19 @@
 
         <style>
 :root{
-  --paper:#f3efe7;
-  --ink:#111;
-  --soft:#6d6a63;
-  --line:rgba(17,17,17,.14);
-  --red:#9b111e;
-  --stone:#d8d1c4;
-  --void:#050505;
+  --paper:#f7f5f0;
+  --paper-warm:#efede7;
+  --ink:#171717;
+  --muted:#716e68;
+  --line:rgba(23,23,23,.17);
+  --line-soft:rgba(23,23,23,.09);
+  --museum-red:#9d1b20;
+  --black:#111111;
 }
+
+/* -------------------------------------------------------
+   BASE
+------------------------------------------------------- */
 
 html,
 body{
@@ -110,400 +115,1066 @@ body{
 }
 
 body{
-  font-family:"Cormorant Garamond", serif;
-  color:var(--ink);
   background:var(--paper);
-  line-height:1.55;
+  color:var(--ink);
+  font-family:"Cormorant Garamond", Georgia, serif;
+  line-height:1.5;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-/* Fix interference from layout: page2 */
+/* neutralise page2 constraints */
 .page-content,
 .wrapper,
 .container,
 .post,
 .post-content{
-  max-width:none !important;
   width:100% !important;
-  padding:0 !important;
+  max-width:none !important;
   margin:0 !important;
+  padding:0 !important;
 }
 
 .books-page{
+  position:relative;
   width:100vw;
   max-width:100vw;
   margin-left:50%;
   transform:translateX(-50%);
   overflow:hidden;
-  min-height:100vh;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px),
-    linear-gradient(180deg, var(--paper), #ebe4d8 100%);
-  background-size:8.333vw 100%, 100% 100%;
+  background:var(--paper);
 }
 
-/* HERO */
+
+/* -------------------------------------------------------
+   SHARED WIDTH
+------------------------------------------------------- */
+
+.books-shell{
+  width:min(100% - 64px, 1600px);
+  margin:0 auto;
+}
+
+
+/* -------------------------------------------------------
+   HERO
+------------------------------------------------------- */
 
 .books-hero{
-  min-height:92vh;
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:1.4rem;
-  padding:8rem clamp(1.2rem,4vw,4rem) 5rem;
+  min-height:78vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(7rem,11vw,11rem) 0 3rem;
   border-bottom:1px solid var(--line);
-  position:relative;
 }
 
-.books-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 74% 18%, rgba(155,17,30,.12), transparent 30%);
-  pointer-events:none;
+.hero-top{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:clamp(1rem,2vw,2rem);
 }
 
 .hero-kicker{
   grid-column:1 / 4;
-  font-family:"Raleway", sans-serif;
-  font-size:.72rem;
-  letter-spacing:.22em;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.63rem;
+  line-height:1.2;
+  font-weight:500;
+  letter-spacing:.23em;
   text-transform:uppercase;
-  color:var(--red);
+
+  color:var(--museum-red);
+}
+
+.hero-year{
+  grid-column:11 / 13;
+  justify-self:end;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.63rem;
+  line-height:1.2;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--muted);
+}
+
+.hero-main{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:clamp(1rem,2vw,2rem);
+  align-items:end;
+
+  margin-top:clamp(5rem,11vw,10rem);
 }
 
 .hero-title{
-  grid-column:1 / 10;
-  align-self:end;
-  font-size:clamp(5rem,15vw,16rem);
-  line-height:.78;
-  font-weight:500;
-  letter-spacing:-.085em;
+  grid-column:1 / 9;
+
   margin:0;
+
+  font-size:clamp(5.7rem,13.5vw,14rem);
+  line-height:.72;
+  font-weight:400;
+  letter-spacing:-.075em;
 }
 
 .hero-title span{
   display:block;
 }
 
+.hero-title span:last-child{
+  margin-left:.34em;
+}
+
 .hero-text{
-  grid-column:8 / 13;
-  align-self:end;
-  max-width:470px;
-  font-size:clamp(1.2rem,2vw,1.65rem);
-  color:var(--soft);
-  margin:0;
+  grid-column:9 / 13;
+
+  max-width:430px;
+  margin:0 0 .65rem;
+
+  font-size:clamp(1.12rem,1.5vw,1.42rem);
+  line-height:1.5;
+  font-weight:400;
+
+  color:#55524d;
 }
 
 .hero-index{
-  grid-column:1 / 13;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1rem;
-  margin-top:4rem;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:clamp(1rem,2vw,2rem);
+
+  margin-top:clamp(5rem,8vw,8rem);
   padding-top:1rem;
+
   border-top:1px solid var(--line);
 }
 
-.hero-index div{
-  font-family:"Raleway", sans-serif;
-  font-size:.72rem;
-  letter-spacing:.14em;
+.hero-index-item{
+  grid-column:span 3;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.62rem;
+  line-height:1.45;
+  letter-spacing:.12em;
   text-transform:uppercase;
-  color:var(--soft);
+
+  color:var(--muted);
 }
 
-.hero-index strong{
+.hero-index-number{
   display:block;
+  margin-bottom:.55rem;
+
   color:var(--ink);
-  margin-bottom:.35rem;
-  font-size:.8rem;
+  font-size:.67rem;
+  letter-spacing:.18em;
 }
 
-/* BOOKS */
+
+/* -------------------------------------------------------
+   COLLECTION INTRODUCTION
+------------------------------------------------------- */
+
+.books-intro{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:clamp(1rem,2vw,2rem);
+
+  padding:2.1rem 0 0;
+}
+
+.books-intro-title{
+  grid-column:1 / 4;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.62rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+
+  color:var(--museum-red);
+}
+
+.books-intro-text{
+  grid-column:7 / 13;
+
+  max-width:620px;
+  margin:0;
+
+  font-size:clamp(1.3rem,2vw,1.9rem);
+  line-height:1.32;
+  letter-spacing:-.012em;
+}
+
+
+/* -------------------------------------------------------
+   BOOK COLLECTION
+------------------------------------------------------- */
 
 .books-wrap{
-  padding:0 clamp(1.2rem,4vw,4rem) 8rem;
+  padding:clamp(5rem,9vw,10rem) 0 10rem;
 }
 
 .book{
   display:grid;
-  grid-template-columns:90px minmax(280px,470px) minmax(320px,560px);
-  gap:clamp(1.5rem,4vw,4rem);
-  align-items:center;
-  padding:7rem 0;
+  grid-template-columns:
+    minmax(52px,1fr)
+    minmax(270px,4fr)
+    minmax(40px,1fr)
+    minmax(320px,5fr);
+  column-gap:clamp(1rem,2.5vw,2.8rem);
+  align-items:start;
+
+  padding:clamp(5rem,8vw,8rem) 0;
+
+  border-top:1px solid var(--line);
+}
+
+.book:last-child{
   border-bottom:1px solid var(--line);
 }
 
+
+/* accession number */
+
 .book-number{
   grid-column:1;
-  align-self:start;
-  font-family:"Raleway", sans-serif;
-  font-size:.75rem;
+
+  padding-top:.2rem;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.62rem;
+  line-height:1;
   letter-spacing:.2em;
-  color:var(--red);
-  padding-top:.6rem;
+  text-transform:uppercase;
+
+  color:var(--museum-red);
 }
+
+
+/* artwork */
 
 .book-img{
   grid-column:2;
+
+  width:100%;
+  max-width:470px;
+
   margin:0;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.45), rgba(0,0,0,.03)),
-    var(--stone);
-  padding:1.1rem;
-  border:1px solid var(--line);
+}
+
+.book-img-inner{
+  position:relative;
+
+  background:#ece9e2;
+  padding:clamp(.65rem,1vw,1rem);
+
+  border:1px solid var(--line-soft);
 }
 
 .book-img img{
+  display:block;
   width:100%;
   height:auto;
-  display:block;
-  filter:contrast(1.02) saturate(.94);
-  transition:transform .7s ease, filter .7s ease;
+
+  filter:saturate(.94) contrast(1.015);
+
+  transition:
+    transform .55s cubic-bezier(.2,.6,.2,1),
+    filter .55s ease;
 }
 
 .book:hover .book-img img{
-  transform:scale(1.015);
-  filter:contrast(1.06) saturate(1);
+  transform:scale(1.006);
+  filter:saturate(1) contrast(1.025);
 }
 
+.book-object-caption{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+
+  padding-top:.75rem;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.53rem;
+  line-height:1.35;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  color:#8a867f;
+}
+
+
+/* information */
+
 .book-text{
-  grid-column:3;
-  max-width:560px;
+  grid-column:4;
+
+  max-width:650px;
+  padding-top:.05rem;
 }
 
 .book-label{
-  font-family:"Raleway", sans-serif;
-  font-size:.68rem;
-  letter-spacing:.22em;
+  margin-bottom:clamp(2rem,3vw,3.2rem);
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.59rem;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.2em;
   text-transform:uppercase;
-  color:var(--soft);
-  margin-bottom:1.2rem;
+
+  color:var(--muted);
 }
 
 .book-title{
-  font-size:clamp(2.4rem,4.8vw,5rem);
-  line-height:.94;
-  font-weight:500;
+  max-width:640px;
+
+  margin:0 0 clamp(1.7rem,2.7vw,2.6rem);
+
+  font-size:clamp(2.65rem,4.6vw,5.5rem);
+  line-height:.92;
+  font-weight:400;
   letter-spacing:-.045em;
-  margin:0 0 1.5rem;
 }
 
 .book-desc{
-  font-size:clamp(1.08rem,1.45vw,1.32rem);
-  color:var(--soft);
-  line-height:1.72;
-  max-width:470px;
-  margin:0 0 2rem;
+  max-width:520px;
+
+  margin:0;
+
+  font-size:clamp(1.1rem,1.45vw,1.34rem);
+  line-height:1.62;
+
+  color:#55524d;
+}
+
+.book-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.3rem;
+
+  max-width:520px;
+
+  margin-top:clamp(2.3rem,4vw,4rem);
+  padding-top:1rem;
+
+  border-top:1px solid var(--line-soft);
+}
+
+.book-meta-item{
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.55rem;
+  line-height:1.55;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  color:#86827b;
+}
+
+.book-meta-item strong{
+  display:block;
+
+  margin-bottom:.18rem;
+
+  color:var(--ink);
+  font-size:.56rem;
+  font-weight:500;
 }
 
 .btn-modern{
   display:inline-flex;
   align-items:center;
-  gap:1rem;
+  justify-content:space-between;
+  gap:2rem;
+
+  min-width:205px;
+
+  margin-top:clamp(2.5rem,4vw,4rem);
+  padding:.95rem 0 .85rem;
+
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--line-soft);
+
+  color:var(--ink);
   text-decoration:none;
-  font-family:"Raleway", sans-serif;
-  font-size:.72rem;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.6rem;
+  font-weight:500;
+  line-height:1;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--ink);
-  border-top:1px solid var(--ink);
-  padding-top:.9rem;
-  transition:all .25s ease;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease;
 }
 
 .btn-modern::after{
-  content:"→";
-  font-size:1rem;
+  content:"↗";
+  font-family:Arial, sans-serif;
+  font-size:.82rem;
+  font-weight:400;
+
+  transition:transform .25s ease;
 }
 
 .btn-modern:hover{
-  gap:1.5rem;
-  color:var(--red);
+  color:var(--museum-red);
+  border-top-color:var(--museum-red);
 }
 
-/* CLOSING */
+.btn-modern:hover::after{
+  transform:translate(2px,-2px);
+}
+
+
+/* -------------------------------------------------------
+   CLOSING
+------------------------------------------------------- */
 
 .books-closing{
-  background:var(--void);
+  background:var(--black);
   color:var(--paper);
-  padding:8rem clamp(1.2rem,4vw,4rem);
 }
 
 .closing-inner{
+  min-height:70vh;
+
   display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:1.4rem;
-  border-top:1px solid rgba(255,255,255,.16);
-  padding-top:2rem;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:clamp(1rem,2vw,2rem);
+  align-content:space-between;
+
+  padding:clamp(5rem,8vw,8rem) 0 clamp(3rem,5vw,5rem);
 }
 
 .closing-kicker{
   grid-column:1 / 4;
-  font-family:"Raleway", sans-serif;
-  font-size:.7rem;
-  letter-spacing:.22em;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.6rem;
+  line-height:1.3;
+  letter-spacing:.21em;
   text-transform:uppercase;
-  color:#9f998f;
+
+  color:#aca8a0;
+}
+
+.closing-number{
+  grid-column:11 / 13;
+  justify-self:end;
+
+  font-family:"Raleway", Arial, sans-serif;
+  font-size:.6rem;
+  letter-spacing:.18em;
+
+  color:#77736d;
 }
 
 .books-closing h2{
-  grid-column:1 / 8;
-  font-size:clamp(3rem,7vw,8rem);
-  line-height:.88;
-  font-weight:500;
-  letter-spacing:-.06em;
-  margin:4rem 0 0;
+  grid-column:1 / 9;
+
+  align-self:end;
+
+  margin:clamp(8rem,16vw,15rem) 0 0;
+
+  font-size:clamp(4rem,9.5vw,10rem);
+  line-height:.78;
+  font-weight:400;
+  letter-spacing:-.065em;
 }
 
 .books-closing p{
   grid-column:9 / 13;
   align-self:end;
-  color:#beb7ac;
-  font-size:clamp(1.08rem,1.45vw,1.3rem);
-  line-height:1.7;
-  margin:0;
+
+  max-width:420px;
+  margin:0 0 .6rem;
+
+  font-size:clamp(1.08rem,1.45vw,1.32rem);
+  line-height:1.55;
+
+  color:#bbb7af;
 }
 
-/* MOBILE */
 
-@media(max-width:900px){
-  .books-hero{
-    min-height:auto;
-    display:block;
-    padding:6rem 1.2rem 3rem;
+/* -------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------- */
+
+@media(max-width:1050px){
+
+  .books-shell{
+    width:min(100% - 40px, 1600px);
   }
 
   .hero-title{
-    font-size:clamp(4rem,24vw,8rem);
-    margin:4rem 0 2rem;
+    grid-column:1 / 10;
   }
 
   .hero-text{
-    max-width:100%;
-    margin-bottom:3rem;
+    grid-column:9 / 13;
+  }
+
+  .book{
+    grid-template-columns:
+      45px
+      minmax(230px,3.5fr)
+      minmax(300px,4.5fr);
+  }
+
+  .book-number{
+    grid-column:1;
+  }
+
+  .book-img{
+    grid-column:2;
+  }
+
+  .book-text{
+    grid-column:3;
+  }
+}
+
+
+@media(max-width:760px){
+
+  .books-shell{
+    width:calc(100% - 32px);
+  }
+
+  /* hero */
+
+  .books-hero{
+    min-height:auto;
+    padding:7rem 0 2rem;
+  }
+
+  .hero-top{
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+  }
+
+  .hero-year{
+    text-align:right;
+  }
+
+  .hero-main{
+    display:block;
+    margin-top:6rem;
+  }
+
+  .hero-title{
+    font-size:clamp(4.8rem,23vw,8rem);
+    line-height:.76;
+  }
+
+  .hero-title span:last-child{
+    margin-left:.12em;
+  }
+
+  .hero-text{
+    max-width:440px;
+    margin:3.2rem 0 0;
+
+    font-size:1.22rem;
   }
 
   .hero-index{
     grid-template-columns:1fr 1fr;
+    row-gap:2rem;
+
+    margin-top:4.5rem;
+  }
+
+  .hero-index-item{
+    grid-column:span 1;
+  }
+
+
+  /* intro */
+
+  .books-intro{
+    display:block;
+    padding-top:1.4rem;
+  }
+
+  .books-intro-title{
+    margin-bottom:3.2rem;
+  }
+
+  .books-intro-text{
+    max-width:100%;
+    font-size:1.55rem;
+  }
+
+
+  /* books */
+
+  .books-wrap{
+    padding:4rem 0 6rem;
   }
 
   .book{
     display:block;
-    padding:4.5rem 0;
+    padding:4.5rem 0 5rem;
   }
 
   .book-number{
-    margin-bottom:1rem;
-  }
-
-  .book-img{
     margin-bottom:2rem;
   }
 
-  .book-text{
-    max-width:100%;
+  .book-img{
+    width:min(100%,460px);
+    max-width:none;
+    margin:0 0 3rem;
   }
 
+  .book-title{
+    font-size:clamp(2.8rem,12vw,4.6rem);
+    line-height:.93;
+  }
+
+  .book-label{
+    margin-bottom:1.7rem;
+  }
+
+  .book-meta{
+    margin-top:2.6rem;
+  }
+
+
+  /* closing */
+
   .closing-inner{
+    min-height:72vh;
     display:block;
+    padding:4rem 0 3rem;
+  }
+
+  .closing-number{
+    float:right;
+    margin-top:-.9rem;
   }
 
   .books-closing h2{
-    margin:4rem 0 2rem;
+    margin:clamp(9rem,28vw,14rem) 0 3rem;
+    font-size:clamp(4rem,18vw,7rem);
+  }
+
+  .books-closing p{
+    max-width:100%;
+  }
+}
+
+
+@media(max-width:480px){
+
+  .books-shell{
+    width:calc(100% - 24px);
+  }
+
+  .hero-index{
+    grid-template-columns:1fr;
+  }
+
+  .book-meta{
+    grid-template-columns:1fr;
+    gap:.8rem;
+  }
+
+  .btn-modern{
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+
+
+/* -------------------------------------------------------
+   REDUCED MOTION
+------------------------------------------------------- */
+
+@media(prefers-reduced-motion:reduce){
+  .book-img img,
+  .btn-modern,
+  .btn-modern::after{
+    transition:none;
   }
 }
 </style>
 
+
 <div class="books-page">
 
-  <section class="books-hero">
-    <div class="hero-kicker">Library · Works · Manifestos</div>
 
-    <h1 class="hero-title">
-      <span>Books</span>
-      <span>& Texts</span>
-    </h1>
+  <!-- ==================================================
+       HERO
+  =================================================== -->
 
-    <p class="hero-text">
-      A curated architecture of writings, manifestos, poetic dramas, and symbolic studies conceived as volumes within a single intellectual edifice.
-    </p>
+  <section class="books-shell books-hero">
+
+    <div class="hero-top">
+      <div class="hero-kicker">
+        Library · Writings · Works
+      </div>
+
+      <div class="hero-year">
+        Paris · 2026
+      </div>
+    </div>
+
+
+    <div class="hero-main">
+
+      <h1 class="hero-title">
+        <span>Books</span>
+        <span>&amp; Texts</span>
+      </h1>
+
+      <p class="hero-text">
+        A curated architecture of writings, manifestos, poetic dramas,
+        and symbolic studies conceived as volumes within a single
+        intellectual edifice.
+      </p>
+
+    </div>
+
 
     <div class="hero-index">
-      <div><strong>01</strong>Architectonique Sonore</div>
-      <div><strong>02</strong>Hiérodrame</div>
-      <div><strong>03</strong>Theoria</div>
-      <div><strong>04</strong>Dichotomia</div>
+
+      <div class="hero-index-item">
+        <span class="hero-index-number">01</span>
+        Architectonique Sonore
+      </div>
+
+      <div class="hero-index-item">
+        <span class="hero-index-number">02</span>
+        Hiérodrame
+      </div>
+
+      <div class="hero-index-item">
+        <span class="hero-index-number">03</span>
+        Theoria
+      </div>
+
+      <div class="hero-index-item">
+        <span class="hero-index-number">04</span>
+        Dichotomia
+      </div>
+
     </div>
-  </section>
-
-  <section class="books-wrap">
-
-    <article class="book">
-      <div class="book-number">I</div>
-      <figure class="book-img">
-        <img src="/img/postsBooks/annonce- archetectonique-15.png" alt="">
-      </figure>
-      <div class="book-text">
-        <div class="book-label">Manifesto · Aesthetic Architecture</div>
-        <h2 class="book-title">À la Quête d’une Architectonique Sonore — Tome I</h2>
-        <p class="book-desc">
-          Un manifeste pour une esthétique sonore autonome, libérée et résolument intemporelle ; une recherche vers une architecture de sons, vivante, sacrée, universelle.
-        </p>
-        <a class="btn-modern" href="/postsBooks/archetectonique.html">Open the volume</a>
-      </div>
-    </article>
-
-    <article class="book">
-      <div class="book-number">II</div>
-      <figure class="book-img">
-        <img src="/img/postsBooks/hierodrame-couverture.png" alt="">
-      </figure>
-      <div class="book-text">
-        <div class="book-label">Poème-mystère · Rite</div>
-        <h2 class="book-title">Hathor, Iyri — À l’Aube du Vin de Lumière</h2>
-        <p class="book-desc">
-          Hiérodrame tragique consacré à la déesse Hathor, où le rite devient théâtre et la lumière, offrande.
-        </p>
-        <a class="btn-modern" href="/postsBooks/hierodrame.html">Enter the work</a>
-      </div>
-    </article>
-
-    <article class="book">
-      <div class="book-number">III</div>
-      <figure class="book-img">
-        <img src="/img/postsBooks/la theorie-livre-2.png" alt="">
-      </figure>
-      <div class="book-text">
-        <div class="book-label">Art · Time · Creation</div>
-        <h2 class="book-title">Theoria: Art and Creation</h2>
-        <p class="book-desc">
-          Une méditation sur contemplation et genèse, cherchant à harmoniser art et connaissance nés dans l’Égypte ancienne, à la recherche de l’essence du cosmos et de l’humain.
-        </p>
-        <a class="btn-modern" href="/postsBooks/theorie-art.html">Read the text</a>
-      </div>
-    </article>
-
-    <article class="book">
-      <div class="book-number">IV</div>
-      <figure class="book-img">
-        <img src="/img/postsBooks/dichotomie-livre.jpg" alt="">
-      </figure>
-      <div class="book-text">
-        <div class="book-label">Duality · Cosmogony</div>
-        <h2 class="book-title">Dichotomia — A Hymn to the Birth of the Two Lands</h2>
-        <p class="book-desc">
-          Une traversée de la dualité : lumière et ombre, terre et ciel. Des Textes des Sarcophages émerge l’épopée de la création, le miracle du devenir.
-        </p>
-        <a class="btn-modern" href="/postsBooks/dichotomie-grandhymn.html">Open the work</a>
-      </div>
-    </article>
 
   </section>
+
+
+  <!-- ==================================================
+       COLLECTION INTRODUCTION
+  =================================================== -->
+
+  <section class="books-shell books-intro">
+
+    <div class="books-intro-title">
+      Selected writings
+    </div>
+
+    <p class="books-intro-text">
+      Four works situated between musical thought, poetic construction,
+      ritual, and the architecture of creation.
+    </p>
+
+  </section>
+
+
+  <!-- ==================================================
+       BOOKS
+  =================================================== -->
+
+  <main class="books-shell books-wrap">
+
+
+    <!-- BOOK I -->
+
+    <article class="book">
+
+      <div class="book-number">
+        I
+      </div>
+
+      <figure class="book-img">
+
+        <div class="book-img-inner">
+          <img
+            src="/img/postsBooks/annonce- archetectonique-15.png"
+            alt="Cover of À la Quête d’une Architectonique Sonore — Tome I"
+            loading="lazy">
+        </div>
+
+        <figcaption class="book-object-caption">
+          <span>Volume I</span>
+          <span>Collection</span>
+        </figcaption>
+
+      </figure>
+
+      <div class="book-text">
+
+        <div class="book-label">
+          Manifesto · Aesthetic Architecture
+        </div>
+
+        <h2 class="book-title">
+          À la Quête d’une Architectonique Sonore — Tome I
+        </h2>
+
+        <p class="book-desc">
+          Un manifeste pour une esthétique sonore autonome, libérée et
+          résolument intemporelle ; une recherche vers une architecture
+          de sons, vivante, sacrée, universelle.
+        </p>
+
+        <div class="book-meta">
+
+          <div class="book-meta-item">
+            <strong>Form</strong>
+            Traité d’art · manifeste · Études d’œuvres
+          </div>
+
+          <div class="book-meta-item">
+            <strong>Language</strong>
+            Français
+          </div>
+
+        </div>
+
+        <a
+          class="btn-modern"
+          href="/postsBooks/archetectonique.html">
+          Open the volume
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- BOOK II -->
+
+    <article class="book">
+
+      <div class="book-number">
+        II
+      </div>
+
+      <figure class="book-img">
+
+        <div class="book-img-inner">
+          <img
+            src="/img/postsBooks/hierodrame-couverture.png"
+            alt="Cover of Hathor, Iyri — À l’Aube du Vin de Lumière"
+            loading="lazy">
+        </div>
+
+        <figcaption class="book-object-caption">
+          <span>Volume II</span>
+          <span>Hiérodrame</span>
+        </figcaption>
+
+      </figure>
+
+      <div class="book-text">
+
+        <div class="book-label">
+          Poème-mystère · Rite
+        </div>
+
+        <h2 class="book-title">
+          Hathor, Iyri — À l’Aube du Vin de Lumière
+        </h2>
+
+        <p class="book-desc">
+          Hiérodrame tragique consacré à la déesse Hathor, où le rite
+          devient théâtre et la lumière, offrande.
+        </p>
+
+        <div class="book-meta">
+
+          <div class="book-meta-item">
+            <strong>Form</strong>
+            Poème-mystère
+          </div>
+
+          <div class="book-meta-item">
+            <strong>Domain</strong>
+            Rite · Theatre
+          </div>
+
+        </div>
+
+        <a
+          class="btn-modern"
+          href="/postsBooks/hierodrame.html">
+          Enter the work
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- BOOK III -->
+
+    <article class="book">
+
+      <div class="book-number">
+        III
+      </div>
+
+      <figure class="book-img">
+
+        <div class="book-img-inner">
+          <img
+            src="/img/postsBooks/la theorie-livre-2.png"
+            alt="Cover of Theoria: Art and Creation"
+            loading="lazy">
+        </div>
+
+        <figcaption class="book-object-caption">
+          <span>Volume III</span>
+          <span>Theoria</span>
+        </figcaption>
+
+      </figure>
+
+      <div class="book-text">
+
+        <div class="book-label">
+          Art · Time · Creation
+        </div>
+
+        <h2 class="book-title">
+          Theoria: Art and Creation
+        </h2>
+
+        <p class="book-desc">
+          Une méditation sur contemplation et genèse, cherchant à
+          harmoniser art et connaissance nés dans l’Égypte ancienne,
+          à la recherche de l’essence du cosmos et de l’humain.
+        </p>
+
+        <div class="book-meta">
+
+          <div class="book-meta-item">
+            <strong>Form</strong>
+            Essay
+          </div>
+
+          <div class="book-meta-item">
+            <strong>Domain</strong>
+            Art · Knowledge
+          </div>
+
+        </div>
+
+        <a
+          class="btn-modern"
+          href="/postsBooks/theorie-art.html">
+          Read the text
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- BOOK IV -->
+
+    <article class="book">
+
+      <div class="book-number">
+        IV
+      </div>
+
+      <figure class="book-img">
+
+        <div class="book-img-inner">
+          <img
+            src="/img/postsBooks/dichotomie-livre.jpg"
+            alt="Cover of Dichotomia — A Hymn to the Birth of the Two Lands"
+            loading="lazy">
+        </div>
+
+        <figcaption class="book-object-caption">
+          <span>Volume IV</span>
+          <span>Dichotomia</span>
+        </figcaption>
+
+      </figure>
+
+      <div class="book-text">
+
+        <div class="book-label">
+          Duality · Cosmogony
+        </div>
+
+        <h2 class="book-title">
+          Dichotomia — A Hymn to the Birth of the Two Lands
+        </h2>
+
+        <p class="book-desc">
+          Une traversée de la dualité : lumière et ombre, terre et ciel.
+          Des Textes des Sarcophages émerge l’épopée de la création,
+          le miracle du devenir.
+        </p>
+
+        <div class="book-meta">
+
+          <div class="book-meta-item">
+            <strong>Form</strong>
+            Poetic study
+          </div>
+
+          <div class="book-meta-item">
+            <strong>Domain</strong>
+            Cosmogony
+          </div>
+
+        </div>
+
+        <a
+          class="btn-modern"
+          href="/postsBooks/dichotomie-grandhymn.html">
+          Open the work
+        </a>
+
+      </div>
+
+    </article>
+
+  </main>
+
+
+  <!-- ==================================================
+       CLOSING
+  =================================================== -->
 
   <section class="books-closing">
-    <div class="closing-inner">
-      <div class="closing-kicker">Catalogue · Thought · Architecture</div>
+
+    <div class="books-shell closing-inner">
+
+      <div class="closing-kicker">
+        Catalogue · Thought · Architecture
+      </div>
+
+      <div class="closing-number">
+        01—04
+      </div>
 
       <h2>
         Architecture<br>
@@ -511,11 +1182,14 @@ body{
       </h2>
 
       <p>
-        Each volume stands as a chamber within a larger intellectual edifice:
-        a place of study, ritual, memory, and poetic construction.
+        Each volume stands as a chamber within a larger intellectual
+        edifice: a place of study, ritual, memory, and poetic construction.
       </p>
+
     </div>
+
   </section>
+
 
 </div>
 

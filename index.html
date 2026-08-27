@@ -748,45 +748,30 @@ img{
 
 /* ===== Book ===== */
 
-.book{
-  background:linear-gradient(180deg,#fff,var(--paper));
-}
-
-.book-grid{
-  display:grid;
-  grid-template-columns:.72fr 1.28fr;
-  gap:clamp(2rem,6vw,7rem);
-  align-items:center;
-}
-
 .book-cover{
-  border-radius:1.8rem;
+  margin:0;
+  width:100%;
+  aspect-ratio:4 / 3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   overflow:hidden;
-  box-shadow:var(--shadow);
-  background:white;
-  padding:.65rem;
-  transform:rotate(-1deg);
+  background:#f1eee8;
+  border:1px solid var(--line);
+  padding:clamp(2rem,4vw,5rem);
+  box-shadow:none;
+  transform:none;
+  border-radius:0;
 }
 
 .book-cover img{
-  border-radius:1.2rem;
-}
-
-.book-copy h2{
-  font-family:var(--serif);
-  font-size:clamp(3rem,6vw,7rem);
-  font-weight:300;
-  line-height:.88;
-  letter-spacing:-.055em;
-  margin:0;
-}
-
-.book-copy p{
-  margin-top:1.8rem;
-  max-width:55rem;
-  color:var(--ink-soft);
-  line-height:1.9;
-  font-weight:300;
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:0;
 }
 
 .meta-list{
@@ -1145,12 +1130,7 @@ footer{
         <h1 class="hero-title">Sherif <span>Dahroug</span></h1>
       </div>
 
-      <aside class="hero-panel">
-        <div class="eyebrow">Paris · Alexandria</div>
-        <p>
-          "A contemporary classical universe guided by a quest for architectonic transcendence, drawing philosophy, astronomy, poetry, and the inner geometry of sound into a single luminous horizon." — Voxwave Magazine.
-        </p>
-      </aside>
+      
     </div>
 
     <div class="scroll-note">Scroll to enter</div>
@@ -1540,7 +1520,7 @@ footer{
           loop
           playsinline
           preload="metadata"
-          poster="/img/postsMusic/albums/2026-05-15-nuit-du-songe/art-promo.png">
+         
 
           <source
             src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/NDS-OFFICIAL-3.mp4"
