@@ -135,13 +135,30 @@
    GLOBAL
    --------------------------------------------------------- */
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
   background: var(--vica-paper);
-  color: var(--vica-ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+}
+
+/* Neutralise width constraints inherited from postNewEvent */
+.page-content,
+.wrapper,
+.container,
+.post,
+.post-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .vica-page,
@@ -150,13 +167,23 @@ body {
 }
 
 .vica-page {
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+
   background: var(--vica-paper);
   color: var(--vica-ink);
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .vica-shell {
-  width: min(1240px, calc(100% - 48px));
+  width: min(calc(100% - 48px), 1240px);
   margin: 0 auto;
 }
 
@@ -534,7 +561,7 @@ body {
 @media (max-width: 800px) {
 
   .vica-shell {
-    width: min(100% - 36px, 1240px);
+    width: min(calc(100% - 36px), 1240px);
   }
 
   .vica-opening {
@@ -552,6 +579,7 @@ body {
 
   .vica-prose {
     order: 1;
+    max-width: none;
   }
 
   .vica-edition-grid {
@@ -571,6 +599,144 @@ body {
   .vica-order-link {
     min-width: 0;
     width: 100%;
+  }
+}
+
+
+@media (max-width: 520px) {
+
+  .vica-shell {
+    width: calc(100% - 24px);
+  }
+
+  .vica-opening {
+    min-height: auto;
+    padding: 105px 0 62px;
+  }
+
+  .vica-overline {
+    margin-bottom: 24px;
+    font-size: 9px;
+    letter-spacing: .20em;
+  }
+
+  .vica-main-title {
+    font-size: clamp(58px, 21vw, 88px);
+    line-height: .88;
+    letter-spacing: -.048em;
+  }
+
+  .vica-latin {
+    margin-top: 28px;
+    font-size: clamp(19px, 6vw, 25px);
+  }
+
+  .vica-foundations {
+    margin-top: 14px;
+    font-size: 9px;
+    letter-spacing: .17em;
+  }
+
+  .vica-film-section {
+    padding: 62px 0 70px;
+  }
+
+  .vica-section-number {
+    margin-bottom: 22px;
+  }
+
+  .vica-question-section {
+    padding: 74px 0 82px;
+  }
+
+  .vica-question {
+    font-size: clamp(31px, 9.2vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -.03em;
+  }
+
+  .vica-content {
+    gap: 58px;
+    padding: 72px 0 84px;
+  }
+
+  .vica-prose p {
+    font-size: 18px;
+    line-height: 1.68;
+  }
+
+  .vica-small-title {
+    margin-bottom: 32px;
+  }
+
+  .vica-secondary-question {
+    margin-top: 58px;
+    padding-top: 32px;
+    font-size: clamp(27px, 8vw, 38px);
+  }
+
+  .vica-meta-row {
+    grid-template-columns: minmax(72px, 82px) minmax(0, 1fr);
+    gap: 16px;
+    padding: 15px 0 16px;
+  }
+
+  .vica-meta-value {
+    overflow-wrap: anywhere;
+  }
+
+  .vica-edition {
+    padding: 74px 0 90px;
+  }
+
+  .vica-edition-grid {
+    gap: 28px;
+  }
+
+  .vica-edition-text {
+    font-size: clamp(27px, 8vw, 38px);
+  }
+
+  .vica-order-inner {
+    min-height: auto;
+    padding: 62px 0 42px;
+  }
+
+  .vica-order-main {
+    padding: 92px 0 86px;
+  }
+
+  .vica-order-title {
+    margin-bottom: 30px;
+    font-size: clamp(56px, 19vw, 84px);
+  }
+
+  .vica-order-subtitle {
+    margin-bottom: 45px;
+    font-size: clamp(19px, 6vw, 24px);
+  }
+
+  .vica-order-link {
+    gap: 28px;
+  }
+
+  .vica-order-footer {
+    gap: 10px;
+  }
+}
+
+
+/* Keyboard accessibility */
+.vica-order-link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 8px;
+}
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .vica-order-link {
+    transition: none;
   }
 }
 
@@ -625,12 +791,12 @@ body {
       <div class="vica-film">
 
         <iframe
-          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1047293254763710%2F&show_text=false&width=560&t=0"
-          title="VICA 23° — Film"
-          scrolling="no"
-          frameborder="0"
-          allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          src="https://www.youtube.com/embed/lyFERLATk4E?si=CjFXkqVqbitXVdyT"
+          title="VICA 23° — film de présentation"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
         </iframe>
 
       </div>
