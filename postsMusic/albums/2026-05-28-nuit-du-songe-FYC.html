@@ -951,7 +951,223 @@
   }
 
 }
-  </style>
+  
+/* =========================================================
+   LISTENING CARDS
+   Three vertical audiovisual objects, inserted after Press.
+   ========================================================= */
+.listening-cards-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.listening-cards-section::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--rose-soft),
+    transparent
+  );
+  opacity: 0.34;
+}
+
+.listening-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.65rem);
+  align-items: start;
+}
+
+.listening-card {
+  min-width: 0;
+}
+
+.listening-card-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #050505;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.26);
+}
+
+.listening-card-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 12px solid rgba(244,230,220,0.045);
+  transition: border-color 0.35s ease;
+}
+
+.listening-card:hover .listening-card-frame::after,
+.listening-card.is-playing .listening-card-frame::after {
+  border-color: rgba(232,182,169,0.12);
+}
+
+.listening-card video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #050505;
+  transform: scale(1.001);
+  transition:
+    transform 0.8s cubic-bezier(.2,.75,.25,1),
+    filter 0.5s ease;
+}
+
+.listening-card:hover video {
+  transform: scale(1.012);
+}
+
+.listening-card-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(244,230,220,0.72);
+  text-shadow: 0 1px 14px rgba(0,0,0,0.6);
+}
+
+.listening-card-control {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+  min-width: 7.9rem;
+  border: 1px solid rgba(244,230,220,0.30);
+  border-radius: 999px;
+  padding: 0.68rem 0.92rem;
+  color: #f4e6dc;
+  background: rgba(5,5,5,0.64);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.listening-card-control:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232,182,169,0.72);
+  background: rgba(5,5,5,0.80);
+}
+
+.listening-card-control-icon {
+  width: 0.52rem;
+  height: 0.52rem;
+  flex: 0 0 auto;
+  display: inline-block;
+  position: relative;
+}
+
+.listening-card-control-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(16% 5%, 94% 50%, 16% 95%);
+  background: currentColor;
+}
+
+.listening-card.is-playing .listening-card-control-icon::before {
+  clip-path: none;
+  background:
+    linear-gradient(
+      90deg,
+      currentColor 0 34%,
+      transparent 34% 66%,
+      currentColor 66% 100%
+    );
+}
+
+.listening-card-copy {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  row-gap: 0.35rem;
+  align-items: baseline;
+  padding: 1.15rem 0 0;
+}
+
+.listening-card-copy h3 {
+  grid-column: 1;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.listening-card-duration {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  color: var(--rose-soft);
+}
+
+.listening-card-copy p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  line-height: 1.65;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+}
+
+body.day-mode .listening-card-frame {
+  box-shadow: 0 24px 60px rgba(63,35,25,0.12);
+}
+
+@media (max-width: 980px) {
+  .listening-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .listening-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .listening-card {
+    max-width: 520px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listening-card video,
+  .listening-card-control {
+    transition: none;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -972,6 +1188,7 @@
         <a href="#liner">Liner Note</a>
         <a href="#credits">Credits</a>
         <a href="#press">Press</a>
+        <a href="#listening-cards">Cards</a>
         <a href="#fyc">FYC</a>
         <button class="mode-toggle" type="button" aria-label="Switch color mode">Night</button>
       </nav>
@@ -1367,17 +1584,114 @@
         </div>
 
         <div class="press-list">
+          <article class="press-item"><time>— Ron Hart, SPIN Magazine, June 2026</time><div><h3>“[…] colors and fragrances of flowers,  shimmering with a modal polytonality […]”</h3><p>“Now Hear This,”</p></div><a href="https://www.spinmagazine.com/2026/06/now-hear-this-june-2026/#:~:text=colors%20and%20fragrances%20of%20flowers">Read ↗</a></article>
           <article class="press-item"><time>— Helena Lynch, Voxwave Magazine, May 2026</time><div><h3>“Synesthesia – the gift of seeing sound and hearing color […]”</h3><p>—Nine States Of The Night In Sherif Dahroug’s Album “Night Of The Dream”</p></div><a href="https://voxwavemag.com/2026/05/21/night-of-dreams-nine-states-of-the-night-in-sherif-dahrougs-album-night-of-the-dream/">Read ↗</a></article>
           <article class="press-item"><time>— Davide Fasiello, Modern Classical Music, May 2026</time><div><h3>“[…]Dahroug absorbs [his influences] into a singular compositional language where timbre itself becomes structural material. Harmonic colour… gradually engenders [musical form] from within […]”</h3><p>—The Nocturnal Architectures of Memory</p></div><a href="https://www.modernclassicalmusic.com/the-nocturnal-architectures-of-memory-nuit-du-songe/">Read ↗</a></article>
+          <article class="press-item"><time>— — Hominis Canidae (Brazil)</time><div><h3>“ […] a nocturnal passage between pilgrimage and return, appearance and disappearance. A delicate work that reveals the full capacity of human feeling.”</h3><p>—Sherif DAHROUG – Nuit du songe</p></div><a href="https://www.hominiscanidae.org/2026/05/gringos-de-maio-nova-leva-de-sons.html#:~:text=Sherif%20DAHROUG%20-%20Nuite%20Du%20Songe%20(%C3%81lbum%2F%20Egito)">Read ↗</a></article>
           <article class="press-item"><time>Radio interview—Listen from 29:30.</time><div><h3>A 30-minute radio interview exploring Nuit du Songe on The Lite Lounge with Dimitri K.</h3><p>—Featured in the June 28, 2026 episode of Protons, Neutrons, Electrons and Music!</p></div><a href="https://www.facebook.com/share/v/1ASWDqtp2q/">Open ↗</a></article>
           <article class="press-item"><time>— Jazz in Family, Italy, May 2026</time><div><h3>"[…] Nuit du songe works best when it lets silence complete the composition...The album finds its identity not in formal complexity, but in the precision with which it balances density and emptiness...
             A transversal writing capable of traversing contemporary music, impressionism, and cinematic sensitivity without forcing the connections […]"</h3><p>—Nuit du songe: la notte impressionista di Sherif Dahroug tra memoria e contemplazione</p></div><a href="https://www.jazzinfamily.com/nuit-du-songe-sherif-dahroug-recensione/">Open ↗</a></article>
+          </div>
+          <article class="press-item"><time>— Berlin On Air (Germany), May 2026</time><div><h3>“ […] Through a subtly experimental approach, Sherif Dahroug establishes a truly distinctive voice within contemporary neoclassical music. ”</h3><p>—Sherif DAHROUG – Songe couleur d’aube (Klassik)</p></div><a href="https://www.berlinonair.cc/post/816851527093420032/sherif-dahroug-songe-couleur-daube-klassik">Read ↗</a></article>
+          <article class="press-item"><time>— Branimir A. Lokner, Editor-in-Chief, Time Machine Music</time><div><h3>“ […] Sherif Dahroug shows his authorial and performing versatility […] Through polyphonic invention, avant-garde sensibility, and neo-classical and post-classical tendencies… Sherif Dahroug shapes a highly personal structural language — a work both complex and profoundly challenging in its achievement.”</h3><p>—Sherif DAHROUG – Songe couleur d’aube </p></div><a href="https://www.instagram.com/p/DYhJshbgNyK/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D">Read ↗</a></article>
+          <article class="press-item"><time>— Skylight Webzine (Greece), May 2026</time><div><h3>“ […] The piece is particularly impressive because of its simplicity and discipline… Rather than relying on complexity for impact, the composition communicates emotion and subtle melodic movement, resulting in a deeply personal listening experience”</h3><p>—Sherif DAHROUG – Songe couleur d’aube </p></div><a href="https://skylight.gr/index.php/2026/05/18/sherif-dahroug-songe-couleur-daube/">Read ↗</a></article>
+          <article class="press-item"><time>— VaultLab, Italy, May 2026</time><div><h3>“ […] Within an instrumental landscape often divided between accessible minimalism and difficult experimentation, Sherif Dahroug seeks a third path: complex, yet sensorial; contemporary, yet traversed by a subtle lyricism.”</h3><p>—Sherif DAHROUG – Songe couleur d’aube (</p></div><a href="https://vaultlab.it/2026/05/17/tra-sogno-rito-e-resistenza-nuove-traiettorie-indipendenti-tra-elettronica-folk-avanguardia-e-rock/?utm_source=chatgpt.com#:~:text=Sherif%20Dahroug%20%E2%80%93%20%E2%80%9CSonge%20couleur%20d%E2%80%99aube%E2%80%9D">Read ↗</a></article>
+          <article class="press-item"><time>— — Tavares Beverly, Authority Magazine</time><div><h3>“ […] A synthesis of structural thought, formal rigor, and poetic inquiry.”</h3><p>—“Music Star Sherif Dahroug of Lyre de Mercure On The Five Things You Need To Shine In The Music Industry” </p></div><a href="https://medium.com/authority-magazine/music-star-sherif-dahroug-of-lyre-de-mercure-on-the-five-things-you-need-to-shine-in-the-music-82a445932985">Read ↗</a></article>
+          <article class="press-item"><time>— New Music Alert</time><div><h3>“ […] Not simply a collection of compositions but an immersive artistic landscape shaped by poetry, philosophy, architecture, and lived experience.”</h3><p>—“Interview with Sherif Dahroug”</p></div><a href="https://newmusicalert.in/interview-with-sherif-dahroug/">Open ↗</a></article>
+      </section>
+
+
+      <section id="listening-cards" class="listening-cards-section reveal" aria-labelledby="listening-cards-title">
+        <div class="section-head">
+          <div class="kicker">05 · Listening Cards</div>
+          <div>
+            <h2 id="listening-cards-title">Passages from <em>Nuit du Songe</em>.</h2>
+            <p class="lead">
+              Short audiovisual fsragments from the album. Select a card to listen with sound.
+            </p>
+          </div>
+        </div>
+
+        <div class="listening-cards-grid">
+
+          <article class="listening-card">
+            <div class="listening-card-frame">
+              <span class="listening-card-number">01 · Fragment</span>
+              <video
+                preload="metadata"
+                playsinline
+                poster="/img/postsMusic/albums/2026-05-15-nuit-du-songe/POSTER-FYC03-instrumental-22.png"
+                aria-label="Nuit du Songe — listening fragment one">
+                <source
+                  src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/card01.mp4"
+                  type="video/mp4" />
+              </video>
+              <button class="listening-card-control" type="button" aria-label="Play listening fragment one">
+                <span class="listening-card-control-icon" aria-hidden="true"></span>
+                <span class="listening-card-control-label">Listen</span>
+              </button>
+            </div>
+            <div class="listening-card-copy">
+              <h3>Listening fragment I</h3>
+              <span class="listening-card-duration">00:18</span>
+              <p>Film · music · critical trace</p>
+            </div>
+          </article>
+
+          <article class="listening-card">
+            <div class="listening-card-frame">
+              <span class="listening-card-number">02 · Fragment</span>
+              <video
+                preload="metadata"
+                playsinline
+                poster="/img/postsMusic/albums/2026-05-15-nuit-du-songe/POSTER-FYC03-instrumental-11.png"
+                aria-label="Nuit du Songe — listening fragment two">
+                <source
+                  src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/card03.mp4"
+                  type="video/mp4" />
+              </video>
+              <button class="listening-card-control" type="button" aria-label="Play listening fragment two">
+                <span class="listening-card-control-icon" aria-hidden="true"></span>
+                <span class="listening-card-control-label">Listen</span>
+              </button>
+            </div>
+            <div class="listening-card-copy">
+              <h3>Listening fragment II</h3>
+              <span class="listening-card-duration">00:42</span>
+              <p>Film · music · critical trace</p>
+            </div>
+          </article>
+
+          <article class="listening-card">
+            <div class="listening-card-frame">
+              <span class="listening-card-number">03 · Fragment</span>
+              <video
+                preload="metadata"
+                playsinline
+                poster="/img/postsMusic/albums/2026-05-15-nuit-du-songe/POSTER-FYC03-instrumental-16.png"
+                aria-label="Nuit du Songe — listening fragment three">
+                <source
+                  src="/img/postsMusic/albums/2026-05-15-nuit-du-songe/card02.mp4"
+                  type="video/mp4" />
+              </video>
+              <button class="listening-card-control" type="button" aria-label="Play listening fragment three">
+                <span class="listening-card-control-icon" aria-hidden="true"></span>
+                <span class="listening-card-control-label">Listen</span>
+              </button>
+            </div>
+            <div class="listening-card-copy">
+              <h3>Listening fragment III</h3>
+              <span class="listening-card-duration">00:18</span>
+              <p>Film · music · critical trace</p>
+            </div>
+          </article>
+
         </div>
       </section>
 
       <section id="fyc" class="reveal">
         <div class="section-head">
-          <div class="kicker">05 · FYC</div>
+          <div class="kicker">06 · FYC</div>
           <div>
             <h2>For Your Consideration.</h2>
             <p class="lead">A formal FYC panel: factual, dignified, and free of promotional excess.</p>
@@ -1399,7 +1713,7 @@
       <section id="listening-chamber" class="listening-chamber reveal">
 
         <div class="section-head">
-          <div class="kicker">06 · Listening Chamber</div>
+          <div class="kicker">07 · Listening Chamber</div>
       
           <div>
             <h2>Artists’ listening desk.</h2>
@@ -1557,6 +1871,64 @@
         bioDialog.close();
       }
     });
+
+    // Listening cards: one audiovisual fragment at a time.
+    const listeningCards = [...document.querySelectorAll('.listening-card')];
+
+    listeningCards.forEach(card => {
+      const video = card.querySelector('video');
+      const control = card.querySelector('.listening-card-control');
+      const label = card.querySelector('.listening-card-control-label');
+
+      const resetCard = () => {
+        card.classList.remove('is-playing');
+        label.textContent = 'Listen';
+        control.setAttribute('aria-label', control.getAttribute('aria-label').replace(/^Pause/, 'Play'));
+      };
+
+      control.addEventListener('click', async () => {
+        const isPlaying = !video.paused && !video.ended;
+
+        listeningCards.forEach(otherCard => {
+          if (otherCard === card) return;
+          const otherVideo = otherCard.querySelector('video');
+          const otherLabel = otherCard.querySelector('.listening-card-control-label');
+          const otherControl = otherCard.querySelector('.listening-card-control');
+
+          otherVideo.pause();
+          otherCard.classList.remove('is-playing');
+          otherLabel.textContent = 'Listen';
+          otherControl.setAttribute(
+            'aria-label',
+            otherControl.getAttribute('aria-label').replace(/^Pause/, 'Play')
+          );
+        });
+
+        if (isPlaying) {
+          video.pause();
+          resetCard();
+        } else {
+          try {
+            await video.play();
+            card.classList.add('is-playing');
+            label.textContent = 'Pause';
+            control.setAttribute(
+              'aria-label',
+              control.getAttribute('aria-label').replace(/^Play/, 'Pause')
+            );
+          } catch (error) {
+            console.warn('Playback could not start:', error);
+          }
+        }
+      });
+
+      video.addEventListener('ended', resetCard);
+      video.addEventListener('pause', () => {
+        if (!video.ended) resetCard();
+      });
+    });
+
+
   </script>
 </body>
 </html>
